@@ -1,0 +1,73 @@
+<h2 md-dialog-title>Створення епізоду</h2>
+<md-dialog-actions>
+  <button md-button [md-dialog-close]="false">Відміна</button>
+  <!-- Can optionally provide a result for the closing dialog. -->
+  <button md-button [md-dialog-close]="true">Створити</button>
+</md-dialog-actions>
+<md-dialog-content>
+  <div>
+    <md-form-field>
+      <input placeholder="Назва епізоду" mdInput [formControl]="ctrl">
+    </md-form-field>
+  </div>
+  <div>
+    <!--<md-form-field>-->
+    <md-select>
+      <md-option *ngFor="let food of [{viewValue: 'a'}]" [value]="food.value">
+        {{ food.viewValue }}
+      </md-option>
+    </md-select>
+    <!--</md-form-field>-->
+  </div>
+  <div>
+    <md-form-field>
+      <input type="text" mdInput [formControl]="ctrl" [mdAutocomplete]="auto">
+    </md-form-field>
+
+    <md-autocomplete #auto="mdAutocomplete">
+      <md-option *ngFor="let option of actionReasonOptions | async" [value]="option">
+        {{ option }}
+      </md-option>
+    </md-autocomplete>
+  </div>
+
+  <md-tab-group>
+    <md-tab label="Причина">
+      <md-form-field>
+        <input type="text" placeholder="введіть причину чи код" mdInput [formControl]="ctrl" [mdAutocomplete]="auto">
+      </md-form-field>
+
+      <md-autocomplete #auto="mdAutocomplete" (optionSelected)="onReasonSelected($event)">
+        <md-option *ngFor="let option of actionReasonOptions | async" [value]="option">
+          {{ option }}
+        </md-option>
+      </md-autocomplete>
+      <md-list>
+        <md-list-item *ngFor="let reason of selectedReasons">{{reason}}</md-list-item>
+      </md-list>
+      <span>Варто пам'ятати! Ви можете вибрати декілька кодів для кожного поля</span>
+    </md-tab>
+    <md-tab label="Діагноз">
+      <md-list>
+        <md-list-item *ngFor="let diagnosis of episode?.diagnoses">{{diagnosis.code | icpcCode}}</md-list-item>
+      </md-list>
+    </md-tab>
+    <md-tab label="Дія">
+      <md-form-field>
+        <input type="text" placeholder="введіть причину чи код" mdInput [formControl]="ctrl" [mdAutocomplete]="auto">
+      </md-form-field>
+
+      <md-autocomplete #auto="mdAutocomplete" (optionSelected)="onReasonSelected($event)">
+        <md-option *ngFor="let option of actionReasonOptions | async" [value]="option | icpcCode">
+          {{ option | icpcCode}}
+        </md-option>
+      </md-autocomplete>
+      <md-list>
+        <md-list-item *ngFor="let reason of selectedReasons">{{reason}}</md-list-item>
+      </md-list>
+      <span>Варто пам'ятати! Ви можете вибрати декілька кодів для кожного поля</span>
+    </md-tab>
+  </md-tab-group>
+
+</md-dialog-content>
+

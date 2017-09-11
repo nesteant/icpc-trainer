@@ -1,0 +1,7 @@
+<div class="patient-card" [routerLink]="['/patients', patient.id]">
+  <md-card>
+    <div>{{patient.name}}</div>
+    <div>{{patient.birthday | date}}, {{patient.gender}}</div>
+  </md-card>
+</div>
+

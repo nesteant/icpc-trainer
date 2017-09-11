@@ -1,0 +1,20 @@
+.patient-card {
+  overflow: hidden;
+  position: relative;
+}
+
+.patient-card:hover md-card {
+  background: #f3f0fb;
+  cursor: pointer;
+}
+
+.patient-card:hover:before {
+  display: block;
+  content: ' ';
+  height: 100%;
+  background: #8969e0;
+  width: 5px;
+  position: absolute;
+  z-index: 100;
+  float: left;
+}

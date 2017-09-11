@@ -1,0 +1,169 @@
+[
+  {
+    "id": "1",
+    "name": "Pupkin",
+    "gender": "чол",
+    "birthday": "2000-10-10",
+    "visits": [
+      {
+        "date": "2010-10-10",
+        "diagnosis": {
+          "id": "1",
+          "code": {
+            "code": "W92",
+            "shortTitleUa": "Пологи з ускладненнями/живонароджений",
+            "preferred": "Complicated labour/delivery livebirth",
+            "shortTitle": "Compl labour/ delivery livebirth",
+            "inclusionUa": "живонародження після ускладнених пологів:примусове видалення плоду, пологи при сідничному передлежінні, кесарів розтин, дистоція (ускладнені пологи), штучна стимуляція пологів, травми спричинені пологами, непрвильне розташування плаценти під час пологів, обернення плоду",
+            "inclusion": "livebirth after complicated delivery: assisted extraction, breech delivery, caesarian section, dystocia, induction of labour, injuries caused by childbirth, placenta praevia in delivery, version",
+            "exclusionUa": "післяпологова кровотеча W17; еклампсія W81",
+            "exclusion": "post-partum haemorrhage W17; eclampsia W81",
+            "criteriaUa": "",
+            "criteria": "",
+            "considerUa": "",
+            "consider": "",
+            "noteUa": "",
+            "note": ""
+          },
+          "date": "2011-07-09"
+        }
+      }
+    ],
+    "episodes": [
+      {
+        "id": "1",
+        "name": "Захворювання печінки БДУ",
+        "diagnoses": [
+          {
+            "id": "1",
+            "code": {
+              "code": "W92",
+              "shortTitleUa": "Пологи з ускладненнями/живонароджений",
+              "preferred": "Complicated labour/delivery livebirth",
+              "shortTitle": "Compl labour/ delivery livebirth",
+              "inclusionUa": "живонародження після ускладнених пологів:примусове видалення плоду, пологи при сідничному передлежінні, кесарів розтин, дистоція (ускладнені пологи), штучна стимуляція пологів, травми спричинені пологами, непрвильне розташування плаценти під час пологів, обернення плоду",
+              "inclusion": "livebirth after complicated delivery: assisted extraction, breech delivery, caesarian section, dystocia, induction of labour, injuries caused by childbirth, placenta praevia in delivery, version",
+              "exclusionUa": "післяпологова кровотеча W17; еклампсія W81",
+              "exclusion": "post-partum haemorrhage W17; eclampsia W81",
+              "criteriaUa": "",
+              "criteria": "",
+              "considerUa": "",
+              "consider": "",
+              "noteUa": "",
+              "note": ""
+            },
+            "date": "2010-07-09"
+          },
+          {
+            "id": "2",
+            "code": {
+              "code": "W92",
+              "shortTitleUa": "Пологи з ускладненнями/живонароджений",
+              "preferred": "Complicated labour/delivery livebirth",
+              "shortTitle": "Compl labour/ delivery livebirth",
+              "inclusionUa": "живонародження після ускладнених пологів:примусове видалення плоду, пологи при сідничному передлежінні, кесарів розтин, дистоція (ускладнені пологи), штучна стимуляція пологів, травми спричинені пологами, непрвильне розташування плаценти під час пологів, обернення плоду",
+              "inclusion": "livebirth after complicated delivery: assisted extraction, breech delivery, caesarian section, dystocia, induction of labour, injuries caused by childbirth, placenta praevia in delivery, version",
+              "exclusionUa": "післяпологова кровотеча W17; еклампсія W81",
+              "exclusion": "post-partum haemorrhage W17; eclampsia W81",
+              "criteriaUa": "",
+              "criteria": "",
+              "considerUa": "",
+              "consider": "",
+              "noteUa": "",
+              "note": ""
+            },
+            "date": "2010-09-09"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "name": "episode2",
+        "diagnoses": [
+          {
+            "id": "3",
+            "code": {
+              "code": "W92",
+              "shortTitleUa": "Пологи з ускладненнями/живонароджений",
+              "preferred": "Complicated labour/delivery livebirth",
+              "shortTitle": "Compl labour/ delivery livebirth",
+              "inclusionUa": "живонародження після ускладнених пологів:примусове видалення плоду, пологи при сідничному передлежінні, кесарів розтин, дистоція (ускладнені пологи), штучна стимуляція пологів, травми спричинені пологами, непрвильне розташування плаценти під час пологів, обернення плоду",
+              "inclusion": "livebirth after complicated delivery: assisted extraction, breech delivery, caesarian section, dystocia, induction of labour, injuries caused by childbirth, placenta praevia in delivery, version",
+              "exclusionUa": "післяпологова кровотеча W17; еклампсія W81",
+              "exclusion": "post-partum haemorrhage W17; eclampsia W81",
+              "criteriaUa": "",
+              "criteria": "",
+              "considerUa": "",
+              "consider": "",
+              "noteUa": "",
+              "note": ""
+            },
+            "date": "2010-07-09"
+          },
+          {
+            "id": "4",
+            "code": {
+              "code": "W92",
+              "shortTitleUa": "Пологи з ускладненнями/живонароджений",
+              "preferred": "Complicated labour/delivery livebirth",
+              "shortTitle": "Compl labour/ delivery livebirth",
+              "inclusionUa": "живонародження після ускладнених пологів:примусове видалення плоду, пологи при сідничному передлежінні, кесарів розтин, дистоція (ускладнені пологи), штучна стимуляція пологів, травми спричинені пологами, непрвильне розташування плаценти під час пологів, обернення плоду",
+              "inclusion": "livebirth after complicated delivery: assisted extraction, breech delivery, caesarian section, dystocia, induction of labour, injuries caused by childbirth, placenta praevia in delivery, version",
+              "exclusionUa": "післяпологова кровотеча W17; еклампсія W81",
+              "exclusion": "post-partum haemorrhage W17; eclampsia W81",
+              "criteriaUa": "",
+              "criteria": "",
+              "considerUa": "",
+              "consider": "",
+              "noteUa": "",
+              "note": ""
+            },
+            "date": "2010-09-09"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Rybkin",
+    "gender": "чол",
+    "birthday": "2000-10-10"
+  },
+  {
+    "id": "3",
+    "name": "Shapkin",
+    "gender": "чол",
+    "birthday": "2000-10-10"
+  },
+  {
+    "id": "4",
+    "name": "Bubkin",
+    "gender": "чол",
+    "birthday": "2000-10-10"
+  },
+  {
+    "id": "5",
+    "name": "Hvatalkin",
+    "gender": "чол",
+    "birthday": "2000-10-10"
+  },
+  {
+    "id": "6",
+    "name": "Murkin",
+    "gender": "чол",
+    "birthday": "2000-10-10"
+  },
+  {
+    "id": "7",
+    "name": "Popkin",
+    "gender": "чол",
+    "birthday": "2000-10-10"
+  },
+  {
+    "id": "8",
+    "name": "Dobkin",
+    "gender": "чол",
+    "birthday": "2000-10-10"
+  }
+]
