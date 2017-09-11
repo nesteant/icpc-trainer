@@ -3,8 +3,8 @@ import {PatientsService} from '../../services/PatientsService';
 
 @Component({
   selector: 'icpc-patients',
-  templateUrl: './patients.component.html',
-  styleUrls: ['./patients-component.css']
+  templateUrl: 'patients.component.html',
+  styleUrls: ['./patients.component.css']
 })
 export class PatientsPageComponent {
 
