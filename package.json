@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "start": "node server.js",
-    "postinstall": "ng build --aot -prod"
+    "heroku-postbuild": "ng build --aot -prod"
   },
   "engines": {
     "node": "6.11.1",
@@ -19,11 +19,11 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "4.3.6",
-    "@angular/compiler-cli": "4.3.6",
-    "@angular/cli": "1.4.1",
     "@angular/cdk": "2.0.0-beta.10",
+    "@angular/cli": "1.4.1",
     "@angular/common": "4.3.6",
     "@angular/compiler": "4.3.6",
+    "@angular/compiler-cli": "4.3.6",
     "@angular/core": "4.3.6",
     "@angular/flex-layout": "2.0.0-beta.9",
     "@angular/forms": "4.3.6",
@@ -35,6 +35,7 @@
     "@ngrx/core": "1.2.0",
     "@ngrx/store": "2.2.3",
     "core-js": "2.4.1",
+    "express": "4.15.4",
     "ngrx": "2.0.1",
     "rxjs": "5.4.1",
     "typescript": "~2.3.3",
