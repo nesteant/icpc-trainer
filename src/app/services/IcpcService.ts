@@ -11,12 +11,43 @@ import {IcpcCode} from '../model/IcpcCode';
 export class IcpcService {
   public codes: Observable<IcpcCode[]>;
 
+  public actions: Observable<IcpcCode[]>;
+  public diagnoses: Observable<IcpcCode[]>;
+  public reasons: Observable<IcpcCode[]>;
+
   constructor(private httpClient: HttpClient, private store: Store<PatientsStore>) {
-    this.codes = store.select('icpc');
+    this.codes = store.select('icpc').filter(codes => {
+      console.log(codes);
+      return true;
+    });
   }
 
   public loadItems() {
     return this.httpClient.get<IcpcCode[]>('assets/icpc.json')
+      .do(codes => {
+        let actions: IcpcCode[] = [];
+        let reasons: IcpcCode[] = [];
+        let diagnoses: IcpcCode[] = [];
+
+        codes.forEach(code => {
+          let reasonFilter = true;
+
+          let diagnosisExec = /[A-Z](\d{2})/gi.exec(code.code);
+          let diagnosisCode = parseInt(diagnosisExec && diagnosisExec[1]);
+          if (reasonFilter) {
+            reasons.push(code);
+          }
+          if (diagnosisCode <= 29 || diagnosisCode >= 70 && diagnosisCode <= 99) {
+            diagnoses.push(code);
+          }
+          if (code.code.startsWith('-')) {
+            actions.push(code);
+          }
+        });
+        this.actions = Observable.of(actions);
+        this.reasons = Observable.of(reasons);
+        this.diagnoses = Observable.of(diagnoses);
+      })
       .map(payload => ({type: 'LOAD_ITEMS', payload}))
       .subscribe(action => this.store.dispatch(action));
   }

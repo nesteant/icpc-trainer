@@ -1,7 +1,9 @@
-import {Diagnosis} from './Diagnosis';
+import {IcpcCode} from './IcpcCode';
 
 export interface Visit {
   id: string;
-  name: string;
-  diagnoses: Diagnosis[];
+  date: string;
+  diagnoses: IcpcCode[];
+  reasons: IcpcCode[];
+  actions: IcpcCode[];
 }

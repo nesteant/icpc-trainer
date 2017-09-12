@@ -11,6 +11,9 @@ import {CommonModule} from '@angular/common';
   ],
   imports: [
     CommonModule,
+  ],
+  providers: [
+      IcpcCodePipe
   ]
 })
 export class SharedModule {

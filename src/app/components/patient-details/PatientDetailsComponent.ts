@@ -6,6 +6,9 @@ import {MdDialog} from '@angular/material';
 import {CreateVisitDialogComponent} from '../create-visit-dialog/CreateVisitDialogComponent';
 import {Episode} from '../../model/Episode';
 import {CreateEpisodeDialogComponent} from '../create-episode-dialog/CreateEpisodeDialogComponent';
+import {PatientsService} from '../../services/PatientsService';
+
+let id = 44;
 
 @Component({
   selector: 'icpc-patient-details',
@@ -18,7 +21,7 @@ export class PatientDetailsComponent {
   @Input()
   public patient: Patient;
 
-  constructor(public dialog: MdDialog) {
+  constructor(public dialog: MdDialog, private patientsService: PatientsService) {
 
   }
 
@@ -52,7 +55,22 @@ export class PatientDetailsComponent {
       width: '600px',
       data: {}
     });
-    dialogRef.afterClosed().subscribe(v => {
+    dialogRef.afterClosed().subscribe(episodeForm => {
+      if (!episodeForm) {
+        return;
+      }
+      let episode: Episode = {
+        name: episodeForm.name,
+        id: '' + ++id,
+        visits: [{
+          id: '' + ++id,
+          date: episodeForm.date,
+          diagnoses: [episodeForm.diagnosis],
+          reasons: episodeForm.reasons,
+          actions: episodeForm.actions
+        }]
+      };
+      this.patientsService.createEpisode(this.patient, episode)
     });
   }
 

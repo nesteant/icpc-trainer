@@ -1,7 +1,7 @@
-import {Diagnosis} from './Diagnosis';
+import {Visit} from './Visit';
 
 export interface Episode {
   id: string;
   name: string;
-  diagnoses: Diagnosis[];
+  visits: Visit[];
 }

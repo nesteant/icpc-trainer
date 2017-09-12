@@ -6,26 +6,42 @@ import 'rxjs/add/operator/map';
 import {Observable} from 'rxjs/Observable';
 import {Patient} from '../model/Patient';
 import 'rxjs/add/operator/first';
+import 'rxjs/add/observable/of';
+import 'rxjs/add/operator/delay';
+import {Episode} from '../model/Episode';
+import 'rxjs/add/operator/do';
 
 @Injectable()
 export class PatientsService {
   public patients: Observable<Patient[]>;
   public selectedPatient: Observable<Patient>;
+  public saved: Patient[];
 
   constructor(private httpClient: HttpClient, private store: Store<PatientsStore>) {
     this.patients = store.select('patients'); // Bind an observable of our patients to "ItemsService"
     this.selectedPatient = store.select('patient'); // Bind an observable of our patients to "ItemsService"
   }
 
+  public preloadItems() {
+    return this.httpClient.get<Patient[]>('assets/patients.json').do(patients => {
+      this.saved = patients;
+    });
+  }
+
   public loadItems() {
-    console.log('LOAD');
-    return this.httpClient.get('assets/patients.json')
+    return Observable.of(this.saved)
+      .delay(200)
       .map(payload => ({type: 'ADD_ITEMS', payload}))
       .subscribe(action => this.store.dispatch(action));
   }
 
+  public createEpisode(patient: Patient, episode: Episode) {
+    this.saved.filter(p => p.id === patient.id).forEach(p => p.episodes.push(episode));
+    this.store.dispatch({type: 'CREATE_EPISODE', payload: patient});
+  }
+
   public getPatient(id: string) {
-    return this.httpClient.get<Patient[]>('assets/patients.json')
+    return Observable.of(this.saved)
       .map(patients => {
         return patients.filter(p => p.id === id);
       })

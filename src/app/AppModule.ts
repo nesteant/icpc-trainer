@@ -20,6 +20,7 @@ import {icpcReducer} from './reducers/IcpcReducer';
 import {IcpcService} from './services/IcpcService';
 import {SharedModule} from './SharedModule';
 import {CreateEpisodeDialogModule} from './components/create-episode-dialog/CreateEpisodeDialogModule';
+import {PatientResolver} from './services/PatientResolver';
 
 @NgModule({
   declarations: [
@@ -49,11 +50,17 @@ import {CreateEpisodeDialogModule} from './components/create-episode-dialog/Crea
     RouterModule.forRoot([
       {
         path: 'patients',
-        component: PatientsPageComponent
+        component: PatientsPageComponent,
+        resolve: {
+          patients: PatientResolver
+        }
       },
       {
         path: 'patients/:id',
         component: PatientDetailsPageComponent,
+        resolve: {
+          patients: PatientResolver
+        }
       },
       {
         path: '',
@@ -66,7 +73,8 @@ import {CreateEpisodeDialogModule} from './components/create-episode-dialog/Crea
   providers: [
     {provide: LOCALE_ID, useValue: 'en-US'},
     PatientsService,
-    IcpcService
+    IcpcService,
+    PatientResolver
   ],
   bootstrap: [AppComponent]
 })

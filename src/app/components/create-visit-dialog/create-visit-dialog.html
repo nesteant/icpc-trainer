@@ -27,7 +27,7 @@
     </md-form-field>
 
     <md-autocomplete #auto="mdAutocomplete">
-      <md-option *ngFor="let option of actionReasonOptions | async" [value]="option">
+      <md-option *ngFor="let option of reasonOptions | async" [value]="option">
         {{ option }}
       </md-option>
     </md-autocomplete>
@@ -40,7 +40,7 @@
       </md-form-field>
 
       <md-autocomplete #auto="mdAutocomplete" (optionSelected)="onReasonSelected($event)">
-        <md-option *ngFor="let option of actionReasonOptions | async" [value]="option">
+        <md-option *ngFor="let option of reasonOptions | async" [value]="option">
           {{ option }}
         </md-option>
       </md-autocomplete>
@@ -60,7 +60,7 @@
       </md-form-field>
 
       <md-autocomplete #auto="mdAutocomplete" (optionSelected)="onReasonSelected($event)">
-        <md-option *ngFor="let option of actionReasonOptions | async" [value]="option | icpcCode">
+        <md-option *ngFor="let option of reasonOptions | async" [value]="option | icpcCode">
           {{ option | icpcCode}}
         </md-option>
       </md-autocomplete>

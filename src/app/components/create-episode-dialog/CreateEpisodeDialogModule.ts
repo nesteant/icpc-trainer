@@ -5,7 +5,7 @@ import {
   MdButtonModule,
   MdDatepickerModule,
   MdDialogModule,
-  MdFormFieldModule,
+  MdFormFieldModule, MdIconModule,
   MdInputModule,
   MdListModule,
   MdSelectModule,
@@ -18,6 +18,7 @@ import {CreateEpisodeDialogComponent} from './CreateEpisodeDialogComponent';
 @NgModule({
   imports: [
     CommonModule,
+    MdIconModule,
     MdButtonModule,
     MdDatepickerModule,
     MdDialogModule,

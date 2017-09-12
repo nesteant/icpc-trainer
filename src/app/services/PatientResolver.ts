@@ -6,12 +6,11 @@ import {PatientsService} from './PatientsService';
 import 'rxjs/add/operator/take';
 
 @Injectable()
-export class TransactionResolver implements Resolve<any> {
+export class PatientResolver implements Resolve<any> {
   constructor(private patientsService: PatientsService) {
   }
 
-  resolve(route: ActivatedRouteSnapshot): Observable<any> {
-    this.patientsService.getPatient(route.params.id);
-    return this.patientsService.selectedPatient.take(1);
+  public resolve(route: ActivatedRouteSnapshot): Observable<any> {
+    return this.patientsService.saved == undefined ? this.patientsService.preloadItems() : Observable.of(this.patientsService.saved);
   }
 }
