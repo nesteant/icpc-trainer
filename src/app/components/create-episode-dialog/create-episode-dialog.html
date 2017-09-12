@@ -44,7 +44,7 @@
           <input type="text" placeholder="введіть причину чи код" mdInput formControlName="diagnosis" [mdAutocomplete]="diagnosis">
         </md-form-field>
 
-        <md-autocomplete #diagnosis="mdAutocomplete" [displayWith]="formatDiagnosis" (optionSelected)="onDiagnosisSelected($event)">
+        <md-autocomplete #diagnosis="mdAutocomplete" [displayWith]="formatDiagnosis">
           <md-option *ngFor="let option of diagnosisOptions | async" [value]="option">
             {{ option | icpcCode}}
           </md-option>

@@ -6,18 +6,20 @@ import {
   MdDatepickerModule,
   MdDialogModule,
   MdFormFieldModule,
+  MdIconModule,
   MdInputModule,
   MdListModule,
   MdSelectModule,
   MdTabsModule
 } from '@angular/material';
-import {CreateVisitDialogComponent} from './CreateVisitDialogComponent';
 import {ReactiveFormsModule} from '@angular/forms';
 import {SharedModule} from '../../SharedModule';
+import {UpdateEpisodeDialogComponent} from './UpdateEpisodeDialogComponent';
 
 @NgModule({
   imports: [
     CommonModule,
+    MdIconModule,
     MdButtonModule,
     MdDatepickerModule,
     MdDialogModule,
@@ -31,15 +33,15 @@ import {SharedModule} from '../../SharedModule';
     SharedModule
   ],
   declarations: [
-    CreateVisitDialogComponent
+    UpdateEpisodeDialogComponent
   ],
   exports: [
-    CreateVisitDialogComponent
+    UpdateEpisodeDialogComponent
   ],
   entryComponents: [
-    CreateVisitDialogComponent
+    UpdateEpisodeDialogComponent
   ]
 })
-export class CreateVisitDialogModule {
+export class UpdateEpisodeDialogModule {
 
 }

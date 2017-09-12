@@ -6,6 +6,7 @@ import {MdDialog} from '@angular/material';
 import {Episode} from '../../model/Episode';
 import {CreateEpisodeDialogComponent} from '../create-episode-dialog/CreateEpisodeDialogComponent';
 import {PatientsService} from '../../services/PatientsService';
+import {UpdateEpisodeDialogComponent} from '../create-visit-dialog/UpdateEpisodeDialogComponent';
 
 let id = 44;
 
@@ -25,15 +26,24 @@ export class PatientDetailsComponent {
   }
 
   public openEditEpisodeModal(episode: Episode) {
-    let dialogRef = this.dialog.open(CreateEpisodeDialogComponent, {
+    let dialogRef = this.dialog.open(UpdateEpisodeDialogComponent, {
       height: '400px',
       width: '600px',
       data: {
-        episode: episode,
-        dialogTitle: 'Створення епізоду'
+        episode: episode
       }
     });
-    dialogRef.afterClosed().subscribe(v => {
+    dialogRef.afterClosed().subscribe(episodeForm => {
+      if (!episodeForm) {
+        return;
+      }
+      episode.history = episode.history || [];
+      episode.history.push({
+        name: episode.name,
+        date: new Date().toISOString()
+      });
+      episode.name = episodeForm.name;
+      this.patientsService.updateEpisode(this.patient, episode)
     });
   }
 
@@ -50,6 +60,11 @@ export class PatientDetailsComponent {
       if (!episodeForm) {
         return;
       }
+      episode.history = episode.history || [];
+      episode.history.push({
+        name: episode.name,
+        date: new Date().toISOString()
+      });
       episode.name = episodeForm.name;
       episode.visits.push({
         id: '' + ++id,
@@ -77,12 +92,13 @@ export class PatientDetailsComponent {
       let episode: Episode = {
         name: episodeForm.name,
         id: '' + ++id,
+        history: [],
         visits: [{
           id: '' + ++id,
           date: episodeForm.date,
           diagnoses: [episodeForm.diagnosis],
           reasons: episodeForm.reasons,
-          actions: episodeForm.actions
+          actions: episodeForm.actions,
         }]
       };
       this.patientsService.createEpisode(this.patient, episode)

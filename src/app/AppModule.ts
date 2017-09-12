@@ -15,12 +15,12 @@ import {PatientDetailsPageComponent} from './pages/details/PatientDetailsPageCom
 import {PatientsModule} from './pages/patients/PatientsModule';
 import {PatientsPageComponent} from './pages/patients/PatientsPageComponent';
 import {MdDialogModule, MdNativeDateModule} from '@angular/material';
-import {CreateVisitDialogModule} from './components/create-visit-dialog/CreateVisitDialogModule';
 import {icpcReducer} from './reducers/IcpcReducer';
 import {IcpcService} from './services/IcpcService';
 import {SharedModule} from './SharedModule';
 import {CreateEpisodeDialogModule} from './components/create-episode-dialog/CreateEpisodeDialogModule';
 import {PatientResolver} from './services/PatientResolver';
+import {UpdateEpisodeDialogModule} from './components/create-visit-dialog/UpdateEpisodeDialogModule';
 
 @NgModule({
   declarations: [
@@ -33,7 +33,7 @@ import {PatientResolver} from './services/PatientResolver';
   ],
   imports: [
     SharedModule,
-    CreateVisitDialogModule,
+    UpdateEpisodeDialogModule,
     CreateEpisodeDialogModule,
     MdNativeDateModule,
     MdDialogModule,

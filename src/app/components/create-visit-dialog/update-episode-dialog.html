@@ -1,0 +1,25 @@
+<div [formGroup]="formGroup">
+  <md-dialog-actions>
+    <button md-icon-button [md-dialog-close]="false">
+      <md-icon>clear</md-icon>
+    </button>
+  </md-dialog-actions>
+  <h2 md-dialog-title>Створення підвізиту</h2>
+  <md-dialog-content>
+    <md-form-field>
+      <input placeholder="Епізод" mdInput formControlName="name">
+    </md-form-field>
+
+    <md-tab-group>
+      <md-tab label="Зміни">
+        <md-list>
+          <md-list-item *ngFor="let item of episode.history">{{item.name}} {{item.date | date : 'dd/MM'}}</md-list-item>
+        </md-list>
+      </md-tab>
+    </md-tab-group>
+    <md-dialog-actions>
+      <button md-button (click)="save()">Зберегти</button>
+    </md-dialog-actions>
+
+  </md-dialog-content>
+</div>
