@@ -20,7 +20,9 @@ import {IcpcService} from './services/IcpcService';
 import {SharedModule} from './SharedModule';
 import {CreateEpisodeDialogModule} from './components/create-episode-dialog/CreateEpisodeDialogModule';
 import {PatientResolver} from './services/PatientResolver';
-import {UpdateEpisodeDialogModule} from './components/create-visit-dialog/UpdateEpisodeDialogModule';
+import {EpisodeDetailsDialogModule} from './components/episode-details-dialog/EpisodeDetailsDialogModule';
+import {UpdateEpisodeDialogModule} from './components/update-episode-dialog/UpdateEpisodeDialogModule';
+import {VisitDetailsDialogModule} from './components/visit-details-dialog/VisitDetailsDialogModule';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import {UpdateEpisodeDialogModule} from './components/create-visit-dialog/Update
   ],
   imports: [
     SharedModule,
+    VisitDetailsDialogModule,
+    EpisodeDetailsDialogModule,
     UpdateEpisodeDialogModule,
     CreateEpisodeDialogModule,
     MdNativeDateModule,

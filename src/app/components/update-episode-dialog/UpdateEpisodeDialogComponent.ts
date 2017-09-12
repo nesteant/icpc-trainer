@@ -7,7 +7,7 @@ import {IcpcService} from '../../services/IcpcService';
 import {Episode} from '../../model/Episode';
 
 @Component({
-  selector: 'icpc-create-visit-dialog',
+  selector: 'icpc-update-episode-dialog',
   templateUrl: 'update-episode-dialog.html',
 })
 export class UpdateEpisodeDialogComponent implements OnInit {

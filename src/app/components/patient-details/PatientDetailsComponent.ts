@@ -6,7 +6,9 @@ import {MdDialog} from '@angular/material';
 import {Episode} from '../../model/Episode';
 import {CreateEpisodeDialogComponent} from '../create-episode-dialog/CreateEpisodeDialogComponent';
 import {PatientsService} from '../../services/PatientsService';
-import {UpdateEpisodeDialogComponent} from '../create-visit-dialog/UpdateEpisodeDialogComponent';
+import {UpdateEpisodeDialogComponent} from '../update-episode-dialog/UpdateEpisodeDialogComponent';
+import {EpisodeDetailsDialogComponent} from '../episode-details-dialog/EpisodeDetailsDialogComponent';
+
 
 let id = 44;
 
@@ -23,6 +25,16 @@ export class PatientDetailsComponent {
 
   constructor(public dialog: MdDialog, private patientsService: PatientsService) {
 
+  }
+
+  public openEpisodeDetailsModal(episode: Episode) {
+    let dialogRef = this.dialog.open(EpisodeDetailsDialogComponent, {
+      height: '400px',
+      width: '600px',
+      data: {
+        episode: episode
+      }
+    });
   }
 
   public openEditEpisodeModal(episode: Episode) {
@@ -69,7 +81,7 @@ export class PatientDetailsComponent {
       episode.visits.push({
         id: '' + ++id,
         date: episodeForm.date,
-        diagnoses: [episodeForm.diagnosis],
+        diagnosis: episodeForm.diagnosis,
         reasons: episodeForm.reasons,
         actions: episodeForm.actions
       });
@@ -96,7 +108,7 @@ export class PatientDetailsComponent {
         visits: [{
           id: '' + ++id,
           date: episodeForm.date,
-          diagnoses: [episodeForm.diagnosis],
+          diagnosis: episodeForm.diagnosis,
           reasons: episodeForm.reasons,
           actions: episodeForm.actions,
         }]

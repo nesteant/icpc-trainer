@@ -3,7 +3,7 @@ import {IcpcCode} from './IcpcCode';
 export interface Visit {
   id: string;
   date: string;
-  diagnoses: IcpcCode[];
+  diagnosis: IcpcCode;
   reasons: IcpcCode[];
   actions: IcpcCode[];
 }

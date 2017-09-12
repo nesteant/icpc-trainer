@@ -1,0 +1,35 @@
+<div [formGroup]="formGroup">
+  <md-dialog-actions>
+    <button md-icon-button [md-dialog-close]="false">
+      <md-icon>clear</md-icon>
+    </button>
+  </md-dialog-actions>
+  <label>Епізод
+    <h4 md-dialog-title>{{episode.name}}</h4>
+  </label>
+
+  <md-dialog-content>
+
+    <md-tab-group>
+      <md-tab [label]="visitsLabel">
+        <md-list>
+          <md-list-item *ngFor="let visit of episode.visits">
+            <span (click)="openVisitDetailsModal(visit)">{{visit.diagnosis.shortTitleUa}} {{visit.date | date : 'dd/MM'}}</span>
+            <button md-icon-button [mdMenuTriggerFor]="appMenu">
+              <md-icon>more_horiz</md-icon>
+            </button>
+            <md-menu #appMenu="mdMenu">
+              <button md-menu-item>Змінити епізод</button>
+              <button md-menu-item>Редагувати</button>
+            </md-menu>
+          </md-list-item>
+        </md-list>
+      </md-tab>
+      <md-tab label="Коментарі">
+      </md-tab>
+    </md-tab-group>
+    <md-dialog-actions>
+    </md-dialog-actions>
+
+  </md-dialog-content>
+</div>

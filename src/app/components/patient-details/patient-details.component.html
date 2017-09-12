@@ -10,14 +10,12 @@
                   <md-icon>edit</md-icon>
                 </button>
               </div>
-              <h3>{{episode.name}}</h3>
+              <h4 (click)="openEpisodeDetailsModal(episode)">{{episode.name}}</h4>
               <hr/>
               <div>Діагноз</div>
               <div class="grid-x" *ngFor="let visit of episode.visits">
-                <div class="grid-x" *ngFor="let diagnosis of visit.diagnoses">
-                  <span>{{diagnosis | icpcCode}}</span>
+                  <span>{{visit.diagnosis | icpcCode}}</span>
                   <span class="align-right">{{visit.date | date : 'dd/MM'}}</span>
-                </div>
               </div>
               <md-card-actions>
                 <button md-button (click)="openAddVisitModal(episode)">Додати підвізит</button>
