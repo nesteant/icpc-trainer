@@ -27,7 +27,6 @@ export class CreateEpisodeDialogComponent implements OnInit {
   public formGroup: FormGroup;
 
   constructor(private icpcService: IcpcService,
-              private icpcCodePipe: IcpcCodePipe,
               public dialogRef: MdDialogRef<CreateEpisodeDialogComponent>,
               @Inject(MD_DIALOG_DATA) public data: any,
               fb: FormBuilder) {
@@ -40,6 +39,10 @@ export class CreateEpisodeDialogComponent implements OnInit {
       actions: new FormControl()
     });
     this.formGroup.valueChanges.subscribe(v => console.log(v));
+  }
+
+  public onDiagnosisSelected(event: MdAutocompleteSelectedEvent) {
+    this.formGroup.get('name').setValue(this.formatDiagnosis(this.diagnosisField.value))
   }
 
   public onReasonSelected(event: MdAutocompleteSelectedEvent) {

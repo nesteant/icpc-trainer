@@ -3,8 +3,6 @@
     <button md-icon-button [md-dialog-close]="false">
       <md-icon>clear</md-icon>
     </button>
-    <!--&lt;!&ndash; Can optionally provide a result for the closing dialog. &ndash;&gt;-->
-    <!--<button md-button [md-dialog-close]="formGroup.value">Створити</button>-->
   </md-dialog-actions>
   <h2 md-dialog-title>Створення епізоду</h2>
   <md-dialog-content>
@@ -17,7 +15,7 @@
     </div>
 
     <md-form-field>
-      <input placeholder="Епізод" mdInput formControlName="name">
+      <input placeholder="Епізод" mdInput formControlName="name" [readonly]="true">
     </md-form-field>
 
     <md-tab-group [selectedIndex]="selectedTab" (selectedIndexChange)="changeSelectedTab($event)">
@@ -46,7 +44,7 @@
           <input type="text" placeholder="введіть причину чи код" mdInput formControlName="diagnosis" [mdAutocomplete]="diagnosis">
         </md-form-field>
 
-        <md-autocomplete #diagnosis="mdAutocomplete" [displayWith]="formatDiagnosis">
+        <md-autocomplete #diagnosis="mdAutocomplete" [displayWith]="formatDiagnosis" (optionSelected)="onDiagnosisSelected($event)">
           <md-option *ngFor="let option of diagnosisOptions | async" [value]="option">
             {{ option | icpcCode}}
           </md-option>
