@@ -44,7 +44,7 @@
           <input type="text" placeholder="введіть причину чи код" mdInput formControlName="diagnosis" [mdAutocomplete]="diagnosis">
         </md-form-field>
 
-        <md-autocomplete #diagnosis="mdAutocomplete" [displayWith]="formatDiagnosis">
+        <md-autocomplete #diagnosis="mdAutocomplete" [displayWith]="formatDiagnosis" (optionSelected)="onDiagnosisSelected($event)">
           <md-option *ngFor="let option of diagnosisOptions | async" [value]="option">
             {{ option | icpcCode}}
           </md-option>
@@ -74,8 +74,8 @@
       </md-tab>
     </md-tab-group>
     <md-dialog-actions>
-      <button md-button (click)="nextTab()" [disabled]="!canSelectNext" *ngIf="!canSave">Далі</button>
-      <button md-button (click)="save()" *ngIf="canSave">Зберегти</button>
+      <button md-button (click)="nextTab()" [disabled]="!canSelectNext" *ngIf="selectedTab < 3">Далі</button>
+      <button md-button (click)="save()" *ngIf="selectedTab > 2 && canSave">Зберегти</button>
     </md-dialog-actions>
 
   </md-dialog-content>

@@ -60,7 +60,7 @@ export class CreateEpisodeDialogComponent implements OnInit {
   }
 
   public onDiagnosisSelected(event: MdAutocompleteSelectedEvent) {
-    this.formGroup.get('name').setValue(this.formatDiagnosis(this.diagnosisField.value))
+    // this.formGroup.get('name').setValue(this.formatDiagnosis(this.diagnosisField.value))
   }
 
   public onReasonSelected(event: MdAutocompleteSelectedEvent) {
@@ -69,9 +69,13 @@ export class CreateEpisodeDialogComponent implements OnInit {
     this.reasonSearch.reset();
   }
 
-  public onActionSelected(event: MdAutocompleteSelectedEvent) {
+  public updateActions(codes: IcpcCode[]) {
     let actions = this.actionsField;
-    actions.setValue(actions.value ? actions.value.concat(event.option.value) : [event.option.value]);
+    actions.setValue(actions.value ? actions.value.concat(codes) : codes);
+  }
+
+  public onActionSelected(event: MdAutocompleteSelectedEvent) {
+    this.updateActions(event.option.value ? [event.option.value] : []);
     this.actionSearch.reset();
   }
 
@@ -82,6 +86,7 @@ export class CreateEpisodeDialogComponent implements OnInit {
   public get diagnosisField() {
     return this.formGroup.get('diagnosis');
   }
+
   public get actionsField() {
     return this.formGroup.get('actions');
   }
@@ -95,6 +100,8 @@ export class CreateEpisodeDialogComponent implements OnInit {
 
   public changeSelectedTab(index: number) {
     this.selectedTab = index;
+    this.actionsField.setValue([]);
+    this.updateActions([this.diagnosisField.value, ...this.reasonsField.value]);
   }
 
   public nextTab() {
