@@ -17,6 +17,7 @@ export class CreateEpisodeDialogComponent implements OnInit {
 
   @Input()
   public episode: Episode;
+  public dialogTitle: string;
   public reasonSearch: FormControl = new FormControl();
   public diagnosisSearch: FormControl = new FormControl();
   public actionSearch: FormControl = new FormControl();
@@ -31,6 +32,7 @@ export class CreateEpisodeDialogComponent implements OnInit {
               @Inject(MD_DIALOG_DATA) public data: any,
               fb: FormBuilder) {
     this.episode = data.episode;
+    this.dialogTitle = data.dialogTitle;
     this.formGroup = fb.group({
       date: new FormControl(),
       name: new FormControl(),
@@ -38,7 +40,23 @@ export class CreateEpisodeDialogComponent implements OnInit {
       reasons: new FormControl(),
       actions: new FormControl()
     });
-    this.formGroup.valueChanges.subscribe(v => console.log(v));
+  }
+
+  public ngOnInit() {
+    if (this.episode) {
+      this.formGroup.patchValue({
+        name: this.episode.name
+      });
+    }
+    this.reasonOptions = this.reasonSearch.valueChanges
+      .startWith(null)
+      .mergeMap(val => val ? this.filter(val, this.icpcService.reasons) : this.icpcService.reasons);
+    this.diagnosisOptions = this.diagnosisSearch.valueChanges
+      .startWith(null)
+      .mergeMap(val => val ? this.filter(val, this.icpcService.diagnoses) : this.icpcService.diagnoses);
+    this.actionOptions = this.actionSearch.valueChanges
+      .startWith(null)
+      .mergeMap(val => val ? this.filter(val, this.icpcService.actions) : this.icpcService.actions);
   }
 
   public onDiagnosisSelected(event: MdAutocompleteSelectedEvent) {
@@ -64,21 +82,8 @@ export class CreateEpisodeDialogComponent implements OnInit {
   public get diagnosisField() {
     return this.formGroup.get('diagnosis');
   }
-
   public get actionsField() {
     return this.formGroup.get('actions');
-  }
-
-  public ngOnInit() {
-    this.reasonOptions = this.reasonSearch.valueChanges
-      .startWith(null)
-      .mergeMap(val => val ? this.filter(val, this.icpcService.reasons) : this.icpcService.reasons);
-    this.diagnosisOptions = this.diagnosisSearch.valueChanges
-      .startWith(null)
-      .mergeMap(val => val ? this.filter(val, this.icpcService.diagnoses) : this.icpcService.diagnoses);
-    this.actionOptions = this.actionSearch.valueChanges
-      .startWith(null)
-      .mergeMap(val => val ? this.filter(val, this.icpcService.actions) : this.icpcService.actions);
   }
 
   public filter(val: string, values: Observable<IcpcCode[]>): Observable<IcpcCode[]> {

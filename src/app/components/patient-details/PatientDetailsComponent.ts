@@ -3,7 +3,6 @@ import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/takeLast';
 import {Patient} from '../../model/Patient';
 import {MdDialog} from '@angular/material';
-import {CreateVisitDialogComponent} from '../create-visit-dialog/CreateVisitDialogComponent';
 import {Episode} from '../../model/Episode';
 import {CreateEpisodeDialogComponent} from '../create-episode-dialog/CreateEpisodeDialogComponent';
 import {PatientsService} from '../../services/PatientsService';
@@ -26,11 +25,12 @@ export class PatientDetailsComponent {
   }
 
   public openEditEpisodeModal(episode: Episode) {
-    let dialogRef = this.dialog.open(CreateVisitDialogComponent, {
+    let dialogRef = this.dialog.open(CreateEpisodeDialogComponent, {
       height: '400px',
       width: '600px',
       data: {
-        episode: episode
+        episode: episode,
+        dialogTitle: 'Створення епізоду'
       }
     });
     dialogRef.afterClosed().subscribe(v => {
@@ -38,14 +38,27 @@ export class PatientDetailsComponent {
   }
 
   public openAddVisitModal(episode: Episode) {
-    let dialogRef = this.dialog.open(CreateVisitDialogComponent, {
+    let dialogRef = this.dialog.open(CreateEpisodeDialogComponent, {
       height: '400px',
       width: '600px',
       data: {
-        episode: episode
+        episode: episode,
+        dialogTitle: 'Створення візіту'
       }
     });
-    dialogRef.afterClosed().subscribe(v => {
+    dialogRef.afterClosed().subscribe(episodeForm => {
+      if (!episodeForm) {
+        return;
+      }
+      episode.name = episodeForm.name;
+      episode.visits.push({
+        id: '' + ++id,
+        date: episodeForm.date,
+        diagnoses: [episodeForm.diagnosis],
+        reasons: episodeForm.reasons,
+        actions: episodeForm.actions
+      });
+      this.patientsService.updateEpisode(this.patient, episode)
     });
   }
 
@@ -53,7 +66,9 @@ export class PatientDetailsComponent {
     let dialogRef = this.dialog.open(CreateEpisodeDialogComponent, {
       height: '400px',
       width: '600px',
-      data: {}
+      data: {
+        dialogTitle: 'Створення епізоду'
+      }
     });
     dialogRef.afterClosed().subscribe(episodeForm => {
       if (!episodeForm) {

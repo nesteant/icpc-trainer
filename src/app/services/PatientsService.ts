@@ -35,6 +35,21 @@ export class PatientsService {
       .subscribe(action => this.store.dispatch(action));
   }
 
+  public updateEpisode(patient: Patient, episode: Episode) {
+    this.saved
+      .filter(p => p.id === patient.id)
+      .map(p => p.episodes)
+      .reduce((previousValue, currentValue) => previousValue.concat(currentValue), [])
+      .filter(episode => {
+        return episode.id === episode.id;
+      })
+      .forEach(e => {
+        e.name = episode.name;
+        e.visits = episode.visits;
+      });
+    this.store.dispatch({type: 'CREATE_EPISODE', payload: patient});
+  }
+
   public createEpisode(patient: Patient, episode: Episode) {
     this.saved.filter(p => p.id === patient.id).forEach(p => p.episodes.push(episode));
     this.store.dispatch({type: 'CREATE_EPISODE', payload: patient});

@@ -1,75 +1,82 @@
-<h2 md-dialog-title>Створення підвізиту</h2>
-<md-dialog-actions>
-  <button md-button [md-dialog-close]="false">Відміна</button>
-  <!-- Can optionally provide a result for the closing dialog. -->
-  <button md-button [md-dialog-close]="true">Створити</button>
-</md-dialog-actions>
-<md-dialog-content>
-  <div>
+<div [formGroup]="formGroup">
+  <md-dialog-actions>
+    <button md-icon-button [md-dialog-close]="false">
+      <md-icon>clear</md-icon>
+    </button>
+  </md-dialog-actions>
+  <h2 md-dialog-title>Створення підвізиту</h2>
+  <md-dialog-content>
+    <div>
+      <md-form-field>
+        <input mdInput [mdDatepicker]="picker" placeholder="Дата звернення" formControlName="date">
+        <md-datepicker-toggle mdSuffix [for]="picker"></md-datepicker-toggle>
+        <md-datepicker #picker></md-datepicker>
+      </md-form-field>
+    </div>
+
     <md-form-field>
-      <input mdInput [mdDatepicker]="picker" placeholder="Choose a date">
-      <md-datepicker-toggle mdSuffix [for]="picker"></md-datepicker-toggle>
-      <md-datepicker #picker></md-datepicker>
+      <input placeholder="Епізод" mdInput formControlName="name" [readonly]="true">
     </md-form-field>
-  </div>
-  <div>
-    <!--<md-form-field>-->
-    <md-select>
-      <md-option *ngFor="let food of [{viewValue: 'a'}]" [value]="food.value">
-        {{ food.viewValue }}
-      </md-option>
-    </md-select>
-    <!--</md-form-field>-->
-  </div>
-  <div>
-    <!--<md-form-field>-->
-      <!--<input type="text" mdInput [formControl]="ctrl" [mdAutocomplete]="auto">-->
-    <!--</md-form-field>-->
 
-    <!--<md-autocomplete #auto="mdAutocomplete">-->
-      <!--<md-option *ngFor="let option of reasonOptions | async" [value]="option">-->
-        <!--{{ option }}-->
-      <!--</md-option>-->
-    <!--</md-autocomplete>-->
-  </div>
+    <md-tab-group [selectedIndex]="selectedTab" (selectedIndexChange)="changeSelectedTab($event)">
+      <md-tab label="Причина">
+        <md-form-field>
+          <input type="text" placeholder="введіть причину чи код" mdInput [formControl]="reasonSearch" [mdAutocomplete]="reason">
+        </md-form-field>
 
-  <md-tab-group>
-    <md-tab label="Причина">
-      <!--<md-form-field>-->
-        <!--<input type="text" placeholder="введіть причину чи код" mdInput [formControl]="ctrl" [mdAutocomplete]="auto">-->
-      <!--</md-form-field>-->
+        <md-autocomplete #reason="mdAutocomplete" (optionSelected)="onReasonSelected($event)">
+          <md-option *ngFor="let option of reasonOptions | async" [value]="option">
+            {{ option | icpcCode}}
+          </md-option>
+        </md-autocomplete>
+        <md-list>
+          <md-list-item *ngFor="let reason of reasonsField.value; let index=index;">
+            {{reason | icpcCode}}
+            <button md-icon-button (click)="deleteReason(index)">
+              <md-icon>clear</md-icon>
+            </button>
+          </md-list-item>
+        </md-list>
+        <span>Варто пам'ятати! Ви можете вибрати декілька кодів для кожного поля</span>
+      </md-tab>
+      <md-tab label="Діагноз" [disabled]="!diagnosesEnabled">
+        <md-form-field>
+          <input type="text" placeholder="введіть причину чи код" mdInput formControlName="diagnosis" [mdAutocomplete]="diagnosis">
+        </md-form-field>
 
-      <!--<md-autocomplete #auto="mdAutocomplete" (optionSelected)="onReasonSelected($event)">-->
-        <!--<md-option *ngFor="let option of reasonOptions | async" [value]="option">-->
-          <!--{{ option }}-->
-        <!--</md-option>-->
-      <!--</md-autocomplete>-->
-      <!--<md-list>-->
-        <!--<md-list-item *ngFor="let reason of selectedReasons">{{reason}}</md-list-item>-->
-      <!--</md-list>-->
-      <span>Варто пам'ятати! Ви можете вибрати декілька кодів для кожного поля</span>
-    </md-tab>
-    <md-tab label="Діагноз">
-      <md-list>
-        <!--<md-list-item *ngFor="let diagnosis of episode?.diagnoses">{{diagnosis.code | icpcCode}}</md-list-item>-->
-      </md-list>
-    </md-tab>
-    <md-tab label="Дія">
-      <!--<md-form-field>-->
-        <!--<input type="text" placeholder="введіть причину чи код" mdInput [formControl]="ctrl" [mdAutocomplete]="auto">-->
-      <!--</md-form-field>-->
+        <md-autocomplete #diagnosis="mdAutocomplete" [displayWith]="formatDiagnosis" (optionSelected)="onDiagnosisSelected($event)">
+          <md-option *ngFor="let option of diagnosisOptions | async" [value]="option">
+            {{ option | icpcCode}}
+          </md-option>
+        </md-autocomplete>
+      </md-tab>
 
-      <!--<md-autocomplete #auto="mdAutocomplete" (optionSelected)="onReasonSelected($event)">-->
-        <!--<md-option *ngFor="let option of reasonOptions | async" [value]="option | icpcCode">-->
-          <!--{{ option | icpcCode}}-->
-        <!--</md-option>-->
-      <!--</md-autocomplete>-->
-      <md-list>
-        <md-list-item *ngFor="let reason of selectedReasons">{{reason}}</md-list-item>
-      </md-list>
-      <span>Варто пам'ятати! Ви можете вибрати декілька кодів для кожного поля</span>
-    </md-tab>
-  </md-tab-group>
+      <md-tab label="Дія" [disabled]="!actionsEnabled">
+        <md-form-field>
+          <input type="text" placeholder="введіть причину чи код" mdInput [formControl]="actionSearch" [mdAutocomplete]="action">
+        </md-form-field>
 
-</md-dialog-content>
+        <md-autocomplete #action="mdAutocomplete" (optionSelected)="onActionSelected($event)">
+          <md-option *ngFor="let option of actionOptions | async" [value]="option">
+            {{ option | icpcCode}}
+          </md-option>
+        </md-autocomplete>
 
+        <md-list>
+          <md-list-item *ngFor="let action of actionsField.value; let index=index;">
+            {{action | icpcCode}}
+            <button md-icon-button (click)="deleteAction(index)">
+              <md-icon>clear</md-icon>
+            </button>
+          </md-list-item>
+        </md-list>
+        <span>Варто пам'ятати! Ви можете вибрати декілька кодів для кожного поля</span>
+      </md-tab>
+    </md-tab-group>
+    <md-dialog-actions>
+      <button md-button (click)="nextTab()" [disabled]="!canSelectNext" *ngIf="!canSave">Далі</button>
+      <button md-button (click)="save()" *ngIf="canSave">Зберегти</button>
+    </md-dialog-actions>
+
+  </md-dialog-content>
+</div>
