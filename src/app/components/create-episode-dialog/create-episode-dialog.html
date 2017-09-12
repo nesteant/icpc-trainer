@@ -74,8 +74,8 @@
       </md-tab>
     </md-tab-group>
     <md-dialog-actions>
-      <button md-button (click)="nextTab()" [disabled]="!canSelectNext" *ngIf="selectedTab < 3">Далі</button>
-      <button md-button (click)="save()" *ngIf="selectedTab > 2 && canSave">Зберегти</button>
+      <button md-button (click)="nextTab()" [disabled]="!canSelectNext" *ngIf="selectedTab === 2">Далі</button>
+      <button md-button (click)="save()" *ngIf="selectedTab === 2 && canSave">Зберегти</button>
     </md-dialog-actions>
 
   </md-dialog-content>
