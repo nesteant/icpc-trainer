@@ -1,1 +1,8 @@
-<icpc-patient [patient]="patient" *ngFor="let patient of patients | async"></icpc-patient>
+<div class="grid-x">
+  <div class="cell medium-3 large-3">
+    <icpc-patient [patient]="patient" *ngFor="let patient of patients | async"></icpc-patient>
+  </div>
+  <div class="cell medium-9 large-9">
+    <router-outlet></router-outlet>
+  </div>
+</div>

@@ -53,14 +53,14 @@ import {UpdateEpisodeDialogModule} from './components/create-visit-dialog/Update
         component: PatientsPageComponent,
         resolve: {
           patients: PatientResolver
-        }
-      },
-      {
-        path: 'patients/:id',
-        component: PatientDetailsPageComponent,
-        resolve: {
-          patients: PatientResolver
-        }
+        },
+        children: [{
+          path: ':id',
+          component: PatientDetailsPageComponent,
+          resolve: {
+            patients: PatientResolver
+          }
+        }]
       },
       {
         path: '',

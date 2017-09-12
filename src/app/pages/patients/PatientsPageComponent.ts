@@ -13,9 +13,6 @@ export class PatientsPageComponent {
   }
 
   public get patients() {
-    this.patientsService.patients.subscribe(f => {
-      console.log(f);
-    })
     return this.patientsService.patients;
   }
 }
