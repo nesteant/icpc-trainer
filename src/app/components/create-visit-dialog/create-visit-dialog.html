@@ -22,48 +22,48 @@
     <!--</md-form-field>-->
   </div>
   <div>
-    <md-form-field>
-      <input type="text" mdInput [formControl]="ctrl" [mdAutocomplete]="auto">
-    </md-form-field>
+    <!--<md-form-field>-->
+      <!--<input type="text" mdInput [formControl]="ctrl" [mdAutocomplete]="auto">-->
+    <!--</md-form-field>-->
 
-    <md-autocomplete #auto="mdAutocomplete">
-      <md-option *ngFor="let option of reasonOptions | async" [value]="option">
-        {{ option }}
-      </md-option>
-    </md-autocomplete>
+    <!--<md-autocomplete #auto="mdAutocomplete">-->
+      <!--<md-option *ngFor="let option of reasonOptions | async" [value]="option">-->
+        <!--{{ option }}-->
+      <!--</md-option>-->
+    <!--</md-autocomplete>-->
   </div>
 
   <md-tab-group>
     <md-tab label="Причина">
-      <md-form-field>
-        <input type="text" placeholder="введіть причину чи код" mdInput [formControl]="ctrl" [mdAutocomplete]="auto">
-      </md-form-field>
+      <!--<md-form-field>-->
+        <!--<input type="text" placeholder="введіть причину чи код" mdInput [formControl]="ctrl" [mdAutocomplete]="auto">-->
+      <!--</md-form-field>-->
 
-      <md-autocomplete #auto="mdAutocomplete" (optionSelected)="onReasonSelected($event)">
-        <md-option *ngFor="let option of reasonOptions | async" [value]="option">
-          {{ option }}
-        </md-option>
-      </md-autocomplete>
-      <md-list>
-        <md-list-item *ngFor="let reason of selectedReasons">{{reason}}</md-list-item>
-      </md-list>
+      <!--<md-autocomplete #auto="mdAutocomplete" (optionSelected)="onReasonSelected($event)">-->
+        <!--<md-option *ngFor="let option of reasonOptions | async" [value]="option">-->
+          <!--{{ option }}-->
+        <!--</md-option>-->
+      <!--</md-autocomplete>-->
+      <!--<md-list>-->
+        <!--<md-list-item *ngFor="let reason of selectedReasons">{{reason}}</md-list-item>-->
+      <!--</md-list>-->
       <span>Варто пам'ятати! Ви можете вибрати декілька кодів для кожного поля</span>
     </md-tab>
     <md-tab label="Діагноз">
       <md-list>
-        <md-list-item *ngFor="let diagnosis of episode?.diagnoses">{{diagnosis.code | icpcCode}}</md-list-item>
+        <!--<md-list-item *ngFor="let diagnosis of episode?.diagnoses">{{diagnosis.code | icpcCode}}</md-list-item>-->
       </md-list>
     </md-tab>
     <md-tab label="Дія">
-      <md-form-field>
-        <input type="text" placeholder="введіть причину чи код" mdInput [formControl]="ctrl" [mdAutocomplete]="auto">
-      </md-form-field>
+      <!--<md-form-field>-->
+        <!--<input type="text" placeholder="введіть причину чи код" mdInput [formControl]="ctrl" [mdAutocomplete]="auto">-->
+      <!--</md-form-field>-->
 
-      <md-autocomplete #auto="mdAutocomplete" (optionSelected)="onReasonSelected($event)">
-        <md-option *ngFor="let option of reasonOptions | async" [value]="option | icpcCode">
-          {{ option | icpcCode}}
-        </md-option>
-      </md-autocomplete>
+      <!--<md-autocomplete #auto="mdAutocomplete" (optionSelected)="onReasonSelected($event)">-->
+        <!--<md-option *ngFor="let option of reasonOptions | async" [value]="option | icpcCode">-->
+          <!--{{ option | icpcCode}}-->
+        <!--</md-option>-->
+      <!--</md-autocomplete>-->
       <md-list>
         <md-list-item *ngFor="let reason of selectedReasons">{{reason}}</md-list-item>
       </md-list>
