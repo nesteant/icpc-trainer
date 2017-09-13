@@ -62,3 +62,7 @@ icpc-card h4,.icpc-card-header h4 {
 .icpc-card .mat-list-item-content {
   padding: 0 !important;
 }
+
+.clickable {
+  cursor: pointer;
+}
