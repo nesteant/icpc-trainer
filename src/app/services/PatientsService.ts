@@ -10,6 +10,7 @@ import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/delay';
 import {Episode} from '../model/Episode';
 import 'rxjs/add/operator/do';
+import {SubVisit} from '../model/SubVisit';
 
 @Injectable()
 export class PatientsService {
@@ -23,7 +24,7 @@ export class PatientsService {
   }
 
   public preloadItems() {
-    return this.httpClient.get<Patient[]>('assets/patients.json').do(patients => {
+    return this.httpClient.get<Patient[]>('assets/rest/patients.json').do(patients => {
       this.saved = patients;
     });
   }
@@ -33,6 +34,17 @@ export class PatientsService {
       .delay(200)
       .map(payload => ({type: 'ADD_ITEMS', payload}))
       .subscribe(action => this.store.dispatch(action));
+  }
+
+  public createSubivsit(patient: Patient, episode: Episode, visit: SubVisit) {
+    this.saved
+      .filter(p => p.id === patient.id)
+      .forEach(p => {
+        p.subVisits.push(visit);
+        let updateableEpisode = p.episodes.find(e => e.id === episode.id);
+        updateableEpisode.subVisits.push(visit.id);
+      });
+    // this.store.dispatch({type: 'CREATE_EPISODE', payload: patient});
   }
 
   public updateEpisode(patient: Patient, episode: Episode) {
@@ -45,14 +57,14 @@ export class PatientsService {
       })
       .forEach(e => {
         e.name = episode.name;
-        e.visits = episode.visits;
+        e.subVisits = episode.subVisits;
       });
-    this.store.dispatch({type: 'CREATE_EPISODE', payload: patient});
+    // this.store.dispatch({type: 'CREATE_EPISODE', payload: episode});
   }
 
   public createEpisode(patient: Patient, episode: Episode) {
     this.saved.filter(p => p.id === patient.id).forEach(p => p.episodes.push(episode));
-    this.store.dispatch({type: 'CREATE_EPISODE', payload: patient});
+    // this.store.dispatch({type: 'CREATE_EPISODE', payload: episode});
   }
 
   public getPatient(id: string) {

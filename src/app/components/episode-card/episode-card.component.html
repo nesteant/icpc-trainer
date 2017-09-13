@@ -1,0 +1,23 @@
+<md-card class="icpc-card">
+  <div class="icpc-card-header">
+    <div class="icpc-button-pane">
+      <button md-icon-button (click)="openEditEpisodeModal(episode)">
+        <md-icon>edit</md-icon>
+      </button>
+    </div>
+    <label class="icpc-label">Епізод</label>
+    <h4 (click)="openEpisodeDetailsModal(episode)">{{episode.name}}</h4>
+  </div>
+  <div>
+    <label class="icpc-label">Діагноз</label>
+    <md-list>
+      <md-list-item class="grid-x" *ngFor="let id of episode.subVisits">
+        <icpc-subvisit-card [subVisit]="getVisit(id)"></icpc-subvisit-card>
+      </md-list-item>
+    </md-list>
+  </div>
+
+  <md-card-actions>
+    <button md-button (click)="openCreateSubvisitDialog(episode)">Додати підвізит</button>
+  </md-card-actions>
+</md-card>

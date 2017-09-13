@@ -1,19 +1,23 @@
 import {NgModule} from '@angular/core';
 import {IcpcCodePipe} from './pipes/IcpcCodePipe';
 import {CommonModule} from '@angular/common';
+import {EpisodePipe} from './pipes/EpisodePipe';
 
 @NgModule({
   declarations: [
-    IcpcCodePipe
+    IcpcCodePipe,
+    EpisodePipe
   ],
   exports: [
-    IcpcCodePipe
+    IcpcCodePipe,
+    EpisodePipe
   ],
   imports: [
     CommonModule,
   ],
   providers: [
-      IcpcCodePipe
+    IcpcCodePipe,
+    EpisodePipe
   ]
 })
 export class SharedModule {

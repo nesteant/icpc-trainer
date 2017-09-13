@@ -1,9 +1,6 @@
-import {IcpcCode} from './IcpcCode';
+import {SubVisit} from './SubVisit';
 
 export interface Visit {
   id: string;
-  date: string;
-  diagnosis: IcpcCode;
-  reasons: IcpcCode[];
-  actions: IcpcCode[];
+  subVisits: SubVisit[];
 }

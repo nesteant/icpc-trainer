@@ -2,10 +2,10 @@ import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'icpc-patient',
-  templateUrl: './patient.component.html',
-  styleUrls: ['./patient.component.css']
+  templateUrl: './patient-card.component.html',
+  styleUrls: ['./patient-card.component.css']
 })
-export class PatientComponent {
+export class PatientCardComponent {
 
   @Input()
   public patient: any;

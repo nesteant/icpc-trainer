@@ -4,31 +4,15 @@
       <div class="grid-x">
         <div class="small-6 cell" *ngFor="let episode of patient.episodes">
           <div class="card-container">
-            <md-card>
-              <div>Епізод
-                <button md-icon-button (click)="openEditEpisodeModal(episode)">
-                  <md-icon>edit</md-icon>
-                </button>
-              </div>
-              <h4 (click)="openEpisodeDetailsModal(episode)">{{episode.name}}</h4>
-              <hr/>
-              <div>Діагноз</div>
-              <div class="grid-x" *ngFor="let visit of episode.visits">
-                  <span>{{visit.diagnosis | icpcCode}}</span>
-                  <span class="align-right">{{visit.date | date : 'dd/MM'}}</span>
-              </div>
-              <md-card-actions>
-                <button md-button (click)="openAddVisitModal(episode)">Додати підвізит</button>
-              </md-card-actions>
-            </md-card>
+            <icpc-episode-card [patient]="patient" [episode]="episode"></icpc-episode-card>
           </div>
         </div>
+      </div>
+      <div class="grid-x">
+        <button md-button (click)="openCreateSubvisitDialog()">Новий візит</button>
       </div>
     </md-tab>
     <md-tab [label]="visitsLabel">Content 2</md-tab>
   </md-tab-group>
-  <div class="grid-x">
-    <button md-button (click)="openAddEpisodeModal()">Новий епізод</button>
-  </div>
 </div>
 

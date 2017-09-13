@@ -37,7 +37,8 @@ export class EpisodeDetailsDialogComponent implements OnInit {
   }
 
   public get visitsLabel() {
-    return `Підвізіти (${(this.episode.visits || []).length})`;
+    return 0;
+    // return `Підвізіти (${(this.episode.visits || []).length})`;
   }
 
   public openVisitDetailsModal(visit: Visit) {

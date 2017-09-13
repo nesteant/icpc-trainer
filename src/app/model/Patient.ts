@@ -1,8 +1,8 @@
 import {Episode} from './Episode';
-import {Visit} from './Visit';
+import {SubVisit} from './SubVisit';
 
 export interface Patient {
   id: string;
   episodes: Episode[];
-  visits: Visit[];
+  subVisits: SubVisit[];
 }

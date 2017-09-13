@@ -2,12 +2,12 @@ import {NgModule} from '@angular/core';
 import {PatientsPageComponent} from './PatientsPageComponent';
 import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
-import {PatientModule} from '../../components/patient/PatientModule';
+import {PatientCardModule} from '../../components/patient-card/PatientCardModule';
 
 @NgModule({
   imports: [
     CommonModule,
-    PatientModule,
+    PatientCardModule,
     RouterModule
   ],
   exports: [PatientsPageComponent],

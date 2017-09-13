@@ -1,0 +1,17 @@
+<div>
+  <md-checkbox [formControl]="episodeCheckbox">Створити новий епізод</md-checkbox>
+</div>
+<div>
+  <md-form-field class="xxl">
+    <input type="text" placeholder="Введіть назву епізоду" mdInput
+           [mdAutocomplete]="episode"
+           [disabled]="disabled"
+           [formControl]="episodeSearch">
+  </md-form-field>
+
+  <md-autocomplete #episode="mdAutocomplete" [displayWith]="formatEpisode">
+    <md-option *ngFor="let option of episodeOptions | async" [value]="option">
+      {{ option | episode }}
+    </md-option>
+  </md-autocomplete>
+</div>

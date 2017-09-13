@@ -1,0 +1,9 @@
+<md-form-field>
+  <input type="text" placeholder="введіть причину чи код" mdInput [formControl]="diagnosisControl" [mdAutocomplete]="diagnosis">
+</md-form-field>
+
+<md-autocomplete #diagnosis="mdAutocomplete" [displayWith]="formatDiagnosis" (optionSelected)="onDiagnosisSelected($event)">
+  <md-option *ngFor="let option of diagnosisOptions | async" [value]="option">
+    {{ option | icpcCode}}
+  </md-option>
+</md-autocomplete>

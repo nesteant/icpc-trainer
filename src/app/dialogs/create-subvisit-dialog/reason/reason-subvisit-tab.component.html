@@ -1,0 +1,17 @@
+<md-form-field>
+  <input type="text" placeholder="введіть причину чи код" mdInput [formControl]="reasonSearch" [mdAutocomplete]="reason">
+</md-form-field>
+
+<md-autocomplete #reason="mdAutocomplete" (optionSelected)="onReasonSelected($event)">
+  <md-option *ngFor="let option of reasonOptions | async" [value]="option">
+    {{ option | icpcCode}}
+  </md-option>
+</md-autocomplete>
+<md-list>
+  <md-list-item *ngFor="let reason of reasonsControl.value; let index=index;">
+    {{reason | icpcCode}}
+    <button md-icon-button (click)="deleteReason(index)">
+      <md-icon>clear</md-icon>
+    </button>
+  </md-list-item>
+</md-list>

@@ -2,7 +2,6 @@ import {BrowserModule} from '@angular/platform-browser';
 import {LOCALE_ID, NgModule} from '@angular/core';
 
 import {AppComponent} from './AppComponent';
-import {PageNotFoundComponent} from './components/page-not-found/PageNotFoundComponent';
 import {PatientsService} from './services/PatientsService';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from '@angular/common/http';
@@ -18,11 +17,9 @@ import {MdDialogModule, MdNativeDateModule} from '@angular/material';
 import {icpcReducer} from './reducers/IcpcReducer';
 import {IcpcService} from './services/IcpcService';
 import {SharedModule} from './SharedModule';
-import {CreateEpisodeDialogModule} from './components/create-episode-dialog/CreateEpisodeDialogModule';
 import {PatientResolver} from './services/PatientResolver';
-import {EpisodeDetailsDialogModule} from './components/episode-details-dialog/EpisodeDetailsDialogModule';
-import {UpdateEpisodeDialogModule} from './components/update-episode-dialog/UpdateEpisodeDialogModule';
-import {VisitDetailsDialogModule} from './components/visit-details-dialog/VisitDetailsDialogModule';
+import {IcpcDialogsModule} from './dialogs/IcpcDialogsModule';
+import {PageNotFoundComponent} from './pages/page-not-found/PageNotFoundComponent';
 
 @NgModule({
   declarations: [
@@ -35,10 +32,7 @@ import {VisitDetailsDialogModule} from './components/visit-details-dialog/VisitD
   ],
   imports: [
     SharedModule,
-    VisitDetailsDialogModule,
-    EpisodeDetailsDialogModule,
-    UpdateEpisodeDialogModule,
-    CreateEpisodeDialogModule,
+    IcpcDialogsModule,
     MdNativeDateModule,
     MdDialogModule,
     BrowserModule,

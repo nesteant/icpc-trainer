@@ -2,7 +2,63 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "assets/foundation.min.css";
 
+.mat-dialog-container {
+  position: relative;
+}
+
 .mat-form-field {
   width: 100% !important;
 }
 
+.mat-form-field.xs {
+  width: 10% !important;
+}
+
+.mat-form-field.s {
+  width: 20% !important;
+}
+
+.mat-form-field.m {
+  width: 30% !important;
+}
+
+.mat-form-field.l {
+  width: 40% !important;
+}
+
+.mat-form-field.xl {
+  width: 50% !important;
+}
+
+.mat-form-field.xxl {
+  width: 60% !important;
+}
+
+.mat-dialog-title {
+  font-size: 1.5em;
+  line-height: 1.5em;
+}
+
+.icpc-label {
+  margin-top: 3px;
+  font-size: .7em;
+  font-weight: bold;
+  color: #acacac;
+}
+
+.icpc-button-pane {
+  position: absolute;
+  right: 10px;
+}
+
+.icpc-card-header {
+  border-bottom: 1px solid #acacac;
+}
+
+.icpc-card-header h4 {
+  margin: 0;
+}
+
+.icpc-card .mat-list-item-content {
+  padding: 0 !important;
+}
