@@ -26,14 +26,14 @@ export class ActionSubVisitTabComponent implements OnInit {
       .mergeMap(val => val ? this.filter(val, this.icpcService.actions) : this.icpcService.actions);
   }
 
+  public onActionSelected(event: MdAutocompleteSelectedEvent) {
+    this.updateActions(event.option.value ? [event.option.value] : []);
+    this.actionSearch.reset();
+  }
+
   protected updateActions(codes: IcpcCode[]) {
     let actions = this.actionsControl;
     actions.setValue(actions.value ? actions.value.concat(codes) : codes);
-  }
-
-  protected onActionSelected(event: MdAutocompleteSelectedEvent) {
-    this.updateActions(event.option.value ? [event.option.value] : []);
-    this.actionSearch.reset();
   }
 
   protected deleteAction(index: number) {
