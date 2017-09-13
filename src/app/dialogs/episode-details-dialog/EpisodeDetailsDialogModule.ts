@@ -15,6 +15,7 @@ import {
 import {ReactiveFormsModule} from '@angular/forms';
 import {SharedModule} from '../../SharedModule';
 import {EpisodeDetailsDialogComponent} from './EpisodeDetailsDialogComponent';
+import {SubVisitCardModule} from '../../components/visit-card/SubVisitCardModule';
 
 @NgModule({
   imports: [
@@ -31,7 +32,8 @@ import {EpisodeDetailsDialogComponent} from './EpisodeDetailsDialogComponent';
     ReactiveFormsModule,
     MdTabsModule,
     MdListModule,
-    SharedModule
+    SharedModule,
+    SubVisitCardModule
   ],
   declarations: [
     EpisodeDetailsDialogComponent

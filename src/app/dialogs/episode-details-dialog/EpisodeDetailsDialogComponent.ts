@@ -7,12 +7,16 @@ import {IcpcService} from '../../services/IcpcService';
 import {Episode} from '../../model/Episode';
 import {Visit} from '../../model/Visit';
 import {VisitDetailsDialogComponent} from '../visit-details-dialog/VisitDetailsDialogComponent';
+import {Patient} from '../../model/Patient';
 
 @Component({
   selector: 'icpc-episode-details-dialog',
   templateUrl: 'episode-details-dialog.html',
 })
 export class EpisodeDetailsDialogComponent implements OnInit {
+
+  @Input()
+  public patient: Patient;
 
   @Input()
   public episode: Episode;
@@ -25,6 +29,7 @@ export class EpisodeDetailsDialogComponent implements OnInit {
               @Inject(MD_DIALOG_DATA) public data: any,
               fb: FormBuilder) {
     this.episode = data.episode;
+    this.patient = data.patient;
     this.formGroup = fb.group({
       name: new FormControl()
     });
@@ -36,9 +41,12 @@ export class EpisodeDetailsDialogComponent implements OnInit {
     })
   }
 
+  public getVisit(id: number) {
+    return this.patient.subVisits.find(v => v.id === id);
+  }
+
   public get visitsLabel() {
-    return 0;
-    // return `Підвізіти (${(this.episode.visits || []).length})`;
+    return `Підвізіти (${(this.episode.subVisits || []).length})`;
   }
 
   public openVisitDetailsModal(visit: Visit) {

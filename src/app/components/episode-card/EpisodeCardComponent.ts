@@ -54,7 +54,8 @@ export class EpisodeCardComponent {
       height: '400px',
       width: '600px',
       data: {
-        episode: episode
+        episode: episode,
+        patient: this.patient
       }
     });
   }

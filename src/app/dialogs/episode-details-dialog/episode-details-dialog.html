@@ -1,20 +1,19 @@
 <div [formGroup]="formGroup">
-  <md-dialog-actions>
+  <div class="icpc-button-pane">
     <button md-icon-button [md-dialog-close]="false">
       <md-icon>clear</md-icon>
     </button>
-  </md-dialog-actions>
-  <label>Епізод
-    <h4 md-dialog-title>{{episode.name}}</h4>
-  </label>
+  </div>
+  <!--<label>Епізод</label>-->
+  <h4 md-dialog-title>{{episode.name}}</h4>
 
   <md-dialog-content>
 
     <md-tab-group>
       <md-tab [label]="visitsLabel">
         <md-list>
-          <md-list-item *ngFor="let visit of episode.visits">
-            <span (click)="openVisitDetailsModal(visit)">{{visit.diagnosis.shortTitleUa}} {{visit.date | date : 'dd/MM'}}</span>
+          <md-list-item *ngFor="let visit of episode.subVisits">
+            <icpc-subvisit-card (click)="openVisitDetailsModal(getVisit(visit))" [subVisit]="getVisit(visit)"></icpc-subvisit-card>
             <button md-icon-button [mdMenuTriggerFor]="appMenu">
               <md-icon>more_horiz</md-icon>
             </button>
