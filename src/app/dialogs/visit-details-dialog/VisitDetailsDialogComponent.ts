@@ -1,10 +1,8 @@
 import {Component, Inject, Input, OnInit} from '@angular/core';
 import {MD_DIALOG_DATA, MdDialogRef} from '@angular/material';
-import {FormBuilder} from '@angular/forms';
 import 'rxjs/add/operator/startWith';
-import {IcpcService} from '../../services/IcpcService';
 import 'rxjs/add/operator/mergeMap';
-import {Visit} from '../../model/Visit';
+import {SubVisit} from '../../model/SubVisit';
 
 @Component({
   selector: 'icpc-visit-details-dialog',
@@ -13,12 +11,10 @@ import {Visit} from '../../model/Visit';
 export class VisitDetailsDialogComponent implements OnInit {
 
   @Input()
-  public visit: Visit;
+  public visit: SubVisit;
 
-  constructor(private icpcService: IcpcService,
-              public dialogRef: MdDialogRef<VisitDetailsDialogComponent>,
-              @Inject(MD_DIALOG_DATA) public data: any,
-              fb: FormBuilder) {
+  constructor(public dialogRef: MdDialogRef<VisitDetailsDialogComponent>,
+              @Inject(MD_DIALOG_DATA) public data: any) {
     this.visit = data.visit;
   }
 
