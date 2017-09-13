@@ -18,8 +18,8 @@
               <md-icon>more_horiz</md-icon>
             </button>
             <md-menu #appMenu="mdMenu">
-              <button md-menu-item>Змінити епізод</button>
-              <button md-menu-item>Редагувати</button>
+              <button md-menu-item (click)="openChangeEpisodeDialog(getVisit(visit))">Змінити епізод</button>
+              <!--<button md-menu-item (click)="openChangeSubvisitDialog()">Редагувати</button>-->
             </md-menu>
           </md-list-item>
         </md-list>

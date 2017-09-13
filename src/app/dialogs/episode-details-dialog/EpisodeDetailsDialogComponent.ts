@@ -3,11 +3,14 @@ import 'rxjs/add/operator/startWith';
 import 'rxjs/add/operator/mergeMap';
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import {MD_DIALOG_DATA, MdDialog, MdDialogRef} from '@angular/material';
-import {IcpcService} from '../../services/IcpcService';
 import {Episode} from '../../model/Episode';
-import {Visit} from '../../model/Visit';
 import {VisitDetailsDialogComponent} from '../visit-details-dialog/VisitDetailsDialogComponent';
 import {Patient} from '../../model/Patient';
+import {SubVisit} from '../../model/SubVisit';
+import {ChangeEpisodeDialogComponent} from '../change-episode-dialog/ChangeEpisodeDialogComponent';
+import {PatientsService} from '../../services/PatientsService';
+
+let id = 1000;
 
 @Component({
   selector: 'icpc-episode-details-dialog',
@@ -23,7 +26,7 @@ export class EpisodeDetailsDialogComponent implements OnInit {
 
   public formGroup: FormGroup;
 
-  constructor(private icpcService: IcpcService,
+  constructor(private patientsService: PatientsService,
               public dialog: MdDialog,
               public dialogRef: MdDialogRef<EpisodeDetailsDialogComponent>,
               @Inject(MD_DIALOG_DATA) public data: any,
@@ -49,14 +52,35 @@ export class EpisodeDetailsDialogComponent implements OnInit {
     return `Підвізіти (${(this.episode.subVisits || []).length})`;
   }
 
-  public openVisitDetailsModal(visit: Visit) {
+  public openVisitDetailsModal(visit: SubVisit) {
     let dialogRef = this.dialog.open(VisitDetailsDialogComponent, {
-      height: '400px',
+      height: '500px',
       width: '600px',
       data: {
         visit: visit
       }
     });
+  }
+
+  public openChangeEpisodeDialog(visit: SubVisit) {
+    let dialogRef = this.dialog.open(ChangeEpisodeDialogComponent, {
+      height: '500px',
+      width: '600px',
+      data: {
+        visit: visit,
+        episode: this.episode,
+        episodes: this.patient.episodes
+      }
+    });
+    dialogRef.afterClosed().subscribe(episode => {
+      if (episode && !episode.id) {
+        episode.id = ++id;
+        this.patientsService.createEpisode(this.patient, episode);
+      }
+      if (episode && episode.id) {
+        this.patientsService.rearrangeVisit(this.patient, visit, this.episode, episode);
+      }
+    })
   }
 
 }

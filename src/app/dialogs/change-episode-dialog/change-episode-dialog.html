@@ -1,0 +1,32 @@
+<div class="icpc-card">
+  <div class="icpc-button-pane">
+    <button md-icon-button [md-dialog-close]="false">
+      <md-icon>clear</md-icon>
+    </button>
+  </div>
+  <!--<label>Епізод</label>-->
+  <h4 md-dialog-title>Змінити епізод</h4>
+  <md-dialog-content>
+    <div>
+      <label class="icpc-label">Діагноз</label>
+      <h4>{{visit.diagnosis.shortTitleUa}}</h4>
+    </div>
+    <md-tab-group>
+      <md-tab label="Зміна епізоду">
+        <md-list>
+          <md-radio-group [formControl]="episodeControl">
+            <md-list-item *ngFor="let episode of episodes">
+              <md-radio-button [value]="episode">{{episode.name}}</md-radio-button>
+            </md-list-item>
+          </md-radio-group>
+        </md-list>
+        <div *ngIf="episodeControl.value?.id === -1">
+          <md-form-field class="xl">
+            <input type="text" placeholder="Назва" mdInput [formControl]="episodeNameControl">
+          </md-form-field>
+        </div>
+        <button md-button (click)="save()">Змінити</button>
+      </md-tab>
+    </md-tab-group>
+  </md-dialog-content>
+</div>

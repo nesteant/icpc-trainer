@@ -47,13 +47,42 @@ export class PatientsService {
     // this.store.dispatch({type: 'CREATE_EPISODE', payload: patient});
   }
 
+  public rearrangeVisit(patient: Patient, visit: SubVisit, oldEpisode: Episode, newEpisode: Episode) {
+    console.log(visit.id, oldEpisode, newEpisode);
+    this.saved
+      .filter(p => p.id === patient.id)
+      .map(p => p.episodes)
+      .reduce((previousValue, currentValue) => previousValue.concat(currentValue), [])
+      .filter(e => {
+        return e.id === oldEpisode.id;
+      })
+      .forEach(e => {
+        console.log('rmeove', e);
+        console.log('R1', e.subVisits, visit.id);
+        e.subVisits = e.subVisits.filter(v => v !== visit.id)
+        console.log('R', e.subVisits)
+      });
+    this.saved
+      .filter(p => p.id === patient.id)
+      .map(p => p.episodes)
+      .reduce((previousValue, currentValue) => previousValue.concat(currentValue), [])
+      .filter(e => {
+        return e.id === newEpisode.id;
+      })
+      .forEach(e => {
+        console.log('ADD', e);
+        e.subVisits.push(visit.id);
+      })
+    // this.store.dispatch({type: 'CREATE_EPISODE', payload: episode});
+  }
+
   public updateEpisode(patient: Patient, episode: Episode) {
     this.saved
       .filter(p => p.id === patient.id)
       .map(p => p.episodes)
       .reduce((previousValue, currentValue) => previousValue.concat(currentValue), [])
-      .filter(episode => {
-        return episode.id === episode.id;
+      .filter(e => {
+        return e.id === episode.id;
       })
       .forEach(e => {
         e.name = episode.name;
