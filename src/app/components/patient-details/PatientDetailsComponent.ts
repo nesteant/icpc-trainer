@@ -66,7 +66,21 @@ export class PatientDetailsComponent {
   }
 
   public get visitsCount() {
-    return 0;
-    // return this.patient.visits ? this.patient.visits.length : 0;
+    return this.visits.length;
+  }
+
+  public get visits() {
+    let entries = this.patient && this.patient.subVisits.reduce((acc, curr) => {
+      let date = curr.date;
+      acc[date] ? acc[date].push(curr) : acc[date] = [curr];
+      return acc;
+    }, {});
+    return Object.entries(entries).reduce((acc, [k, v]) => {
+      acc.push({
+        date: k,
+        values: v
+      });
+      return acc;
+    }, []);
   }
 }

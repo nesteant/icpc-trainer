@@ -12,7 +12,12 @@
         <button md-button (click)="openCreateSubvisitDialog()">Новий візит</button>
       </div>
     </md-tab>
-    <md-tab [label]="visitsLabel">Content 2</md-tab>
+    <md-tab [label]="visitsLabel">
+      <div *ngFor="let entry of visits">
+        <icpc-visit-card [visit]="entry"></icpc-visit-card>
+      </div>
+
+    </md-tab>
   </md-tab-group>
 </div>
 

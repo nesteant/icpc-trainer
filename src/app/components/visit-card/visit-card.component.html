@@ -1,0 +1,12 @@
+<md-card class="icpc-card">
+  <div class="icpc-card-header">
+    <label class="icpc-label">Дата візіту</label>
+    <h4>{{visit.date}}</h4>
+  </div>
+  <div>
+    <label class="icpc-label">Діагноз</label>
+    <md-list>
+      <md-list-item *ngFor="let subVisit of visit.values">{{subVisit.diagnosis.shortTitleUa}}</md-list-item>
+    </md-list>
+  </div>
+</md-card>

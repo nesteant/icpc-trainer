@@ -17,7 +17,7 @@ import {
 import {ReactiveFormsModule} from '@angular/forms';
 import {SharedModule} from '../../SharedModule';
 import {ChangeEpisodeDialogComponent} from './ChangeEpisodeDialogComponent';
-import {SubVisitCardModule} from '../../components/visit-card/SubVisitCardModule';
+import {SubVisitCardModule} from '../../components/subvisit-card/SubVisitCardModule';
 
 @NgModule({
   imports: [

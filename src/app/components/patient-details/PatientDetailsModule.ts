@@ -4,6 +4,7 @@ import {CommonModule} from '@angular/common';
 import {MdButtonModule, MdCardModule, MdIconModule, MdTabsModule} from '@angular/material';
 import {SharedModule} from '../../SharedModule';
 import {EpisodeCardModule} from '../episode-card/EpisodeCardModule';
+import {VisitCardModule} from '../visit-card/VisitCardModule';
 
 @NgModule({
   imports: [
@@ -13,6 +14,7 @@ import {EpisodeCardModule} from '../episode-card/EpisodeCardModule';
     MdButtonModule,
     MdIconModule,
     EpisodeCardModule,
+    VisitCardModule,
     SharedModule
   ],
   exports: [
