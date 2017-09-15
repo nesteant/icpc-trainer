@@ -20,11 +20,13 @@ import {SharedModule} from './SharedModule';
 import {PatientResolver} from './services/PatientResolver';
 import {IcpcDialogsModule} from './dialogs/IcpcDialogsModule';
 import {PageNotFoundComponent} from './pages/page-not-found/PageNotFoundComponent';
+import {NoContentComponent} from './pages/no-content/NoContentComponent';
 
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent,
+    NoContentComponent,
     PatientDetailsPageComponent
   ],
   exports: [
@@ -58,7 +60,9 @@ import {PageNotFoundComponent} from './pages/page-not-found/PageNotFoundComponen
           resolve: {
             patients: PatientResolver
           }
-        }]
+        },
+          {path: '**', component: NoContentComponent}
+        ]
       },
       {
         path: '',

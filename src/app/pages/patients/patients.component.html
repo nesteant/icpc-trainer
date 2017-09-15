@@ -1,11 +1,14 @@
-<div class="grid-x">
-  <div class="cell medium-3 large-3">
-    <div class="card-container" *ngFor="let patient of patients | async">
+<div class="grid-x full-height">
+  <div class="cell medium-3 large-3 patient-menu-container">
+    <div class="patient-card-header">
+      <strong>Пацієнти</strong>
+    </div>
+    <div *ngFor="let patient of patients | async">
       <icpc-patient [patient]="patient"></icpc-patient>
     </div>
 
   </div>
-  <div class="cell medium-9 large-9">
+  <div class="cell medium-9 large-9 position-relative">
     <router-outlet></router-outlet>
   </div>
 </div>

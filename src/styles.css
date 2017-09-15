@@ -99,3 +99,23 @@ button.mat-button.circle {
   margin-bottom: 10px;
   line-height: 40px;
 }
+
+.patient-card {
+  border-bottom: #acacac 1px solid;
+}
+
+.patient-menu-container {
+  border-right: #dadada 1px solid;
+}
+.patient-card-header {
+  /*height: 40px;*/
+  border-bottom: #dadada 1px solid;
+  padding: 12px 20px;
+}
+
+.full-height {
+  height: 100%;
+}
+html, body, icpc-root, icpc-patients {
+  height: 100%;
+}

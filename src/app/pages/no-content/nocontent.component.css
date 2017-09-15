@@ -1,0 +1,18 @@
+.doctor-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #f5f8fb;
+}
+
+.doctor-img {
+  position: relative;
+  width: 197px;
+  height: 197px;
+  margin: 0 auto;
+  top: 50%;
+  margin-top: -98px;
+  background: url('/assets/images/if_medical_icon.png');
+}

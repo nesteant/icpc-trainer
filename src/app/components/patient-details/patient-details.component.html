@@ -1,15 +1,16 @@
 <div class="patient-details">
   <md-tab-group>
     <md-tab [label]="episodesLabel">
-      <div class="grid-x">
-        <div class="small-6 cell" *ngFor="let episode of patient.episodes">
-          <div class="card-container">
+      <div class="card-container">
+        <div class="grid-x">
+          <div class="small-6 cell" *ngFor="let episode of patient.episodes">
             <icpc-episode-card [patient]="patient" [episode]="episode"></icpc-episode-card>
           </div>
         </div>
-      </div>
-      <div class="grid-x">
-        <button md-button class="circle" (click)="openCreateSubvisitDialog()">Новий візит</button>
+        <br/>
+        <div class="grid-x">
+          <button md-button class="circle" (click)="openCreateSubvisitDialog()">Новий візит</button>
+        </div>
       </div>
     </md-tab>
     <md-tab [label]="visitsLabel">
