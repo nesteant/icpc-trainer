@@ -119,3 +119,7 @@ button.mat-button.circle {
 html, body, icpc-root, icpc-patients {
   height: 100%;
 }
+.page-content {
+  background: #f5f8fb;
+  height: 100%;
+}
