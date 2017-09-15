@@ -55,7 +55,7 @@
   border-bottom: 1px solid #acacac;
 }
 
-icpc-card h4,.icpc-card-header h4 {
+icpc-card h4, .icpc-card-header h4 {
   margin: 0;
 }
 
@@ -65,4 +65,37 @@ icpc-card h4,.icpc-card-header h4 {
 
 .clickable {
   cursor: pointer;
+}
+
+button.mat-button, button.mat-icon-button {
+  color: #8969e0;
+}
+
+button.mat-button.circle {
+  color: #8969e0;
+  border: #8969e0 1px solid;
+  border-radius: 30px;
+}
+
+.mat-list-item-content {
+  height: auto !important;
+  min-height: 48px;
+}
+.mat-list-item {
+  box-sizing: border-box;
+  /*border-bottom: #acacac 1px solid;*/
+  margin-bottom: 8px;
+}
+
+.text-right {
+  text-align: right;
+}
+.simple-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.simple-list li {
+  margin-bottom: 10px;
+  line-height: 40px;
 }

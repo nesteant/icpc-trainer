@@ -9,14 +9,17 @@
         </div>
       </div>
       <div class="grid-x">
-        <button md-button (click)="openCreateSubvisitDialog()">Новий візит</button>
+        <button md-button class="circle" (click)="openCreateSubvisitDialog()">Новий візит</button>
       </div>
     </md-tab>
     <md-tab [label]="visitsLabel">
-      <div *ngFor="let entry of visits">
-        <icpc-visit-card [visit]="entry"></icpc-visit-card>
+      <div class="grid-x">
+        <div class="small-6 cell" *ngFor="let entry of visits">
+          <div class="card-container">
+            <icpc-visit-card [visit]="entry"></icpc-visit-card>
+          </div>
+        </div>
       </div>
-
     </md-tab>
   </md-tab-group>
 </div>

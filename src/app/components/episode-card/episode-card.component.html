@@ -10,11 +10,11 @@
   </div>
   <div>
     <label class="icpc-label">Діагноз</label>
-    <md-list>
-      <md-list-item class="grid-x" *ngFor="let id of episode.subVisits">
+    <ul class="simple-list">
+      <li *ngFor="let id of episode.subVisits">
         <icpc-subvisit-card [subVisit]="getVisit(id)"></icpc-subvisit-card>
-      </md-list-item>
-    </md-list>
+      </li>
+    </ul>
   </div>
 
   <md-card-actions>

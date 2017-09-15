@@ -11,18 +11,21 @@
 
     <md-tab-group>
       <md-tab [label]="visitsLabel">
-        <md-list>
-          <md-list-item *ngFor="let visit of episode.subVisits">
-            <icpc-subvisit-card (click)="openVisitDetailsModal(getVisit(visit))" [subVisit]="getVisit(visit)"></icpc-subvisit-card>
-            <button md-icon-button [mdMenuTriggerFor]="appMenu">
-              <md-icon>more_horiz</md-icon>
-            </button>
-            <md-menu #appMenu="mdMenu">
-              <button md-menu-item (click)="openChangeEpisodeDialog(getVisit(visit))">Змінити епізод</button>
-              <!--<button md-menu-item (click)="openChangeSubvisitDialog()">Редагувати</button>-->
-            </md-menu>
-          </md-list-item>
-        </md-list>
+        <ul class="simple-list">
+          <li *ngFor="let visit of episode.subVisits" class=" grid-x">
+            <div class="cell medium-11 large-11">
+              <icpc-subvisit-card (click)="openVisitDetailsModal(getVisit(visit))" [subVisit]="getVisit(visit)"></icpc-subvisit-card>
+            </div>
+            <div class="cell medium-1 large-1">
+              <button md-icon-button [mdMenuTriggerFor]="appMenu">
+                <md-icon>more_horiz</md-icon>
+              </button>
+              <md-menu #appMenu="mdMenu">
+                <button md-menu-item (click)="openChangeEpisodeDialog(getVisit(visit))">Змінити епізод</button>
+              </md-menu>
+            </div>
+          </li>
+        </ul>
       </md-tab>
       <md-tab label="Коментарі">
       </md-tab>
