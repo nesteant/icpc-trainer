@@ -54,8 +54,8 @@ export class EpisodeDetailsDialogComponent implements OnInit {
 
   public openVisitDetailsModal(visit: SubVisit) {
     let dialogRef = this.dialog.open(VisitDetailsDialogComponent, {
-      height: '500px',
-      width: '600px',
+      height: '600px',
+      width: '700px',
       data: {
         visit: visit
       }
@@ -64,8 +64,8 @@ export class EpisodeDetailsDialogComponent implements OnInit {
 
   public openChangeEpisodeDialog(visit: SubVisit) {
     let dialogRef = this.dialog.open(ChangeEpisodeDialogComponent, {
-      height: '500px',
-      width: '600px',
+      height: '600px',
+      width: '700px',
       data: {
         visit: visit,
         episode: this.episode,

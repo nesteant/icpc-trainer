@@ -26,8 +26,8 @@ export class PatientDetailsComponent {
 
   public openCreateSubvisitDialog() {
     let dialogRef = this.dialog.open(CreateSubVisitDialogComponent, {
-      height: '500px',
-      width: '600px',
+      height: '600px',
+      width: '700px',
       data: {
         dialogTitle: 'Створення підвізиту',
         episodes: this.patient.episodes

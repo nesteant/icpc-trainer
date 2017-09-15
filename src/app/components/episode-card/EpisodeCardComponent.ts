@@ -29,8 +29,8 @@ export class EpisodeCardComponent {
 
   public openEditEpisodeModal(episode: Episode) {
     let dialogRef = this.dialog.open(UpdateEpisodeDialogComponent, {
-      height: '500px',
-      width: '600px',
+      height: '600px',
+      width: '700px',
       data: {
         episode: episode
       }
@@ -51,8 +51,8 @@ export class EpisodeCardComponent {
 
   public openEpisodeDetailsModal(episode: Episode) {
     let dialogRef = this.dialog.open(EpisodeDetailsDialogComponent, {
-      height: '500px',
-      width: '600px',
+      height: '600px',
+      width: '700px',
       data: {
         episode: episode,
         patient: this.patient
@@ -62,8 +62,8 @@ export class EpisodeCardComponent {
 
   public openCreateSubvisitDialog(episode: Episode) {
     let dialogRef = this.dialog.open(CreateSubVisitDialogComponent, {
-      height: '500px',
-      width: '600px',
+      height: '600px',
+      width: '700px',
       data: {
         dialogTitle: 'Створення підвізиту',
         episode: episode,
