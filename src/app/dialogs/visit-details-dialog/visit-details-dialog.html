@@ -4,63 +4,71 @@
       <md-icon>clear</md-icon>
     </button>
   </div>
-  <md-tab-group>
+  <md-tab-group #tg>
     <md-tab label="Причина">
-      <md-expansion-panel *ngFor="let reason of visit.reasons">
+      <md-expansion-panel [expanded]="false" *ngFor="let reason of visit.reasons">
         <md-expansion-panel-header>
           <md-panel-title>{{reason.shortTitleUa}}</md-panel-title>
         </md-expansion-panel-header>
-        <div>
-          <h4>MKX-10</h4>
-          <span>{{reason.shortTitleUa}}</span>
-        </div>
-        <div>
-          <h4>Включення</h4>
-          <span>{{reason.inclusionUa}}</span>
-        </div>
-        <div>
-          <h4>Виключення</h4>
-          <span>{{reason.exclusionUa}}</span>
-        </div>
+        <md-panel-description>
+          <div>
+            <h4>MKX-10</h4>
+            <span>{{reason.shortTitleUa}}</span>
+          </div>
+          <div>
+            <h4>Включення</h4>
+            <span>{{reason.inclusionUa}}</span>
+          </div>
+          <div>
+            <h4>Виключення</h4>
+            <span>{{reason.exclusionUa}}</span>
+          </div>
+        </md-panel-description>
       </md-expansion-panel>
     </md-tab>
-    <md-tab label="Діагноз">
-      <md-expansion-panel>
-        <md-expansion-panel-header>
-          <md-panel-title>{{visit.diagnosis.shortTitleUa}}</md-panel-title>
-        </md-expansion-panel-header>
-        <div>
-          <h4>MKX-10</h4>
-          <span>{{visit.diagnosis.shortTitleUa}}</span>
-        </div>
-        <div>
-          <h4>Включення</h4>
-          <span>{{visit.diagnosis.inclusionUa}}</span>
-        </div>
-        <div>
-          <h4>Виключення</h4>
-          <span>{{visit.diagnosis.exclusionUa}}</span>
-        </div>
-      </md-expansion-panel>
+    <md-tab label="Діагноз" #t>
+      <ng-template [ngIf]="tg.selectedIndex == 1">
+        <md-expansion-panel [expanded]="false">
+          <md-expansion-panel-header>
+            <md-panel-title>{{visit.diagnosis.shortTitleUa}}</md-panel-title>
+          </md-expansion-panel-header>
+          <div>
+            <h4>MKX-10</h4>
+            <span>{{visit.diagnosis.shortTitleUa}}</span>
+          </div>
+          <div>
+            <h4>Включення</h4>
+            <span>{{visit.diagnosis.inclusionUa}}</span>
+          </div>
+          <div>
+            <h4>Виключення</h4>
+            <span>{{visit.diagnosis.exclusionUa}}</span>
+          </div>
+        </md-expansion-panel>
+      </ng-template>
     </md-tab>
-    <md-tab label="Дія">
-      <md-expansion-panel *ngFor="let action of visit.actions">
-        <md-expansion-panel-header>
-          <md-panel-title>{{action.shortTitleUa}}</md-panel-title>
-        </md-expansion-panel-header>
-        <div>
-          <h4>MKX-10</h4>
-          <span>{{action.shortTitleUa}}</span>
-        </div>
-        <div>
-          <h4>Включення</h4>
-          <span>{{action.inclusionUa}}</span>
-        </div>
-        <div>
-          <h4>Виключення</h4>
-          <span>{{action.exclusionUa}}</span>
-        </div>
-      </md-expansion-panel>
+    <md-tab label="Дія" #t>
+      <ng-template [ngIf]="tg.selectedIndex == 2">
+        <md-expansion-panel [expanded]="false" *ngFor="let action of visit.actions">
+          <md-expansion-panel-header>
+            <md-panel-title>{{action.shortTitleUa}}</md-panel-title>
+          </md-expansion-panel-header>
+          <md-panel-description>
+            <div>
+              <h4>MKX-10</h4>
+              <span>{{action.shortTitleUa}}</span>
+            </div>
+            <div>
+              <h4>Включення</h4>
+              <span>{{action.inclusionUa}}</span>
+            </div>
+            <div>
+              <h4>Виключення</h4>
+              <span>{{action.exclusionUa}}</span>
+            </div>
+          </md-panel-description>
+        </md-expansion-panel>
+      </ng-template>
     </md-tab>
   </md-tab-group>
 </div>

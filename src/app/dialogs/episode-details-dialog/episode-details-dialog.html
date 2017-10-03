@@ -13,12 +13,12 @@
             <icpc-subvisit-card (click)="openVisitDetailsModal(getVisit(visit))" [subVisit]="getVisit(visit)"></icpc-subvisit-card>
           </div>
           <div class="cell medium-1 large-1">
-            <button md-icon-button [mdMenuTriggerFor]="appMenu">
-              <md-icon>more_horiz</md-icon>
-            </button>
             <md-menu #appMenu="mdMenu">
               <button md-menu-item (click)="openChangeEpisodeDialog(getVisit(visit))">Змінити епізод</button>
             </md-menu>
+            <button md-icon-button [mdMenuTriggerFor]="appMenu">
+              <md-icon>more_horiz</md-icon>
+            </button>
           </div>
         </li>
       </ul>
