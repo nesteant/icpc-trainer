@@ -39,7 +39,7 @@ export class ReasonSubVisitTabComponent implements OnInit {
 
   private filter(val: string, values: Observable<IcpcCode[]>): Observable<IcpcCode[]> {
     return values.map(codes => {
-        return codes.filter(c => `${c.code} ${c.shortTitleUa}`.toLowerCase().indexOf(val.toLowerCase()) === 0);
+        return codes.filter(c => `${c.code} ${c.shortTitleUa}`.toLowerCase().indexOf(val.toLowerCase()) > -1);
       }
     );
   }

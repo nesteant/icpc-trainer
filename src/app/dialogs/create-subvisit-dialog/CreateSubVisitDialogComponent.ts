@@ -97,7 +97,6 @@ export class CreateSubVisitDialogComponent implements OnInit {
   }
 
   public save() {
-    console.log(this.formGroup.value);
     this.dialogRef.close(this.formGroup.value);
   }
 
