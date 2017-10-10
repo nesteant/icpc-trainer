@@ -55,6 +55,10 @@
   border-bottom: 1px solid #acacac;
 }
 
+.icpc-card.ended {
+  background: #f3f3f3;
+}
+
 .icpc-card h4, .icpc-card-header h4 {
   margin: 0;
 }

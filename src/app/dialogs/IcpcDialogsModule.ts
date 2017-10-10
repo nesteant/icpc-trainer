@@ -4,6 +4,7 @@ import {EpisodeDetailsDialogModule} from './episode-details-dialog/EpisodeDetail
 import {VisitDetailsDialogModule} from './visit-details-dialog/VisitDetailsDialogModule';
 import {CreateSubVisitDialogModule} from './create-subvisit-dialog/CreateSubVisitDialogModule';
 import {ChangeEpisodeDialogModule} from './change-episode-dialog/ChangeEpisodeDialogModule';
+import {CloseEpisodeDialogModule} from './close-episode-dialog/CloseEpisodeDialogModule';
 
 @NgModule({
   imports: [
@@ -11,14 +12,16 @@ import {ChangeEpisodeDialogModule} from './change-episode-dialog/ChangeEpisodeDi
     EpisodeDetailsDialogModule,
     UpdateEpisodeDialogModule,
     CreateSubVisitDialogModule,
-    ChangeEpisodeDialogModule
+    ChangeEpisodeDialogModule,
+    CloseEpisodeDialogModule
   ],
   exports: [
     VisitDetailsDialogModule,
     EpisodeDetailsDialogModule,
     UpdateEpisodeDialogModule,
     CreateSubVisitDialogModule,
-    ChangeEpisodeDialogModule
+    ChangeEpisodeDialogModule,
+    CloseEpisodeDialogModule
   ],
   declarations: []
 })

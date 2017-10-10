@@ -16,7 +16,7 @@
             <md-menu #appMenu="mdMenu">
               <button md-menu-item (click)="openChangeEpisodeDialog(getVisit(visit))">Змінити епізод</button>
             </md-menu>
-            <button md-icon-button [mdMenuTriggerFor]="appMenu">
+            <button md-icon-button [mdMenuTriggerFor]="appMenu" *ngIf="!episode.ended">
               <md-icon>more_horiz</md-icon>
             </button>
           </div>

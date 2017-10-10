@@ -5,4 +5,6 @@ export interface Episode {
   name: string;
   subVisits: number[];
   history: HsitoryItem[];
+  ended?: boolean;
+  endDate?: string;
 }
