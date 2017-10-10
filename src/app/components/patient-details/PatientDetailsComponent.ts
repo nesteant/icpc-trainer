@@ -30,7 +30,7 @@ export class PatientDetailsComponent {
       width: '700px',
       data: {
         dialogTitle: 'Створення підвізиту',
-        episodes: this.patient.episodes
+        episodes: this.patient.episodes.filter(e => !e.ended)
       }
     });
     dialogRef.afterClosed().subscribe(episodeForm => {
