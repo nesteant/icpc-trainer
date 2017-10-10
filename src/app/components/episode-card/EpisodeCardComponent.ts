@@ -63,8 +63,8 @@ export class EpisodeCardComponent {
 
   public openCloseEpisodeDialog(episode: Episode) {
     let dialogRef = this.dialog.open(CloseEpisodeDialogComponent, {
-      height: '600px',
-      width: '700px',
+      height: '300px',
+      width: '400px',
       data: {
         episode: episode
       }

@@ -6,13 +6,13 @@
   </div>
   <h4 md-dialog-title>Завершити епізод</h4>
   <md-dialog-content>
-    <md-form-field class="m">
+    <md-form-field class="xl">
       <input mdInput [mdDatepicker]="picker" placeholder="Дата завершення" [formControl]="date">
       <md-datepicker-toggle mdSuffix [for]="picker"></md-datepicker-toggle>
       <md-datepicker #picker></md-datepicker>
     </md-form-field>
-    <md-dialog-actions>
-      <button md-button (click)="save()">Зберегти</button>
-    </md-dialog-actions>
   </md-dialog-content>
+  <md-dialog-actions>
+    <button md-button (click)="save()">Зберегти</button>
+  </md-dialog-actions>
 </div>
