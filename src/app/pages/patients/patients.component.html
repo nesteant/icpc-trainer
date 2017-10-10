@@ -4,7 +4,7 @@
       <strong>Пацієнти</strong>
     </div>
     <div *ngFor="let patient of patients | async">
-      <icpc-patient [patient]="patient"></icpc-patient>
+      <icpc-patient [patient]="patient" [routerLink]="['/patients', patient.id]" routerLinkActive="active"></icpc-patient>
     </div>
 
   </div>

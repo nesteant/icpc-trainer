@@ -127,3 +127,17 @@ html, body, icpc-root, icpc-patients {
   background: #f5f8fb;
   height: 100%;
 }
+
+icpc-patient.active md-card {
+  background: #f3f0fb;
+}
+icpc-patient.active .patient-card:before {
+  display: block;
+  content: ' ';
+  height: 100%;
+  background: #8969e0;
+  width: 5px;
+  position: absolute;
+  z-index: 100;
+  float: left;
+}
