@@ -6,7 +6,7 @@
       </button>
     </div>
     <label class="icpc-label">Епізод</label>
-    <h4 class="clickable" (click)="openEpisodeDetailsModal(episode)">{{episode.name}}</h4>
+    <h4 class="clickable" (click)="openEpisodeDetailsModal(episode)">{{episode.name}} <span *ngIf="episode.ended">({{ episode.endDate | date : 'dd/MM/yyyy' }})</span></h4>
   </div>
   <div>
     <label class="icpc-label">Діагноз</label>
