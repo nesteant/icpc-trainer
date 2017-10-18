@@ -3,10 +3,10 @@ import {UpdateEpisodeDialogComponent} from '../../dialogs/update-episode-dialog/
 import {Episode} from '../../model/Episode';
 import {EpisodeDetailsDialogComponent} from '../../dialogs/episode-details-dialog/EpisodeDetailsDialogComponent';
 import {PatientsService} from '../../services/PatientsService';
-import {MdDialog} from '@angular/material';
 import {CreateSubVisitDialogComponent} from '../../dialogs/create-subvisit-dialog/CreateSubVisitDialogComponent';
 import {Patient} from '../../model/Patient';
 import {CloseEpisodeDialogComponent} from '../../dialogs/close-episode-dialog/CloseEpisodeDialogComponent';
+import {MatDialog} from '@angular/material';
 
 let id = 199;
 
@@ -20,7 +20,7 @@ export class EpisodeCardComponent {
   @Input()
   public episode: Episode;
 
-  constructor(public dialog: MdDialog, private patientsService: PatientsService) {
+  constructor(public dialog: MatDialog, private patientsService: PatientsService) {
   }
 
   public getVisit(id: number) {
@@ -33,6 +33,7 @@ export class EpisodeCardComponent {
       height: '600px',
       width: '700px',
       data: {
+        patient: this.patient,
         episode: episode
       }
     });
@@ -45,7 +46,8 @@ export class EpisodeCardComponent {
         name: episode.name,
         date: new Date().toISOString()
       });
-      episode.name = episodeForm.name;
+      episode.name = episodeForm;
+      console.log(episode)
       this.patientsService.updateEpisode(this.patient, episode)
     });
   }
@@ -81,6 +83,7 @@ export class EpisodeCardComponent {
       width: '700px',
       data: {
         dialogTitle: 'Створення підвізиту',
+        patient: this.patient,
         episode: episode,
         episodes: this.patient.episodes
       }

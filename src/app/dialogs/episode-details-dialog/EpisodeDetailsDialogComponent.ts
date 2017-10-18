@@ -2,7 +2,7 @@ import {Component, Inject, Input, OnInit} from '@angular/core';
 import 'rxjs/add/operator/startWith';
 import 'rxjs/add/operator/mergeMap';
 import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
-import {MD_DIALOG_DATA, MdDialog, MdDialogRef} from '@angular/material';
+import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material';
 import {Episode} from '../../model/Episode';
 import {VisitDetailsDialogComponent} from '../visit-details-dialog/VisitDetailsDialogComponent';
 import {Patient} from '../../model/Patient';
@@ -27,9 +27,9 @@ export class EpisodeDetailsDialogComponent implements OnInit {
   public formGroup: FormGroup;
 
   constructor(private patientsService: PatientsService,
-              public dialog: MdDialog,
-              public dialogRef: MdDialogRef<EpisodeDetailsDialogComponent>,
-              @Inject(MD_DIALOG_DATA) public data: any,
+              public dialog: MatDialog,
+              public dialogRef: MatDialogRef<EpisodeDetailsDialogComponent>,
+              @Inject(MAT_DIALOG_DATA) public data: any,
               fb: FormBuilder) {
     this.episode = data.episode;
     this.patient = data.patient;

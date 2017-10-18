@@ -1,26 +1,36 @@
-<div [formGroup]="formGroup">
+<div [formGroup]="episodeNameGroup">
   <div class="icpc-button-pane">
-    <button md-icon-button [md-dialog-close]="false">
-      <md-icon>clear</md-icon>
+    <button mat-icon-button [mat-dialog-close]="false">
+      <mat-icon>clear</mat-icon>
     </button>
   </div>
-  <h2 md-dialog-title>Редагування епізоду</h2>
-  <md-dialog-content>
-    <md-form-field>
-      <input placeholder="Епізод" mdInput formControlName="name">
-    </md-form-field>
+  <h2 mat-dialog-title>Редагування епізоду</h2>
+  <mat-dialog-content>
+    <div>
+      <mat-form-field class="s">
+        <mat-select placeholder="Діагноз" formControlName="diagnosis">
+          <mat-option *ngFor="let diagnosis of diagnoses" [value]="diagnosis">
+            {{diagnosis}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="xl">
+        <input type="text" placeholder="Введіть назву епізоду" matInput
+               formControlName="episode">
+      </mat-form-field>
+    </div>
 
-    <md-tab-group>
-      <md-tab label="Зміни">
-        <md-list>
-          <md-list-item *ngFor="let item of episode.history">{{item.name}} {{item.date | date : 'dd/MM'}}</md-list-item>
-        </md-list>
-      </md-tab>
-    </md-tab-group>
+    <mat-tab-group>
+      <mat-tab label="Зміни">
+        <mat-list>
+          <mat-list-item *ngFor="let item of episode.history">{{item | episode}} {{item.date | date : 'dd/MM'}}</mat-list-item>
+        </mat-list>
+      </mat-tab>
+    </mat-tab-group>
 
-  </md-dialog-content>
+  </mat-dialog-content>
 
-  <md-dialog-actions>
-    <button md-button (click)="save()">Зберегти</button>
-  </md-dialog-actions>
+  <mat-dialog-actions>
+    <button mat-button (click)="save()">Зберегти</button>
+  </mat-dialog-actions>
 </div>

@@ -1,12 +1,12 @@
-<md-card class="icpc-card" [class.ended]="episode.ended">
+<mat-card class="icpc-card" [class.ended]="episode.ended">
   <div class="icpc-card-header">
     <div class="icpc-button-pane">
-      <button md-icon-button *ngIf="!episode.ended" (click)="openEditEpisodeModal(episode)">
-        <md-icon>edit</md-icon>
+      <button mat-icon-button *ngIf="!episode.ended" (click)="openEditEpisodeModal(episode)">
+        <mat-icon>edit</mat-icon>
       </button>
     </div>
     <label class="icpc-label">Епізод</label>
-    <h4 class="clickable" (click)="openEpisodeDetailsModal(episode)">{{episode.name}} <span *ngIf="episode.ended">({{ episode.endDate | date : 'dd/MM/yyyy' }})</span></h4>
+    <h4 class="clickable" (click)="openEpisodeDetailsModal(episode)">{{episode | episode}}<span *ngIf="episode.ended">({{ episode.endDate | date : 'dd/MM/yyyy' }})</span></h4>
   </div>
   <div>
     <label class="icpc-label">Діагноз</label>
@@ -17,8 +17,8 @@
     </ul>
   </div>
 
-  <md-card-actions>
-    <button md-button (click)="openCloseEpisodeDialog(episode)" *ngIf="!episode.ended">Закрити епізод</button>
-    <button md-button (click)="openCreateSubvisitDialog(episode)" *ngIf="!episode.ended">Додати підвізит</button>
-  </md-card-actions>
-</md-card>
+  <mat-card-actions>
+    <button mat-button (click)="openCloseEpisodeDialog(episode)" *ngIf="!episode.ended">Закрити епізод</button>
+    <button mat-button (click)="openCreateSubvisitDialog(episode)" *ngIf="!episode.ended">Додати підвізит</button>
+  </mat-card-actions>
+</mat-card>

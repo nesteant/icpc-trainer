@@ -1,29 +1,29 @@
 <div class="icpc-card">
   <div class="icpc-button-pane">
-    <button md-icon-button [md-dialog-close]="false">
-      <md-icon>clear</md-icon>
+    <button mat-icon-button [mat-dialog-close]="false">
+      <mat-icon>clear</mat-icon>
     </button>
   </div>
-  <h4 md-dialog-title>Змінити епізод</h4>
+  <h4 mat-dialog-title>Змінити епізод</h4>
   <div>
     <label class="icpc-label">Діагноз</label>
     <h4>{{(visit.diagnosis | icpcTransform | async).shortTitleUa}}</h4>
   </div>
-  <md-tab-group>
-    <md-tab label="Зміна епізоду">
-      <md-list>
-        <md-radio-group [formControl]="episodeControl">
-          <md-list-item *ngFor="let episode of episodes">
-            <md-radio-button [value]="episode">{{episode.name}}</md-radio-button>
-          </md-list-item>
-        </md-radio-group>
-      </md-list>
+  <mat-tab-group>
+    <mat-tab label="Зміна епізоду">
+      <mat-list>
+        <mat-radio-group [formControl]="episodeControl">
+          <mat-list-item *ngFor="let episode of episodes">
+            <mat-radio-button [value]="episode">{{episode | episode}}</mat-radio-button>
+          </mat-list-item>
+        </mat-radio-group>
+      </mat-list>
       <div *ngIf="episodeControl.value?.id === -1">
-        <md-form-field class="xl">
-          <input type="text" placeholder="Назва" mdInput [formControl]="episodeNameControl">
-        </md-form-field>
+        <mat-form-field class="xl">
+          <input type="text" placeholder="Назва" matInput [formControl]="episodeNameControl">
+        </mat-form-field>
       </div>
-      <button md-button (click)="save()">Змінити</button>
-    </md-tab>
-  </md-tab-group>
+      <button mat-button (click)="save()">Змінити</button>
+    </mat-tab>
+  </mat-tab-group>
 </div>

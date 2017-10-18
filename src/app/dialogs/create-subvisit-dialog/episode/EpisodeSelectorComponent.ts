@@ -1,10 +1,11 @@
 import {Component, forwardRef, Input, OnInit} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/race';
-import {ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR} from '@angular/forms';
+import {ControlValueAccessor, FormBuilder, FormControl, FormGroup, NG_VALUE_ACCESSOR, Validators} from '@angular/forms';
 import {Episode} from '../../../model/Episode';
 import {EpisodePipe} from '../../../pipes/EpisodePipe';
 import 'rxjs/add/operator/skipWhile';
+import {Patient} from '../../../model/Patient';
 
 let id = 99;
 
@@ -22,17 +23,25 @@ let id = 99;
 export class EpisodeSelectorComponent implements OnInit, ControlValueAccessor {
 
   @Input()
+  public patient: Patient;
+  @Input()
   public episodes: Episode[];
   public episodeSearch: FormControl = new FormControl();
   public episodeOptions: Observable<Episode[]>;
   public episodeCheckbox: FormControl = new FormControl();
+  public episodeNameGroup: FormGroup;
   public onChange = (v: Episode) => {
   };
   public onTouched = (v: any) => {
   };
   public disabled = false;
 
-  constructor() {
+  constructor(fb: FormBuilder) {
+    this.episodeNameGroup = fb.group({
+      diagnosis: new FormControl(null, Validators.required),
+      episode: new FormControl(null, Validators.required)
+    });
+    this.episodeNameGroup.valueChanges.subscribe(v => this.onChange(v));
     this.episodeSearch.valueChanges.subscribe(v => {
         if (this.episodeCheckbox.value) {
           this.onChange({
@@ -45,6 +54,16 @@ export class EpisodeSelectorComponent implements OnInit, ControlValueAccessor {
         }
       }
     );
+  }
+
+  public get diagnoses() {
+    return this.episodeSearch.value && Object.keys(this.episodeSearch.value.subVisits
+      .map(id => this.patient.subVisits.find(sv => sv.id === id))
+      .map(sv => sv.diagnosis)
+      .reduce((acc, cv) => {
+        acc[cv] = cv;
+        return acc;
+      }, {})) || [];
   }
 
   public writeValue(obj: any): void {
@@ -71,7 +90,7 @@ export class EpisodeSelectorComponent implements OnInit, ControlValueAccessor {
 
   public filterEpisodes(val: string, values: Observable<Episode[]>): Observable<Episode[]> {
     return values.map(str => {
-        return str.filter(c => c.name.toLowerCase().indexOf(val.toLowerCase()) === 0);
+        return str.filter(c => `${c.name.diagnosis} ${c.name.episode}`.toLowerCase().indexOf(val.toLowerCase()) > -1);
       }
     );
   }

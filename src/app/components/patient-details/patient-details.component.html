@@ -1,6 +1,6 @@
 <div class="patient-details">
-  <md-tab-group>
-    <md-tab [label]="episodesLabel">
+  <mat-tab-group>
+    <mat-tab [label]="episodesLabel">
       <div class="grid-x">
         <div class="small-6 cell" *ngFor="let episode of patient.episodes">
           <div class="card-container">
@@ -11,11 +11,11 @@
       <br/>
       <div class="card-container">
         <div class="grid-x">
-          <button md-button class="circle" (click)="openCreateSubvisitDialog()">Новий візит</button>
+          <button mat-button class="circle" (click)="openCreateSubvisitDialog()">Новий візит</button>
         </div>
       </div>
-    </md-tab>
-    <md-tab [label]="visitsLabel">
+    </mat-tab>
+    <mat-tab [label]="visitsLabel">
       <div class="grid-x">
         <div class="small-6 cell" *ngFor="let entry of visits">
           <div class="card-container">
@@ -23,7 +23,7 @@
           </div>
         </div>
       </div>
-    </md-tab>
-  </md-tab-group>
+    </mat-tab>
+  </mat-tab-group>
 </div>
 

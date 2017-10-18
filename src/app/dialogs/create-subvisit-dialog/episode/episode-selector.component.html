@@ -1,17 +1,30 @@
 <div>
-  <md-checkbox [formControl]="episodeCheckbox">Створити новий епізод</md-checkbox>
+  <mat-checkbox [formControl]="episodeCheckbox">Створити новий епізод</mat-checkbox>
 </div>
-<div>
-  <md-form-field class="xxl">
-    <input type="text" placeholder="Введіть назву епізоду" mdInput
-           [mdAutocomplete]="episode"
+<div *ngIf="!episodeCheckbox.value">
+  <mat-form-field class="xxl">
+    <input type="text" placeholder="Введіть назву епізоду" matInput
+           [matAutocomplete]="episode"
            [disabled]="disabled"
            [formControl]="episodeSearch">
-  </md-form-field>
+  </mat-form-field>
 
-  <md-autocomplete #episode="mdAutocomplete" [displayWith]="formatEpisode">
-    <md-option *ngFor="let option of episodeOptions | async" [value]="option">
+  <mat-autocomplete #episode="matAutocomplete" [displayWith]="formatEpisode">
+    <mat-option *ngFor="let option of episodeOptions | async" [value]="option">
       {{ option | episode }}
-    </md-option>
-  </md-autocomplete>
+    </mat-option>
+  </mat-autocomplete>
+</div>
+<div *ngIf="episodeCheckbox.value" [formGroup]="episodeNameGroup">
+  <mat-form-field class="s">
+    <mat-select placeholder="Діагноз" formControlName="diagnosis">
+      <mat-option *ngFor="let diagnosis of diagnoses" [value]="diagnosis">
+        {{diagnosis}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field class="xl">
+    <input type="text" placeholder="Введіть назву епізоду" matInput
+           formControlName="episode">
+  </mat-form-field>
 </div>

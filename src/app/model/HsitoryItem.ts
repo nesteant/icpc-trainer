@@ -1,4 +1,4 @@
 export interface HsitoryItem {
   date: string;
-  name: string;
+  name: { diagnosis: string, episode: string };
 }

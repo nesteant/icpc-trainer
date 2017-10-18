@@ -7,6 +7,6 @@ import {Episode} from '../model/Episode';
 export class EpisodePipe implements PipeTransform {
 
   public transform(value: Episode, ...args): any {
-    return value && `${value.name}`;
+    return value && `${value.name.episode} (${value.name.diagnosis})`;
   }
 }

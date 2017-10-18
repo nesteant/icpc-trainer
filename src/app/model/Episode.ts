@@ -2,7 +2,7 @@ import {HsitoryItem} from './HsitoryItem';
 
 export interface Episode {
   id?: string;
-  name: string;
+  name: {diagnosis: string, episode: string};
   subVisits: number[];
   history: HsitoryItem[];
   ended?: boolean;

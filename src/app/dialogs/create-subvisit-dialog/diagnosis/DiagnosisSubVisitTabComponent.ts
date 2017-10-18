@@ -3,7 +3,7 @@ import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs/Observable';
 import {IcpcCode} from '../../../model/IcpcCode';
 import {IcpcService} from '../../../services/IcpcService';
-import {MdAutocompleteSelectedEvent} from '@angular/material';
+import {MatAutocompleteSelectedEvent} from '@angular/material';
 import {IcpcCodePipe} from '../../../pipes/IcpcCodePipe';
 
 @Component({
@@ -29,7 +29,7 @@ export class DiagnosisSubVisitTabComponent implements OnInit {
   }
 
 
-  public onDiagnosisSelected(event: MdAutocompleteSelectedEvent) {
+  public onDiagnosisSelected(event: MatAutocompleteSelectedEvent) {
 
   }
 

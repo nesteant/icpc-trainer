@@ -1,18 +1,18 @@
-<md-form-field>
-  <input type="text" placeholder="введіть причину чи код" mdInput [formControl]="actionSearch" [mdAutocomplete]="action">
-</md-form-field>
+<mat-form-field>
+  <input type="text" placeholder="введіть причину чи код" matInput [formControl]="actionSearch" [matAutocomplete]="action">
+</mat-form-field>
 
-<md-autocomplete #action="mdAutocomplete" (optionSelected)="onActionSelected($event)">
-  <md-option *ngFor="let option of actionOptions | async" [value]="option">
+<mat-autocomplete #action="matAutocomplete" (optionSelected)="onActionSelected($event)">
+  <mat-option *ngFor="let option of actionOptions | async" [value]="option">
     {{ option | icpcCode}}
-  </md-option>
-</md-autocomplete>
+  </mat-option>
+</mat-autocomplete>
 
-<md-list>
-  <md-list-item *ngFor="let action of actionsControl.value; let index=index;">
+<mat-list>
+  <mat-list-item *ngFor="let action of actionsControl.value; let index=index;">
     {{action | icpcTransform | async | icpcCode}}
-    <button md-icon-button (click)="deleteAction(index)">
-      <md-icon>clear</md-icon>
+    <button mat-icon-button (click)="deleteAction(index)">
+      <mat-icon>clear</mat-icon>
     </button>
-  </md-list-item>
-</md-list>
+  </mat-list-item>
+</mat-list>

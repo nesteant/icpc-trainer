@@ -1,10 +1,10 @@
-import {Component, Inject, Input, OnInit} from '@angular/core';
+import {Component, Inject, Input, OnInit, ViewChild} from '@angular/core';
 import 'rxjs/add/operator/startWith';
 import 'rxjs/add/operator/mergeMap';
-import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
-import {MD_DIALOG_DATA, MdDialogRef} from '@angular/material';
-import {IcpcService} from '../../services/IcpcService';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {MAT_DIALOG_DATA, MatDialogRef, MatSelect} from '@angular/material';
 import {Episode} from '../../model/Episode';
+import {Patient} from '../../model/Patient';
 
 @Component({
   selector: 'icpc-update-episode-dialog',
@@ -13,28 +13,41 @@ import {Episode} from '../../model/Episode';
 export class UpdateEpisodeDialogComponent implements OnInit {
 
   @Input()
+  public patient: Patient;
+
+  @Input()
   public episode: Episode;
+  public episodeNameGroup: FormGroup;
+  @ViewChild('select')
+  public select: MatSelect;
 
-  public formGroup: FormGroup;
-
-  constructor(private icpcService: IcpcService,
-              public dialogRef: MdDialogRef<UpdateEpisodeDialogComponent>,
-              @Inject(MD_DIALOG_DATA) public data: any,
+  constructor(public dialogRef: MatDialogRef<UpdateEpisodeDialogComponent>,
+              @Inject(MAT_DIALOG_DATA) public data: any,
               fb: FormBuilder) {
-    this.episode = data.episode;
-    this.formGroup = fb.group({
-      name: new FormControl()
+    this.episodeNameGroup = fb.group({
+      diagnosis: new FormControl(null, Validators.required),
+      episode: new FormControl(null, Validators.required)
     });
+    this.episode = data.episode;
+    this.patient = data.patient;
   }
 
   public ngOnInit(): void {
-    this.formGroup.patchValue({
-      name: this.episode.name
-    })
+    this.episodeNameGroup.setValue(this.episode.name);
+  }
+
+  public get diagnoses() {
+    return Object.keys(this.episode.subVisits
+      .map(id => this.patient.subVisits.find(sv => sv.id === id))
+      .map(sv => sv.diagnosis)
+      .reduce((acc, cv) => {
+        acc[cv] = cv;
+        return acc;
+      }, {})) || [];
   }
 
   public save() {
-    this.dialogRef.close(this.formGroup.value);
+    this.dialogRef.close(this.episodeNameGroup.value);
   }
 
 }

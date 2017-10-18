@@ -1,11 +1,11 @@
 import {NgModule} from '@angular/core';
 import {PatientCardComponent} from './PatientCardComponent';
 import {CommonModule} from '@angular/common';
-import {MdCardModule} from '@angular/material';
 import {RouterModule} from '@angular/router';
+import {SharedModule} from '../../SharedModule';
 
 @NgModule({
-  imports: [CommonModule, MdCardModule, RouterModule],
+  imports: [CommonModule, SharedModule, RouterModule],
   exports: [PatientCardComponent],
   declarations: [PatientCardComponent]
 })

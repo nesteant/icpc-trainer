@@ -1,10 +1,11 @@
 import {Component, Inject, Input, OnInit} from '@angular/core';
-import {MD_DIALOG_DATA, MdDialogRef} from '@angular/material';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import 'rxjs/add/operator/startWith';
 import {Episode} from '../../model/Episode';
 import 'rxjs/add/operator/mergeMap';
 import {IcpcCode} from '../../model/IcpcCode';
+import {Patient} from '../../model/Patient';
 
 @Component({
   selector: 'icpc-create-subvisit-dialog',
@@ -12,6 +13,8 @@ import {IcpcCode} from '../../model/IcpcCode';
 })
 export class CreateSubVisitDialogComponent implements OnInit {
 
+  @Input()
+  public patient: Patient;
   @Input()
   public episodes: Episode[];
 
@@ -22,10 +25,11 @@ export class CreateSubVisitDialogComponent implements OnInit {
   public selectedTab: number = 0;
   public formGroup: FormGroup;
 
-  constructor(public dialogRef: MdDialogRef<CreateSubVisitDialogComponent>,
-              @Inject(MD_DIALOG_DATA) public data: any,
+  constructor(public dialogRef: MatDialogRef<CreateSubVisitDialogComponent>,
+              @Inject(MAT_DIALOG_DATA) public data: any,
               fb: FormBuilder) {
     this.episode = data.episode;
+    this.patient = data.patient;
     this.episodes = data.episodes;
     this.dialogTitle = data.dialogTitle;
     this.formGroup = fb.group({

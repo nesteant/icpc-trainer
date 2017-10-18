@@ -2,7 +2,7 @@ import {Component, Input, ViewEncapsulation} from '@angular/core';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/takeLast';
 import {Patient} from '../../model/Patient';
-import {MdDialog} from '@angular/material';
+import {MatDialog} from '@angular/material';
 import {PatientsService} from '../../services/PatientsService';
 import {CreateSubVisitDialogComponent} from '../../dialogs/create-subvisit-dialog/CreateSubVisitDialogComponent';
 
@@ -20,7 +20,7 @@ export class PatientDetailsComponent {
   @Input()
   public patient: Patient;
 
-  constructor(public dialog: MdDialog, private patientsService: PatientsService) {
+  constructor(public dialog: MatDialog, private patientsService: PatientsService) {
 
   }
 

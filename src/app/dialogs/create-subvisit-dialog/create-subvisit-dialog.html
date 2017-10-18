@@ -1,34 +1,34 @@
 <div [formGroup]="formGroup">
   <div class="icpc-button-pane">
-    <button md-icon-button [md-dialog-close]="false">
-      <md-icon>clear</md-icon>
+    <button mat-icon-button [mat-dialog-close]="false">
+      <mat-icon>clear</mat-icon>
     </button>
   </div>
-  <h2 md-dialog-title>{{dialogTitle}}</h2>
+  <h2 mat-dialog-title>{{dialogTitle}}</h2>
   <div>
-    <md-form-field class="m">
-      <input mdInput [mdDatepicker]="picker" placeholder="Дата звернення" formControlName="date">
-      <md-datepicker-toggle mdSuffix [for]="picker"></md-datepicker-toggle>
-      <md-datepicker #picker></md-datepicker>
-    </md-form-field>
+    <mat-form-field class="m">
+      <input matInput [matDatepicker]="picker" placeholder="Дата звернення" formControlName="date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
   </div>
-  <icpc-episode-selector [episodes]="episodes" formControlName="episode"></icpc-episode-selector>
-  <md-tab-group [selectedIndex]="selectedTab" (selectedIndexChange)="changeSelectedTab($event)">
-    <md-tab label="Причина">
+  <icpc-episode-selector [patient]="patient" [episodes]="episodes" formControlName="episode"></icpc-episode-selector>
+  <mat-tab-group [selectedIndex]="selectedTab" (selectedIndexChange)="changeSelectedTab($event)">
+    <mat-tab label="Причина">
       <icpc-reason-subvisit-tab-action-tab [reasonsControl]="reasonsField"></icpc-reason-subvisit-tab-action-tab>
       <span>Варто пам'ятати! Ви можете вибрати декілька кодів для кожного поля</span>
-    </md-tab>
-    <md-tab label="Діагноз" [disabled]="!diagnosesEnabled">
+    </mat-tab>
+    <mat-tab label="Діагноз" [disabled]="!diagnosesEnabled">
       <icpc-diagnosis-subvisit-tab-action-tab [diagnosisControl]="diagnosisField"></icpc-diagnosis-subvisit-tab-action-tab>
-    </md-tab>
+    </mat-tab>
 
-    <md-tab label="Дія" [disabled]="!actionsEnabled">
+    <mat-tab label="Дія" [disabled]="!actionsEnabled">
       <icpc-action-subvisit-tab-action-tab [actionsControl]="actionsField"></icpc-action-subvisit-tab-action-tab>
       <span>Варто пам'ятати! Ви можете вибрати декілька кодів для кожного поля</span>
-    </md-tab>
-  </md-tab-group>
-  <md-dialog-actions>
-    <button md-button (click)="nextTab()" [disabled]="!canSelectNext" *ngIf="selectedTab < 2">Далі</button>
-    <button md-button (click)="save()" *ngIf="selectedTab === 2 && canSave">Зберегти</button>
-  </md-dialog-actions>
+    </mat-tab>
+  </mat-tab-group>
+  <mat-dialog-actions>
+    <button mat-button (click)="nextTab()" [disabled]="!canSelectNext" *ngIf="selectedTab < 2">Далі</button>
+    <button mat-button (click)="save()" *ngIf="selectedTab === 2 && canSave">Зберегти</button>
+  </mat-dialog-actions>
 </div>

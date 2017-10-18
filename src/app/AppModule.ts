@@ -13,7 +13,6 @@ import {RouterModule} from '@angular/router';
 import {PatientDetailsPageComponent} from './pages/details/PatientDetailsPageComponent';
 import {PatientsModule} from './pages/patients/PatientsModule';
 import {PatientsPageComponent} from './pages/patients/PatientsPageComponent';
-import {MdDialogModule, MdNativeDateModule} from '@angular/material';
 import {icpcReducer} from './reducers/IcpcReducer';
 import {IcpcService} from './services/IcpcService';
 import {SharedModule} from './SharedModule';
@@ -35,8 +34,6 @@ import {NoContentComponent} from './pages/no-content/NoContentComponent';
   imports: [
     SharedModule,
     IcpcDialogsModule,
-    MdNativeDateModule,
-    MdDialogModule,
     BrowserModule,
     NoopAnimationsModule,
     PatientsModule,

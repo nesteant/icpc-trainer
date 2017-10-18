@@ -3,7 +3,7 @@ import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs/Observable';
 import {IcpcCode} from '../../../model/IcpcCode';
 import {IcpcService} from '../../../services/IcpcService';
-import {MdAutocompleteSelectedEvent} from '@angular/material';
+import {MatAutocompleteSelectedEvent} from '@angular/material';
 
 @Component({
   selector: 'icpc-action-subvisit-tab-action-tab',
@@ -26,7 +26,7 @@ export class ActionSubVisitTabComponent implements OnInit {
       .mergeMap(val => val ? this.filter(val, this.icpcService.actions) : this.icpcService.actions);
   }
 
-  public onActionSelected(event: MdAutocompleteSelectedEvent) {
+  public onActionSelected(event: MatAutocompleteSelectedEvent) {
     this.updateActions(event.option.value ? [event.option.value] : []);
     this.actionSearch.reset();
   }

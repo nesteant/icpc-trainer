@@ -1,18 +1,18 @@
 <div>
   <div class="icpc-button-pane">
-    <button md-icon-button [md-dialog-close]="false">
-      <md-icon>clear</md-icon>
+    <button mat-icon-button [mat-dialog-close]="false">
+      <mat-icon>clear</mat-icon>
     </button>
   </div>
-  <h2 md-dialog-title>Деталі епізоду</h2>
-  <md-tab-group #tg>
-    <md-tab label="Причина">
+  <h2 mat-dialog-title>Деталі епізоду</h2>
+  <mat-tab-group #tg>
+    <mat-tab label="Причина">
       <!--TODO: optimize-->
-      <md-expansion-panel [expanded]="false" *ngFor="let reason of visit.reasons;">
-        <md-expansion-panel-header>
-          <md-panel-title>{{(reason | icpcTransform | async).shortTitleUa}}</md-panel-title>
-        </md-expansion-panel-header>
-        <md-panel-description>
+      <mat-expansion-panel [expanded]="false" *ngFor="let reason of visit.reasons;">
+        <mat-expansion-panel-header>
+          <mat-panel-title>{{(reason | icpcTransform | async).shortTitleUa}}</mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-panel-description>
           <div>
             <h4>MKX-10</h4>
             <span>{{(reason | icpcTransform | async).shortTitleUa}}</span>
@@ -25,15 +25,15 @@
             <h4>Виключення</h4>
             <span>{{(reason | icpcTransform | async).exclusionUa}}</span>
           </div>
-        </md-panel-description>
-      </md-expansion-panel>
-    </md-tab>
-    <md-tab label="Діагноз" #t>
+        </mat-panel-description>
+      </mat-expansion-panel>
+    </mat-tab>
+    <mat-tab label="Діагноз" #t>
       <ng-template [ngIf]="tg.selectedIndex == 1">
-        <md-expansion-panel [expanded]="false">
-          <md-expansion-panel-header>
-            <md-panel-title>{{(visit.diagnosis | icpcTransform | async).shortTitleUa}}</md-panel-title>
-          </md-expansion-panel-header>
+        <mat-expansion-panel [expanded]="false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>{{(visit.diagnosis | icpcTransform | async).shortTitleUa}}</mat-panel-title>
+          </mat-expansion-panel-header>
           <div>
             <h4>MKX-10</h4>
             <span>{{(visit.diagnosis | icpcTransform | async).shortTitleUa}}</span>
@@ -46,16 +46,16 @@
             <h4>Виключення</h4>
             <span>{{(visit.diagnosis | icpcTransform | async).exclusionUa}}</span>
           </div>
-        </md-expansion-panel>
+        </mat-expansion-panel>
       </ng-template>
-    </md-tab>
-    <md-tab label="Дія" #t>
+    </mat-tab>
+    <mat-tab label="Дія" #t>
       <ng-template [ngIf]="tg.selectedIndex == 2">
-        <md-expansion-panel [expanded]="false" *ngFor="let action of visit.actions">
-          <md-expansion-panel-header>
-            <md-panel-title>{{(action | icpcTransform | async).shortTitleUa}}</md-panel-title>
-          </md-expansion-panel-header>
-          <md-panel-description>
+        <mat-expansion-panel [expanded]="false" *ngFor="let action of visit.actions">
+          <mat-expansion-panel-header>
+            <mat-panel-title>{{(action | icpcTransform | async).shortTitleUa}}</mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-panel-description>
             <div>
               <h4>MKX-10</h4>
               <span>{{(action | icpcTransform | async).shortTitleUa}}</span>
@@ -68,9 +68,9 @@
               <h4>Виключення</h4>
               <span>{{(action | icpcTransform | async).exclusionUa}}</span>
             </div>
-          </md-panel-description>
-        </md-expansion-panel>
+          </mat-panel-description>
+        </mat-expansion-panel>
       </ng-template>
-    </md-tab>
-  </md-tab-group>
+    </mat-tab>
+  </mat-tab-group>
 </div>

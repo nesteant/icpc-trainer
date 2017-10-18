@@ -1,5 +1,5 @@
 import {AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, Inject, Input} from '@angular/core';
-import {MD_DIALOG_DATA, MdDialogRef, MdTab} from '@angular/material';
+import {MAT_DIALOG_DATA, MatDialogRef, MatTab} from '@angular/material';
 import 'rxjs/add/operator/startWith';
 import 'rxjs/add/operator/mergeMap';
 import {SubVisit} from '../../model/SubVisit';
@@ -14,9 +14,9 @@ export class VisitDetailsDialogComponent {
   @Input()
   public visit: SubVisit;
 
-  constructor(public dialogRef: MdDialogRef<VisitDetailsDialogComponent>,
+  constructor(public dialogRef: MatDialogRef<VisitDetailsDialogComponent>,
               public cd: ChangeDetectorRef,
-              @Inject(MD_DIALOG_DATA) public data: any) {
+              @Inject(MAT_DIALOG_DATA) public data: any) {
     this.visit = data.visit;
   }
 

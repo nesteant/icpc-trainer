@@ -128,7 +128,7 @@ html, body, icpc-root, icpc-patients {
   height: 100%;
 }
 
-icpc-patient.active md-card {
+icpc-patient.active mat-card {
   background: #f3f0fb;
 }
 icpc-patient.active .patient-card:before {

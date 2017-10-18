@@ -1,31 +1,31 @@
 <div [formGroup]="formGroup">
   <div class="icpc-button-pane">
-    <button md-icon-button [md-dialog-close]="false">
-      <md-icon>clear</md-icon>
+    <button mat-icon-button [mat-dialog-close]="false">
+      <mat-icon>clear</mat-icon>
     </button>
   </div>
-  <h4 md-dialog-title>{{episode.name}}</h4>
-  <md-tab-group>
-    <md-tab [label]="visitsLabel">
+  <h4 mat-dialog-title>{{episode | episode}}</h4>
+  <mat-tab-group>
+    <mat-tab [label]="visitsLabel">
       <ul class="simple-list">
         <li *ngFor="let visit of episode.subVisits" class=" grid-x">
           <div class="cell medium-11 large-11">
             <icpc-subvisit-card (click)="openVisitDetailsModal(getVisit(visit))" [subVisit]="getVisit(visit)"></icpc-subvisit-card>
           </div>
           <div class="cell medium-1 large-1">
-            <md-menu #appMenu="mdMenu">
-              <button md-menu-item (click)="openChangeEpisodeDialog(getVisit(visit))">Змінити епізод</button>
-            </md-menu>
-            <button md-icon-button [mdMenuTriggerFor]="appMenu" *ngIf="!episode.ended">
-              <md-icon>more_horiz</md-icon>
+            <mat-menu #appMenu="matMenu">
+              <button mat-menu-item (click)="openChangeEpisodeDialog(getVisit(visit))">Змінити епізод</button>
+            </mat-menu>
+            <button mat-icon-button [matMenuTriggerFor]="appMenu" *ngIf="!episode.ended">
+              <mat-icon>more_horiz</mat-icon>
             </button>
           </div>
         </li>
       </ul>
-    </md-tab>
-    <md-tab label="Коментарі">
-    </md-tab>
-  </md-tab-group>
-  <md-dialog-actions>
-  </md-dialog-actions>
+    </mat-tab>
+    <mat-tab label="Коментарі">
+    </mat-tab>
+  </mat-tab-group>
+  <mat-dialog-actions>
+  </mat-dialog-actions>
 </div>

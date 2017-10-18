@@ -3,7 +3,7 @@
   position: relative;
 }
 
-.patient-card:hover md-card {
+.patient-card:hover mat-card {
   background: #f3f0fb;
   cursor: pointer;
 }
