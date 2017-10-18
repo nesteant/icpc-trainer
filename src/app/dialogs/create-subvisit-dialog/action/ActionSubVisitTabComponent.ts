@@ -27,6 +27,7 @@ export class ActionSubVisitTabComponent implements OnInit {
   }
 
   public onActionSelected(event: MdAutocompleteSelectedEvent) {
+    console.log(event.option.value);
     this.updateActions(event.option.value ? [event.option.value] : []);
     this.actionSearch.reset();
   }

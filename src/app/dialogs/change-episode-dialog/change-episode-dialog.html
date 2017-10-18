@@ -7,7 +7,7 @@
   <h4 md-dialog-title>Змінити епізод</h4>
   <div>
     <label class="icpc-label">Діагноз</label>
-    <h4>{{visit.diagnosis.shortTitleUa}}</h4>
+    <h4>{{(visit.diagnosis | icpcTransform | async).shortTitleUa}}</h4>
   </div>
   <md-tab-group>
     <md-tab label="Зміна епізоду">

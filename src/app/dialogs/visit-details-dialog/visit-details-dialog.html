@@ -7,22 +7,23 @@
   <h2 md-dialog-title>Деталі епізоду</h2>
   <md-tab-group #tg>
     <md-tab label="Причина">
-      <md-expansion-panel [expanded]="false" *ngFor="let reason of visit.reasons">
+      <!--TODO: optimize-->
+      <md-expansion-panel [expanded]="false" *ngFor="let reason of visit.reasons;">
         <md-expansion-panel-header>
-          <md-panel-title>{{reason.shortTitleUa}}</md-panel-title>
+          <md-panel-title>{{(reason | icpcTransform | async).shortTitleUa}}</md-panel-title>
         </md-expansion-panel-header>
         <md-panel-description>
           <div>
             <h4>MKX-10</h4>
-            <span>{{reason.shortTitleUa}}</span>
+            <span>{{(reason | icpcTransform | async).shortTitleUa}}</span>
           </div>
           <div>
             <h4>Включення</h4>
-            <span>{{reason.inclusionUa}}</span>
+            <span>{{(reason | icpcTransform | async).inclusionUa}}</span>
           </div>
           <div>
             <h4>Виключення</h4>
-            <span>{{reason.exclusionUa}}</span>
+            <span>{{(reason | icpcTransform | async).exclusionUa}}</span>
           </div>
         </md-panel-description>
       </md-expansion-panel>
@@ -31,19 +32,19 @@
       <ng-template [ngIf]="tg.selectedIndex == 1">
         <md-expansion-panel [expanded]="false">
           <md-expansion-panel-header>
-            <md-panel-title>{{visit.diagnosis.shortTitleUa}}</md-panel-title>
+            <md-panel-title>{{(visit.diagnosis | icpcTransform | async).shortTitleUa}}</md-panel-title>
           </md-expansion-panel-header>
           <div>
             <h4>MKX-10</h4>
-            <span>{{visit.diagnosis.shortTitleUa}}</span>
+            <span>{{(visit.diagnosis | icpcTransform | async).shortTitleUa}}</span>
           </div>
           <div>
             <h4>Включення</h4>
-            <span>{{visit.diagnosis.inclusionUa}}</span>
+            <span>{{(visit.diagnosis | icpcTransform | async).inclusionUa}}</span>
           </div>
           <div>
             <h4>Виключення</h4>
-            <span>{{visit.diagnosis.exclusionUa}}</span>
+            <span>{{(visit.diagnosis | icpcTransform | async).exclusionUa}}</span>
           </div>
         </md-expansion-panel>
       </ng-template>
@@ -52,20 +53,20 @@
       <ng-template [ngIf]="tg.selectedIndex == 2">
         <md-expansion-panel [expanded]="false" *ngFor="let action of visit.actions">
           <md-expansion-panel-header>
-            <md-panel-title>{{action.shortTitleUa}}</md-panel-title>
+            <md-panel-title>{{(action | icpcTransform | async).shortTitleUa}}</md-panel-title>
           </md-expansion-panel-header>
           <md-panel-description>
             <div>
               <h4>MKX-10</h4>
-              <span>{{action.shortTitleUa}}</span>
+              <span>{{(action | icpcTransform | async).shortTitleUa}}</span>
             </div>
             <div>
               <h4>Включення</h4>
-              <span>{{action.inclusionUa}}</span>
+              <span>{{(action | icpcTransform | async).inclusionUa}}</span>
             </div>
             <div>
               <h4>Виключення</h4>
-              <span>{{action.exclusionUa}}</span>
+              <span>{{(action | icpcTransform | async).exclusionUa}}</span>
             </div>
           </md-panel-description>
         </md-expansion-panel>

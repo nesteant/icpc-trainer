@@ -1,5 +1,5 @@
 <div class="grid-x">
-  <span class="cell medium-10 large-10">{{subVisit.diagnosis | icpcCode}}</span>
+  <span class="cell medium-10 large-10">{{subVisit.diagnosis | icpcTransform | async | icpcCode}}</span>
   <span class="cell medium-2 large-2 text-right">{{subVisit.date | date : 'dd/MM'}}</span>
 </div>
 

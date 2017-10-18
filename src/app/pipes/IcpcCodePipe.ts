@@ -6,7 +6,8 @@ import {IcpcCode} from '../model/IcpcCode';
 })
 export class IcpcCodePipe implements PipeTransform {
 
-  public transform(value: IcpcCode, ...args): any {
-    return value && `${value.code} - ${value.shortTitleUa}`;
+  //TODO: split to 2 filters
+  public transform(value: IcpcCode, field?: string): any {
+    return value && (field ? value[field] : `${value.code} - ${value.shortTitleUa}`);
   }
 }

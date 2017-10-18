@@ -6,7 +6,7 @@
   <div>
     <label class="icpc-label">Діагноз</label>
     <ul class="simple-list">
-      <li *ngFor="let subVisit of visit.values">{{subVisit.diagnosis.shortTitleUa}}</li>
+      <li *ngFor="let subVisit of visit.values">{{(subVisit.diagnosis | icpcTransform | async)?.shortTitleUa}}</li>
     </ul>
   </div>
 </md-card>

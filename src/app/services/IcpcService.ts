@@ -6,6 +6,7 @@ import 'rxjs/add/operator/map';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/first';
 import {IcpcCode} from '../model/IcpcCode';
+import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class IcpcService {
@@ -16,10 +17,9 @@ export class IcpcService {
   public reasons: Observable<IcpcCode[]>;
 
   constructor(private httpClient: HttpClient, private store: Store<PatientsStore>) {
-    this.codes = store.select('icpc').filter(codes => {
-      console.log(codes);
-      return true;
-    });
+    let codes = new BehaviorSubject<IcpcCode[]>([]);
+    store.select('icpc').filter(codes => true).subscribe(codes);
+    this.codes = codes;
   }
 
   public loadItems() {
