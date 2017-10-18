@@ -27,7 +27,7 @@ export class ReasonSubVisitTabComponent implements OnInit {
 
   public onReasonSelected(event: MdAutocompleteSelectedEvent) {
     let reasons = this.reasonsControl;
-    reasons.setValue(reasons.value ? reasons.value.concat(event.option.value) : [event.option.value]);
+    reasons.setValue(reasons.value ? reasons.value.concat(event.option.value.code) : [event.option.value.code]);
     this.reasonSearch.reset();
   }
 

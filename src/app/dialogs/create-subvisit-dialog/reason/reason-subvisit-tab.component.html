@@ -9,7 +9,7 @@
 </md-autocomplete>
 <md-list>
   <md-list-item *ngFor="let reason of reasonsControl.value; let index=index;">
-    {{reason | icpcCode}}
+    {{reason | icpcTransform | async | icpcCode}}
     <button md-icon-button (click)="deleteReason(index)">
       <md-icon>clear</md-icon>
     </button>

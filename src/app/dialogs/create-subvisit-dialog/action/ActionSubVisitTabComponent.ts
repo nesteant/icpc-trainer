@@ -27,14 +27,14 @@ export class ActionSubVisitTabComponent implements OnInit {
   }
 
   public onActionSelected(event: MdAutocompleteSelectedEvent) {
-    console.log(event.option.value);
     this.updateActions(event.option.value ? [event.option.value] : []);
     this.actionSearch.reset();
   }
 
   protected updateActions(codes: IcpcCode[]) {
     let actions = this.actionsControl;
-    actions.setValue(actions.value ? actions.value.concat(codes) : codes);
+    let strings = codes.map(c => c.code);
+    actions.setValue(actions.value ? actions.value.concat(strings) : codes.map(c => c.code));
   }
 
   protected deleteAction(index: number) {

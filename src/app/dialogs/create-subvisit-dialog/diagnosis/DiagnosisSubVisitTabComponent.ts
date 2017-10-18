@@ -14,6 +14,7 @@ export class DiagnosisSubVisitTabComponent implements OnInit {
 
   @Input()
   public diagnosisControl: FormControl;
+  public innerDiagnosisControl: FormControl = new FormControl();
   public diagnosisSearch: FormControl = new FormControl();
   public diagnosisOptions: Observable<IcpcCode[]>;
 
@@ -24,12 +25,12 @@ export class DiagnosisSubVisitTabComponent implements OnInit {
     this.diagnosisOptions = this.diagnosisSearch.valueChanges
       .startWith(null)
       .mergeMap(val => val ? this.filter(val, this.icpcService.diagnoses) : this.icpcService.diagnoses);
+    this.innerDiagnosisControl.valueChanges.map(code => code.code).subscribe(code => this.diagnosisControl.setValue(code));
   }
 
 
   public onDiagnosisSelected(event: MdAutocompleteSelectedEvent) {
-    console.log(event);
-    // this.formGroup.get('name').setValue(this.formatDiagnosis(this.diagnosisField.value))
+
   }
 
   public formatDiagnosis(code: IcpcCode) {

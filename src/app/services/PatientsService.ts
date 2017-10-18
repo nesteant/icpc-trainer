@@ -48,7 +48,6 @@ export class PatientsService {
   }
 
   public rearrangeVisit(patient: Patient, visit: SubVisit, oldEpisode: Episode, newEpisode: Episode) {
-    console.log(visit.id, oldEpisode, newEpisode);
     this.saved
       .filter(p => p.id === patient.id)
       .map(p => p.episodes)
@@ -57,10 +56,7 @@ export class PatientsService {
         return e.id === oldEpisode.id;
       })
       .forEach(e => {
-        console.log('rmeove', e);
-        console.log('R1', e.subVisits, visit.id);
-        e.subVisits = e.subVisits.filter(v => v !== visit.id)
-        console.log('R', e.subVisits)
+        e.subVisits = e.subVisits.filter(v => v !== visit.id);
       });
     this.saved
       .filter(p => p.id === patient.id)
@@ -69,10 +65,7 @@ export class PatientsService {
       .filter(e => {
         return e.id === newEpisode.id;
       })
-      .forEach(e => {
-        console.log('ADD', e);
-        e.subVisits.push(visit.id);
-      })
+      .forEach(e => e.subVisits.push(visit.id));
     // this.store.dispatch({type: 'CREATE_EPISODE', payload: episode});
   }
 

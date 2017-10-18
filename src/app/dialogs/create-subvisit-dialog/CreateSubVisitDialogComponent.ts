@@ -1,6 +1,6 @@
 import {Component, Inject, Input, OnInit} from '@angular/core';
 import {MD_DIALOG_DATA, MdDialogRef} from '@angular/material';
-import {FormBuilder, FormControl, FormGroup} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import 'rxjs/add/operator/startWith';
 import {Episode} from '../../model/Episode';
 import 'rxjs/add/operator/mergeMap';
@@ -29,7 +29,7 @@ export class CreateSubVisitDialogComponent implements OnInit {
     this.episodes = data.episodes;
     this.dialogTitle = data.dialogTitle;
     this.formGroup = fb.group({
-      date: new FormControl(),
+      date: new FormControl(null, [Validators.required]),
       episode: new FormControl(),
       diagnosis: new FormControl(),
       reasons: new FormControl(),
@@ -93,7 +93,7 @@ export class CreateSubVisitDialogComponent implements OnInit {
   }
 
   public get canSave() {
-    return this.diagnosisField.value && this.reasonsField.value && this.actionsField.value;
+    return this.diagnosisField.value && this.reasonsField.value && this.actionsField.value && this.formGroup.valid;
   }
 
   public save() {

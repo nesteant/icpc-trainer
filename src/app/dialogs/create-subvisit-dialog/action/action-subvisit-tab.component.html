@@ -10,7 +10,7 @@
 
 <md-list>
   <md-list-item *ngFor="let action of actionsControl.value; let index=index;">
-    {{action | icpcCode}}
+    {{action | icpcTransform | async | icpcCode}}
     <button md-icon-button (click)="deleteAction(index)">
       <md-icon>clear</md-icon>
     </button>
