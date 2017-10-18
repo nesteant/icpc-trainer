@@ -13,6 +13,8 @@ import {IcpcCodePipe} from '../../../pipes/IcpcCodePipe';
 export class DiagnosisSubVisitTabComponent implements OnInit {
 
   @Input()
+  public previousCodes: string[];
+  @Input()
   public diagnosisControl: FormControl;
   public innerDiagnosisControl: FormControl = new FormControl();
   public diagnosisSearch: FormControl = new FormControl();

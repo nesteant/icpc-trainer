@@ -73,6 +73,18 @@ export class CreateSubVisitDialogComponent implements OnInit {
     this.updateActions([this.diagnosisField.value, ...this.reasonsField.value]);
   }
 
+  public get previousActionCodes() {
+    return [this.diagnosisField.value, ...(this.reasonsField.value || [])];
+  }
+
+  public get previousReasonCodes() {
+    return [...(this.actionsField.value || [])];
+  }
+
+  public get previousDiagnosisCodes() {
+    return [...(this.actionsField.value || [])];
+  }
+
   public nextTab() {
     this.selectedTab++;
   }

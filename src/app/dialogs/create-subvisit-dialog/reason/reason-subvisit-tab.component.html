@@ -15,3 +15,8 @@
     </button>
   </mat-list-item>
 </mat-list>
+<mat-list>
+  <mat-list-item *ngFor="let code of previousCodes; let index=index;">
+    {{code | icpcTransform | async | icpcCode}}
+  </mat-list-item>
+</mat-list>

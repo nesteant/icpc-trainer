@@ -47,7 +47,6 @@ export class EpisodeCardComponent {
         date: new Date().toISOString()
       });
       episode.name = episodeForm;
-      console.log(episode)
       this.patientsService.updateEpisode(this.patient, episode)
     });
   }

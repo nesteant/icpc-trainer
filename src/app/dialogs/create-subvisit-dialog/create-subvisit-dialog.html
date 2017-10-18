@@ -15,15 +15,15 @@
   <icpc-episode-selector [patient]="patient" [episodes]="episodes" formControlName="episode"></icpc-episode-selector>
   <mat-tab-group [selectedIndex]="selectedTab" (selectedIndexChange)="changeSelectedTab($event)">
     <mat-tab label="Причина">
-      <icpc-reason-subvisit-tab-action-tab [reasonsControl]="reasonsField"></icpc-reason-subvisit-tab-action-tab>
+      <icpc-reason-subvisit-tab-action-tab [previousCodes]="previousReasonCodes" [reasonsControl]="reasonsField"></icpc-reason-subvisit-tab-action-tab>
       <span>Варто пам'ятати! Ви можете вибрати декілька кодів для кожного поля</span>
     </mat-tab>
     <mat-tab label="Діагноз" [disabled]="!diagnosesEnabled">
-      <icpc-diagnosis-subvisit-tab-action-tab [diagnosisControl]="diagnosisField"></icpc-diagnosis-subvisit-tab-action-tab>
+      <icpc-diagnosis-subvisit-tab-action-tab [previousCodes]="previousDiagnosisCodes" [diagnosisControl]="diagnosisField"></icpc-diagnosis-subvisit-tab-action-tab>
     </mat-tab>
 
     <mat-tab label="Дія" [disabled]="!actionsEnabled">
-      <icpc-action-subvisit-tab-action-tab [actionsControl]="actionsField"></icpc-action-subvisit-tab-action-tab>
+      <icpc-action-subvisit-tab-action-tab [previousCodes]="previousActionCodes" [actionsControl]="actionsField"></icpc-action-subvisit-tab-action-tab>
       <span>Варто пам'ятати! Ви можете вибрати декілька кодів для кожного поля</span>
     </mat-tab>
   </mat-tab-group>
