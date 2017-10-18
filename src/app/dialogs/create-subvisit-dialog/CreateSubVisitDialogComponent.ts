@@ -74,15 +74,15 @@ export class CreateSubVisitDialogComponent implements OnInit {
   }
 
   public get previousActionCodes() {
-    return [this.diagnosisField.value, ...(this.reasonsField.value || [])];
+    return (this.reasonsField.value || []).concat(this.diagnosisField.value);
   }
 
   public get previousReasonCodes() {
-    return [...(this.actionsField.value || [])];
+    return [];
   }
 
   public get previousDiagnosisCodes() {
-    return [...(this.actionsField.value || [])];
+    return this.reasonsField.value || [];
   }
 
   public nextTab() {
