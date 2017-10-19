@@ -39,7 +39,7 @@ export class CreateSubVisitDialogComponent implements OnInit {
       reasons: new FormControl(),
       actions: new FormControl()
     });
-    this.formGroup.valueChanges.subscribe(v => console.log(v));
+    // this.formGroup.valueChanges.subscribe(v => console.log(v));
   }
 
   public ngOnInit() {

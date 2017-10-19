@@ -41,7 +41,11 @@ export class EpisodeSelectorComponent implements OnInit, ControlValueAccessor {
       diagnosis: new FormControl(null, Validators.required),
       episode: new FormControl(null, Validators.required)
     });
-    this.episodeNameGroup.valueChanges.subscribe(v => this.onChange(v));
+    this.episodeNameGroup.valueChanges.subscribe(v => this.onChange({
+      name: v,
+      history: [],
+      subVisits: []
+    }));
     this.episodeSearch.valueChanges.subscribe(v => {
         if (this.episodeCheckbox.value) {
           this.onChange({

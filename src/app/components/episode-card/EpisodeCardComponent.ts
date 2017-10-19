@@ -91,13 +91,14 @@ export class EpisodeCardComponent {
       if (!episodeForm) {
         return;
       }
-      if (episodeForm.episode.id) {
-        this.patientsService.updateEpisode(this.patient, episodeForm.episode)
+      let newEpisode = episodeForm.episode;
+      if (newEpisode.id) {
+        this.patientsService.updateEpisode(this.patient, newEpisode)
       } else {
-        episodeForm.episode.id = ++id;
-        this.patientsService.createEpisode(this.patient, episodeForm.episode);
+        newEpisode.id = ++id;
+        this.patientsService.createEpisode(this.patient, newEpisode);
       }
-      this.patientsService.createSubivsit(this.patient, episodeForm.episode, {
+      this.patientsService.createSubivsit(this.patient, newEpisode, {
         id: ++id,
         date: episodeForm.date,
         diagnosis: episodeForm.diagnosis,
