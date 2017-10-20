@@ -7,12 +7,12 @@
   <h4 mat-dialog-title>Завершити епізод</h4>
   <mat-dialog-content>
     <mat-form-field class="xl">
-      <input matInput [matDatepicker]="picker" placeholder="Дата завершення" [formControl]="date">
+      <input matInput [matDatepicker]="picker" placeholder="Дата завершення" [formControl]="date" required>
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
   </mat-dialog-content>
   <mat-dialog-actions>
-    <button mat-button (click)="save()">Зберегти</button>
+    <button mat-button (click)="save()" [disabled]="date.invalid">Зберегти</button>
   </mat-dialog-actions>
 </div>
