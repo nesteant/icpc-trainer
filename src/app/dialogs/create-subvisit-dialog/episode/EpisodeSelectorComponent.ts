@@ -36,7 +36,7 @@ export class EpisodeSelectorComponent implements OnInit, ControlValueAccessor {
   };
   public disabled = false;
 
-  constructor(fb: FormBuilder) {
+  constructor(fb: FormBuilder, private episodePipe: EpisodePipe) {
     this.episodeNameGroup = fb.group({
       diagnosis: new FormControl(null, Validators.required),
       episode: new FormControl(null, Validators.required)
@@ -94,13 +94,12 @@ export class EpisodeSelectorComponent implements OnInit, ControlValueAccessor {
 
   public filterEpisodes(val: string, values: Observable<Episode[]>): Observable<Episode[]> {
     return values.map(str => {
-        return str.filter(c => `${c.name.diagnosis} ${c.name.episode}`.toLowerCase().indexOf(val.toLowerCase()) > -1);
+        return str.filter(c => `${this.episodePipe.transform(c)}`.toLowerCase().indexOf(val.toLowerCase()) > -1);
       }
     );
   }
 
-  public formatEpisode(episode: Episode) {
-    return new EpisodePipe().transform(episode);
+  public formatEpisode = (episode: Episode) => {
+    return this.episodePipe.transform(episode);
   }
-
 }

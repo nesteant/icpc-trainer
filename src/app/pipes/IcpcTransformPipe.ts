@@ -10,7 +10,6 @@ export class IcpcTransformPipe implements PipeTransform {
   }
 
   public transform(value: string, ...args): any {
-
     return value && this.icpcService.codes
       .map(codes => (codes || []).find(code => code.code === value));
   }

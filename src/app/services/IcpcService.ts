@@ -11,6 +11,7 @@ import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 @Injectable()
 export class IcpcService {
   public codes: Observable<IcpcCode[]>;
+  public staticCodes: IcpcCode[];
 
   public actions: Observable<IcpcCode[]>;
   public diagnoses: Observable<IcpcCode[]>;
@@ -20,6 +21,7 @@ export class IcpcService {
     let codes = new BehaviorSubject<IcpcCode[]>([]);
     store.select('icpc').filter(codes => true).subscribe(codes);
     this.codes = codes;
+    this.loadItems();
   }
 
   public loadItems() {
@@ -47,6 +49,7 @@ export class IcpcService {
         this.actions = Observable.of(actions);
         this.reasons = Observable.of(reasons);
         this.diagnoses = Observable.of(diagnoses);
+        this.staticCodes = codes;
       })
       .map(payload => ({type: 'LOAD_ITEMS', payload}))
       .subscribe(action => this.store.dispatch(action));

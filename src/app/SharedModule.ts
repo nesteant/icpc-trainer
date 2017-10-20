@@ -30,9 +30,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
   exports: [
     IcpcCodePipe,
     IcpcTransformPipe,
+    EpisodePipe,
     FormsModule,
     ReactiveFormsModule,
-    EpisodePipe,
     MatCheckboxModule,
     MatOptionModule,
     MatExpansionModule,
