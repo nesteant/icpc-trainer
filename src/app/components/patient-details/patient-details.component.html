@@ -2,16 +2,17 @@
   <mat-tab-group>
     <mat-tab [label]="episodesLabel">
       <div class="grid-x">
-        <div class="small-6 cell" *ngFor="let episode of patient.episodes">
+        <div class="small-6 cell" *ngFor="let episode of patientEpisodes">
           <div class="card-container">
             <icpc-episode-card [patient]="patient" [episode]="episode"></icpc-episode-card>
           </div>
         </div>
       </div>
       <br/>
-      <div class="card-container">
+      <div class="card-container btn-group">
         <div class="grid-x">
           <button mat-button class="circle" (click)="openCreateSubvisitDialog()">Новий візит</button>
+          <button mat-button class="circle" (click)="toggleClosedEpisodes()">{{closedEpisodesToggleText}}</button>
         </div>
       </div>
     </mat-tab>

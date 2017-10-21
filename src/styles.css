@@ -141,3 +141,7 @@ icpc-patient.active .patient-card:before {
   z-index: 100;
   float: left;
 }
+
+.patient-details .btn-group button {
+  margin-right: 10px;
+}

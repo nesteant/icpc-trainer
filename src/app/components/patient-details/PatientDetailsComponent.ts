@@ -17,11 +17,24 @@ let id = 44;
 })
 export class PatientDetailsComponent {
 
+  public showClosedEpisodes: boolean = false;
   @Input()
   public patient: Patient;
 
   constructor(public dialog: MatDialog, private patientsService: PatientsService) {
 
+  }
+
+  public toggleClosedEpisodes() {
+    this.showClosedEpisodes = !this.showClosedEpisodes;
+  }
+
+  public get closedEpisodesToggleText() {
+    return this.showClosedEpisodes ? 'Сховати закриті епізоди' : 'Показати закриті епізоди';
+  }
+
+  public get patientEpisodes() {
+    return this.showClosedEpisodes ? this.patient.episodes : this.patient.episodes.filter(ep => !ep.ended);
   }
 
   public openCreateSubvisitDialog() {
@@ -62,7 +75,7 @@ export class PatientDetailsComponent {
   }
 
   public get episodesCount() {
-    return this.patient.episodes ? this.patient.episodes.length : 0;
+    return this.patient.episodes ? this.patient.episodes.filter(ep => !ep.ended).length : 0;
   }
 
   public get visitsCount() {
