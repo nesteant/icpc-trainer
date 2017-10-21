@@ -1,30 +1,37 @@
 <div>
-  <mat-checkbox [formControl]="episodeCheckbox">Створити новий епізод</mat-checkbox>
-</div>
-<div *ngIf="!episodeCheckbox.value">
-  <mat-form-field class="xxl">
-    <input type="text" placeholder="Введіть назву епізоду" matInput
-           [matAutocomplete]="episode"
-           [disabled]="disabled"
-           [formControl]="episodeSearch">
-  </mat-form-field>
+  <mat-radio-group [formControl]="episodeCheckbox" required="">
+    <div>
+      <mat-radio-button [value]="true">Створити новий епізод</mat-radio-button>
+      <div *ngIf="episodeCheckbox.value" [formGroup]="episodeNameGroup">
+        <mat-form-field class="s">
+          <mat-select placeholder="Діагноз" formControlName="diagnosis">
+            <mat-option *ngFor="let diagnosis of diagnoses" [value]="diagnosis">
+              {{diagnosis}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="xl">
+          <input type="text" placeholder="Введіть назву епізоду" matInput
+                 formControlName="episode">
+        </mat-form-field>
+      </div>
+    </div>
+    <div>
+      <mat-radio-button [value]="false">Додати до існуючого епізоду</mat-radio-button>
+      <div *ngIf="episodeCheckbox.value === false">
+        <mat-form-field class="xxl">
+          <input type="text" placeholder="Введіть назву епізоду" matInput
+                 [matAutocomplete]="episode"
+                 [disabled]="disabled "
+                 [formControl]="episodeSearch">
+        </mat-form-field>
 
-  <mat-autocomplete #episode="matAutocomplete" [displayWith]="formatEpisode">
-    <mat-option *ngFor="let option of episodeOptions | async" [value]="option">
-      {{ option | episode }}
-    </mat-option>
-  </mat-autocomplete>
-</div>
-<div *ngIf="episodeCheckbox.value" [formGroup]="episodeNameGroup">
-  <mat-form-field class="s">
-    <mat-select placeholder="Діагноз" formControlName="diagnosis">
-      <mat-option *ngFor="let diagnosis of diagnoses" [value]="diagnosis">
-        {{diagnosis}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-  <mat-form-field class="xl">
-    <input type="text" placeholder="Введіть назву епізоду" matInput
-           formControlName="episode">
-  </mat-form-field>
+        <mat-autocomplete #episode="matAutocomplete" [displayWith]="formatEpisode">
+          <mat-option *ngFor="let option of episodeOptions | async" [value]="option">
+            {{ option | episode }}
+          </mat-option>
+        </mat-autocomplete>
+      </div>
+    </div>
+  </mat-radio-group>
 </div>

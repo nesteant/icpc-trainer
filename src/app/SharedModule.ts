@@ -6,15 +6,18 @@ import {IcpcTransformPipe} from './pipes/IcpcTransformPipe';
 import {
   MatAutocompleteModule,
   MatButtonModule,
-  MatCardModule, MatCheckboxModule,
+  MatCardModule,
+  MatCheckboxModule,
   MatDatepickerModule,
-  MatDialogModule, MatExpansionModule,
+  MatDialogModule,
+  MatExpansionModule,
   MatFormFieldModule,
   MatIconModule,
   MatInputModule,
   MatListModule,
   MatMenuModule,
-  MatNativeDateModule, MatOptionModule,
+  MatNativeDateModule,
+  MatOptionModule,
   MatRadioModule,
   MatSelectModule,
   MatTabsModule
@@ -52,9 +55,14 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     MatRadioModule,
   ],
   imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatCheckboxModule,
+    MatOptionModule,
+    MatExpansionModule,
     MatCardModule,
     MatNativeDateModule,
-    MatSelectModule,
     MatMenuModule,
     MatIconModule,
     MatButtonModule,
@@ -66,8 +74,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     MatAutocompleteModule,
     MatTabsModule,
     MatListModule,
-    CommonModule,
-    ReactiveFormsModule
+    MatRadioModule
   ],
   providers: [
     IcpcCodePipe,
