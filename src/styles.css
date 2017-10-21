@@ -145,3 +145,8 @@ icpc-patient.active .patient-card:before {
 .patient-details .btn-group button {
   margin-right: 10px;
 }
+
+.asterisk-text {
+  font-size: 0.8em;
+  color: #acacac;
+}
