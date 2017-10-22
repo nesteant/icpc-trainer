@@ -5,8 +5,8 @@
       <div *ngIf="episodeCheckbox.value" [formGroup]="episodeNameGroup">
         <mat-form-field class="s">
           <mat-select placeholder="Діагноз" formControlName="diagnosis">
-            <mat-option *ngFor="let diagnosis of diagnoses" [value]="diagnosis">
-              {{diagnosis}}
+            <mat-option *ngFor="let diagnosis of diagnosisOptions | async" [value]="diagnosis.code">
+              {{diagnosis | icpcCode}}
             </mat-option>
           </mat-select>
         </mat-form-field>

@@ -85,6 +85,7 @@ button.mat-button.circle {
   height: auto !important;
   min-height: 48px;
 }
+
 .mat-list-item {
   box-sizing: border-box;
   /*border-bottom: #acacac 1px solid;*/
@@ -94,11 +95,13 @@ button.mat-button.circle {
 .text-right {
   text-align: right;
 }
+
 .simple-list {
   list-style: none;
   margin: 0;
   padding: 0;
 }
+
 .simple-list li {
   margin-bottom: 10px;
   line-height: 40px;
@@ -111,6 +114,7 @@ button.mat-button.circle {
 .patient-menu-container {
   border-right: #dadada 1px solid;
 }
+
 .patient-card-header {
   /*height: 40px;*/
   border-bottom: #dadada 1px solid;
@@ -120,9 +124,11 @@ button.mat-button.circle {
 .full-height {
   height: 100%;
 }
+
 html, body, icpc-root, icpc-patients {
   height: 100%;
 }
+
 .page-content {
   background: #f5f8fb;
   height: 100%;
@@ -131,6 +137,7 @@ html, body, icpc-root, icpc-patients {
 icpc-patient.active mat-card {
   background: #f3f0fb;
 }
+
 icpc-patient.active .patient-card:before {
   display: block;
   content: ' ';
@@ -149,4 +156,8 @@ icpc-patient.active .patient-card:before {
 .asterisk-text {
   font-size: 0.8em;
   color: #acacac;
+}
+
+.fill-space {
+  flex: 1 1 auto;
 }

@@ -1,8 +1,8 @@
 <div class="grid-x full-height">
   <div class="cell medium-3 large-3 patient-menu-container">
-    <div class="patient-card-header">
-      <strong>Пацієнти</strong>
-    </div>
+    <!--<div class="patient-card-header">-->
+      <!--<strong>Пацієнти</strong>-->
+    <!--</div>-->
     <div *ngFor="let patient of patients | async">
       <icpc-patient [patient]="patient" [routerLink]="['/patients', patient.id]" routerLinkActive="active"></icpc-patient>
     </div>

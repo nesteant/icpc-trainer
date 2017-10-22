@@ -5,6 +5,10 @@ import 'rxjs/add/operator/startWith';
 import {Episode} from '../../model/Episode';
 import 'rxjs/add/operator/mergeMap';
 import {Patient} from '../../model/Patient';
+import {IcpcCode} from '../../model/IcpcCode';
+import {IcpcCodePipe} from '../../pipes/IcpcCodePipe';
+import {Observable} from 'rxjs/Observable';
+import {IcpcService} from '../../services/IcpcService';
 
 @Component({
   selector: 'icpc-create-subvisit-dialog',
@@ -20,8 +24,6 @@ export class CreateSubVisitDialogComponent implements OnInit {
   @Input()
   public episode: Episode;
   public dialogTitle: string;
-
-  public selectedTab: number = 0;
   public formGroup: FormGroup;
 
   constructor(public dialogRef: MatDialogRef<CreateSubVisitDialogComponent>,
@@ -33,12 +35,13 @@ export class CreateSubVisitDialogComponent implements OnInit {
     this.dialogTitle = data.dialogTitle;
     this.formGroup = fb.group({
       date: new FormControl(null, [Validators.required]),
-      episode: new FormControl(),
-      diagnosis: new FormControl(),
-      reasons: new FormControl(),
-      actions: new FormControl()
+      episode: new FormControl(null, [Validators.required]),
+      diagnosis: new FormControl(null, [Validators.required]),
+      reasons: new FormControl(null, [Validators.required]),
+      actions: new FormControl(null, [Validators.required])
     });
   }
+
 
   public ngOnInit() {
     if (this.episode) {
@@ -61,7 +64,11 @@ export class CreateSubVisitDialogComponent implements OnInit {
   }
 
   public get canSave() {
-    return this.diagnosisField.value && this.reasonsField.value && this.actionsField.value && this.formGroup.valid;
+    return this.diagnosisField.value &&
+      this.reasonsField.value &&
+      this.actionsField.value &&
+      this.formGroup.get('episode') && this.formGroup.get('episode').value &&
+      this.formGroup.valid;
   }
 
   public save() {

@@ -20,7 +20,7 @@ import {
   MatOptionModule,
   MatRadioModule,
   MatSelectModule,
-  MatTabsModule
+  MatTabsModule, MatToolbarModule
 } from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
@@ -36,6 +36,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     EpisodePipe,
     FormsModule,
     ReactiveFormsModule,
+    MatToolbarModule,
     MatCheckboxModule,
     MatOptionModule,
     MatExpansionModule,

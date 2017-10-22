@@ -12,6 +12,9 @@ export class EpisodePipe implements PipeTransform {
   }
 
   public transform(value: Episode, ...args): any {
+    if (!value) {
+      return '';
+    }
     let diagnosis = this.icpcService.staticCodes && this.icpcService.staticCodes
       .find(code => code.code === value.name.diagnosis);
     let postfix = value.name.episode ? ` - ${value.name.episode}` : '';

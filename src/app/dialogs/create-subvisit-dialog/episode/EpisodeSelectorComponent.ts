@@ -6,8 +6,9 @@ import {Episode} from '../../../model/Episode';
 import {EpisodePipe} from '../../../pipes/EpisodePipe';
 import 'rxjs/add/operator/skipWhile';
 import {Patient} from '../../../model/Patient';
-
-let id = 99;
+import {IcpcCode} from '../../../model/IcpcCode';
+import {IcpcCodePipe} from '../../../pipes/IcpcCodePipe';
+import {IcpcService} from '../../../services/IcpcService';
 
 @Component({
   selector: 'icpc-episode-selector',
@@ -30,13 +31,16 @@ export class EpisodeSelectorComponent implements OnInit, ControlValueAccessor {
   public episodeOptions: Observable<Episode[]>;
   public episodeCheckbox: FormControl = new FormControl();
   public episodeNameGroup: FormGroup;
+  public diagnosisSearch: FormControl = new FormControl();
+  public diagnosisOptions: Observable<IcpcCode[]>;
+
   public onChange = (v: Episode) => {
   };
   public onTouched = (v: any) => {
   };
   public disabled = false;
 
-  constructor(fb: FormBuilder, private episodePipe: EpisodePipe) {
+  constructor(fb: FormBuilder, private icpcService: IcpcService, private episodePipe: EpisodePipe) {
     this.episodeNameGroup = fb.group({
       diagnosis: new FormControl(null, Validators.required),
       episode: new FormControl(null, Validators.required)
@@ -60,18 +64,20 @@ export class EpisodeSelectorComponent implements OnInit, ControlValueAccessor {
     );
   }
 
-  public get diagnoses() {
-    return this.episodeSearch.value && Object.keys(this.episodeSearch.value.subVisits
-      .map(id => this.patient.subVisits.find(sv => sv.id === id))
-      .map(sv => sv.diagnosis)
-      .reduce((acc, cv) => {
-        acc[cv] = cv;
-        return acc;
-      }, {})) || [];
+  public formatDiagnosis(code: IcpcCode) {
+    return new IcpcCodePipe().transform(code);
+  }
+
+  private filter(val: string, values: Observable<IcpcCode[]>): Observable<IcpcCode[]> {
+    return values.map(codes => {
+        return codes.filter(c => `${c.code} ${c.shortTitleUa}`.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      }
+    );
   }
 
   public writeValue(obj: any): void {
     this.episodeSearch.setValue(obj);
+    obj && this.episodeCheckbox.setValue(false);
   }
 
   public registerOnChange(fn: any): void {
@@ -87,6 +93,10 @@ export class EpisodeSelectorComponent implements OnInit, ControlValueAccessor {
   }
 
   public ngOnInit() {
+    this.diagnosisOptions = this.diagnosisSearch.valueChanges
+      .startWith(null)
+      .mergeMap(val => val ? this.filter(val, this.icpcService.diagnoses) : this.icpcService.diagnoses);
+
     this.episodeOptions = this.episodeSearch.valueChanges
       .startWith(null)
       .mergeMap(val => val && this.episodeCheckbox.value !== true ? this.filterEpisodes(val, Observable.of(this.episodes)) : []);

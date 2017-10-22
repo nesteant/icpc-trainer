@@ -29,10 +29,10 @@
 
   <h4>Назва епізоду</h4>
   <fieldset>
-    <icpc-episode-selector [patient]="patient" [episodes]="episodes" formControlName="episode" reuqired></icpc-episode-selector>
+    <icpc-episode-selector [patient]="patient" [episodes]="episodes" formControlName="episode"></icpc-episode-selector>
   </fieldset>
 
   <mat-dialog-actions>
-    <button mat-button (click)="save()" *ngIf="selectedTab === 2 && canSave" [disabled]="formGroup.invalid">Зберегти</button>
+    <button mat-button (click)="save()" *ngIf="canSave" [disabled]="formGroup.invalid">Зберегти</button>
   </mat-dialog-actions>
 </div>
