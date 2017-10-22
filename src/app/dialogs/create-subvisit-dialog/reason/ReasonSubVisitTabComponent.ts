@@ -12,8 +12,6 @@ import {MatAutocompleteSelectedEvent} from '@angular/material';
 export class ReasonSubVisitTabComponent implements OnInit {
 
   @Input()
-  public previousCodes: string[];
-  @Input()
   public reasonsControl: FormControl;
   public reasonOptions: Observable<IcpcCode[]>;
   public reasonSearch: FormControl = new FormControl();

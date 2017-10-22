@@ -7,9 +7,3 @@
     {{ option | icpcCode}}
   </mat-option>
 </mat-autocomplete>
-
-<mat-list>
-  <mat-list-item *ngFor="let code of previousCodes; let index=index;">
-    {{code | icpcTransform | async | icpcCode}}
-  </mat-list-item>
-</mat-list>

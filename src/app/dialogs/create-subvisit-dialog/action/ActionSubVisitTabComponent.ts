@@ -12,10 +12,7 @@ import {MatAutocompleteSelectedEvent} from '@angular/material';
 export class ActionSubVisitTabComponent implements OnInit {
 
   @Input()
-  public previousCodes: string[];
-  @Input()
   public actionsControl: FormControl;
-
   public actionSearch: FormControl = new FormControl();
   public actionOptions: Observable<IcpcCode[]>;
 

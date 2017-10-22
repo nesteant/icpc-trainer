@@ -5,33 +5,34 @@
     </button>
   </div>
   <h2 mat-dialog-title>{{dialogTitle}}</h2>
-  <div>
-    <mat-form-field class="m">
-      <input matInput [matDatepicker]="picker" placeholder="Дата звернення" formControlName="date" required>
-      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-  </div>
-  <icpc-episode-selector [patient]="patient" [episodes]="episodes" formControlName="episode" reuqired></icpc-episode-selector>
-  <mat-tab-group [selectedIndex]="selectedTab" (selectedIndexChange)="changeSelectedTab($event)">
-    <mat-tab label="Причина">
-      <icpc-reason-subvisit-tab-action-tab [previousCodes]="previousReasonCodes"
-                                           [reasonsControl]="reasonsField"></icpc-reason-subvisit-tab-action-tab>
-      <span>Варто пам'ятати! Ви можете вибрати декілька кодів для кожного поля</span>
-    </mat-tab>
-    <mat-tab label="Діагноз" [disabled]="!diagnosesEnabled">
-      <icpc-diagnosis-subvisit-tab-action-tab [previousCodes]="previousDiagnosisCodes"
-                                              [diagnosisControl]="diagnosisField"></icpc-diagnosis-subvisit-tab-action-tab>
-    </mat-tab>
+  <mat-form-field class="m">
+    <input matInput [matDatepicker]="picker" placeholder="Дата звернення" formControlName="date" required>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
 
-    <mat-tab label="Дія" [disabled]="!actionsEnabled">
-      <icpc-action-subvisit-tab-action-tab [previousCodes]="previousActionCodes"
-                                           [actionsControl]="actionsField"></icpc-action-subvisit-tab-action-tab>
-      <span>Варто пам'ятати! Ви можете вибрати декілька кодів для кожного поля</span>
-    </mat-tab>
-  </mat-tab-group>
+  <h4>Причина</h4>
+  <fieldset>
+    <icpc-reason-subvisit-tab-action-tab [reasonsControl]="reasonsField"></icpc-reason-subvisit-tab-action-tab>
+    <span class="asterisk-text">Варто пам'ятати! Ви можете вибрати декілька кодів для кожного поля</span>
+  </fieldset>
+  <h4>Діагноз</h4>
+  <fieldset>
+    <icpc-diagnosis-subvisit-tab-action-tab [diagnosisControl]="diagnosisField"></icpc-diagnosis-subvisit-tab-action-tab>
+  </fieldset>
+
+  <h4>Дія</h4>
+  <fieldset>
+    <icpc-action-subvisit-tab-action-tab [actionsControl]="actionsField"></icpc-action-subvisit-tab-action-tab>
+    <span class="asterisk-text">Варто пам'ятати! Ви можете вибрати декілька кодів для кожного поля</span>
+  </fieldset>
+
+  <h4>Назва епізоду</h4>
+  <fieldset>
+    <icpc-episode-selector [patient]="patient" [episodes]="episodes" formControlName="episode" reuqired></icpc-episode-selector>
+  </fieldset>
+
   <mat-dialog-actions>
-    <button mat-button (click)="nextTab()" [disabled]="!canSelectNext" *ngIf="selectedTab < 2">Далі</button>
     <button mat-button (click)="save()" *ngIf="selectedTab === 2 && canSave" [disabled]="formGroup.invalid">Зберегти</button>
   </mat-dialog-actions>
 </div>

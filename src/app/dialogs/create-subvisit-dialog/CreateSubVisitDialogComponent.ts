@@ -4,7 +4,6 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import 'rxjs/add/operator/startWith';
 import {Episode} from '../../model/Episode';
 import 'rxjs/add/operator/mergeMap';
-import {IcpcCode} from '../../model/IcpcCode';
 import {Patient} from '../../model/Patient';
 
 @Component({
@@ -39,7 +38,6 @@ export class CreateSubVisitDialogComponent implements OnInit {
       reasons: new FormControl(),
       actions: new FormControl()
     });
-    // this.formGroup.valueChanges.subscribe(v => console.log(v));
   }
 
   public ngOnInit() {
@@ -48,11 +46,6 @@ export class CreateSubVisitDialogComponent implements OnInit {
         episode: this.episode
       });
     }
-  }
-
-  public updateActions(codes: IcpcCode[]) {
-    let actions = this.actionsField;
-    actions.setValue(actions.value ? actions.value.concat(codes) : codes);
   }
 
   public get reasonsField() {
@@ -65,47 +58,6 @@ export class CreateSubVisitDialogComponent implements OnInit {
 
   public get actionsField() {
     return this.formGroup.get('actions');
-  }
-
-  public changeSelectedTab(index: number) {
-    this.selectedTab = index;
-    this.actionsField.setValue([]);
-    this.updateActions([this.diagnosisField.value, ...this.reasonsField.value]);
-  }
-
-  public get previousActionCodes() {
-    return (this.reasonsField.value || []).concat(this.diagnosisField.value);
-  }
-
-  public get previousReasonCodes() {
-    return [];
-  }
-
-  public get previousDiagnosisCodes() {
-    return this.reasonsField.value || [];
-  }
-
-  public nextTab() {
-    this.selectedTab++;
-  }
-
-  public get diagnosesEnabled() {
-    return !!(this.reasonsField.value || []).length;
-  }
-
-  public get actionsEnabled() {
-    return !!this.diagnosisField.value && !!(this.reasonsField.value || []).length;
-  }
-
-  public get canSelectNext() {
-    switch (this.selectedTab) {
-      case 0:
-        return !!(this.reasonsField.value || []).length;
-      case 1:
-        return !!this.diagnosisField.value;
-      case 2:
-        return false;
-    }
   }
 
   public get canSave() {
