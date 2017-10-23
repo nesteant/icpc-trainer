@@ -24,6 +24,12 @@ import {IcpcService} from '../../../services/IcpcService';
 export class EpisodeSelectorComponent implements OnInit, ControlValueAccessor {
 
   @Input()
+  public set diagnosis(diagnosis: string) {
+    let f = this.episodeNameGroup.get('diagnosis');
+    f.value || f.setValue(diagnosis)
+  };
+
+  @Input()
   public patient: Patient;
   @Input()
   public episodes: Episode[];
