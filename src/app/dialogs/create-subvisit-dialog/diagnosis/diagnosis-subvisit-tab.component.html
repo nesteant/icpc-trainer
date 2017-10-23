@@ -7,3 +7,24 @@
     {{ option | icpcCode}}
   </mat-option>
 </mat-autocomplete>
+<mat-list *ngIf="innerDiagnosisControl?.value">
+  <mat-list-item>
+    <mat-expansion-panel [expanded]="false" class="width-100">
+      <mat-expansion-panel-header>
+        <mat-panel-title>{{innerDiagnosisControl.value.shortTitleUa}}</mat-panel-title>
+      </mat-expansion-panel-header>
+      <div>
+        <h4>MKX-10</h4>
+        <span>{{innerDiagnosisControl.value.shortTitleUa}}</span>
+      </div>
+      <div>
+        <h4>Включення</h4>
+        <span>{{innerDiagnosisControl.value.inclusionUa}}</span>
+      </div>
+      <div>
+        <h4>Виключення</h4>
+        <span>{{innerDiagnosisControl.value.exclusionUa}}</span>
+      </div>
+    </mat-expansion-panel>
+  </mat-list-item>
+</mat-list>

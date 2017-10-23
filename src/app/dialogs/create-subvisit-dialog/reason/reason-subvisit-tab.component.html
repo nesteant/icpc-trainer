@@ -7,9 +7,26 @@
     {{ option | icpcCode}}
   </mat-option>
 </mat-autocomplete>
+
 <mat-list>
   <mat-list-item *ngFor="let reason of reasonsControl.value; let index=index;">
-    {{reason | icpcTransform | async | icpcCode}}
+    <mat-expansion-panel [expanded]="false" class="width-100">
+      <mat-expansion-panel-header>
+        <mat-panel-title>{{(reason | icpcTransform | async).shortTitleUa}}</mat-panel-title>
+      </mat-expansion-panel-header>
+      <div>
+        <h4>MKX-10</h4>
+        <span>{{(reason | icpcTransform | async).shortTitleUa}}</span>
+      </div>
+      <div>
+        <h4>Включення</h4>
+        <span>{{(reason | icpcTransform | async).inclusionUa}}</span>
+      </div>
+      <div>
+        <h4>Виключення</h4>
+        <span>{{(reason | icpcTransform | async).exclusionUa}}</span>
+      </div>
+    </mat-expansion-panel>
     <button mat-icon-button (click)="deleteReason(index)">
       <mat-icon>clear</mat-icon>
     </button>
