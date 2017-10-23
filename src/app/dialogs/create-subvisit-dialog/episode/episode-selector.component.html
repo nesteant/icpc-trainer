@@ -3,14 +3,14 @@
     <div>
       <mat-radio-button [value]="true">Створити новий епізод</mat-radio-button>
       <div *ngIf="episodeCheckbox.value" [formGroup]="episodeNameGroup">
-        <mat-form-field class="s">
+        <mat-form-field class="xxl">
           <mat-select placeholder="Діагноз" formControlName="diagnosis">
             <mat-option *ngFor="let diagnosis of diagnosisOptions | async" [value]="diagnosis.code">
               {{diagnosis | icpcCode}}
             </mat-option>
           </mat-select>
         </mat-form-field>
-        <mat-form-field class="xl">
+        <mat-form-field class="s">
           <input type="text" placeholder="Суфікс" matInput
                  formControlName="episode">
         </mat-form-field>
