@@ -11,7 +11,7 @@
   <mat-list-item>
     <mat-expansion-panel [expanded]="false" class="width-100">
       <mat-expansion-panel-header>
-        <mat-panel-title>{{innerDiagnosisControl.value.shortTitleUa}}</mat-panel-title>
+        <mat-panel-title>{{innerDiagnosisControl.value | icpcCode}}</mat-panel-title>
       </mat-expansion-panel-header>
       <div>
         <h4>MKX-10</h4>

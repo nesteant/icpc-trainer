@@ -12,7 +12,7 @@
   <mat-list-item *ngFor="let reason of reasonsControl.value; let index=index;">
     <mat-expansion-panel [expanded]="false" class="width-100">
       <mat-expansion-panel-header>
-        <mat-panel-title>{{(reason | icpcTransform | async).shortTitleUa}}</mat-panel-title>
+        <mat-panel-title>{{reason | icpcTransform | async | icpcCode}}</mat-panel-title>
       </mat-expansion-panel-header>
       <div>
         <h4>MKX-10</h4>

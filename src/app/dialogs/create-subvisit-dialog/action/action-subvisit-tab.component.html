@@ -12,7 +12,7 @@
   <mat-list-item *ngFor="let action of actionsControl.value; let index=index;">
     <mat-expansion-panel [expanded]="false" class="width-100">
       <mat-expansion-panel-header>
-        <mat-panel-title>{{(action | icpcTransform | async).shortTitleUa}}</mat-panel-title>
+        <mat-panel-title>{{action | icpcTransform | async | icpcCode}}</mat-panel-title>
       </mat-expansion-panel-header>
       <div>
         <h4>MKX-10</h4>

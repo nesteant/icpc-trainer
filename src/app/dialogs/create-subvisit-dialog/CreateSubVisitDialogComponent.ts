@@ -5,10 +5,6 @@ import 'rxjs/add/operator/startWith';
 import {Episode} from '../../model/Episode';
 import 'rxjs/add/operator/mergeMap';
 import {Patient} from '../../model/Patient';
-import {IcpcCode} from '../../model/IcpcCode';
-import {IcpcCodePipe} from '../../pipes/IcpcCodePipe';
-import {Observable} from 'rxjs/Observable';
-import {IcpcService} from '../../services/IcpcService';
 
 @Component({
   selector: 'icpc-create-subvisit-dialog',

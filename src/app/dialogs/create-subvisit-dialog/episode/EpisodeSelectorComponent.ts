@@ -25,8 +25,7 @@ export class EpisodeSelectorComponent implements OnInit, ControlValueAccessor {
 
   @Input()
   public set diagnosis(diagnosis: string) {
-    let f = this.episodeNameGroup.get('diagnosis');
-    f.value || f.setValue(diagnosis)
+    this.episodeNameGroup.get('diagnosis').setValue(diagnosis)
   };
 
   @Input()
@@ -105,11 +104,14 @@ export class EpisodeSelectorComponent implements OnInit, ControlValueAccessor {
 
     this.episodeOptions = this.episodeSearch.valueChanges
       .startWith(null)
-      .mergeMap(val => val && this.episodeCheckbox.value !== true ? this.filterEpisodes(val, Observable.of(this.episodes)) : []);
+      .mergeMap(val => this.filterEpisodes(val || this.formatEpisode(this.episodeSearch.value), Observable.of(this.episodes)));
   }
 
   public filterEpisodes(val: string, values: Observable<Episode[]>): Observable<Episode[]> {
     return values.map(str => {
+        if (!val) {
+          return str;
+        }
         return str.filter(c => `${this.episodePipe.transform(c)}`.toLowerCase().indexOf(val.toLowerCase()) > -1);
       }
     );
