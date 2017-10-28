@@ -6,7 +6,9 @@
   <div>
     <label class="icpc-label">Діагноз</label>
     <ul class="simple-list">
-      <li *ngFor="let subVisit of visit.values">{{subVisit.diagnosis?.shortTitleUa}}</li>
+      <li *ngFor="let subVisit of visit.values">
+        <icpc-subvisit-card class="clickable" (click)="openVisitDetailsModal(subVisit)" [subVisit]="subVisit"></icpc-subvisit-card>
+      </li>
     </ul>
   </div>
 </mat-card>
