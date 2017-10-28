@@ -1,4 +1,4 @@
-import {Component, Inject, Input, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, Inject, Input, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import 'rxjs/add/operator/startWith';
@@ -22,7 +22,7 @@ export class CreateSubVisitDialogComponent implements OnInit {
   public dialogTitle: string;
   public formGroup: FormGroup;
 
-  constructor(public dialogRef: MatDialogRef<CreateSubVisitDialogComponent>,
+  constructor(cd: ChangeDetectorRef, public dialogRef: MatDialogRef<CreateSubVisitDialogComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any,
               fb: FormBuilder) {
     this.episode = data.episode;
@@ -47,6 +47,10 @@ export class CreateSubVisitDialogComponent implements OnInit {
     }
   }
 
+  public get diagnosisValue() {
+    return this.diagnosisField.value;
+  }
+
   public get reasonsField() {
     return this.formGroup.get('reasons');
   }
@@ -68,7 +72,6 @@ export class CreateSubVisitDialogComponent implements OnInit {
   }
 
   public save() {
-    console.log(this.formGroup.value);
     this.dialogRef.close(this.formGroup.value);
   }
 

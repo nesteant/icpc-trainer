@@ -23,8 +23,15 @@ import {IcpcService} from '../../../services/IcpcService';
 })
 export class EpisodeSelectorComponent implements OnInit, ControlValueAccessor {
 
+  private _diagnosis: IcpcCode;
   @Input()
-  private diagnosis: IcpcCode;
+  public set diagnosis(code: IcpcCode) {
+    this._diagnosis = code;
+    if (this._diagnosis && this.episodeCheckbox.value) {
+      this.episodeNameGroup.get('diagnosis').setValue(this._diagnosis);
+      this._diagnosis = null;
+    }
+  };
 
   @Input()
   public patient: Patient;
@@ -43,21 +50,12 @@ export class EpisodeSelectorComponent implements OnInit, ControlValueAccessor {
   };
   public disabled = false;
 
-
-  public ngOnChange() {
-    //TODO: diagnogis is not updated
-    if (this.diagnosis && this.episodeCheckbox.value) {
-      this.episodeNameGroup.get('diagnosis').setValue(this.diagnosis);
-      this.diagnosis = null;
-    }
-  }
-
   constructor(fb: FormBuilder, private icpcService: IcpcService, private episodePipe: EpisodePipe) {
     this.episodeNameGroup = fb.group({
       diagnosis: new FormControl(null, Validators.required),
       episode: new FormControl(null, Validators.required)
     });
-    this.episodeCheckbox.valueChanges.subscribe(v => this.ngOnChange());
+    this.episodeCheckbox.valueChanges.subscribe(v => this.diagnosis = this._diagnosis);
     this.episodeNameGroup.valueChanges.subscribe(v => this.onChange({
       name: v,
       history: [],

@@ -21,7 +21,7 @@ import {noop} from 'rxjs/util/noop';
 export class DiagnosisSelectComponent implements OnInit, ControlValueAccessor {
 
   @Input()
-  public clazz = 's';
+  public clazz = 'xxl';
   @Input()
   public autocomplete: boolean = false;
   public diagnosisControl: FormControl = new FormControl();
