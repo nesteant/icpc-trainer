@@ -13,7 +13,7 @@
     <label class="icpc-label">Діагноз</label>
     <ul class="simple-list">
       <li *ngFor="let id of episode.subVisits">
-        <icpc-subvisit-card [subVisit]="getVisit(id)"></icpc-subvisit-card>
+        <icpc-subvisit-card class="clickable" (click)="openVisitDetailsModal(getVisit(id))" [subVisit]="getVisit(id)"></icpc-subvisit-card>
       </li>
     </ul>
   </div>

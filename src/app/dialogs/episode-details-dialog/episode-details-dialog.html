@@ -10,7 +10,7 @@
       <ul class="simple-list">
         <li *ngFor="let visit of episode.subVisits" class=" grid-x">
           <div class="cell medium-11 large-11">
-            <icpc-subvisit-card (click)="openVisitDetailsModal(getVisit(visit))" [subVisit]="getVisit(visit)"></icpc-subvisit-card>
+            <icpc-subvisit-card class="clickable" (click)="openVisitDetailsModal(getVisit(visit))" [subVisit]="getVisit(visit)"></icpc-subvisit-card>
           </div>
           <div class="cell medium-1 large-1">
             <mat-menu #appMenu="matMenu">

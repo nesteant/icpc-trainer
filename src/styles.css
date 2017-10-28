@@ -67,8 +67,9 @@
   padding: 0 !important;
 }
 
-.clickable {
+icpc-subvisit-card.clickable:hover > div, .clickable:hover {
   cursor: pointer;
+  background: #f3f0fb;
 }
 
 button.mat-button, button.mat-icon-button {

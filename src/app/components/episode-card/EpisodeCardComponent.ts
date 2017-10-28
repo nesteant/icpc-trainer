@@ -7,6 +7,8 @@ import {CreateSubVisitDialogComponent} from '../../dialogs/create-subvisit-dialo
 import {Patient} from '../../model/Patient';
 import {CloseEpisodeDialogComponent} from '../../dialogs/close-episode-dialog/CloseEpisodeDialogComponent';
 import {MatDialog} from '@angular/material';
+import {SubVisit} from '../../model/SubVisit';
+import {VisitDetailsDialogComponent} from '../../dialogs/visit-details-dialog/VisitDetailsDialogComponent';
 
 let id = 199;
 
@@ -73,6 +75,16 @@ export class EpisodeCardComponent {
     dialogRef.afterClosed().subscribe(date => {
       this.episode.endDate = date;
       date && (this.episode.ended = true);
+    });
+  }
+
+  public openVisitDetailsModal(visit: SubVisit) {
+    let dialogRef = this.dialog.open(VisitDetailsDialogComponent, {
+      height: '600px',
+      width: '700px',
+      data: {
+        visit: visit
+      }
     });
   }
 
