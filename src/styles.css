@@ -20,27 +20,27 @@
   width: 100% !important;
 }
 
-.mat-form-field.xs {
+.xs {
   width: 10% !important;
 }
 
-.mat-form-field.s {
+.s {
   width: 20% !important;
 }
 
-.mat-form-field.m {
+.m {
   width: 30% !important;
 }
 
-.mat-form-field.l {
+.l {
   width: 40% !important;
 }
 
-.mat-form-field.xl {
+.xl {
   width: 50% !important;
 }
 
-.mat-form-field.xxl {
+.xxl {
   width: 60% !important;
 }
 

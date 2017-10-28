@@ -21,7 +21,6 @@ export class UpdateEpisodeDialogComponent implements OnInit {
   @Input()
   public episode: Episode;
   public episodeNameGroup: FormGroup;
-  public diagnosisOptions: Observable<IcpcCode[]>;
   @ViewChild('select')
   public select: MatSelect;
 
@@ -35,9 +34,6 @@ export class UpdateEpisodeDialogComponent implements OnInit {
     });
     this.episode = data.episode;
     this.patient = data.patient;
-    this.diagnosisOptions = this.episodeNameGroup.valueChanges
-      .startWith(null)
-      .mergeMap(val => val ? this.filter(val, this.icpcService.diagnoses) : this.icpcService.diagnoses);
   }
 
   public ngOnInit(): void {
@@ -46,13 +42,6 @@ export class UpdateEpisodeDialogComponent implements OnInit {
 
   public save() {
     this.dialogRef.close(this.episodeNameGroup.value);
-  }
-
-  private filter(val: string, values: Observable<IcpcCode[]>): Observable<IcpcCode[]> {
-    return values.map(codes => {
-        return codes.filter(c => `${c.code} ${c.shortTitleUa}`.toLowerCase().indexOf(val.toLowerCase()) > -1);
-      }
-    );
   }
 
 }

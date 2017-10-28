@@ -1,4 +1,4 @@
-import {Component, forwardRef, Input, OnInit} from '@angular/core';
+import {Component, forwardRef, Input, OnInit, ViewEncapsulation} from '@angular/core';
 import {ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR} from '@angular/forms';
 import {IcpcCode} from '../../model/IcpcCode';
 import {Observable} from 'rxjs/Observable';
@@ -15,10 +15,13 @@ import {noop} from 'rxjs/util/noop';
       useExisting: forwardRef(() => DiagnosisSelectComponent),
       multi: true
     }
-  ]
+  ],
+  encapsulation: ViewEncapsulation.None
 })
 export class DiagnosisSelectComponent implements OnInit, ControlValueAccessor {
 
+  @Input()
+  public clazz = 's';
   @Input()
   public autocomplete: boolean = false;
   public diagnosisControl: FormControl = new FormControl();

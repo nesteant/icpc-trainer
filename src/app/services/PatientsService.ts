@@ -25,7 +25,7 @@ export class PatientsService {
 
   public preloadItems() {
     return this.httpClient.get<Patient[]>('assets/rest/patients.json').do(patients => {
-      this.saved = patients;
+      this.saved = this.getContext() || patients;
     });
   }
 
@@ -44,6 +44,7 @@ export class PatientsService {
         let updateableEpisode = p.episodes.find(e => e.id === episode.id);
         updateableEpisode.subVisits.push(visit.id);
       });
+    this.saveContext();
     // this.store.dispatch({type: 'CREATE_EPISODE', payload: patient});
   }
 
@@ -66,6 +67,7 @@ export class PatientsService {
         return e.id === newEpisode.id;
       })
       .forEach(e => e.subVisits.push(visit.id));
+    this.saveContext();
     // this.store.dispatch({type: 'CREATE_EPISODE', payload: episode});
   }
 
@@ -81,11 +83,13 @@ export class PatientsService {
         e.name = episode.name;
         e.subVisits = episode.subVisits;
       });
+    this.saveContext();
     // this.store.dispatch({type: 'CREATE_EPISODE', payload: episode});
   }
 
   public createEpisode(patient: Patient, episode: Episode) {
     this.saved.filter(p => p.id === patient.id).forEach(p => p.episodes.push(episode));
+    this.saveContext();
     // this.store.dispatch({type: 'CREATE_EPISODE', payload: episode});
   }
 
@@ -98,6 +102,18 @@ export class PatientsService {
         return ({type: 'SELECT_ITEM', payload: payload[0]});
       })
       .subscribe(action => this.store.dispatch(action));
+  }
+
+  public saveContext() {
+    localStorage.setItem('patients', JSON.stringify(this.saved));
+  }
+
+  public getContext() {
+    return JSON.parse(localStorage.getItem('patients'));
+  }
+
+  public clearContext() {
+    localStorage.clear();
   }
 
 }

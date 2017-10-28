@@ -75,6 +75,7 @@ export class EpisodeCardComponent {
     dialogRef.afterClosed().subscribe(date => {
       this.episode.endDate = date;
       date && (this.episode.ended = true);
+      this.patientsService.updateEpisode(this.patient, this.episode);
     });
   }
 

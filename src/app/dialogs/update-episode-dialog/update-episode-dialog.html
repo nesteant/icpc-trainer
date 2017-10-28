@@ -7,13 +7,7 @@
   <h2 mat-dialog-title>Редагування епізоду</h2>
   <mat-dialog-content>
     <div>
-      <mat-form-field class="s">
-        <mat-select placeholder="Діагноз" formControlName="diagnosis">
-          <mat-option *ngFor="let diagnosis of diagnosisOptions | async" [value]="diagnosis">
-            {{diagnosis | icpcCode}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
+      <icpc-diagnosis-select clazz="s" [autocomplete]="false" formControlName="diagnosis"></icpc-diagnosis-select>
       <mat-form-field class="xl">
         <input type="text" placeholder="Суфікс" matInput
                formControlName="episode">
