@@ -9,6 +9,7 @@ import {Patient} from '../../model/Patient';
 import {SubVisit} from '../../model/SubVisit';
 import {ChangeEpisodeDialogComponent} from '../change-episode-dialog/ChangeEpisodeDialogComponent';
 import {PatientsService} from '../../services/PatientsService';
+import {UpdateEpisodeDialogComponent} from '../update-episode-dialog/UpdateEpisodeDialogComponent';
 
 let id = 1000;
 
@@ -57,8 +58,32 @@ export class EpisodeDetailsDialogComponent implements OnInit {
       height: '600px',
       width: '700px',
       data: {
+        episode: this.episode,
         visit: visit
       }
+    });
+  }
+
+  public openEditEpisodeModal(episode: Episode) {
+    let dialogRef = this.dialog.open(UpdateEpisodeDialogComponent, {
+      height: '600px',
+      width: '700px',
+      data: {
+        patient: this.patient,
+        episode: episode
+      }
+    });
+    dialogRef.afterClosed().subscribe(episodeForm => {
+      if (!episodeForm) {
+        return;
+      }
+      episode.history = episode.history || [];
+      episode.history.push({
+        name: episode.name,
+        date: new Date().toISOString()
+      });
+      episode.name = episodeForm;
+      this.patientsService.updateEpisode(this.patient, episode)
     });
   }
 

@@ -1,5 +1,8 @@
 <div [formGroup]="formGroup">
   <div class="icpc-button-pane">
+    <button mat-icon-button *ngIf="!episode.ended" (click)="openEditEpisodeModal(episode)">
+      <mat-icon>edit</mat-icon>
+    </button>
     <button mat-icon-button [mat-dialog-close]="false">
       <mat-icon>clear</mat-icon>
     </button>

@@ -20,7 +20,7 @@
       <div class="grid-x">
         <div class="small-6 cell" *ngFor="let entry of visits">
           <div class="card-container">
-            <icpc-visit-card [visit]="entry"></icpc-visit-card>
+            <icpc-visit-card [visit]="entry" [episodes]="patientEpisodes"></icpc-visit-card>
           </div>
         </div>
       </div>

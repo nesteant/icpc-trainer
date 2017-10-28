@@ -1,10 +1,11 @@
-<div>
+<div class="visit-details">
   <div class="icpc-button-pane">
     <button mat-icon-button [mat-dialog-close]="false">
       <mat-icon>clear</mat-icon>
     </button>
   </div>
-  <h2 mat-dialog-title>Деталі епізоду</h2>
+  <h2 mat-dialog-title>{{episode | episode}}</h2>
+  <h5 mat-dialog-title>Підвізит від {{visit.date | date : 'dd/MM/yyyy'}}</h5>
   <mat-tab-group #tg>
     <mat-tab label="Причина">
       <!--TODO: optimize-->

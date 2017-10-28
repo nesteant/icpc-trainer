@@ -83,6 +83,7 @@ export class EpisodeCardComponent {
       height: '600px',
       width: '700px',
       data: {
+        episode: this.episode,
         visit: visit
       }
     });

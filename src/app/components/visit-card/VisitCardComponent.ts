@@ -12,7 +12,7 @@ export class VisitCardComponent {
   @Input()
   public visit: { date: string, values: SubVisit[] };
   @Input()
-  public episode: Episode;
+  public episodes: Episode[];
 
   constructor(public dialog: MatDialog) {
   }
@@ -22,8 +22,13 @@ export class VisitCardComponent {
       height: '600px',
       width: '700px',
       data: {
+        episode: this.findEpisode(visit),
         visit: visit
       }
     });
+  }
+
+  private findEpisode(entry: SubVisit) {
+    return this.episodes.find(ep => ep.subVisits.indexOf(entry.id) > -1);
   }
 }

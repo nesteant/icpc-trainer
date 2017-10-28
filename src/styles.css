@@ -2,6 +2,16 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "assets/foundation.min.css";
 
+.visit-details h2 {
+  margin-bottom: 5px;
+  font-size: 1.3em;
+}
+.visit-details h5 {
+  margin: 5px 0;
+  font-size: 1em;
+  font-weight: normal;
+}
+
 .mat-dialog-container {
   position: relative;
 }
