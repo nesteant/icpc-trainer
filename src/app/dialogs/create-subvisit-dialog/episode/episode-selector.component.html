@@ -3,19 +3,15 @@
     <div>
       <mat-radio-button [value]="true">Створити новий епізод</mat-radio-button>
       <div *ngIf="episodeCheckbox.value" [formGroup]="episodeNameGroup">
-        <mat-form-field class="xxl">
-          <mat-select placeholder="Діагноз" formControlName="diagnosis">
-            <mat-option *ngFor="let diagnosis of diagnosisOptions | async" [value]="diagnosis.code">
-              {{diagnosis | icpcCode}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
+        <icpc-diagnosis-select [autocomplete]="false" formControlName="diagnosis"></icpc-diagnosis-select>
         <mat-form-field class="s">
           <input type="text" placeholder="Суфікс" matInput
                  formControlName="episode">
         </mat-form-field>
         <span>*</span>
-        <div><span class="asterisk-text">*Назва епізоду складається з діагнозу та опціонального суфіксу (може бути відсутнім, відображати дату, і т.д.)</span></div>
+        <div>
+          <span class="asterisk-text">*Назва епізоду складається з діагнозу та опціонального суфіксу (може бути відсутнім, відображати дату, і т.д.)</span>
+        </div>
       </div>
     </div>
     <div>

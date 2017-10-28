@@ -1,40 +1,61 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {FormControl} from '@angular/forms';
+import {Component, forwardRef, OnInit} from '@angular/core';
+import {ControlValueAccessor, FormArray, FormBuilder, FormControl, NG_VALUE_ACCESSOR} from '@angular/forms';
 import {Observable} from 'rxjs/Observable';
 import {IcpcCode} from '../../../model/IcpcCode';
 import {IcpcService} from '../../../services/IcpcService';
 import {MatAutocompleteSelectedEvent} from '@angular/material';
+import {noop} from 'rxjs/util/noop';
 
 @Component({
   selector: 'icpc-reason-subvisit-tab-action-tab',
-  templateUrl: 'reason-subvisit-tab.component.html'
+  templateUrl: 'reason-subvisit-tab.component.html',
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => ReasonSubVisitTabComponent),
+      multi: true
+    }
+  ]
 })
-export class ReasonSubVisitTabComponent implements OnInit {
+export class ReasonSubVisitTabComponent implements OnInit, ControlValueAccessor {
+  private onChange: any = noop;
 
-  @Input()
-  public reasonsControl: FormControl;
+  writeValue(obj: any[]): void {
+    (obj || []).forEach(el => {
+      this.reasonsControl.push(new FormControl(el));
+    });
+  }
+
+  registerOnChange(fn: any): void {
+    this.onChange = fn;
+  }
+
+
+  registerOnTouched(fn: any): void {
+  }
+
+  public reasonsControl: FormArray;
   public reasonOptions: Observable<IcpcCode[]>;
   public reasonSearch: FormControl = new FormControl();
 
-  constructor(private icpcService: IcpcService) {
+  constructor(fb: FormBuilder, private icpcService: IcpcService) {
+    this.reasonsControl = fb.array([])
   }
 
   public ngOnInit() {
     this.reasonOptions = this.reasonSearch.valueChanges
       .startWith(null)
       .mergeMap(val => val ? this.filter(val, this.icpcService.reasons) : this.icpcService.reasons);
+    this.reasonsControl.valueChanges.subscribe(v => this.onChange(v));
   }
 
   public onReasonSelected(event: MatAutocompleteSelectedEvent) {
-    let reasons = this.reasonsControl;
-    reasons.setValue(reasons.value ? reasons.value.concat(event.option.value.code) : [event.option.value.code]);
+    this.reasonsControl.push(new FormControl(event.option.value));
     this.reasonSearch.reset();
   }
 
   public deleteReason(index: number) {
-    let value = this.reasonsControl.value || [];
-    value.splice(index, 1);
-    this.reasonsControl.setValue(value);
+    this.reasonsControl.removeAt(index);
   }
 
   private filter(val: string, values: Observable<IcpcCode[]>): Observable<IcpcCode[]> {

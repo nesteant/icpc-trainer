@@ -26,10 +26,10 @@ import {NoContentComponent} from './pages/no-content/NoContentComponent';
     AppComponent,
     PageNotFoundComponent,
     NoContentComponent,
-    PatientDetailsPageComponent
+    PatientDetailsPageComponent,
   ],
   exports: [
-    SharedModule
+    SharedModule,
   ],
   imports: [
     SharedModule,

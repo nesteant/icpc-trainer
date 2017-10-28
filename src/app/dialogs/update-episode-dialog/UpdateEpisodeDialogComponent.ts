@@ -5,6 +5,9 @@ import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {MAT_DIALOG_DATA, MatDialogRef, MatSelect} from '@angular/material';
 import {Episode} from '../../model/Episode';
 import {Patient} from '../../model/Patient';
+import {IcpcCode} from '../../model/IcpcCode';
+import {Observable} from 'rxjs/Observable';
+import {IcpcService} from '../../services/IcpcService';
 
 @Component({
   selector: 'icpc-update-episode-dialog',
@@ -18,11 +21,13 @@ export class UpdateEpisodeDialogComponent implements OnInit {
   @Input()
   public episode: Episode;
   public episodeNameGroup: FormGroup;
+  public diagnosisOptions: Observable<IcpcCode[]>;
   @ViewChild('select')
   public select: MatSelect;
 
   constructor(public dialogRef: MatDialogRef<UpdateEpisodeDialogComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any,
+              private icpcService: IcpcService,
               fb: FormBuilder) {
     this.episodeNameGroup = fb.group({
       diagnosis: new FormControl(null, Validators.required),
@@ -30,24 +35,24 @@ export class UpdateEpisodeDialogComponent implements OnInit {
     });
     this.episode = data.episode;
     this.patient = data.patient;
+    this.diagnosisOptions = this.episodeNameGroup.valueChanges
+      .startWith(null)
+      .mergeMap(val => val ? this.filter(val, this.icpcService.diagnoses) : this.icpcService.diagnoses);
   }
 
   public ngOnInit(): void {
     this.episodeNameGroup.setValue(this.episode.name);
   }
 
-  public get diagnoses() {
-    return Object.keys(this.episode.subVisits
-      .map(id => this.patient.subVisits.find(sv => sv.id === id))
-      .map(sv => sv.diagnosis)
-      .reduce((acc, cv) => {
-        acc[cv] = cv;
-        return acc;
-      }, {})) || [];
-  }
-
   public save() {
     this.dialogRef.close(this.episodeNameGroup.value);
+  }
+
+  private filter(val: string, values: Observable<IcpcCode[]>): Observable<IcpcCode[]> {
+    return values.map(codes => {
+        return codes.filter(c => `${c.code} ${c.shortTitleUa}`.toLowerCase().indexOf(val.toLowerCase()) > -1);
+      }
+    );
   }
 
 }

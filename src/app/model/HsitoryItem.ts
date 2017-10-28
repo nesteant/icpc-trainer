@@ -1,4 +1,6 @@
+import {IcpcCode} from './IcpcCode';
+
 export interface HsitoryItem {
   date: string;
-  name: { diagnosis: string, episode: string };
+  name: { diagnosis: IcpcCode, episode: string };
 }

@@ -2,7 +2,6 @@ import {NgModule} from '@angular/core';
 import {IcpcCodePipe} from './pipes/IcpcCodePipe';
 import {CommonModule} from '@angular/common';
 import {EpisodePipe} from './pipes/EpisodePipe';
-import {IcpcTransformPipe} from './pipes/IcpcTransformPipe';
 import {
   MatAutocompleteModule,
   MatButtonModule,
@@ -20,19 +19,18 @@ import {
   MatOptionModule,
   MatRadioModule,
   MatSelectModule,
-  MatTabsModule, MatToolbarModule
+  MatTabsModule,
+  MatToolbarModule
 } from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
     IcpcCodePipe,
-    IcpcTransformPipe,
     EpisodePipe,
   ],
   exports: [
     IcpcCodePipe,
-    IcpcTransformPipe,
     EpisodePipe,
     FormsModule,
     ReactiveFormsModule,
@@ -79,7 +77,6 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
   ],
   providers: [
     IcpcCodePipe,
-    IcpcTransformPipe,
     EpisodePipe
   ]
 })

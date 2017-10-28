@@ -5,9 +5,11 @@ import {VisitDetailsDialogModule} from './visit-details-dialog/VisitDetailsDialo
 import {CreateSubVisitDialogModule} from './create-subvisit-dialog/CreateSubVisitDialogModule';
 import {ChangeEpisodeDialogModule} from './change-episode-dialog/ChangeEpisodeDialogModule';
 import {CloseEpisodeDialogModule} from './close-episode-dialog/CloseEpisodeDialogModule';
+import {CodeFormModule} from '../components/code-form/CodeFormModule';
 
 @NgModule({
   imports: [
+    CodeFormModule,
     VisitDetailsDialogModule,
     EpisodeDetailsDialogModule,
     UpdateEpisodeDialogModule,
@@ -16,6 +18,7 @@ import {CloseEpisodeDialogModule} from './close-episode-dialog/CloseEpisodeDialo
     CloseEpisodeDialogModule
   ],
   exports: [
+    CodeFormModule,
     VisitDetailsDialogModule,
     EpisodeDetailsDialogModule,
     UpdateEpisodeDialogModule,

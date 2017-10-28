@@ -8,7 +8,22 @@
       {
         "id": "1",
         "name": {
-          "diagnosis": "K87",
+          "diagnosis": {
+            "code": "K87",
+            "shortTitleUa": "Гіпертонія з ускладненням",
+            "preferred": "Hypertension complicated",
+            "shortTitle": "Hypertension complicated",
+            "inclusionUa": "злоякісна гіпертонія",
+            "inclusion": "malignant hypertension",
+            "exclusionUa": "неускладнена гіпертонія K86",
+            "exclusion": "uncomplicated hypertension K86",
+            "criteriaUa": "два зняття замірів / показів при візиті, взяті при двух чи більше візитах, коли кров’яний тиск в середньому вище 95 мм рт.ст. діастолічний або вище 160 мм рт. ст. систолічний у дорослого пацієнта; або два чи більше показників за один візит, коли середній діастолічний кров’яний тиск 120 мм рт. ст. чи вище; а також ознаки аномалій серця (збільшення, серцева недостатність), нирок (альбумінурія, азотемія), очей або головного мозку, пов'язані з артеріальною гіпертонією",
+            "criteria": "either two or more readings per encounter, taken at two or more encounters, with blood pressures that average over 95 mm Hg diastolic or over 160 mm Hg systolic in adult patients; or two or more readings at a single encounter with an average diastolic blood pressure of 120 mm Hg or more; plus evidence of abnormalities of the heart (enlargement, failure), kidney (albuminuria, azotemia), eye, or the brain attributed to hypertension",
+            "considerUa": "",
+            "consider": "",
+            "noteUa": "1) для дітей, звіритись з відповідними педіатричними таблицями кров’яного тиску. 2) якщо є вторинна гіпертонія, ставити також код основної причини",
+            "note": "1) For children, consult appropriate paediatric blood pressure tables. 2) If secondary hypertension, code also the underlying cause"
+          },
           "episode": "Гіпертонія з ускладненням"
         },
         "subVisits": [
@@ -20,7 +35,22 @@
       {
         "id": "2",
         "name": {
-          "diagnosis": "T93",
+          "diagnosis": {
+            "code": "T93",
+            "shortTitleUa": "Розлад ліпідного обміну",
+            "preferred": "Lipid disorder",
+            "shortTitle": "Lipid disorder",
+            "inclusionUa": "відхиленя від норми рівня ліпопротеїнів; гіперліпідемія; підвищений рівень холестерину / тригліцеридів; ксантома",
+            "inclusion": "abnormality of lipoprotein level; hyperlipidaemia; raised level of cholesterol/triglycerides; xanthoma",
+            "exclusionUa": "",
+            "exclusion": "",
+            "criteriaUa": "",
+            "criteria": "",
+            "considerUa": "",
+            "consider": "",
+            "noteUa": "",
+            "note": ""
+          },
           "episode": "Розлад ліпідного обміну"
         },
         "subVisits": [
@@ -34,62 +64,377 @@
         "id": 1,
         "date": "2017-05-25",
         "reasons": [
-          "-50"
+          {
+            "code": "-50",
+            "shortTitleUa": "Призначення ліків/ін’єкції ",
+            "preferred": "Medication/prescription/renewal/injection",
+            "shortTitle": "Medication/prescr/renewal/inject",
+            "inclusionUa": "призначення лікування; поновлення лікування; нагляд за лікуванням; систематичні ін'єкції ліків; десенсибілізація",
+            "inclusion": "prescribing of medication; renewal of medication; administration of medication; injection of medication with systemic effect; desensitisation ",
+            "exclusionUa": "венесекция -51; ін'єкція ліків з місцевим ефектом -55; голковколювання -59",
+            "exclusion": "venesection -51; injection of medication with local effect -55; acupuncture -59",
+            "criteriaUa": "",
+            "criteria": "",
+            "considerUa": "профілактична імунізація / лікування-44",
+            "consider": "preventive immunization/medication -44",
+            "noteUa": "Лікування конкретного стану пацієнта слід класифікувати тут.",
+            "note": "Treatment for a specific condition the patient should be classified here."
+          }
         ],
         "actions": [
-          "-50",
-          "-31"
+          {
+            "code": "-50",
+            "shortTitleUa": "Призначення ліків/ін’єкції ",
+            "preferred": "Medication/prescription/renewal/injection",
+            "shortTitle": "Medication/prescr/renewal/inject",
+            "inclusionUa": "призначення лікування; поновлення лікування; нагляд за лікуванням; систематичні ін'єкції ліків; десенсибілізація",
+            "inclusion": "prescribing of medication; renewal of medication; administration of medication; injection of medication with systemic effect; desensitisation ",
+            "exclusionUa": "венесекция -51; ін'єкція ліків з місцевим ефектом -55; голковколювання -59",
+            "exclusion": "venesection -51; injection of medication with local effect -55; acupuncture -59",
+            "criteriaUa": "",
+            "criteria": "",
+            "considerUa": "профілактична імунізація / лікування-44",
+            "consider": "preventive immunization/medication -44",
+            "noteUa": "Лікування конкретного стану пацієнта слід класифікувати тут.",
+            "note": "Treatment for a specific condition the patient should be classified here."
+          },
+          {
+            "code": "-31",
+            "shortTitleUa": "Часткове медичне обстеження",
+            "preferred": "Medical examination/health evaluation partial",
+            "shortTitle": "Medical examin/health eval partial",
+            "inclusionUa": "прицільний огляд; клінічний скрінінг окремих проблем зі здоров'ям",
+            "inclusion": "focussed examination; clinical screening of single health problems",
+            "exclusionUa": "",
+            "exclusion": "",
+            "criteriaUa": "огляд, сконцентрований на конкретній системі організму, на приклад аускультація серця або вимірювання тиску К31; або вимірювання температури тіла А31",
+            "criteria": "an examination focussed on a specific part of a body system, e.g. heart auscultation or blood pressure measurement K31; or body temperature measurement A31",
+            "considerUa": "медичний огляд / повний аналіз стану сдоров'я – 30; тест на фізичне функціонування -39",
+            "consider": "medical examination/health evaluation complete -30; physical function test -39",
+            "noteUa": "",
+            "note": ""
+          }
         ],
-        "diagnosis": "K87"
+        "diagnosis": {
+          "code": "K87",
+          "shortTitleUa": "Гіпертонія з ускладненням",
+          "preferred": "Hypertension complicated",
+          "shortTitle": "Hypertension complicated",
+          "inclusionUa": "злоякісна гіпертонія",
+          "inclusion": "malignant hypertension",
+          "exclusionUa": "неускладнена гіпертонія K86",
+          "exclusion": "uncomplicated hypertension K86",
+          "criteriaUa": "два зняття замірів / показів при візиті, взяті при двух чи більше візитах, коли кров’яний тиск в середньому вище 95 мм рт.ст. діастолічний або вище 160 мм рт. ст. систолічний у дорослого пацієнта; або два чи більше показників за один візит, коли середній діастолічний кров’яний тиск 120 мм рт. ст. чи вище; а також ознаки аномалій серця (збільшення, серцева недостатність), нирок (альбумінурія, азотемія), очей або головного мозку, пов'язані з артеріальною гіпертонією",
+          "criteria": "either two or more readings per encounter, taken at two or more encounters, with blood pressures that average over 95 mm Hg diastolic or over 160 mm Hg systolic in adult patients; or two or more readings at a single encounter with an average diastolic blood pressure of 120 mm Hg or more; plus evidence of abnormalities of the heart (enlargement, failure), kidney (albuminuria, azotemia), eye, or the brain attributed to hypertension",
+          "considerUa": "",
+          "consider": "",
+          "noteUa": "1) для дітей, звіритись з відповідними педіатричними таблицями кров’яного тиску. 2) якщо є вторинна гіпертонія, ставити також код основної причини",
+          "note": "1) For children, consult appropriate paediatric blood pressure tables. 2) If secondary hypertension, code also the underlying cause"
+        }
       },
       {
         "id": 2,
         "date": "2017-07-19",
         "reasons": [
-          "-31"
+          {
+            "code": "-31",
+            "shortTitleUa": "Часткове медичне обстеження",
+            "preferred": "Medical examination/health evaluation partial",
+            "shortTitle": "Medical examin/health eval partial",
+            "inclusionUa": "прицільний огляд; клінічний скрінінг окремих проблем зі здоров'ям",
+            "inclusion": "focussed examination; clinical screening of single health problems",
+            "exclusionUa": "",
+            "exclusion": "",
+            "criteriaUa": "огляд, сконцентрований на конкретній системі організму, на приклад аускультація серця або вимірювання тиску К31; або вимірювання температури тіла А31",
+            "criteria": "an examination focussed on a specific part of a body system, e.g. heart auscultation or blood pressure measurement K31; or body temperature measurement A31",
+            "considerUa": "медичний огляд / повний аналіз стану сдоров'я – 30; тест на фізичне функціонування -39",
+            "consider": "medical examination/health evaluation complete -30; physical function test -39",
+            "noteUa": "",
+            "note": ""
+          }
         ],
         "actions": [
-          "-31",
-          "-35",
-          "-42",
-          "-50"
+          {
+            "code": "-31",
+            "shortTitleUa": "Часткове медичне обстеження",
+            "preferred": "Medical examination/health evaluation partial",
+            "shortTitle": "Medical examin/health eval partial",
+            "inclusionUa": "прицільний огляд; клінічний скрінінг окремих проблем зі здоров'ям",
+            "inclusion": "focussed examination; clinical screening of single health problems",
+            "exclusionUa": "",
+            "exclusion": "",
+            "criteriaUa": "огляд, сконцентрований на конкретній системі організму, на приклад аускультація серця або вимірювання тиску К31; або вимірювання температури тіла А31",
+            "criteria": "an examination focussed on a specific part of a body system, e.g. heart auscultation or blood pressure measurement K31; or body temperature measurement A31",
+            "considerUa": "медичний огляд / повний аналіз стану сдоров'я – 30; тест на фізичне функціонування -39",
+            "consider": "medical examination/health evaluation complete -30; physical function test -39",
+            "noteUa": "",
+            "note": ""
+          },
+          {
+            "code": "-35",
+            "shortTitleUa": "Аналіз сечі",
+            "preferred": "Urine test",
+            "shortTitle": "Urine test",
+            "inclusionUa": "аналіз сечі із використанням тест-смужок; аналіз на наркотики у сечі; аналіз сечі на виявлення вагітності; вимірювання альбуміну: рівень креатиніну",
+            "inclusion": "urine strip test; test for drugs in urine; urine pregnancy test; measurement of albumin: creatinine ratio ",
+            "exclusionUa": "мікроскопічне дослідження сечі -37;аналіз крові на виявлення вагітності -34; розрахунок кліренсу креатиніну -34",
+            "exclusion": "microscopic examination of urine -37; blood pregnancy test -34; calculation of creatinine clearance -34",
+            "criteriaUa": "лабораторний аналіз, проведений на зразку сечі",
+            "criteria": "a laboratory analysis performed on a urine sample",
+            "considerUa": "мікробіологічний / імунологічний аналіз -33",
+            "consider": "microbiological/immunological test -33",
+            "noteUa": "Хімічні аналізи належать до субстрату / субстанції, де цей аналіз проводиться, в той час, як мікробіологічні / імунологічні аналізи належать до -33, а гістологічні / ексфоліативна цитологія до – 37.",
+            "note": "Chemical tests belong to the substrate/substance in which the test is done, whereas microbiological/immunological tests belong to -33 and histological/exfoliative cytology tests to -37."
+          },
+          {
+            "code": "-42",
+            "shortTitleUa": "Вимірювання ел. потенціалів (ЕКГ, ін.)",
+            "preferred": "Electrical tracing",
+            "shortTitle": "Electrical tracing",
+            "inclusionUa": "електрокардіограма; електрокардіограма з навантаженням; Холтерівське моніторування; електроміограма (ЕМГ); електроенцефалограма (ЕЕГ); електроністагмографія (ЕНГ)",
+            "inclusion": "electrocardiogram; exercise electrocardiogram; Holter monitoring; electromyogram (EMG); electroencephalogram (EEG); electronystagmography (ENG)",
+            "exclusionUa": "",
+            "exclusion": "",
+            "criteriaUa": "тест, який використовується для вимірювання електричної активності органу (наприклад, серця, нервів, мозку, м'язів)",
+            "criteria": "a test used to measure the electrical activity of an organ (e.g. heart, nerve, brain, muscle)",
+            "considerUa": "",
+            "consider": "",
+            "noteUa": "",
+            "note": ""
+          },
+          {
+            "code": "-50",
+            "shortTitleUa": "Призначення ліків/ін’єкції ",
+            "preferred": "Medication/prescription/renewal/injection",
+            "shortTitle": "Medication/prescr/renewal/inject",
+            "inclusionUa": "призначення лікування; поновлення лікування; нагляд за лікуванням; систематичні ін'єкції ліків; десенсибілізація",
+            "inclusion": "prescribing of medication; renewal of medication; administration of medication; injection of medication with systemic effect; desensitisation ",
+            "exclusionUa": "венесекция -51; ін'єкція ліків з місцевим ефектом -55; голковколювання -59",
+            "exclusion": "venesection -51; injection of medication with local effect -55; acupuncture -59",
+            "criteriaUa": "",
+            "criteria": "",
+            "considerUa": "профілактична імунізація / лікування-44",
+            "consider": "preventive immunization/medication -44",
+            "noteUa": "Лікування конкретного стану пацієнта слід класифікувати тут.",
+            "note": "Treatment for a specific condition the patient should be classified here."
+          }
         ],
-        "diagnosis": "K87"
+        "diagnosis": {
+          "code": "K87",
+          "shortTitleUa": "Гіпертонія з ускладненням",
+          "preferred": "Hypertension complicated",
+          "shortTitle": "Hypertension complicated",
+          "inclusionUa": "злоякісна гіпертонія",
+          "inclusion": "malignant hypertension",
+          "exclusionUa": "неускладнена гіпертонія K86",
+          "exclusion": "uncomplicated hypertension K86",
+          "criteriaUa": "два зняття замірів / показів при візиті, взяті при двух чи більше візитах, коли кров’яний тиск в середньому вище 95 мм рт.ст. діастолічний або вище 160 мм рт. ст. систолічний у дорослого пацієнта; або два чи більше показників за один візит, коли середній діастолічний кров’яний тиск 120 мм рт. ст. чи вище; а також ознаки аномалій серця (збільшення, серцева недостатність), нирок (альбумінурія, азотемія), очей або головного мозку, пов'язані з артеріальною гіпертонією",
+          "criteria": "either two or more readings per encounter, taken at two or more encounters, with blood pressures that average over 95 mm Hg diastolic or over 160 mm Hg systolic in adult patients; or two or more readings at a single encounter with an average diastolic blood pressure of 120 mm Hg or more; plus evidence of abnormalities of the heart (enlargement, failure), kidney (albuminuria, azotemia), eye, or the brain attributed to hypertension",
+          "considerUa": "",
+          "consider": "",
+          "noteUa": "1) для дітей, звіритись з відповідними педіатричними таблицями кров’яного тиску. 2) якщо є вторинна гіпертонія, ставити також код основної причини",
+          "note": "1) For children, consult appropriate paediatric blood pressure tables. 2) If secondary hypertension, code also the underlying cause"
+        }
       },
       {
         "id": 3,
         "date": "2017-09-20",
         "reasons": [
-          "-31"
+          {
+            "code": "-31",
+            "shortTitleUa": "Часткове медичне обстеження",
+            "preferred": "Medical examination/health evaluation partial",
+            "shortTitle": "Medical examin/health eval partial",
+            "inclusionUa": "прицільний огляд; клінічний скрінінг окремих проблем зі здоров'ям",
+            "inclusion": "focussed examination; clinical screening of single health problems",
+            "exclusionUa": "",
+            "exclusion": "",
+            "criteriaUa": "огляд, сконцентрований на конкретній системі організму, на приклад аускультація серця або вимірювання тиску К31; або вимірювання температури тіла А31",
+            "criteria": "an examination focussed on a specific part of a body system, e.g. heart auscultation or blood pressure measurement K31; or body temperature measurement A31",
+            "considerUa": "медичний огляд / повний аналіз стану сдоров'я – 30; тест на фізичне функціонування -39",
+            "consider": "medical examination/health evaluation complete -30; physical function test -39",
+            "noteUa": "",
+            "note": ""
+          }
         ],
         "actions": [
-          "-31",
-          "-50"
+          {
+            "code": "-31",
+            "shortTitleUa": "Часткове медичне обстеження",
+            "preferred": "Medical examination/health evaluation partial",
+            "shortTitle": "Medical examin/health eval partial",
+            "inclusionUa": "прицільний огляд; клінічний скрінінг окремих проблем зі здоров'ям",
+            "inclusion": "focussed examination; clinical screening of single health problems",
+            "exclusionUa": "",
+            "exclusion": "",
+            "criteriaUa": "огляд, сконцентрований на конкретній системі організму, на приклад аускультація серця або вимірювання тиску К31; або вимірювання температури тіла А31",
+            "criteria": "an examination focussed on a specific part of a body system, e.g. heart auscultation or blood pressure measurement K31; or body temperature measurement A31",
+            "considerUa": "медичний огляд / повний аналіз стану сдоров'я – 30; тест на фізичне функціонування -39",
+            "consider": "medical examination/health evaluation complete -30; physical function test -39",
+            "noteUa": "",
+            "note": ""
+          },
+          {
+            "code": "-50",
+            "shortTitleUa": "Призначення ліків/ін’єкції ",
+            "preferred": "Medication/prescription/renewal/injection",
+            "shortTitle": "Medication/prescr/renewal/inject",
+            "inclusionUa": "призначення лікування; поновлення лікування; нагляд за лікуванням; систематичні ін'єкції ліків; десенсибілізація",
+            "inclusion": "prescribing of medication; renewal of medication; administration of medication; injection of medication with systemic effect; desensitisation ",
+            "exclusionUa": "венесекция -51; ін'єкція ліків з місцевим ефектом -55; голковколювання -59",
+            "exclusion": "venesection -51; injection of medication with local effect -55; acupuncture -59",
+            "criteriaUa": "",
+            "criteria": "",
+            "considerUa": "профілактична імунізація / лікування-44",
+            "consider": "preventive immunization/medication -44",
+            "noteUa": "Лікування конкретного стану пацієнта слід класифікувати тут.",
+            "note": "Treatment for a specific condition the patient should be classified here."
+          }
         ],
-        "diagnosis": "K87"
+        "diagnosis": {
+          "code": "K87",
+          "shortTitleUa": "Гіпертонія з ускладненням",
+          "preferred": "Hypertension complicated",
+          "shortTitle": "Hypertension complicated",
+          "inclusionUa": "злоякісна гіпертонія",
+          "inclusion": "malignant hypertension",
+          "exclusionUa": "неускладнена гіпертонія K86",
+          "exclusion": "uncomplicated hypertension K86",
+          "criteriaUa": "два зняття замірів / показів при візиті, взяті при двух чи більше візитах, коли кров’яний тиск в середньому вище 95 мм рт.ст. діастолічний або вище 160 мм рт. ст. систолічний у дорослого пацієнта; або два чи більше показників за один візит, коли середній діастолічний кров’яний тиск 120 мм рт. ст. чи вище; а також ознаки аномалій серця (збільшення, серцева недостатність), нирок (альбумінурія, азотемія), очей або головного мозку, пов'язані з артеріальною гіпертонією",
+          "criteria": "either two or more readings per encounter, taken at two or more encounters, with blood pressures that average over 95 mm Hg diastolic or over 160 mm Hg systolic in adult patients; or two or more readings at a single encounter with an average diastolic blood pressure of 120 mm Hg or more; plus evidence of abnormalities of the heart (enlargement, failure), kidney (albuminuria, azotemia), eye, or the brain attributed to hypertension",
+          "considerUa": "",
+          "consider": "",
+          "noteUa": "1) для дітей, звіритись з відповідними педіатричними таблицями кров’яного тиску. 2) якщо є вторинна гіпертонія, ставити також код основної причини",
+          "note": "1) For children, consult appropriate paediatric blood pressure tables. 2) If secondary hypertension, code also the underlying cause"
+        }
       },
       {
         "id": 4,
         "date": "2017-06-14",
         "reasons": [
-          "-60"
+          {
+            "code": "-60",
+            "shortTitleUa": "Результати тестів / процедур",
+            "preferred": "Result test/procedure",
+            "shortTitle": "Result test/procedure",
+            "inclusionUa": "",
+            "inclusion": "",
+            "exclusionUa": "",
+            "exclusion": "",
+            "criteriaUa": "результати аналізів або процедур замовлені / здійснені лікуючим лікарем: крові, візуалізація, електричне тресування або інші",
+            "criteria": "results from tests or procedures ordered / performed by the health care provider: blood, imaging, electrical tracing or other",
+            "considerUa": "-45 виховання свідомого ставлення до здоров'я, консультування, якщо пацієнт просить надати інформацію про виниклу проблему або наслідки результатів",
+            "consider": "-45 health education, advice, if the patient requests information on the underlying problem or consequences of the results",
+            "noteUa": "Цей код не може бути використаний для процесу, а тільки як привід для звернення.",
+            "note": "This code cannot be used for process, but only as a reason for encounter "
+          }
         ],
         "actions": [
-          "-50"
+          {
+            "code": "-50",
+            "shortTitleUa": "Призначення ліків/ін’єкції ",
+            "preferred": "Medication/prescription/renewal/injection",
+            "shortTitle": "Medication/prescr/renewal/inject",
+            "inclusionUa": "призначення лікування; поновлення лікування; нагляд за лікуванням; систематичні ін'єкції ліків; десенсибілізація",
+            "inclusion": "prescribing of medication; renewal of medication; administration of medication; injection of medication with systemic effect; desensitisation ",
+            "exclusionUa": "венесекция -51; ін'єкція ліків з місцевим ефектом -55; голковколювання -59",
+            "exclusion": "venesection -51; injection of medication with local effect -55; acupuncture -59",
+            "criteriaUa": "",
+            "criteria": "",
+            "considerUa": "профілактична імунізація / лікування-44",
+            "consider": "preventive immunization/medication -44",
+            "noteUa": "Лікування конкретного стану пацієнта слід класифікувати тут.",
+            "note": "Treatment for a specific condition the patient should be classified here."
+          }
         ],
-        "diagnosis": "T93"
+        "diagnosis": {
+          "code": "T93",
+          "shortTitleUa": "Розлад ліпідного обміну",
+          "preferred": "Lipid disorder",
+          "shortTitle": "Lipid disorder",
+          "inclusionUa": "відхиленя від норми рівня ліпопротеїнів; гіперліпідемія; підвищений рівень холестерину / тригліцеридів; ксантома",
+          "inclusion": "abnormality of lipoprotein level; hyperlipidaemia; raised level of cholesterol/triglycerides; xanthoma",
+          "exclusionUa": "",
+          "exclusion": "",
+          "criteriaUa": "",
+          "criteria": "",
+          "considerUa": "",
+          "consider": "",
+          "noteUa": "",
+          "note": ""
+        }
       },
       {
         "id": 5,
         "date": "2017-07-19",
         "reasons": [
-          "-31"
+          {
+            "code": "-31",
+            "shortTitleUa": "Часткове медичне обстеження",
+            "preferred": "Medical examination/health evaluation partial",
+            "shortTitle": "Medical examin/health eval partial",
+            "inclusionUa": "прицільний огляд; клінічний скрінінг окремих проблем зі здоров'ям",
+            "inclusion": "focussed examination; clinical screening of single health problems",
+            "exclusionUa": "",
+            "exclusion": "",
+            "criteriaUa": "огляд, сконцентрований на конкретній системі організму, на приклад аускультація серця або вимірювання тиску К31; або вимірювання температури тіла А31",
+            "criteria": "an examination focussed on a specific part of a body system, e.g. heart auscultation or blood pressure measurement K31; or body temperature measurement A31",
+            "considerUa": "медичний огляд / повний аналіз стану сдоров'я – 30; тест на фізичне функціонування -39",
+            "consider": "medical examination/health evaluation complete -30; physical function test -39",
+            "noteUa": "",
+            "note": ""
+          }
         ],
         "actions": [
-          "-34",
-          "-50"
+          {
+            "code": "-34",
+            "shortTitleUa": "Аналіз крові",
+            "preferred": "Blood test",
+            "shortTitle": "Blood test",
+            "inclusionUa": "група крові і резус фактор; швидкість осідання еритроцитів (ШОЕ); рівень лейкоцитів у крові; основна метаболічна панель; рівень гормонів у крові; рівень ензимів у крові; рівень наркотиків у крові; рівень алкоголю у крові; с-реактивний білок; протромбіновий час (МНО); D-дімер (маркер тромбоутворення); гази в артеріальній крові; вимірювання кліренсу креатиніну; аналіз крові на виявлення вагітності",
+            "inclusion": "blood group and type; erythrocyte sedimentation rate (ESR); white blood cell count (WBC); basic metabolic panel; blood hormone level; blood enzyme level; blood drug level; blood alcohol level; C-reactive protein (CRP); prothrombin time (INR); D-dimer; arterial blood gases; calculation of creatinine clearance; blood pregnancy test",
+            "exclusionUa": "радіоалергосорбентний тест (РАСТ) -32; посів крові -33; вимір кліренсу креатиніну -35; альбумін: рівень креатиніну -35",
+            "exclusion": "radioallergosorbent test (RAST) -32; blood cultures -33; measurement of  creatinine clearance -35; albumin:creatinine ratio -35",
+            "criteriaUa": "лабораторний аналіз, проведений на зразку крові",
+            "criteria": "a laboratory analysis performed on a blood sample",
+            "considerUa": "мікробіологічний / імунологічний аналіз -33",
+            "consider": "microbiological/immunological test -33",
+            "noteUa": "Хімічні аналізи належать до субстрату / субстанції, де цей аналіз проводиться, в той час, як мікробіологічні / імунологічні аналізи належать до -33, і аналізи  гістологічні / ексфоліативна цитологія до – 37.",
+            "note": "Chemical tests belong to the substrate/substance in which the test is done, whereas microbiological/immunological tests belong to -33 and histological/exfoliative cytology tests to -37."
+          },
+          {
+            "code": "-50",
+            "shortTitleUa": "Призначення ліків/ін’єкції ",
+            "preferred": "Medication/prescription/renewal/injection",
+            "shortTitle": "Medication/prescr/renewal/inject",
+            "inclusionUa": "призначення лікування; поновлення лікування; нагляд за лікуванням; систематичні ін'єкції ліків; десенсибілізація",
+            "inclusion": "prescribing of medication; renewal of medication; administration of medication; injection of medication with systemic effect; desensitisation ",
+            "exclusionUa": "венесекция -51; ін'єкція ліків з місцевим ефектом -55; голковколювання -59",
+            "exclusion": "venesection -51; injection of medication with local effect -55; acupuncture -59",
+            "criteriaUa": "",
+            "criteria": "",
+            "considerUa": "профілактична імунізація / лікування-44",
+            "consider": "preventive immunization/medication -44",
+            "noteUa": "Лікування конкретного стану пацієнта слід класифікувати тут.",
+            "note": "Treatment for a specific condition the patient should be classified here."
+          }
         ],
-        "diagnosis": "K93"
+        "diagnosis": {
+          "code": "K93",
+          "shortTitleUa": "Легенева емболія",
+          "preferred": "Pulmonary embolism",
+          "shortTitle": "Pulmonary embolism",
+          "inclusionUa": "легеневий (артерії / вени) інфаркт; тромбоемболія; тромбоз",
+          "inclusion": "pulmonary (artery/vein) infarction; thromboembolism; thrombosis",
+          "exclusionUa": "",
+          "exclusion": "",
+          "criteriaUa": "раптовий початок задишки / тахіпное і або клінічні або візуалізаційні ознаки легеневого міокарда, або ЕКГ ознаки гострої напруги правого шлуночка",
+          "criteria": "sudden onset of dyspnoea/tachypnoea and either clinical or imaging evidence of pulmonary infarction, or ECG evidence of acute right ventricular strain",
+          "considerUa": "задишка / утруднене дихання R02",
+          "consider": "dyspnoea R02",
+          "noteUa": "",
+          "note": ""
+        }
       }
     ]
   },
@@ -102,7 +447,22 @@
       {
         "id": "3",
         "name": {
-          "diagnosis": "A97",
+          "diagnosis": {
+            "code": "A97",
+            "shortTitleUa": "Відсутність хвороби",
+            "preferred": "No disease",
+            "shortTitle": "No disease",
+            "inclusionUa": "відсутність захворювання / хвороби під час звернення",
+            "inclusion": "no illness/disease dealt with at encounter",
+            "exclusionUa": "підтримання здоров’я / профілактика A98",
+            "exclusion": "health maintenance/preventive medicine A98",
+            "criteriaUa": "",
+            "criteria": "",
+            "considerUa": "",
+            "consider": "",
+            "noteUa": "Іноді у пацієнта є привід для зверненняі, який сімейний лікар не може інтерпретувати як діагноз або симптом в області сімейної практики. У цих випадках сімейний лікар / терапевт буде використовувати код A97, вказавши, що причина пацієнта для звернення стосується чогось, на що сімейний лікар / терапевт не може професійно відреагувати, за винятком того, щоб описати цей випадок.",
+            "note": "Sometimes a patient has a reason for encounter which the family doctor cannot interpret as a diagnosis or symptom within the domain of family practice. In these cases the FP/GP will use the code A97, indicating that the patient's reason for encounter refers to something the FP/GP cannot professionally respond to, except by explaining that this is the case."
+          },
           "episode": "Відсутність хвороби"
         },
         "subVisits": [
@@ -115,13 +475,73 @@
         "id": 6,
         "date": "2017-05-25",
         "reasons": [
-          "-62"
+          {
+            "code": "-62",
+            "shortTitleUa": "Адміністративні процедури",
+            "preferred": "Administrative procedure",
+            "shortTitle": "Administrative procedure",
+            "inclusionUa": "посвідчення (наприклад, лікарняний / водійські права / свідоцтво про смерть); анкета; рахунки, медично-санітарна документація; заповнення документів або форм; перевірка, запрошена третьою стороною",
+            "inclusion": "certificates (e.g. sick leave/driver´s licence/death); questionnaire ; billing issues, health record issues; filling in documents or forms; exams requested by a third party ",
+            "exclusionUa": "",
+            "exclusion": "",
+            "criteriaUa": "",
+            "criteria": "",
+            "considerUa": "",
+            "consider": "",
+            "noteUa": "",
+            "note": ""
+          }
         ],
         "actions": [
-          "-30",
-          "-62"
+          {
+            "code": "-30",
+            "shortTitleUa": "Повне медичне обстеження",
+            "preferred": "Medical examination/health evaluation complete",
+            "shortTitle": "Medical examin/health eval complete",
+            "inclusionUa": "повне обстеження однієї сиссистеми органів або цілого організму; повний медичний огляд; медогляд немовлят; медогляд школярів / молоді",
+            "inclusion": "complete examination of  one body system or the whole body; complete check-up; well-baby exam; school health care exam for children/youth",
+            "exclusionUa": "",
+            "exclusion": "",
+            "criteriaUa": "",
+            "criteria": "",
+            "considerUa": "медогляд / оцінка стану здоров'я часткова – 31; тест на фізичне функціонування-39",
+            "consider": "medical examination/health evaluation partial -31; physical function test -39",
+            "noteUa": "",
+            "note": ""
+          },
+          {
+            "code": "-62",
+            "shortTitleUa": "Адміністративні процедури",
+            "preferred": "Administrative procedure",
+            "shortTitle": "Administrative procedure",
+            "inclusionUa": "посвідчення (наприклад, лікарняний / водійські права / свідоцтво про смерть); анкета; рахунки, медично-санітарна документація; заповнення документів або форм; перевірка, запрошена третьою стороною",
+            "inclusion": "certificates (e.g. sick leave/driver´s licence/death); questionnaire ; billing issues, health record issues; filling in documents or forms; exams requested by a third party ",
+            "exclusionUa": "",
+            "exclusion": "",
+            "criteriaUa": "",
+            "criteria": "",
+            "considerUa": "",
+            "consider": "",
+            "noteUa": "",
+            "note": ""
+          }
         ],
-        "diagnosis": "A97"
+        "diagnosis": {
+          "code": "A97",
+          "shortTitleUa": "Відсутність хвороби",
+          "preferred": "No disease",
+          "shortTitle": "No disease",
+          "inclusionUa": "відсутність захворювання / хвороби під час звернення",
+          "inclusion": "no illness/disease dealt with at encounter",
+          "exclusionUa": "підтримання здоров’я / профілактика A98",
+          "exclusion": "health maintenance/preventive medicine A98",
+          "criteriaUa": "",
+          "criteria": "",
+          "considerUa": "",
+          "consider": "",
+          "noteUa": "Іноді у пацієнта є привід для зверненняі, який сімейний лікар не може інтерпретувати як діагноз або симптом в області сімейної практики. У цих випадках сімейний лікар / терапевт буде використовувати код A97, вказавши, що причина пацієнта для звернення стосується чогось, на що сімейний лікар / терапевт не може професійно відреагувати, за винятком того, щоб описати цей випадок.",
+          "note": "Sometimes a patient has a reason for encounter which the family doctor cannot interpret as a diagnosis or symptom within the domain of family practice. In these cases the FP/GP will use the code A97, indicating that the patient's reason for encounter refers to something the FP/GP cannot professionally respond to, except by explaining that this is the case."
+        }
       }
     ]
   },
@@ -134,7 +554,22 @@
       {
         "id": "4",
         "name": {
-          "diagnosis": "Т90",
+          "diagnosis": {
+            "code": "T90",
+            "shortTitleUa": "Інсулінонезалежний цукровий діабет",
+            "preferred": "Diabetes non-insulin dependent",
+            "shortTitle": "Diabetes non-insulin dependent",
+            "inclusionUa": "діабет БДУ; діабет з пізнім початком; діабет 2-типу",
+            "inclusion": "diabetes NOS; late onset diabetes; type 2 diabetes",
+            "exclusionUa": "гіперглікемія спричинена ліками A85; гіперглікемія, як окремий результат дослідження A91; інсулінозалежний цукровий діабет T89; гестаційний діабет W85",
+            "exclusion": "drug induced hyperglycaemia A85; hyperglycaemia as isolated finding A91; insulin-dependent diabetes T89; gestational diabetes W85",
+            "criteriaUa": "пацієнт не потребує регулярного безперервного лікування інсуліном після постановки діагнозу, підтвердженого одним із наступного: (а) класичні симптоми діабету, такі як поліурія, полідипсія, і швидка втрата ваги, разом з явним підвищенням глюкози в плазмі крові (б) рівень глюкози в крові натщесерце від 8ммоль / л (l40мг / дл) чи вище у двох або більше випадках (в) випадковий рівень глюкози в крові 11ммоль / л (200мг / дл) або вище у двох або більше випадках (г) оральний Тест на Толерантність до Глюкози (75 гм глюкози) з одним значенням глюкози в плазмі крові у проміжку від одної до двох годин 11ммоль / л (200мг / дл) або більше, і глюкозою в плазмі через дві години 11ммол / л (200мг / дл) або вище; ці ВООЗ-критерії можуть змінюватися з часом; крім того, можуть існувати відмінності між критеріями різних національних систем охорони здоров'я",
+            "criteria": "patient not requiring regular ongoing treatment with insulin after diagnosis confirmed by one of the following:(a) the classic symptoms of diabetes, such as polyuria, polydypsia, and rapid weight loss, together with unequivocal elevation of plasma glucose (b) fasting blood glucose levels of 8mmol/l (l40mg/dl) or more on two or more occasions (c) random blood glucose levels of 11mmol/l (200mg/dl) or more on two or more occasions(d) an oral Glucose Tolerance Test (75gm glucose) one value of plasma glucose at between one and two hours of 11mmol/l (200mg/dl) or more and plasma glucose at two hours of 11mol/l (200mg/dl) or more; these WHO-criteria may change over time; also, criteria differences may exist between national health care systems",
+            "considerUa": "",
+            "consider": "",
+            "noteUa": "1) ставити подвійний код для ускладнень таких, як ретинопатія F83, нефропатія U88. 2) під час вагітності подвійний код з W84",
+            "note": "1) double code complications such as retinopathy F83, nephropathy U88. 2) In pregnancy, double code with W84"
+          },
           "episode": "Інсулінонезалежний цукровий діабет"
         },
         "subVisits": [
@@ -145,7 +580,22 @@
       {
         "id": "5",
         "name": {
-          "diagnosis": "T82",
+          "diagnosis": {
+            "code": "T82",
+            "shortTitleUa": "Ожиріння ",
+            "preferred": "Obesity",
+            "shortTitle": "Obesity",
+            "inclusionUa": "",
+            "inclusion": "",
+            "exclusionUa": "надмірна вага тіла T83",
+            "exclusion": "overweight T83",
+            "criteriaUa": "індекс маси тіла більше 30",
+            "criteria": "a body mass index greater than 30",
+            "considerUa": "",
+            "consider": "",
+            "noteUa": "",
+            "note": ""
+          },
           "episode": "Ожиріння"
         },
         "subVisits": [
@@ -158,39 +608,249 @@
         "id": 7,
         "date": "2017-09-11",
         "reasons": [
-          "T01",
-          "D20"
+          {
+            "code": "T01",
+            "shortTitleUa": "Надмірна спрага ",
+            "preferred": "Excessive thirst",
+            "shortTitle": "Excessive thirst",
+            "inclusionUa": "надмірна спрага",
+            "inclusion": "polydipsia",
+            "exclusionUa": "",
+            "exclusion": "",
+            "criteriaUa": "",
+            "criteria": "",
+            "considerUa": "",
+            "consider": "",
+            "noteUa": "",
+            "note": ""
+          },
+          {
+            "code": "D20",
+            "shortTitleUa": "Рот /язик /губи симптоми / скарги",
+            "preferred": "Mouth/tongue/lip symptom/complaint",
+            "shortTitle": "Mouth/tongue/lip symptom/complaint",
+            "inclusionUa": "поганий запах з рота; обкладений язик; потріскані губи; дриблінг; сухість у роті; неприємний запах з рота; ранки в роті; опухлі губи",
+            "inclusion": "bad breath; coated tongue; cracked lips; dribbling; dry mouth; halitosis; sore mouth; swollen lips",
+            "exclusionUa": "проблеми із зубами / яснами D19; хейлоз D83; порушення смаку N16; зневоднення T11",
+            "exclusion": "dental/gum problem D19; cheilosis D83; disturbance of taste N16; dehydration T11",
+            "criteriaUa": "",
+            "criteria": "",
+            "considerUa": "",
+            "consider": "",
+            "noteUa": "",
+            "note": ""
+          }
         ],
         "actions": [
-          "-30",
-          "-34",
-          "-35"
+          {
+            "code": "-30",
+            "shortTitleUa": "Повне медичне обстеження",
+            "preferred": "Medical examination/health evaluation complete",
+            "shortTitle": "Medical examin/health eval complete",
+            "inclusionUa": "повне обстеження однієї сиссистеми органів або цілого організму; повний медичний огляд; медогляд немовлят; медогляд школярів / молоді",
+            "inclusion": "complete examination of  one body system or the whole body; complete check-up; well-baby exam; school health care exam for children/youth",
+            "exclusionUa": "",
+            "exclusion": "",
+            "criteriaUa": "",
+            "criteria": "",
+            "considerUa": "медогляд / оцінка стану здоров'я часткова – 31; тест на фізичне функціонування-39",
+            "consider": "medical examination/health evaluation partial -31; physical function test -39",
+            "noteUa": "",
+            "note": ""
+          },
+          {
+            "code": "-34",
+            "shortTitleUa": "Аналіз крові",
+            "preferred": "Blood test",
+            "shortTitle": "Blood test",
+            "inclusionUa": "група крові і резус фактор; швидкість осідання еритроцитів (ШОЕ); рівень лейкоцитів у крові; основна метаболічна панель; рівень гормонів у крові; рівень ензимів у крові; рівень наркотиків у крові; рівень алкоголю у крові; с-реактивний білок; протромбіновий час (МНО); D-дімер (маркер тромбоутворення); гази в артеріальній крові; вимірювання кліренсу креатиніну; аналіз крові на виявлення вагітності",
+            "inclusion": "blood group and type; erythrocyte sedimentation rate (ESR); white blood cell count (WBC); basic metabolic panel; blood hormone level; blood enzyme level; blood drug level; blood alcohol level; C-reactive protein (CRP); prothrombin time (INR); D-dimer; arterial blood gases; calculation of creatinine clearance; blood pregnancy test",
+            "exclusionUa": "радіоалергосорбентний тест (РАСТ) -32; посів крові -33; вимір кліренсу креатиніну -35; альбумін: рівень креатиніну -35",
+            "exclusion": "radioallergosorbent test (RAST) -32; blood cultures -33; measurement of  creatinine clearance -35; albumin:creatinine ratio -35",
+            "criteriaUa": "лабораторний аналіз, проведений на зразку крові",
+            "criteria": "a laboratory analysis performed on a blood sample",
+            "considerUa": "мікробіологічний / імунологічний аналіз -33",
+            "consider": "microbiological/immunological test -33",
+            "noteUa": "Хімічні аналізи належать до субстрату / субстанції, де цей аналіз проводиться, в той час, як мікробіологічні / імунологічні аналізи належать до -33, і аналізи  гістологічні / ексфоліативна цитологія до – 37.",
+            "note": "Chemical tests belong to the substrate/substance in which the test is done, whereas microbiological/immunological tests belong to -33 and histological/exfoliative cytology tests to -37."
+          },
+          {
+            "code": "-35",
+            "shortTitleUa": "Аналіз сечі",
+            "preferred": "Urine test",
+            "shortTitle": "Urine test",
+            "inclusionUa": "аналіз сечі із використанням тест-смужок; аналіз на наркотики у сечі; аналіз сечі на виявлення вагітності; вимірювання альбуміну: рівень креатиніну",
+            "inclusion": "urine strip test; test for drugs in urine; urine pregnancy test; measurement of albumin: creatinine ratio ",
+            "exclusionUa": "мікроскопічне дослідження сечі -37;аналіз крові на виявлення вагітності -34; розрахунок кліренсу креатиніну -34",
+            "exclusion": "microscopic examination of urine -37; blood pregnancy test -34; calculation of creatinine clearance -34",
+            "criteriaUa": "лабораторний аналіз, проведений на зразку сечі",
+            "criteria": "a laboratory analysis performed on a urine sample",
+            "considerUa": "мікробіологічний / імунологічний аналіз -33",
+            "consider": "microbiological/immunological test -33",
+            "noteUa": "Хімічні аналізи належать до субстрату / субстанції, де цей аналіз проводиться, в той час, як мікробіологічні / імунологічні аналізи належать до -33, а гістологічні / ексфоліативна цитологія до – 37.",
+            "note": "Chemical tests belong to the substrate/substance in which the test is done, whereas microbiological/immunological tests belong to -33 and histological/exfoliative cytology tests to -37."
+          }
         ],
-        "diagnosis": "T90"
+        "diagnosis": {
+          "code": "T90",
+          "shortTitleUa": "Інсулінонезалежний цукровий діабет",
+          "preferred": "Diabetes non-insulin dependent",
+          "shortTitle": "Diabetes non-insulin dependent",
+          "inclusionUa": "діабет БДУ; діабет з пізнім початком; діабет 2-типу",
+          "inclusion": "diabetes NOS; late onset diabetes; type 2 diabetes",
+          "exclusionUa": "гіперглікемія спричинена ліками A85; гіперглікемія, як окремий результат дослідження A91; інсулінозалежний цукровий діабет T89; гестаційний діабет W85",
+          "exclusion": "drug induced hyperglycaemia A85; hyperglycaemia as isolated finding A91; insulin-dependent diabetes T89; gestational diabetes W85",
+          "criteriaUa": "пацієнт не потребує регулярного безперервного лікування інсуліном після постановки діагнозу, підтвердженого одним із наступного: (а) класичні симптоми діабету, такі як поліурія, полідипсія, і швидка втрата ваги, разом з явним підвищенням глюкози в плазмі крові (б) рівень глюкози в крові натщесерце від 8ммоль / л (l40мг / дл) чи вище у двох або більше випадках (в) випадковий рівень глюкози в крові 11ммоль / л (200мг / дл) або вище у двох або більше випадках (г) оральний Тест на Толерантність до Глюкози (75 гм глюкози) з одним значенням глюкози в плазмі крові у проміжку від одної до двох годин 11ммоль / л (200мг / дл) або більше, і глюкозою в плазмі через дві години 11ммол / л (200мг / дл) або вище; ці ВООЗ-критерії можуть змінюватися з часом; крім того, можуть існувати відмінності між критеріями різних національних систем охорони здоров'я",
+          "criteria": "patient not requiring regular ongoing treatment with insulin after diagnosis confirmed by one of the following:(a) the classic symptoms of diabetes, such as polyuria, polydypsia, and rapid weight loss, together with unequivocal elevation of plasma glucose (b) fasting blood glucose levels of 8mmol/l (l40mg/dl) or more on two or more occasions (c) random blood glucose levels of 11mmol/l (200mg/dl) or more on two or more occasions(d) an oral Glucose Tolerance Test (75gm glucose) one value of plasma glucose at between one and two hours of 11mmol/l (200mg/dl) or more and plasma glucose at two hours of 11mol/l (200mg/dl) or more; these WHO-criteria may change over time; also, criteria differences may exist between national health care systems",
+          "considerUa": "",
+          "consider": "",
+          "noteUa": "1) ставити подвійний код для ускладнень таких, як ретинопатія F83, нефропатія U88. 2) під час вагітності подвійний код з W84",
+          "note": "1) double code complications such as retinopathy F83, nephropathy U88. 2) In pregnancy, double code with W84"
+        }
       },
       {
         "id": 8,
         "date": "2017-09-13",
         "reasons": [
-          "-60"
+          {
+            "code": "-60",
+            "shortTitleUa": "Результати тестів / процедур",
+            "preferred": "Result test/procedure",
+            "shortTitle": "Result test/procedure",
+            "inclusionUa": "",
+            "inclusion": "",
+            "exclusionUa": "",
+            "exclusion": "",
+            "criteriaUa": "результати аналізів або процедур замовлені / здійснені лікуючим лікарем: крові, візуалізація, електричне тресування або інші",
+            "criteria": "results from tests or procedures ordered / performed by the health care provider: blood, imaging, electrical tracing or other",
+            "considerUa": "-45 виховання свідомого ставлення до здоров'я, консультування, якщо пацієнт просить надати інформацію про виниклу проблему або наслідки результатів",
+            "consider": "-45 health education, advice, if the patient requests information on the underlying problem or consequences of the results",
+            "noteUa": "Цей код не може бути використаний для процесу, а тільки як привід для звернення.",
+            "note": "This code cannot be used for process, but only as a reason for encounter "
+          }
         ],
         "actions": [
-          "-47",
-          "-50"
+          {
+            "code": "-47",
+            "shortTitleUa": "Консультація зі спеціалістом",
+            "preferred": "Consultation with specialist",
+            "shortTitle": "Consultation with specialist",
+            "inclusionUa": "телемедична (дистанційна) консультація зі спеціалістом",
+            "inclusion": "telemedicine consultation with specialist",
+            "exclusionUa": "консультація в основного лікуючого спеціаліста -46; скерування до іншого спецаліста -66; скерування до лікаря / фахівця / клініки / лікарні -67; інше скерування -68",
+            "exclusion": "consultation with primary care provider -46; referral to another provider -66; referral to physician/specialist/clinic/hospital -67; other referral -68",
+            "criteriaUa": "консультація у спеціаліста, незалежно від того, присутній пацієнт чи ні",
+            "criteria": "consultation with a specialist, regardless whether the patient is present or not",
+            "considerUa": "",
+            "consider": "",
+            "noteUa": "Відповідальність за лікування залишається на основному лікуючому лікареві.",
+            "note": "Treatment responsibility remains at the original primary care provider."
+          },
+          {
+            "code": "-50",
+            "shortTitleUa": "Призначення ліків/ін’єкції ",
+            "preferred": "Medication/prescription/renewal/injection",
+            "shortTitle": "Medication/prescr/renewal/inject",
+            "inclusionUa": "призначення лікування; поновлення лікування; нагляд за лікуванням; систематичні ін'єкції ліків; десенсибілізація",
+            "inclusion": "prescribing of medication; renewal of medication; administration of medication; injection of medication with systemic effect; desensitisation ",
+            "exclusionUa": "венесекция -51; ін'єкція ліків з місцевим ефектом -55; голковколювання -59",
+            "exclusion": "venesection -51; injection of medication with local effect -55; acupuncture -59",
+            "criteriaUa": "",
+            "criteria": "",
+            "considerUa": "профілактична імунізація / лікування-44",
+            "consider": "preventive immunization/medication -44",
+            "noteUa": "Лікування конкретного стану пацієнта слід класифікувати тут.",
+            "note": "Treatment for a specific condition the patient should be classified here."
+          }
         ],
-        "diagnosis": "T90"
+        "diagnosis": {
+          "code": "T90",
+          "shortTitleUa": "Інсулінонезалежний цукровий діабет",
+          "preferred": "Diabetes non-insulin dependent",
+          "shortTitle": "Diabetes non-insulin dependent",
+          "inclusionUa": "діабет БДУ; діабет з пізнім початком; діабет 2-типу",
+          "inclusion": "diabetes NOS; late onset diabetes; type 2 diabetes",
+          "exclusionUa": "гіперглікемія спричинена ліками A85; гіперглікемія, як окремий результат дослідження A91; інсулінозалежний цукровий діабет T89; гестаційний діабет W85",
+          "exclusion": "drug induced hyperglycaemia A85; hyperglycaemia as isolated finding A91; insulin-dependent diabetes T89; gestational diabetes W85",
+          "criteriaUa": "пацієнт не потребує регулярного безперервного лікування інсуліном після постановки діагнозу, підтвердженого одним із наступного: (а) класичні симптоми діабету, такі як поліурія, полідипсія, і швидка втрата ваги, разом з явним підвищенням глюкози в плазмі крові (б) рівень глюкози в крові натщесерце від 8ммоль / л (l40мг / дл) чи вище у двох або більше випадках (в) випадковий рівень глюкози в крові 11ммоль / л (200мг / дл) або вище у двох або більше випадках (г) оральний Тест на Толерантність до Глюкози (75 гм глюкози) з одним значенням глюкози в плазмі крові у проміжку від одної до двох годин 11ммоль / л (200мг / дл) або більше, і глюкозою в плазмі через дві години 11ммол / л (200мг / дл) або вище; ці ВООЗ-критерії можуть змінюватися з часом; крім того, можуть існувати відмінності між критеріями різних національних систем охорони здоров'я",
+          "criteria": "patient not requiring regular ongoing treatment with insulin after diagnosis confirmed by one of the following:(a) the classic symptoms of diabetes, such as polyuria, polydypsia, and rapid weight loss, together with unequivocal elevation of plasma glucose (b) fasting blood glucose levels of 8mmol/l (l40mg/dl) or more on two or more occasions (c) random blood glucose levels of 11mmol/l (200mg/dl) or more on two or more occasions(d) an oral Glucose Tolerance Test (75gm glucose) one value of plasma glucose at between one and two hours of 11mmol/l (200mg/dl) or more and plasma glucose at two hours of 11mol/l (200mg/dl) or more; these WHO-criteria may change over time; also, criteria differences may exist between national health care systems",
+          "considerUa": "",
+          "consider": "",
+          "noteUa": "1) ставити подвійний код для ускладнень таких, як ретинопатія F83, нефропатія U88. 2) під час вагітності подвійний код з W84",
+          "note": "1) double code complications such as retinopathy F83, nephropathy U88. 2) In pregnancy, double code with W84"
+        }
       },
       {
         "id": 9,
         "date": "2017-09-11",
         "reasons": [
-          "T01",
-          "D20"
+          {
+            "code": "T01",
+            "shortTitleUa": "Надмірна спрага ",
+            "preferred": "Excessive thirst",
+            "shortTitle": "Excessive thirst",
+            "inclusionUa": "надмірна спрага",
+            "inclusion": "polydipsia",
+            "exclusionUa": "",
+            "exclusion": "",
+            "criteriaUa": "",
+            "criteria": "",
+            "considerUa": "",
+            "consider": "",
+            "noteUa": "",
+            "note": ""
+          },
+          {
+            "code": "D20",
+            "shortTitleUa": "Рот /язик /губи симптоми / скарги",
+            "preferred": "Mouth/tongue/lip symptom/complaint",
+            "shortTitle": "Mouth/tongue/lip symptom/complaint",
+            "inclusionUa": "поганий запах з рота; обкладений язик; потріскані губи; дриблінг; сухість у роті; неприємний запах з рота; ранки в роті; опухлі губи",
+            "inclusion": "bad breath; coated tongue; cracked lips; dribbling; dry mouth; halitosis; sore mouth; swollen lips",
+            "exclusionUa": "проблеми із зубами / яснами D19; хейлоз D83; порушення смаку N16; зневоднення T11",
+            "exclusion": "dental/gum problem D19; cheilosis D83; disturbance of taste N16; dehydration T11",
+            "criteriaUa": "",
+            "criteria": "",
+            "considerUa": "",
+            "consider": "",
+            "noteUa": "",
+            "note": ""
+          }
         ],
         "actions": [
-          "-45"
+          {
+            "code": "-45",
+            "shortTitleUa": "Нагляд/навчання/консультація/дієта",
+            "preferred": "Observation/health education/advice/diet",
+            "shortTitle": "Observ/health educat/advice/diet",
+            "inclusionUa": "консультування з питань здорового способу життя; профілактика проблем зі здоров'ям; консультації з питань вагітності та планування сім'ї; консультації з приводу використання медичних послуг; консультації з приводу гігієни праці / соціальних проблем; динамічне спостереження",
+            "inclusion": "advice on healthy behaviour; prevention of health problems; advice on pregnancy and family planning; advice on regarding the use of health services; advice on regarding occupational health/social problems; watchful waiting",
+            "exclusionUa": "терапевтичне консультування / прослуховування -58",
+            "exclusion": "therapeutic counselling/listening  -58",
+            "criteriaUa": "профілактика проблем зі здоров'ям і консультування з питань здорового способу життя",
+            "criteria": "prevention of health problems and advice on healthy behaviour",
+            "considerUa": "",
+            "consider": "",
+            "noteUa": "",
+            "note": ""
+          }
         ],
-        "diagnosis": "T82"
+        "diagnosis": {
+          "code": "T82",
+          "shortTitleUa": "Ожиріння ",
+          "preferred": "Obesity",
+          "shortTitle": "Obesity",
+          "inclusionUa": "",
+          "inclusion": "",
+          "exclusionUa": "надмірна вага тіла T83",
+          "exclusion": "overweight T83",
+          "criteriaUa": "індекс маси тіла більше 30",
+          "criteria": "a body mass index greater than 30",
+          "considerUa": "",
+          "consider": "",
+          "noteUa": "",
+          "note": ""
+        }
       }
     ]
   },
@@ -203,7 +863,22 @@
       {
         "id": "6",
         "name": {
-          "diagnosis": "A97",
+          "diagnosis": {
+            "code": "A97",
+            "shortTitleUa": "Відсутність хвороби",
+            "preferred": "No disease",
+            "shortTitle": "No disease",
+            "inclusionUa": "відсутність захворювання / хвороби під час звернення",
+            "inclusion": "no illness/disease dealt with at encounter",
+            "exclusionUa": "підтримання здоров’я / профілактика A98",
+            "exclusion": "health maintenance/preventive medicine A98",
+            "criteriaUa": "",
+            "criteria": "",
+            "considerUa": "",
+            "consider": "",
+            "noteUa": "Іноді у пацієнта є привід для зверненняі, який сімейний лікар не може інтерпретувати як діагноз або симптом в області сімейної практики. У цих випадках сімейний лікар / терапевт буде використовувати код A97, вказавши, що причина пацієнта для звернення стосується чогось, на що сімейний лікар / терапевт не може професійно відреагувати, за винятком того, щоб описати цей випадок.",
+            "note": "Sometimes a patient has a reason for encounter which the family doctor cannot interpret as a diagnosis or symptom within the domain of family practice. In these cases the FP/GP will use the code A97, indicating that the patient's reason for encounter refers to something the FP/GP cannot professionally respond to, except by explaining that this is the case."
+          },
           "episode": "Відсутність хвороби"
         },
         "subVisits": [
@@ -215,7 +890,22 @@
       {
         "id": "7",
         "name": {
-          "diagnosis": "А98",
+          "diagnosis": {
+            "code": "A98",
+            "shortTitleUa": "Підтримання здоров'я / профілактика",
+            "preferred": "Health maintenance/preventive medicine",
+            "shortTitle": "Health maint/preventive medicine",
+            "inclusionUa": "медична процедура / консультація з профілактичною метою, в тому числі генетичне консультування",
+            "inclusion": "medical procedure/counselling with a preventive purpose, including genetic counseling",
+            "exclusionUa": "відсутність хвороби A97",
+            "exclusion": "no disease A97",
+            "criteriaUa": "",
+            "criteria": "",
+            "considerUa": "",
+            "consider": "",
+            "noteUa": "",
+            "note": ""
+          },
           "episode": "Підтримання здоров'я / профілактика"
         },
         "subVisits": [
@@ -229,61 +919,373 @@
         "id": 9,
         "date": "2017-05-17",
         "reasons": [
-          "A64"
+          {
+            "code": "-64",
+            "shortTitleUa": "Звернення,  ініційоване медпрацівником",
+            "preferred": "Encounter/problem initiated by provider",
+            "shortTitle": "Encounter/prob initiated by provider",
+            "inclusionUa": "пацієнту сказали ",
+            "inclusion": " на яку звернув увагу лікар",
+            "exclusionUa": " якої не було у списку основних скарг пацієнта\"\"ацієнту сказали \"повернутися\"; проблема",
+            "exclusion": " на яку звернув увагу лікар",
+            "criteriaUa": " якої не було у списку основн\"\"цієнту сказали \"повернутися\"; проблема",
+            "criteria": " на яку звернув увагу лікар",
+            "considerUa": " якої не було\"\"ієнту сказали \"повернутися\"; проблема",
+            "consider": " на яку звернув увагу ліка\"\"єнту сказали \"повернутися\"; проблема",
+            "noteUa": " на яку звер\"\"нту сказали \"повернутися\"; проблема\"\"ту сказали \"повернутис\"\"у сказали \"",
+            "note": "the patient is told “ to come back”; problem addressed by the provider, that was not on the patient’s agenda",
+            "FIELD15": "перевірка на вимогу третьої сторони -62; зустріч / проблема зініційована не пацієнтом / не постачальником  -65",
+            "FIELD16": "exams requested by a third party -62; encounter/problem initiated by other than patient / provider -65",
+            "FIELD21": "Цей код не можна використовувати для процесу, а тільки як привід для звернення; якщо пацієнт зініціював візит, позначте кодом конкретну причину звернення.",
+            "FIELD22": "This code cannot be used for process, but only as a reason for encounter; If the patient has initiated the contact, code the specific reason for encounter."
+          }
         ],
         "actions": [
-          "-31",
-          "-45"
+          {
+            "code": "-31",
+            "shortTitleUa": "Часткове медичне обстеження",
+            "preferred": "Medical examination/health evaluation partial",
+            "shortTitle": "Medical examin/health eval partial",
+            "inclusionUa": "прицільний огляд; клінічний скрінінг окремих проблем зі здоров'ям",
+            "inclusion": "focussed examination; clinical screening of single health problems",
+            "exclusionUa": "",
+            "exclusion": "",
+            "criteriaUa": "огляд, сконцентрований на конкретній системі організму, на приклад аускультація серця або вимірювання тиску К31; або вимірювання температури тіла А31",
+            "criteria": "an examination focussed on a specific part of a body system, e.g. heart auscultation or blood pressure measurement K31; or body temperature measurement A31",
+            "considerUa": "медичний огляд / повний аналіз стану сдоров'я – 30; тест на фізичне функціонування -39",
+            "consider": "medical examination/health evaluation complete -30; physical function test -39",
+            "noteUa": "",
+            "note": ""
+          },
+          {
+            "code": "-45",
+            "shortTitleUa": "Нагляд/навчання/консультація/дієта",
+            "preferred": "Observation/health education/advice/diet",
+            "shortTitle": "Observ/health educat/advice/diet",
+            "inclusionUa": "консультування з питань здорового способу життя; профілактика проблем зі здоров'ям; консультації з питань вагітності та планування сім'ї; консультації з приводу використання медичних послуг; консультації з приводу гігієни праці / соціальних проблем; динамічне спостереження",
+            "inclusion": "advice on healthy behaviour; prevention of health problems; advice on pregnancy and family planning; advice on regarding the use of health services; advice on regarding occupational health/social problems; watchful waiting",
+            "exclusionUa": "терапевтичне консультування / прослуховування -58",
+            "exclusion": "therapeutic counselling/listening  -58",
+            "criteriaUa": "профілактика проблем зі здоров'ям і консультування з питань здорового способу життя",
+            "criteria": "prevention of health problems and advice on healthy behaviour",
+            "considerUa": "",
+            "consider": "",
+            "noteUa": "",
+            "note": ""
+          }
         ],
-        "diagnosis": "A97"
+        "diagnosis": {
+          "code": "A97",
+          "shortTitleUa": "Відсутність хвороби",
+          "preferred": "No disease",
+          "shortTitle": "No disease",
+          "inclusionUa": "відсутність захворювання / хвороби під час звернення",
+          "inclusion": "no illness/disease dealt with at encounter",
+          "exclusionUa": "підтримання здоров’я / профілактика A98",
+          "exclusion": "health maintenance/preventive medicine A98",
+          "criteriaUa": "",
+          "criteria": "",
+          "considerUa": "",
+          "consider": "",
+          "noteUa": "Іноді у пацієнта є привід для зверненняі, який сімейний лікар не може інтерпретувати як діагноз або симптом в області сімейної практики. У цих випадках сімейний лікар / терапевт буде використовувати код A97, вказавши, що причина пацієнта для звернення стосується чогось, на що сімейний лікар / терапевт не може професійно відреагувати, за винятком того, щоб описати цей випадок.",
+          "note": "Sometimes a patient has a reason for encounter which the family doctor cannot interpret as a diagnosis or symptom within the domain of family practice. In these cases the FP/GP will use the code A97, indicating that the patient's reason for encounter refers to something the FP/GP cannot professionally respond to, except by explaining that this is the case."
+        }
       },
       {
         "id": 10,
         "date": "2017-06-12",
         "reasons": [
-          "-64"
+          {
+            "code": "-64",
+            "shortTitleUa": "Звернення,  ініційоване медпрацівником",
+            "preferred": "Encounter/problem initiated by provider",
+            "shortTitle": "Encounter/prob initiated by provider",
+            "inclusionUa": "пацієнту сказали ",
+            "inclusion": " на яку звернув увагу лікар",
+            "exclusionUa": " якої не було у списку основних скарг пацієнта\"\"ацієнту сказали \"повернутися\"; проблема",
+            "exclusion": " на яку звернув увагу лікар",
+            "criteriaUa": " якої не було у списку основн\"\"цієнту сказали \"повернутися\"; проблема",
+            "criteria": " на яку звернув увагу лікар",
+            "considerUa": " якої не було\"\"ієнту сказали \"повернутися\"; проблема",
+            "consider": " на яку звернув увагу ліка\"\"єнту сказали \"повернутися\"; проблема",
+            "noteUa": " на яку звер\"\"нту сказали \"повернутися\"; проблема\"\"ту сказали \"повернутис\"\"у сказали \"",
+            "note": "the patient is told “ to come back”; problem addressed by the provider, that was not on the patient’s agenda",
+            "FIELD15": "перевірка на вимогу третьої сторони -62; зустріч / проблема зініційована не пацієнтом / не постачальником  -65",
+            "FIELD16": "exams requested by a third party -62; encounter/problem initiated by other than patient / provider -65",
+            "FIELD21": "Цей код не можна використовувати для процесу, а тільки як привід для звернення; якщо пацієнт зініціював візит, позначте кодом конкретну причину звернення.",
+            "FIELD22": "This code cannot be used for process, but only as a reason for encounter; If the patient has initiated the contact, code the specific reason for encounter."
+          }
         ],
         "actions": [
-          "-31",
-          "-45"
+          {
+            "code": "-31",
+            "shortTitleUa": "Часткове медичне обстеження",
+            "preferred": "Medical examination/health evaluation partial",
+            "shortTitle": "Medical examin/health eval partial",
+            "inclusionUa": "прицільний огляд; клінічний скрінінг окремих проблем зі здоров'ям",
+            "inclusion": "focussed examination; clinical screening of single health problems",
+            "exclusionUa": "",
+            "exclusion": "",
+            "criteriaUa": "огляд, сконцентрований на конкретній системі організму, на приклад аускультація серця або вимірювання тиску К31; або вимірювання температури тіла А31",
+            "criteria": "an examination focussed on a specific part of a body system, e.g. heart auscultation or blood pressure measurement K31; or body temperature measurement A31",
+            "considerUa": "медичний огляд / повний аналіз стану сдоров'я – 30; тест на фізичне функціонування -39",
+            "consider": "medical examination/health evaluation complete -30; physical function test -39",
+            "noteUa": "",
+            "note": ""
+          },
+          {
+            "code": "-45",
+            "shortTitleUa": "Нагляд/навчання/консультація/дієта",
+            "preferred": "Observation/health education/advice/diet",
+            "shortTitle": "Observ/health educat/advice/diet",
+            "inclusionUa": "консультування з питань здорового способу життя; профілактика проблем зі здоров'ям; консультації з питань вагітності та планування сім'ї; консультації з приводу використання медичних послуг; консультації з приводу гігієни праці / соціальних проблем; динамічне спостереження",
+            "inclusion": "advice on healthy behaviour; prevention of health problems; advice on pregnancy and family planning; advice on regarding the use of health services; advice on regarding occupational health/social problems; watchful waiting",
+            "exclusionUa": "терапевтичне консультування / прослуховування -58",
+            "exclusion": "therapeutic counselling/listening  -58",
+            "criteriaUa": "профілактика проблем зі здоров'ям і консультування з питань здорового способу життя",
+            "criteria": "prevention of health problems and advice on healthy behaviour",
+            "considerUa": "",
+            "consider": "",
+            "noteUa": "",
+            "note": ""
+          }
         ],
-        "diagnosis": "A97"
+        "diagnosis": {
+          "code": "A97",
+          "shortTitleUa": "Відсутність хвороби",
+          "preferred": "No disease",
+          "shortTitle": "No disease",
+          "inclusionUa": "відсутність захворювання / хвороби під час звернення",
+          "inclusion": "no illness/disease dealt with at encounter",
+          "exclusionUa": "підтримання здоров’я / профілактика A98",
+          "exclusion": "health maintenance/preventive medicine A98",
+          "criteriaUa": "",
+          "criteria": "",
+          "considerUa": "",
+          "consider": "",
+          "noteUa": "Іноді у пацієнта є привід для зверненняі, який сімейний лікар не може інтерпретувати як діагноз або симптом в області сімейної практики. У цих випадках сімейний лікар / терапевт буде використовувати код A97, вказавши, що причина пацієнта для звернення стосується чогось, на що сімейний лікар / терапевт не може професійно відреагувати, за винятком того, щоб описати цей випадок.",
+          "note": "Sometimes a patient has a reason for encounter which the family doctor cannot interpret as a diagnosis or symptom within the domain of family practice. In these cases the FP/GP will use the code A97, indicating that the patient's reason for encounter refers to something the FP/GP cannot professionally respond to, except by explaining that this is the case."
+        }
       },
       {
         "id": 11,
         "date": "2017-10-17",
         "reasons": [
-          "-64"
+          {
+            "code": "-64",
+            "shortTitleUa": "Звернення,  ініційоване медпрацівником",
+            "preferred": "Encounter/problem initiated by provider",
+            "shortTitle": "Encounter/prob initiated by provider",
+            "inclusionUa": "пацієнту сказали ",
+            "inclusion": " на яку звернув увагу лікар",
+            "exclusionUa": " якої не було у списку основних скарг пацієнта\"\"ацієнту сказали \"повернутися\"; проблема",
+            "exclusion": " на яку звернув увагу лікар",
+            "criteriaUa": " якої не було у списку основн\"\"цієнту сказали \"повернутися\"; проблема",
+            "criteria": " на яку звернув увагу лікар",
+            "considerUa": " якої не було\"\"ієнту сказали \"повернутися\"; проблема",
+            "consider": " на яку звернув увагу ліка\"\"єнту сказали \"повернутися\"; проблема",
+            "noteUa": " на яку звер\"\"нту сказали \"повернутися\"; проблема\"\"ту сказали \"повернутис\"\"у сказали \"",
+            "note": "the patient is told “ to come back”; problem addressed by the provider, that was not on the patient’s agenda",
+            "FIELD15": "перевірка на вимогу третьої сторони -62; зустріч / проблема зініційована не пацієнтом / не постачальником  -65",
+            "FIELD16": "exams requested by a third party -62; encounter/problem initiated by other than patient / provider -65",
+            "FIELD21": "Цей код не можна використовувати для процесу, а тільки як привід для звернення; якщо пацієнт зініціював візит, позначте кодом конкретну причину звернення.",
+            "FIELD22": "This code cannot be used for process, but only as a reason for encounter; If the patient has initiated the contact, code the specific reason for encounter."
+          }
         ],
         "actions": [
-          "-31",
-          "-45"
+          {
+            "code": "-31",
+            "shortTitleUa": "Часткове медичне обстеження",
+            "preferred": "Medical examination/health evaluation partial",
+            "shortTitle": "Medical examin/health eval partial",
+            "inclusionUa": "прицільний огляд; клінічний скрінінг окремих проблем зі здоров'ям",
+            "inclusion": "focussed examination; clinical screening of single health problems",
+            "exclusionUa": "",
+            "exclusion": "",
+            "criteriaUa": "огляд, сконцентрований на конкретній системі організму, на приклад аускультація серця або вимірювання тиску К31; або вимірювання температури тіла А31",
+            "criteria": "an examination focussed on a specific part of a body system, e.g. heart auscultation or blood pressure measurement K31; or body temperature measurement A31",
+            "considerUa": "медичний огляд / повний аналіз стану сдоров'я – 30; тест на фізичне функціонування -39",
+            "consider": "medical examination/health evaluation complete -30; physical function test -39",
+            "noteUa": "",
+            "note": ""
+          },
+          {
+            "code": "-45",
+            "shortTitleUa": "Нагляд/навчання/консультація/дієта",
+            "preferred": "Observation/health education/advice/diet",
+            "shortTitle": "Observ/health educat/advice/diet",
+            "inclusionUa": "консультування з питань здорового способу життя; профілактика проблем зі здоров'ям; консультації з питань вагітності та планування сім'ї; консультації з приводу використання медичних послуг; консультації з приводу гігієни праці / соціальних проблем; динамічне спостереження",
+            "inclusion": "advice on healthy behaviour; prevention of health problems; advice on pregnancy and family planning; advice on regarding the use of health services; advice on regarding occupational health/social problems; watchful waiting",
+            "exclusionUa": "терапевтичне консультування / прослуховування -58",
+            "exclusion": "therapeutic counselling/listening  -58",
+            "criteriaUa": "профілактика проблем зі здоров'ям і консультування з питань здорового способу життя",
+            "criteria": "prevention of health problems and advice on healthy behaviour",
+            "considerUa": "",
+            "consider": "",
+            "noteUa": "",
+            "note": ""
+          }
         ],
-        "diagnosis": "A97"
+        "diagnosis": {
+          "code": "A97",
+          "shortTitleUa": "Відсутність хвороби",
+          "preferred": "No disease",
+          "shortTitle": "No disease",
+          "inclusionUa": "відсутність захворювання / хвороби під час звернення",
+          "inclusion": "no illness/disease dealt with at encounter",
+          "exclusionUa": "підтримання здоров’я / профілактика A98",
+          "exclusion": "health maintenance/preventive medicine A98",
+          "criteriaUa": "",
+          "criteria": "",
+          "considerUa": "",
+          "consider": "",
+          "noteUa": "Іноді у пацієнта є привід для зверненняі, який сімейний лікар не може інтерпретувати як діагноз або симптом в області сімейної практики. У цих випадках сімейний лікар / терапевт буде використовувати код A97, вказавши, що причина пацієнта для звернення стосується чогось, на що сімейний лікар / терапевт не може професійно відреагувати, за винятком того, щоб описати цей випадок.",
+          "note": "Sometimes a patient has a reason for encounter which the family doctor cannot interpret as a diagnosis or symptom within the domain of family practice. In these cases the FP/GP will use the code A97, indicating that the patient's reason for encounter refers to something the FP/GP cannot professionally respond to, except by explaining that this is the case."
+        }
       },
       {
         "id": 12,
         "date": "2017-06-12",
         "reasons": [
-          "-44"
+          {
+            "code": "-44",
+            "shortTitleUa": "Імунізація/профілактичне лікування",
+            "preferred": "Preventive immunization/medication",
+            "shortTitle": "Preventive immunization/medication",
+            "inclusionUa": "активна / пасивна імунізація; профілактичне лікування препаратами, наприклад, профілактика малярії; вживання контрацептивних препаратів; десенситизація",
+            "inclusion": "active/passive immunization; prophylactic treatment with drugs e.g. malaria prophylaxis; contraceptive medication; desensitisation",
+            "exclusionUa": "",
+            "exclusion": "",
+            "criteriaUa": "immunization / desensitisation / preventive medication used to avoid conditions / reactions, not present at the time of prescribing \nімунізація / десенситизація /  профілактичне лікування використовуються, щоб уникнути умов / реакції, не присутніх в момент призначення",
+            "criteria": "immunization/desensitisation/preventive medication used to avoid conditions/reactions, not present at the time of prescribing",
+            "considerUa": "-50 використання лікарських препаратів",
+            "consider": "-50 medication ",
+            "noteUa": "Якщо у пацієна є покази (наприклад, гіпертензія), використовуйте для призначення лікування код -50.",
+            "note": "If the patient has a condition (e.g. hypertension), use the code for medication -50.  "
+          }
         ],
         "actions": [
-          "-31",
-          "-44"
+          {
+            "code": "-31",
+            "shortTitleUa": "Часткове медичне обстеження",
+            "preferred": "Medical examination/health evaluation partial",
+            "shortTitle": "Medical examin/health eval partial",
+            "inclusionUa": "прицільний огляд; клінічний скрінінг окремих проблем зі здоров'ям",
+            "inclusion": "focussed examination; clinical screening of single health problems",
+            "exclusionUa": "",
+            "exclusion": "",
+            "criteriaUa": "огляд, сконцентрований на конкретній системі організму, на приклад аускультація серця або вимірювання тиску К31; або вимірювання температури тіла А31",
+            "criteria": "an examination focussed on a specific part of a body system, e.g. heart auscultation or blood pressure measurement K31; or body temperature measurement A31",
+            "considerUa": "медичний огляд / повний аналіз стану сдоров'я – 30; тест на фізичне функціонування -39",
+            "consider": "medical examination/health evaluation complete -30; physical function test -39",
+            "noteUa": "",
+            "note": ""
+          },
+          {
+            "code": "-44",
+            "shortTitleUa": "Імунізація/профілактичне лікування",
+            "preferred": "Preventive immunization/medication",
+            "shortTitle": "Preventive immunization/medication",
+            "inclusionUa": "активна / пасивна імунізація; профілактичне лікування препаратами, наприклад, профілактика малярії; вживання контрацептивних препаратів; десенситизація",
+            "inclusion": "active/passive immunization; prophylactic treatment with drugs e.g. malaria prophylaxis; contraceptive medication; desensitisation",
+            "exclusionUa": "",
+            "exclusion": "",
+            "criteriaUa": "immunization / desensitisation / preventive medication used to avoid conditions / reactions, not present at the time of prescribing \nімунізація / десенситизація /  профілактичне лікування використовуються, щоб уникнути умов / реакції, не присутніх в момент призначення",
+            "criteria": "immunization/desensitisation/preventive medication used to avoid conditions/reactions, not present at the time of prescribing",
+            "considerUa": "-50 використання лікарських препаратів",
+            "consider": "-50 medication ",
+            "noteUa": "Якщо у пацієна є покази (наприклад, гіпертензія), використовуйте для призначення лікування код -50.",
+            "note": "If the patient has a condition (e.g. hypertension), use the code for medication -50.  "
+          }
         ],
-        "diagnosis": "A98"
+        "diagnosis": {
+          "code": "A98",
+          "shortTitleUa": "Підтримання здоров'я / профілактика",
+          "preferred": "Health maintenance/preventive medicine",
+          "shortTitle": "Health maint/preventive medicine",
+          "inclusionUa": "медична процедура / консультація з профілактичною метою, в тому числі генетичне консультування",
+          "inclusion": "medical procedure/counselling with a preventive purpose, including genetic counseling",
+          "exclusionUa": "відсутність хвороби A97",
+          "exclusion": "no disease A97",
+          "criteriaUa": "",
+          "criteria": "",
+          "considerUa": "",
+          "consider": "",
+          "noteUa": "",
+          "note": ""
+        }
       },
       {
         "id": 13,
         "date": "2017-10-11",
         "reasons": [
-          "-44"
+          {
+            "code": "-44",
+            "shortTitleUa": "Імунізація/профілактичне лікування",
+            "preferred": "Preventive immunization/medication",
+            "shortTitle": "Preventive immunization/medication",
+            "inclusionUa": "активна / пасивна імунізація; профілактичне лікування препаратами, наприклад, профілактика малярії; вживання контрацептивних препаратів; десенситизація",
+            "inclusion": "active/passive immunization; prophylactic treatment with drugs e.g. malaria prophylaxis; contraceptive medication; desensitisation",
+            "exclusionUa": "",
+            "exclusion": "",
+            "criteriaUa": "immunization / desensitisation / preventive medication used to avoid conditions / reactions, not present at the time of prescribing \nімунізація / десенситизація /  профілактичне лікування використовуються, щоб уникнути умов / реакції, не присутніх в момент призначення",
+            "criteria": "immunization/desensitisation/preventive medication used to avoid conditions/reactions, not present at the time of prescribing",
+            "considerUa": "-50 використання лікарських препаратів",
+            "consider": "-50 medication ",
+            "noteUa": "Якщо у пацієна є покази (наприклад, гіпертензія), використовуйте для призначення лікування код -50.",
+            "note": "If the patient has a condition (e.g. hypertension), use the code for medication -50.  "
+          }
         ],
         "actions": [
-          "-31",
-          "-44"
+          {
+            "code": "-31",
+            "shortTitleUa": "Часткове медичне обстеження",
+            "preferred": "Medical examination/health evaluation partial",
+            "shortTitle": "Medical examin/health eval partial",
+            "inclusionUa": "прицільний огляд; клінічний скрінінг окремих проблем зі здоров'ям",
+            "inclusion": "focussed examination; clinical screening of single health problems",
+            "exclusionUa": "",
+            "exclusion": "",
+            "criteriaUa": "огляд, сконцентрований на конкретній системі організму, на приклад аускультація серця або вимірювання тиску К31; або вимірювання температури тіла А31",
+            "criteria": "an examination focussed on a specific part of a body system, e.g. heart auscultation or blood pressure measurement K31; or body temperature measurement A31",
+            "considerUa": "медичний огляд / повний аналіз стану сдоров'я – 30; тест на фізичне функціонування -39",
+            "consider": "medical examination/health evaluation complete -30; physical function test -39",
+            "noteUa": "",
+            "note": ""
+          },
+          {
+            "code": "-44",
+            "shortTitleUa": "Імунізація/профілактичне лікування",
+            "preferred": "Preventive immunization/medication",
+            "shortTitle": "Preventive immunization/medication",
+            "inclusionUa": "активна / пасивна імунізація; профілактичне лікування препаратами, наприклад, профілактика малярії; вживання контрацептивних препаратів; десенситизація",
+            "inclusion": "active/passive immunization; prophylactic treatment with drugs e.g. malaria prophylaxis; contraceptive medication; desensitisation",
+            "exclusionUa": "",
+            "exclusion": "",
+            "criteriaUa": "immunization / desensitisation / preventive medication used to avoid conditions / reactions, not present at the time of prescribing \nімунізація / десенситизація /  профілактичне лікування використовуються, щоб уникнути умов / реакції, не присутніх в момент призначення",
+            "criteria": "immunization/desensitisation/preventive medication used to avoid conditions/reactions, not present at the time of prescribing",
+            "considerUa": "-50 використання лікарських препаратів",
+            "consider": "-50 medication ",
+            "noteUa": "Якщо у пацієна є покази (наприклад, гіпертензія), використовуйте для призначення лікування код -50.",
+            "note": "If the patient has a condition (e.g. hypertension), use the code for medication -50.  "
+          }
         ],
-        "diagnosis": "A98"
+        "diagnosis": {
+          "code": "A98",
+          "shortTitleUa": "Підтримання здоров'я / профілактика",
+          "preferred": "Health maintenance/preventive medicine",
+          "shortTitle": "Health maint/preventive medicine",
+          "inclusionUa": "медична процедура / консультація з профілактичною метою, в тому числі генетичне консультування",
+          "inclusion": "medical procedure/counselling with a preventive purpose, including genetic counseling",
+          "exclusionUa": "відсутність хвороби A97",
+          "exclusion": "no disease A97",
+          "criteriaUa": "",
+          "criteria": "",
+          "considerUa": "",
+          "consider": "",
+          "noteUa": "",
+          "note": ""
+        }
       }
     ]
   },
@@ -311,40 +1313,265 @@
         "id": 14,
         "date": "2017-05-17",
         "reasons": [
-          "-50"
+          {
+            "code": "-50",
+            "shortTitleUa": "Призначення ліків/ін’єкції ",
+            "preferred": "Medication/prescription/renewal/injection",
+            "shortTitle": "Medication/prescr/renewal/inject",
+            "inclusionUa": "призначення лікування; поновлення лікування; нагляд за лікуванням; систематичні ін'єкції ліків; десенсибілізація",
+            "inclusion": "prescribing of medication; renewal of medication; administration of medication; injection of medication with systemic effect; desensitisation ",
+            "exclusionUa": "венесекция -51; ін'єкція ліків з місцевим ефектом -55; голковколювання -59",
+            "exclusion": "venesection -51; injection of medication with local effect -55; acupuncture -59",
+            "criteriaUa": "",
+            "criteria": "",
+            "considerUa": "профілактична імунізація / лікування-44",
+            "consider": "preventive immunization/medication -44",
+            "noteUa": "Лікування конкретного стану пацієнта слід класифікувати тут.",
+            "note": "Treatment for a specific condition the patient should be classified here."
+          }
         ],
         "actions": [
-          "-31",
-          "-45",
-          "-50"
+          {
+            "code": "-31",
+            "shortTitleUa": "Часткове медичне обстеження",
+            "preferred": "Medical examination/health evaluation partial",
+            "shortTitle": "Medical examin/health eval partial",
+            "inclusionUa": "прицільний огляд; клінічний скрінінг окремих проблем зі здоров'ям",
+            "inclusion": "focussed examination; clinical screening of single health problems",
+            "exclusionUa": "",
+            "exclusion": "",
+            "criteriaUa": "огляд, сконцентрований на конкретній системі організму, на приклад аускультація серця або вимірювання тиску К31; або вимірювання температури тіла А31",
+            "criteria": "an examination focussed on a specific part of a body system, e.g. heart auscultation or blood pressure measurement K31; or body temperature measurement A31",
+            "considerUa": "медичний огляд / повний аналіз стану сдоров'я – 30; тест на фізичне функціонування -39",
+            "consider": "medical examination/health evaluation complete -30; physical function test -39",
+            "noteUa": "",
+            "note": ""
+          },
+          {
+            "code": "-45",
+            "shortTitleUa": "Нагляд/навчання/консультація/дієта",
+            "preferred": "Observation/health education/advice/diet",
+            "shortTitle": "Observ/health educat/advice/diet",
+            "inclusionUa": "консультування з питань здорового способу життя; профілактика проблем зі здоров'ям; консультації з питань вагітності та планування сім'ї; консультації з приводу використання медичних послуг; консультації з приводу гігієни праці / соціальних проблем; динамічне спостереження",
+            "inclusion": "advice on healthy behaviour; prevention of health problems; advice on pregnancy and family planning; advice on regarding the use of health services; advice on regarding occupational health/social problems; watchful waiting",
+            "exclusionUa": "терапевтичне консультування / прослуховування -58",
+            "exclusion": "therapeutic counselling/listening  -58",
+            "criteriaUa": "профілактика проблем зі здоров'ям і консультування з питань здорового способу життя",
+            "criteria": "prevention of health problems and advice on healthy behaviour",
+            "considerUa": "",
+            "consider": "",
+            "noteUa": "",
+            "note": ""
+          },
+          {
+            "code": "-50",
+            "shortTitleUa": "Призначення ліків/ін’єкції ",
+            "preferred": "Medication/prescription/renewal/injection",
+            "shortTitle": "Medication/prescr/renewal/inject",
+            "inclusionUa": "призначення лікування; поновлення лікування; нагляд за лікуванням; систематичні ін'єкції ліків; десенсибілізація",
+            "inclusion": "prescribing of medication; renewal of medication; administration of medication; injection of medication with systemic effect; desensitisation ",
+            "exclusionUa": "венесекция -51; ін'єкція ліків з місцевим ефектом -55; голковколювання -59",
+            "exclusion": "venesection -51; injection of medication with local effect -55; acupuncture -59",
+            "criteriaUa": "",
+            "criteria": "",
+            "considerUa": "профілактична імунізація / лікування-44",
+            "consider": "preventive immunization/medication -44",
+            "noteUa": "Лікування конкретного стану пацієнта слід класифікувати тут.",
+            "note": "Treatment for a specific condition the patient should be classified here."
+          }
         ],
-        "diagnosis": "K86"
+        "diagnosis": {
+          "code": "K86",
+          "shortTitleUa": "Гіпертонія неускладнена",
+          "preferred": "Hypertension uncomplicated",
+          "shortTitle": "Hypertension uncomplicated",
+          "inclusionUa": "гіпертонічна хвороба; артеріальна гіпертонія БДУ; гіпертонія невідомого походження",
+          "inclusion": "essential hypertension; hypertension NOS; idiopathic hypertension",
+          "exclusionUa": "гіпертонія з ускладненням K87; гіпертонія під час вагітності W81",
+          "exclusion": "hypertension with complications K87; hypertension in pregnancy W81",
+          "criteriaUa": "дві або більше реєстрації показів під час візиту, зроблені під час двох або більше візитів, з кров'яним тиском, що в середньому вище 95 мм рт.ст. діастолічний або більше 160 мм рт.ст. систолічний у дорослих пацієнтів;  або два або більше заміри при одноразовій зустрічіі із середнім діастолічним артеріальним тиском 120 мм рт. ст. або вище; плюс відсутність симптомів вторинного залучення серця, нирок, очей або мозку",
+          "criteria": "either two or more readings per encounter, taken at two or more encounters, with blood pressures that average over 95 mm Hg diastolic or over 160 mm Hg systolic in adult patients; or two or more readings at a single encounter with an average diastolic blood pressure of 120 mm Hg or more; plus absence of evidence of secondary involvement of heart, kidney, eye, or brain",
+          "considerUa": "підвищений кров'яний тиск K85",
+          "consider": "elevated blood pressure K85",
+          "noteUa": "1) для дітей, звіритись з відповідними педіатричними таблицями кров’яного тиску. 2) якщо є вторинна гіпертонія, ставити також код основної причини",
+          "note": "1) For children, consult appropriate paediatric blood pressure tables. 2) If secondary hypertension, code also the underlying cause"
+        }
       },
       {
         "id": 15,
         "date": "2017-06-15",
         "reasons": [
-          "-50"
+          {
+            "code": "-50",
+            "shortTitleUa": "Призначення ліків/ін’єкції ",
+            "preferred": "Medication/prescription/renewal/injection",
+            "shortTitle": "Medication/prescr/renewal/inject",
+            "inclusionUa": "призначення лікування; поновлення лікування; нагляд за лікуванням; систематичні ін'єкції ліків; десенсибілізація",
+            "inclusion": "prescribing of medication; renewal of medication; administration of medication; injection of medication with systemic effect; desensitisation ",
+            "exclusionUa": "венесекция -51; ін'єкція ліків з місцевим ефектом -55; голковколювання -59",
+            "exclusion": "venesection -51; injection of medication with local effect -55; acupuncture -59",
+            "criteriaUa": "",
+            "criteria": "",
+            "considerUa": "профілактична імунізація / лікування-44",
+            "consider": "preventive immunization/medication -44",
+            "noteUa": "Лікування конкретного стану пацієнта слід класифікувати тут.",
+            "note": "Treatment for a specific condition the patient should be classified here."
+          }
         ],
         "actions": [
-          "-31",
-          "-45",
-          "-50"
+          {
+            "code": "-31",
+            "shortTitleUa": "Часткове медичне обстеження",
+            "preferred": "Medical examination/health evaluation partial",
+            "shortTitle": "Medical examin/health eval partial",
+            "inclusionUa": "прицільний огляд; клінічний скрінінг окремих проблем зі здоров'ям",
+            "inclusion": "focussed examination; clinical screening of single health problems",
+            "exclusionUa": "",
+            "exclusion": "",
+            "criteriaUa": "огляд, сконцентрований на конкретній системі організму, на приклад аускультація серця або вимірювання тиску К31; або вимірювання температури тіла А31",
+            "criteria": "an examination focussed on a specific part of a body system, e.g. heart auscultation or blood pressure measurement K31; or body temperature measurement A31",
+            "considerUa": "медичний огляд / повний аналіз стану сдоров'я – 30; тест на фізичне функціонування -39",
+            "consider": "medical examination/health evaluation complete -30; physical function test -39",
+            "noteUa": "",
+            "note": ""
+          },
+          {
+            "code": "-45",
+            "shortTitleUa": "Нагляд/навчання/консультація/дієта",
+            "preferred": "Observation/health education/advice/diet",
+            "shortTitle": "Observ/health educat/advice/diet",
+            "inclusionUa": "консультування з питань здорового способу життя; профілактика проблем зі здоров'ям; консультації з питань вагітності та планування сім'ї; консультації з приводу використання медичних послуг; консультації з приводу гігієни праці / соціальних проблем; динамічне спостереження",
+            "inclusion": "advice on healthy behaviour; prevention of health problems; advice on pregnancy and family planning; advice on regarding the use of health services; advice on regarding occupational health/social problems; watchful waiting",
+            "exclusionUa": "терапевтичне консультування / прослуховування -58",
+            "exclusion": "therapeutic counselling/listening  -58",
+            "criteriaUa": "профілактика проблем зі здоров'ям і консультування з питань здорового способу життя",
+            "criteria": "prevention of health problems and advice on healthy behaviour",
+            "considerUa": "",
+            "consider": "",
+            "noteUa": "",
+            "note": ""
+          },
+          {
+            "code": "-50",
+            "shortTitleUa": "Призначення ліків/ін’єкції ",
+            "preferred": "Medication/prescription/renewal/injection",
+            "shortTitle": "Medication/prescr/renewal/inject",
+            "inclusionUa": "призначення лікування; поновлення лікування; нагляд за лікуванням; систематичні ін'єкції ліків; десенсибілізація",
+            "inclusion": "prescribing of medication; renewal of medication; administration of medication; injection of medication with systemic effect; desensitisation ",
+            "exclusionUa": "венесекция -51; ін'єкція ліків з місцевим ефектом -55; голковколювання -59",
+            "exclusion": "venesection -51; injection of medication with local effect -55; acupuncture -59",
+            "criteriaUa": "",
+            "criteria": "",
+            "considerUa": "профілактична імунізація / лікування-44",
+            "consider": "preventive immunization/medication -44",
+            "noteUa": "Лікування конкретного стану пацієнта слід класифікувати тут.",
+            "note": "Treatment for a specific condition the patient should be classified here."
+          }
         ],
-        "diagnosis": "K86"
+        "diagnosis": {
+          "code": "K86",
+          "shortTitleUa": "Гіпертонія неускладнена",
+          "preferred": "Hypertension uncomplicated",
+          "shortTitle": "Hypertension uncomplicated",
+          "inclusionUa": "гіпертонічна хвороба; артеріальна гіпертонія БДУ; гіпертонія невідомого походження",
+          "inclusion": "essential hypertension; hypertension NOS; idiopathic hypertension",
+          "exclusionUa": "гіпертонія з ускладненням K87; гіпертонія під час вагітності W81",
+          "exclusion": "hypertension with complications K87; hypertension in pregnancy W81",
+          "criteriaUa": "дві або більше реєстрації показів під час візиту, зроблені під час двох або більше візитів, з кров'яним тиском, що в середньому вище 95 мм рт.ст. діастолічний або більше 160 мм рт.ст. систолічний у дорослих пацієнтів;  або два або більше заміри при одноразовій зустрічіі із середнім діастолічним артеріальним тиском 120 мм рт. ст. або вище; плюс відсутність симптомів вторинного залучення серця, нирок, очей або мозку",
+          "criteria": "either two or more readings per encounter, taken at two or more encounters, with blood pressures that average over 95 mm Hg diastolic or over 160 mm Hg systolic in adult patients; or two or more readings at a single encounter with an average diastolic blood pressure of 120 mm Hg or more; plus absence of evidence of secondary involvement of heart, kidney, eye, or brain",
+          "considerUa": "підвищений кров'яний тиск K85",
+          "consider": "elevated blood pressure K85",
+          "noteUa": "1) для дітей, звіритись з відповідними педіатричними таблицями кров’яного тиску. 2) якщо є вторинна гіпертонія, ставити також код основної причини",
+          "note": "1) For children, consult appropriate paediatric blood pressure tables. 2) If secondary hypertension, code also the underlying cause"
+        }
       },
       {
         "id": 16,
         "date": "2017-07-17",
         "reasons": [
-          "-50"
+          {
+            "code": "-50",
+            "shortTitleUa": "Призначення ліків/ін’єкції ",
+            "preferred": "Medication/prescription/renewal/injection",
+            "shortTitle": "Medication/prescr/renewal/inject",
+            "inclusionUa": "призначення лікування; поновлення лікування; нагляд за лікуванням; систематичні ін'єкції ліків; десенсибілізація",
+            "inclusion": "prescribing of medication; renewal of medication; administration of medication; injection of medication with systemic effect; desensitisation ",
+            "exclusionUa": "венесекция -51; ін'єкція ліків з місцевим ефектом -55; голковколювання -59",
+            "exclusion": "venesection -51; injection of medication with local effect -55; acupuncture -59",
+            "criteriaUa": "",
+            "criteria": "",
+            "considerUa": "профілактична імунізація / лікування-44",
+            "consider": "preventive immunization/medication -44",
+            "noteUa": "Лікування конкретного стану пацієнта слід класифікувати тут.",
+            "note": "Treatment for a specific condition the patient should be classified here."
+          }
         ],
         "actions": [
-          "-31",
-          "-45",
-          "-50"
+          {
+            "code": "-31",
+            "shortTitleUa": "Часткове медичне обстеження",
+            "preferred": "Medical examination/health evaluation partial",
+            "shortTitle": "Medical examin/health eval partial",
+            "inclusionUa": "прицільний огляд; клінічний скрінінг окремих проблем зі здоров'ям",
+            "inclusion": "focussed examination; clinical screening of single health problems",
+            "exclusionUa": "",
+            "exclusion": "",
+            "criteriaUa": "огляд, сконцентрований на конкретній системі організму, на приклад аускультація серця або вимірювання тиску К31; або вимірювання температури тіла А31",
+            "criteria": "an examination focussed on a specific part of a body system, e.g. heart auscultation or blood pressure measurement K31; or body temperature measurement A31",
+            "considerUa": "медичний огляд / повний аналіз стану сдоров'я – 30; тест на фізичне функціонування -39",
+            "consider": "medical examination/health evaluation complete -30; physical function test -39",
+            "noteUa": "",
+            "note": ""
+          },
+          {
+            "code": "-45",
+            "shortTitleUa": "Нагляд/навчання/консультація/дієта",
+            "preferred": "Observation/health education/advice/diet",
+            "shortTitle": "Observ/health educat/advice/diet",
+            "inclusionUa": "консультування з питань здорового способу життя; профілактика проблем зі здоров'ям; консультації з питань вагітності та планування сім'ї; консультації з приводу використання медичних послуг; консультації з приводу гігієни праці / соціальних проблем; динамічне спостереження",
+            "inclusion": "advice on healthy behaviour; prevention of health problems; advice on pregnancy and family planning; advice on regarding the use of health services; advice on regarding occupational health/social problems; watchful waiting",
+            "exclusionUa": "терапевтичне консультування / прослуховування -58",
+            "exclusion": "therapeutic counselling/listening  -58",
+            "criteriaUa": "профілактика проблем зі здоров'ям і консультування з питань здорового способу життя",
+            "criteria": "prevention of health problems and advice on healthy behaviour",
+            "considerUa": "",
+            "consider": "",
+            "noteUa": "",
+            "note": ""
+          },
+          {
+            "code": "-50",
+            "shortTitleUa": "Призначення ліків/ін’єкції ",
+            "preferred": "Medication/prescription/renewal/injection",
+            "shortTitle": "Medication/prescr/renewal/inject",
+            "inclusionUa": "призначення лікування; поновлення лікування; нагляд за лікуванням; систематичні ін'єкції ліків; десенсибілізація",
+            "inclusion": "prescribing of medication; renewal of medication; administration of medication; injection of medication with systemic effect; desensitisation ",
+            "exclusionUa": "венесекция -51; ін'єкція ліків з місцевим ефектом -55; голковколювання -59",
+            "exclusion": "venesection -51; injection of medication with local effect -55; acupuncture -59",
+            "criteriaUa": "",
+            "criteria": "",
+            "considerUa": "профілактична імунізація / лікування-44",
+            "consider": "preventive immunization/medication -44",
+            "noteUa": "Лікування конкретного стану пацієнта слід класифікувати тут.",
+            "note": "Treatment for a specific condition the patient should be classified here."
+          }
         ],
-        "diagnosis": "K86"
+        "diagnosis": {
+          "code": "K86",
+          "shortTitleUa": "Гіпертонія неускладнена",
+          "preferred": "Hypertension uncomplicated",
+          "shortTitle": "Hypertension uncomplicated",
+          "inclusionUa": "гіпертонічна хвороба; артеріальна гіпертонія БДУ; гіпертонія невідомого походження",
+          "inclusion": "essential hypertension; hypertension NOS; idiopathic hypertension",
+          "exclusionUa": "гіпертонія з ускладненням K87; гіпертонія під час вагітності W81",
+          "exclusion": "hypertension with complications K87; hypertension in pregnancy W81",
+          "criteriaUa": "дві або більше реєстрації показів під час візиту, зроблені під час двох або більше візитів, з кров'яним тиском, що в середньому вище 95 мм рт.ст. діастолічний або більше 160 мм рт.ст. систолічний у дорослих пацієнтів;  або два або більше заміри при одноразовій зустрічіі із середнім діастолічним артеріальним тиском 120 мм рт. ст. або вище; плюс відсутність симптомів вторинного залучення серця, нирок, очей або мозку",
+          "criteria": "either two or more readings per encounter, taken at two or more encounters, with blood pressures that average over 95 mm Hg diastolic or over 160 mm Hg systolic in adult patients; or two or more readings at a single encounter with an average diastolic blood pressure of 120 mm Hg or more; plus absence of evidence of secondary involvement of heart, kidney, eye, or brain",
+          "considerUa": "підвищений кров'яний тиск K85",
+          "consider": "elevated blood pressure K85",
+          "noteUa": "1) для дітей, звіритись з відповідними педіатричними таблицями кров’яного тиску. 2) якщо є вторинна гіпертонія, ставити також код основної причини",
+          "note": "1) For children, consult appropriate paediatric blood pressure tables. 2) If secondary hypertension, code also the underlying cause"
+        }
       }
     ]
   }

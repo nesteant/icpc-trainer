@@ -1,0 +1,21 @@
+<div *ngIf="autocomplete;then autocmplt else select"></div>
+<ng-template #autocmplt>
+  <mat-form-field>
+    <input type="text" placeholder="введіть причину чи код" matInput [formControl]="diagnosisControl" [matAutocomplete]="diagnosis">
+  </mat-form-field>
+  <mat-autocomplete #diagnosis="matAutocomplete" [displayWith]="formatDiagnosis">
+    <mat-option *ngFor="let option of diagnosisOptions | async" [value]="option.code">
+      {{ option | icpcCode}}
+    </mat-option>
+  </mat-autocomplete>
+</ng-template>
+<ng-template #select>
+  <mat-form-field class="xxl">
+    <mat-select placeholder="Діагноз" [formControl]="diagnosisControl">
+      <mat-option *ngFor="let option of diagnosisOptions | async" [value]="option.code">
+        {{option | icpcCode}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</ng-template>
+

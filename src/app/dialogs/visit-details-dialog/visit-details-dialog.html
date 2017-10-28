@@ -10,20 +10,20 @@
       <!--TODO: optimize-->
       <mat-expansion-panel [expanded]="false" *ngFor="let reason of visit.reasons;">
         <mat-expansion-panel-header>
-          <mat-panel-title>{{(reason | icpcTransform | async).shortTitleUa}}</mat-panel-title>
+          <mat-panel-title>{{reason.shortTitleUa}}</mat-panel-title>
         </mat-expansion-panel-header>
         <mat-panel-description>
           <div>
             <h4>MKX-10</h4>
-            <span>{{(reason | icpcTransform | async).shortTitleUa}}</span>
+            <span>{{reason.shortTitleUa}}</span>
           </div>
           <div>
             <h4>Включення</h4>
-            <span>{{(reason | icpcTransform | async).inclusionUa}}</span>
+            <span>{{reason.inclusionUa}}</span>
           </div>
           <div>
             <h4>Виключення</h4>
-            <span>{{(reason | icpcTransform | async).exclusionUa}}</span>
+            <span>{{reason.exclusionUa}}</span>
           </div>
         </mat-panel-description>
       </mat-expansion-panel>
@@ -32,19 +32,19 @@
       <ng-template [ngIf]="tg.selectedIndex == 1">
         <mat-expansion-panel [expanded]="false">
           <mat-expansion-panel-header>
-            <mat-panel-title>{{(visit.diagnosis | icpcTransform | async).shortTitleUa}}</mat-panel-title>
+            <mat-panel-title>{{visit.diagnosis.shortTitleUa}}</mat-panel-title>
           </mat-expansion-panel-header>
           <div>
             <h4>MKX-10</h4>
-            <span>{{(visit.diagnosis | icpcTransform | async).shortTitleUa}}</span>
+            <span>{{visit.diagnosis.shortTitleUa}}</span>
           </div>
           <div>
             <h4>Включення</h4>
-            <span>{{(visit.diagnosis | icpcTransform | async).inclusionUa}}</span>
+            <span>{{visit.diagnosis.inclusionUa}}</span>
           </div>
           <div>
             <h4>Виключення</h4>
-            <span>{{(visit.diagnosis | icpcTransform | async).exclusionUa}}</span>
+            <span>{{visit.diagnosis.exclusionUa}}</span>
           </div>
         </mat-expansion-panel>
       </ng-template>
@@ -53,20 +53,20 @@
       <ng-template [ngIf]="tg.selectedIndex == 2">
         <mat-expansion-panel [expanded]="false" *ngFor="let action of visit.actions">
           <mat-expansion-panel-header>
-            <mat-panel-title>{{(action | icpcTransform | async).shortTitleUa}}</mat-panel-title>
+            <mat-panel-title>{{action.shortTitleUa}}</mat-panel-title>
           </mat-expansion-panel-header>
           <mat-panel-description>
             <div>
               <h4>MKX-10</h4>
-              <span>{{(action | icpcTransform | async).shortTitleUa}}</span>
+              <span>{{action.shortTitleUa}}</span>
             </div>
             <div>
               <h4>Включення</h4>
-              <span>{{(action | icpcTransform | async).inclusionUa}}</span>
+              <span>{{action.inclusionUa}}</span>
             </div>
             <div>
               <h4>Виключення</h4>
-              <span>{{(action | icpcTransform | async).exclusionUa}}</span>
+              <span>{{action.exclusionUa}}</span>
             </div>
           </mat-panel-description>
         </mat-expansion-panel>

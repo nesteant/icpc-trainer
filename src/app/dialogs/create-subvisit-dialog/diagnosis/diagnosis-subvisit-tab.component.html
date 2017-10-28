@@ -1,30 +1,11 @@
-<mat-form-field>
-  <input type="text" placeholder="введіть причину чи код" matInput [formControl]="innerDiagnosisControl" [matAutocomplete]="diagnosis">
-</mat-form-field>
-
-<mat-autocomplete #diagnosis="matAutocomplete" [displayWith]="formatDiagnosis" (optionSelected)="onDiagnosisSelected($event)">
-  <mat-option *ngFor="let option of diagnosisOptions | async" [value]="option">
-    {{ option | icpcCode}}
-  </mat-option>
-</mat-autocomplete>
-<mat-list *ngIf="innerDiagnosisControl?.value">
+<icpc-diagnosis-select [autocomplete]="true" [formControl]="diagnosisControl"></icpc-diagnosis-select>
+<mat-list *ngIf="diagnosisControl?.value">
   <mat-list-item>
     <mat-expansion-panel [expanded]="false" class="width-100">
       <mat-expansion-panel-header>
-        <mat-panel-title>{{innerDiagnosisControl.value | icpcCode}}</mat-panel-title>
+        <mat-panel-title>{{diagnosisControl.value | icpcCode}}</mat-panel-title>
       </mat-expansion-panel-header>
-      <div>
-        <h4>MKX-10</h4>
-        <span>{{innerDiagnosisControl.value.shortTitleUa}}</span>
-      </div>
-      <div>
-        <h4>Включення</h4>
-        <span>{{innerDiagnosisControl.value.inclusionUa}}</span>
-      </div>
-      <div>
-        <h4>Виключення</h4>
-        <span>{{innerDiagnosisControl.value.exclusionUa}}</span>
-      </div>
+      <icpc-code-form [formControl]="diagnosisControl"></icpc-code-form>
     </mat-expansion-panel>
   </mat-list-item>
 </mat-list>
