@@ -65,7 +65,7 @@
         "date": "2017-05-25",
         "reasons": [
           {
-            "code": "-50",
+            "code": "K50",
             "shortTitleUa": "Призначення ліків/ін’єкції ",
             "preferred": "Medication/prescription/renewal/injection",
             "shortTitle": "Medication/prescr/renewal/inject",
@@ -83,7 +83,7 @@
         ],
         "actions": [
           {
-            "code": "-50",
+            "code": "K50",
             "shortTitleUa": "Призначення ліків/ін’єкції ",
             "preferred": "Medication/prescription/renewal/injection",
             "shortTitle": "Medication/prescr/renewal/inject",
@@ -99,7 +99,7 @@
             "note": "Treatment for a specific condition the patient should be classified here."
           },
           {
-            "code": "-31",
+            "code": "K31",
             "shortTitleUa": "Часткове медичне обстеження",
             "preferred": "Medical examination/health evaluation partial",
             "shortTitle": "Medical examin/health eval partial",
@@ -137,7 +137,7 @@
         "date": "2017-07-19",
         "reasons": [
           {
-            "code": "-31",
+            "code": "K31",
             "shortTitleUa": "Часткове медичне обстеження",
             "preferred": "Medical examination/health evaluation partial",
             "shortTitle": "Medical examin/health eval partial",
@@ -155,7 +155,7 @@
         ],
         "actions": [
           {
-            "code": "-31",
+            "code": "K31",
             "shortTitleUa": "Часткове медичне обстеження",
             "preferred": "Medical examination/health evaluation partial",
             "shortTitle": "Medical examin/health eval partial",
@@ -171,7 +171,7 @@
             "note": ""
           },
           {
-            "code": "-35",
+            "code": "K35",
             "shortTitleUa": "Аналіз сечі",
             "preferred": "Urine test",
             "shortTitle": "Urine test",
@@ -187,7 +187,7 @@
             "note": "Chemical tests belong to the substrate/substance in which the test is done, whereas microbiological/immunological tests belong to -33 and histological/exfoliative cytology tests to -37."
           },
           {
-            "code": "-42",
+            "code": "K42",
             "shortTitleUa": "Вимірювання ел. потенціалів (ЕКГ, ін.)",
             "preferred": "Electrical tracing",
             "shortTitle": "Electrical tracing",
@@ -203,7 +203,7 @@
             "note": ""
           },
           {
-            "code": "-50",
+            "code": "K50",
             "shortTitleUa": "Призначення ліків/ін’єкції ",
             "preferred": "Medication/prescription/renewal/injection",
             "shortTitle": "Medication/prescr/renewal/inject",
@@ -241,7 +241,7 @@
         "date": "2017-09-20",
         "reasons": [
           {
-            "code": "-31",
+            "code": "K31",
             "shortTitleUa": "Часткове медичне обстеження",
             "preferred": "Medical examination/health evaluation partial",
             "shortTitle": "Medical examin/health eval partial",
@@ -259,7 +259,7 @@
         ],
         "actions": [
           {
-            "code": "-31",
+            "code": "K31",
             "shortTitleUa": "Часткове медичне обстеження",
             "preferred": "Medical examination/health evaluation partial",
             "shortTitle": "Medical examin/health eval partial",
@@ -275,7 +275,7 @@
             "note": ""
           },
           {
-            "code": "-50",
+            "code": "K50",
             "shortTitleUa": "Призначення ліків/ін’єкції ",
             "preferred": "Medication/prescription/renewal/injection",
             "shortTitle": "Medication/prescr/renewal/inject",
@@ -313,7 +313,7 @@
         "date": "2017-06-14",
         "reasons": [
           {
-            "code": "-60",
+            "code": "T60",
             "shortTitleUa": "Результати тестів / процедур",
             "preferred": "Result test/procedure",
             "shortTitle": "Result test/procedure",
@@ -331,7 +331,7 @@
         ],
         "actions": [
           {
-            "code": "-50",
+            "code": "T50",
             "shortTitleUa": "Призначення ліків/ін’єкції ",
             "preferred": "Medication/prescription/renewal/injection",
             "shortTitle": "Medication/prescr/renewal/inject",
@@ -369,7 +369,7 @@
         "date": "2017-07-19",
         "reasons": [
           {
-            "code": "-31",
+            "code": "T31",
             "shortTitleUa": "Часткове медичне обстеження",
             "preferred": "Medical examination/health evaluation partial",
             "shortTitle": "Medical examin/health eval partial",
@@ -387,7 +387,7 @@
         ],
         "actions": [
           {
-            "code": "-34",
+            "code": "T34",
             "shortTitleUa": "Аналіз крові",
             "preferred": "Blood test",
             "shortTitle": "Blood test",
@@ -403,7 +403,7 @@
             "note": "Chemical tests belong to the substrate/substance in which the test is done, whereas microbiological/immunological tests belong to -33 and histological/exfoliative cytology tests to -37."
           },
           {
-            "code": "-50",
+            "code": "T50",
             "shortTitleUa": "Призначення ліків/ін’єкції ",
             "preferred": "Medication/prescription/renewal/injection",
             "shortTitle": "Medication/prescr/renewal/inject",
@@ -476,7 +476,7 @@
         "date": "2017-05-25",
         "reasons": [
           {
-            "code": "-62",
+            "code": "A62",
             "shortTitleUa": "Адміністративні процедури",
             "preferred": "Administrative procedure",
             "shortTitle": "Administrative procedure",
@@ -494,7 +494,7 @@
         ],
         "actions": [
           {
-            "code": "-30",
+            "code": "A30",
             "shortTitleUa": "Повне медичне обстеження",
             "preferred": "Medical examination/health evaluation complete",
             "shortTitle": "Medical examin/health eval complete",
@@ -510,7 +510,7 @@
             "note": ""
           },
           {
-            "code": "-62",
+            "code": "A62",
             "shortTitleUa": "Адміністративні процедури",
             "preferred": "Administrative procedure",
             "shortTitle": "Administrative procedure",
@@ -643,7 +643,7 @@
         ],
         "actions": [
           {
-            "code": "-30",
+            "code": "T30",
             "shortTitleUa": "Повне медичне обстеження",
             "preferred": "Medical examination/health evaluation complete",
             "shortTitle": "Medical examin/health eval complete",
@@ -659,7 +659,7 @@
             "note": ""
           },
           {
-            "code": "-34",
+            "code": "T34",
             "shortTitleUa": "Аналіз крові",
             "preferred": "Blood test",
             "shortTitle": "Blood test",
@@ -675,7 +675,7 @@
             "note": "Chemical tests belong to the substrate/substance in which the test is done, whereas microbiological/immunological tests belong to -33 and histological/exfoliative cytology tests to -37."
           },
           {
-            "code": "-35",
+            "code": "T35",
             "shortTitleUa": "Аналіз сечі",
             "preferred": "Urine test",
             "shortTitle": "Urine test",
@@ -713,7 +713,7 @@
         "date": "2017-09-13",
         "reasons": [
           {
-            "code": "-60",
+            "code": "T60",
             "shortTitleUa": "Результати тестів / процедур",
             "preferred": "Result test/procedure",
             "shortTitle": "Result test/procedure",
@@ -731,7 +731,7 @@
         ],
         "actions": [
           {
-            "code": "-47",
+            "code": "T47",
             "shortTitleUa": "Консультація зі спеціалістом",
             "preferred": "Consultation with specialist",
             "shortTitle": "Consultation with specialist",
@@ -747,7 +747,7 @@
             "note": "Treatment responsibility remains at the original primary care provider."
           },
           {
-            "code": "-50",
+            "code": "T50",
             "shortTitleUa": "Призначення ліків/ін’єкції ",
             "preferred": "Medication/prescription/renewal/injection",
             "shortTitle": "Medication/prescr/renewal/inject",
@@ -819,7 +819,7 @@
         ],
         "actions": [
           {
-            "code": "-45",
+            "code": "T45",
             "shortTitleUa": "Нагляд/навчання/консультація/дієта",
             "preferred": "Observation/health education/advice/diet",
             "shortTitle": "Observ/health educat/advice/diet",
@@ -920,7 +920,7 @@
         "date": "2017-05-17",
         "reasons": [
           {
-            "code": "-64",
+            "code": "A64",
             "shortTitleUa": "Звернення,  ініційоване медпрацівником",
             "preferred": "Encounter/problem initiated by provider",
             "shortTitle": "Encounter/prob initiated by provider",
@@ -942,7 +942,7 @@
         ],
         "actions": [
           {
-            "code": "-31",
+            "code": "A31",
             "shortTitleUa": "Часткове медичне обстеження",
             "preferred": "Medical examination/health evaluation partial",
             "shortTitle": "Medical examin/health eval partial",
@@ -958,7 +958,7 @@
             "note": ""
           },
           {
-            "code": "-45",
+            "code": "A45",
             "shortTitleUa": "Нагляд/навчання/консультація/дієта",
             "preferred": "Observation/health education/advice/diet",
             "shortTitle": "Observ/health educat/advice/diet",
@@ -996,7 +996,7 @@
         "date": "2017-06-12",
         "reasons": [
           {
-            "code": "-64",
+            "code": "A64",
             "shortTitleUa": "Звернення,  ініційоване медпрацівником",
             "preferred": "Encounter/problem initiated by provider",
             "shortTitle": "Encounter/prob initiated by provider",
@@ -1018,7 +1018,7 @@
         ],
         "actions": [
           {
-            "code": "-31",
+            "code": "A31",
             "shortTitleUa": "Часткове медичне обстеження",
             "preferred": "Medical examination/health evaluation partial",
             "shortTitle": "Medical examin/health eval partial",
@@ -1034,7 +1034,7 @@
             "note": ""
           },
           {
-            "code": "-45",
+            "code": "A45",
             "shortTitleUa": "Нагляд/навчання/консультація/дієта",
             "preferred": "Observation/health education/advice/diet",
             "shortTitle": "Observ/health educat/advice/diet",
@@ -1072,7 +1072,7 @@
         "date": "2017-10-17",
         "reasons": [
           {
-            "code": "-64",
+            "code": "A64",
             "shortTitleUa": "Звернення,  ініційоване медпрацівником",
             "preferred": "Encounter/problem initiated by provider",
             "shortTitle": "Encounter/prob initiated by provider",
@@ -1094,7 +1094,7 @@
         ],
         "actions": [
           {
-            "code": "-31",
+            "code": "A31",
             "shortTitleUa": "Часткове медичне обстеження",
             "preferred": "Medical examination/health evaluation partial",
             "shortTitle": "Medical examin/health eval partial",
@@ -1110,7 +1110,7 @@
             "note": ""
           },
           {
-            "code": "-45",
+            "code": "A45",
             "shortTitleUa": "Нагляд/навчання/консультація/дієта",
             "preferred": "Observation/health education/advice/diet",
             "shortTitle": "Observ/health educat/advice/diet",
@@ -1148,7 +1148,7 @@
         "date": "2017-06-12",
         "reasons": [
           {
-            "code": "-44",
+            "code": "A44",
             "shortTitleUa": "Імунізація/профілактичне лікування",
             "preferred": "Preventive immunization/medication",
             "shortTitle": "Preventive immunization/medication",
@@ -1166,7 +1166,7 @@
         ],
         "actions": [
           {
-            "code": "-31",
+            "code": "A31",
             "shortTitleUa": "Часткове медичне обстеження",
             "preferred": "Medical examination/health evaluation partial",
             "shortTitle": "Medical examin/health eval partial",
@@ -1182,7 +1182,7 @@
             "note": ""
           },
           {
-            "code": "-44",
+            "code": "A44",
             "shortTitleUa": "Імунізація/профілактичне лікування",
             "preferred": "Preventive immunization/medication",
             "shortTitle": "Preventive immunization/medication",
@@ -1220,7 +1220,7 @@
         "date": "2017-10-11",
         "reasons": [
           {
-            "code": "-44",
+            "code": "A44",
             "shortTitleUa": "Імунізація/профілактичне лікування",
             "preferred": "Preventive immunization/medication",
             "shortTitle": "Preventive immunization/medication",
@@ -1238,7 +1238,7 @@
         ],
         "actions": [
           {
-            "code": "-31",
+            "code": "A31",
             "shortTitleUa": "Часткове медичне обстеження",
             "preferred": "Medical examination/health evaluation partial",
             "shortTitle": "Medical examin/health eval partial",
@@ -1254,7 +1254,7 @@
             "note": ""
           },
           {
-            "code": "-44",
+            "code": "A44",
             "shortTitleUa": "Імунізація/профілактичне лікування",
             "preferred": "Preventive immunization/medication",
             "shortTitle": "Preventive immunization/medication",
@@ -1314,7 +1314,7 @@
         "date": "2017-05-17",
         "reasons": [
           {
-            "code": "-50",
+            "code": "K50",
             "shortTitleUa": "Призначення ліків/ін’єкції ",
             "preferred": "Medication/prescription/renewal/injection",
             "shortTitle": "Medication/prescr/renewal/inject",
@@ -1332,7 +1332,7 @@
         ],
         "actions": [
           {
-            "code": "-31",
+            "code": "K31",
             "shortTitleUa": "Часткове медичне обстеження",
             "preferred": "Medical examination/health evaluation partial",
             "shortTitle": "Medical examin/health eval partial",
@@ -1348,7 +1348,7 @@
             "note": ""
           },
           {
-            "code": "-45",
+            "code": "K45",
             "shortTitleUa": "Нагляд/навчання/консультація/дієта",
             "preferred": "Observation/health education/advice/diet",
             "shortTitle": "Observ/health educat/advice/diet",
@@ -1364,7 +1364,7 @@
             "note": ""
           },
           {
-            "code": "-50",
+            "code": "K50",
             "shortTitleUa": "Призначення ліків/ін’єкції ",
             "preferred": "Medication/prescription/renewal/injection",
             "shortTitle": "Medication/prescr/renewal/inject",
@@ -1402,7 +1402,7 @@
         "date": "2017-06-15",
         "reasons": [
           {
-            "code": "-50",
+            "code": "K50",
             "shortTitleUa": "Призначення ліків/ін’єкції ",
             "preferred": "Medication/prescription/renewal/injection",
             "shortTitle": "Medication/prescr/renewal/inject",
@@ -1420,7 +1420,7 @@
         ],
         "actions": [
           {
-            "code": "-31",
+            "code": "K31",
             "shortTitleUa": "Часткове медичне обстеження",
             "preferred": "Medical examination/health evaluation partial",
             "shortTitle": "Medical examin/health eval partial",
@@ -1436,7 +1436,7 @@
             "note": ""
           },
           {
-            "code": "-45",
+            "code": "K45",
             "shortTitleUa": "Нагляд/навчання/консультація/дієта",
             "preferred": "Observation/health education/advice/diet",
             "shortTitle": "Observ/health educat/advice/diet",
@@ -1452,7 +1452,7 @@
             "note": ""
           },
           {
-            "code": "-50",
+            "code": "K50",
             "shortTitleUa": "Призначення ліків/ін’єкції ",
             "preferred": "Medication/prescription/renewal/injection",
             "shortTitle": "Medication/prescr/renewal/inject",
@@ -1490,7 +1490,7 @@
         "date": "2017-07-17",
         "reasons": [
           {
-            "code": "-50",
+            "code": "K50",
             "shortTitleUa": "Призначення ліків/ін’єкції ",
             "preferred": "Medication/prescription/renewal/injection",
             "shortTitle": "Medication/prescr/renewal/inject",
@@ -1508,7 +1508,7 @@
         ],
         "actions": [
           {
-            "code": "-31",
+            "code": "K31",
             "shortTitleUa": "Часткове медичне обстеження",
             "preferred": "Medical examination/health evaluation partial",
             "shortTitle": "Medical examin/health eval partial",
@@ -1524,7 +1524,7 @@
             "note": ""
           },
           {
-            "code": "-45",
+            "code": "K45",
             "shortTitleUa": "Нагляд/навчання/консультація/дієта",
             "preferred": "Observation/health education/advice/diet",
             "shortTitle": "Observ/health educat/advice/diet",
@@ -1540,7 +1540,7 @@
             "note": ""
           },
           {
-            "code": "-50",
+            "code": "K50",
             "shortTitleUa": "Призначення ліків/ін’єкції ",
             "preferred": "Medication/prescription/renewal/injection",
             "shortTitle": "Medication/prescr/renewal/inject",

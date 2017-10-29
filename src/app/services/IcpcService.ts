@@ -10,6 +10,7 @@ import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class IcpcService {
+  private LETTERS = ['A', 'B', 'D', 'F', 'H', 'K', 'L', 'N', 'P', 'R', 'S', 'T', 'U', 'W', 'X', 'Y', 'Z'];
   public codes: Observable<IcpcCode[]>;
   public staticCodes: IcpcCode[];
 
@@ -30,6 +31,31 @@ export class IcpcService {
         let actions: IcpcCode[] = [];
         let reasons: IcpcCode[] = [];
         let diagnoses: IcpcCode[] = [];
+
+        codes = codes.reduce((acc, code) => {
+          let codeString = code.code;
+          let cn = parseInt(codeString.replace(/[\D]/gi, ''), 10);
+          let fitsDiapason = cn >= 37 && cn <= 47 || cn >= 49 && cn <= 62 || cn >= 63 && cn <= 69;
+          fitsDiapason && console.log(cn);
+          if (codeString.startsWith('-') && fitsDiapason) {
+            this.LETTERS.forEach(l => {
+              let newCode = Object.assign({}, code);
+              newCode.code = l + cn;
+              acc.push(newCode);
+            });
+          } else {
+            acc.push(code);
+          }
+          return acc;
+        }, []).sort((a, b) => {
+          if (a.code === b.code) {
+            return 0;
+          } else if (a.code > b.code) {
+            return 1;
+          } else {
+            return -1;
+          }
+        });
 
         codes.forEach(code => {
           let reasonFilter = true;

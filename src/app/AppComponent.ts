@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {IcpcService} from './services/IcpcService';
 import {PatientsService} from './services/PatientsService';
 
 @Component({
@@ -10,11 +9,10 @@ import {PatientsService} from './services/PatientsService';
 export class AppComponent implements OnInit {
   title = 'app';
 
-  constructor(private patientService: PatientsService, private icpcService: IcpcService) {
+  constructor(private patientService: PatientsService) {
   }
 
   public ngOnInit() {
-    this.icpcService.loadItems();
   }
 
   public logout() {
