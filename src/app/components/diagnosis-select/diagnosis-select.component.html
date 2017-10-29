@@ -1,7 +1,8 @@
 <div *ngIf="autocomplete;then autocmplt else select"></div>
 <ng-template #autocmplt>
   <mat-form-field [class]="clazz">
-    <input type="text" placeholder="введіть причину чи код" matInput [formControl]="diagnosisControl" [matAutocomplete]="diagnosis">
+    <input type="text" placeholder="введіть причину чи код" matInput [formControl]="diagnosisControl" [matAutocomplete]="diagnosis" required>
+    <mat-error>Вкажіть діагноз</mat-error>
   </mat-form-field>
   <mat-autocomplete #diagnosis="matAutocomplete" [displayWith]="formatDiagnosis">
     <mat-option *ngFor="let option of diagnosisOptions | async" [value]="option.code">

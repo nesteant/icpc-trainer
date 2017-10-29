@@ -1,5 +1,6 @@
 <mat-form-field>
   <input type="text" placeholder="введіть причину чи код" matInput [formControl]="reasonSearch" [matAutocomplete]="reason">
+  <mat-error>Вкажіть причину</mat-error>
 </mat-form-field>
 
 <mat-autocomplete #reason="matAutocomplete" (optionSelected)="onReasonSelected($event)">

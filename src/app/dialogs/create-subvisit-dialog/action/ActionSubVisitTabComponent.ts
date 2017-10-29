@@ -1,5 +1,12 @@
 import {Component, forwardRef, OnInit} from '@angular/core';
-import {ControlValueAccessor, FormArray, FormBuilder, FormControl, NG_VALUE_ACCESSOR} from '@angular/forms';
+import {
+  AbstractControl,
+  ControlValueAccessor,
+  FormArray,
+  FormBuilder,
+  FormControl,
+  NG_VALUE_ACCESSOR
+} from '@angular/forms';
 import {Observable} from 'rxjs/Observable';
 import {IcpcCode} from '../../../model/IcpcCode';
 import {IcpcService} from '../../../services/IcpcService';
@@ -35,11 +42,20 @@ export class ActionSubVisitTabComponent implements OnInit, ControlValueAccessor 
   }
 
   public actionsControl: FormArray;
-  public actionSearch: FormControl = new FormControl();
+  public actionSearch: FormControl = new FormControl(null, [(c: AbstractControl) => {
+    let value = this.actionsControl && this.actionsControl.value;
+    return value && value.length ? null : {
+      required: true
+    };
+  }]);
+
   public actionOptions: Observable<IcpcCode[]>;
 
   constructor(fb: FormBuilder, private icpcService: IcpcService) {
     this.actionsControl = fb.array([])
+    this.actionsControl.valueChanges.subscribe(v=> {
+      this.actionSearch.updateValueAndValidity({onlySelf: true, emitEvent: false});
+    })
   }
 
   public ngOnInit() {

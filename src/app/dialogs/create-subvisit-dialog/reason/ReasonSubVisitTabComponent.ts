@@ -1,5 +1,12 @@
 import {Component, forwardRef, OnInit} from '@angular/core';
-import {ControlValueAccessor, FormArray, FormBuilder, FormControl, NG_VALUE_ACCESSOR} from '@angular/forms';
+import {
+  AbstractControl,
+  ControlValueAccessor,
+  FormArray,
+  FormBuilder,
+  FormControl,
+  NG_VALUE_ACCESSOR
+} from '@angular/forms';
 import {Observable} from 'rxjs/Observable';
 import {IcpcCode} from '../../../model/IcpcCode';
 import {IcpcService} from '../../../services/IcpcService';
@@ -36,10 +43,18 @@ export class ReasonSubVisitTabComponent implements OnInit, ControlValueAccessor 
 
   public reasonsControl: FormArray;
   public reasonOptions: Observable<IcpcCode[]>;
-  public reasonSearch: FormControl = new FormControl();
+  public reasonSearch: FormControl = new FormControl(null, [(c: AbstractControl) => {
+    let value = this.reasonsControl && this.reasonsControl.value;
+    return value && value.length ? null : {
+      required: true
+    };
+  }]);
 
   constructor(fb: FormBuilder, private icpcService: IcpcService) {
     this.reasonsControl = fb.array([])
+    this.reasonsControl.valueChanges.subscribe(v=> {
+      this.reasonSearch.updateValueAndValidity({onlySelf: true, emitEvent: false});
+    });
   }
 
   public ngOnInit() {

@@ -7,6 +7,7 @@
   <h2 mat-dialog-title>{{dialogTitle}}</h2>
   <mat-form-field class="m">
     <input matInput [matDatepicker]="picker" placeholder="Дата звернення" formControlName="date" required>
+    <mat-error>Вкажіть дату</mat-error>
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
@@ -33,6 +34,6 @@
   </fieldset>
 
   <mat-dialog-actions>
-    <button mat-button (click)="save()" *ngIf="canSave" [disabled]="formGroup.invalid">Зберегти</button>
+    <button mat-button (click)="save()" [disabled]="formGroup.invalid">Зберегти</button>
   </mat-dialog-actions>
 </div>
