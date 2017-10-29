@@ -88,6 +88,9 @@ export class EpisodeCardComponent {
         visit: visit
       }
     });
+    dialogRef.afterClosed().subscribe(visitUpdate => {
+      visitUpdate && this.patientsService.updateVisit(this.patient, visitUpdate as SubVisit);
+    })
   }
 
   public openCreateSubvisitDialog(episode: Episode) {

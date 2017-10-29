@@ -9,12 +9,12 @@
   <mat-tab-group #tg>
     <mat-tab label="Причина">
       <!--TODO: optimize-->
-      <mat-expansion-panel [expanded]="false" *ngFor="let reason of visit.reasons;">
+      <mat-expansion-panel [expanded]="false" *ngFor="let reason of visit?.reasons; let index = index;">
         <mat-expansion-panel-header>
           <mat-panel-title>{{reason | icpcCode}}</mat-panel-title>
         </mat-expansion-panel-header>
         <mat-panel-description>
-          <icpc-code-form [formControl]="getControl(reason)"></icpc-code-form>
+          <icpc-code-form [formControl]="reasonsArray.controls[index]"></icpc-code-form>
         </mat-panel-description>
       </mat-expansion-panel>
     </mat-tab>
@@ -25,22 +25,25 @@
             <mat-panel-title>{{visit.diagnosis | icpcCode}}</mat-panel-title>
           </mat-expansion-panel-header>
           <mat-panel-description>
-            <icpc-code-form [formControl]="getControl(visit.diagnosis)"></icpc-code-form>
+            <icpc-code-form [formControl]="formGroup.get('diagnosis')"></icpc-code-form>
           </mat-panel-description>
         </mat-expansion-panel>
       </ng-template>
     </mat-tab>
     <mat-tab label="Дія" #t>
       <ng-template [ngIf]="tg.selectedIndex == 2">
-        <mat-expansion-panel [expanded]="false" *ngFor="let action of visit.actions">
+        <mat-expansion-panel [expanded]="false" *ngFor="let action of visit?.actions; let index = index;">
           <mat-expansion-panel-header>
             <mat-panel-title>{{action | icpcCode}}</mat-panel-title>
           </mat-expansion-panel-header>
           <mat-panel-description>
-            <icpc-code-form [formControl]="getControl(action)"></icpc-code-form>
+            <icpc-code-form [formControl]="actionsArray.controls[index]"></icpc-code-form>
           </mat-panel-description>
         </mat-expansion-panel>
       </ng-template>
     </mat-tab>
   </mat-tab-group>
+  <mat-dialog-actions>
+    <button mat-button (click)="save()">Зберегти</button>
+  </mat-dialog-actions>
 </div>

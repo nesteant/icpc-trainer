@@ -40,7 +40,7 @@ export class CodeFormComponent implements ControlValueAccessor {
   }
 
   writeValue(obj: any): void {
-    this.formGroup.setValue(obj);
+    this.formGroup.patchValue(obj || {});
   }
 
   registerOnChange(fn: any): void {

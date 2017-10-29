@@ -3,6 +3,8 @@ import {Episode} from '../../model/Episode';
 import {SubVisit} from '../../model/SubVisit';
 import {VisitDetailsDialogComponent} from '../../dialogs/visit-details-dialog/VisitDetailsDialogComponent';
 import {MatDialog} from '@angular/material';
+import {PatientsService} from '../../services/PatientsService';
+import {Patient} from '../../model/Patient';
 
 @Component({
   selector: 'icpc-visit-card',
@@ -10,11 +12,13 @@ import {MatDialog} from '@angular/material';
 })
 export class VisitCardComponent {
   @Input()
+  public patient: Patient;
+  @Input()
   public visit: { date: string, values: SubVisit[] };
   @Input()
   public episodes: Episode[];
 
-  constructor(public dialog: MatDialog) {
+  constructor(public dialog: MatDialog, private patientsService: PatientsService) {
   }
 
   public openVisitDetailsModal(visit: SubVisit) {
@@ -26,6 +30,9 @@ export class VisitCardComponent {
         visit: visit
       }
     });
+    dialogRef.afterClosed().subscribe(visitUpdate => {
+      visitUpdate && this.patientsService.updateVisit(this.patient, visitUpdate as SubVisit);
+    })
   }
 
   private findEpisode(entry: SubVisit) {
