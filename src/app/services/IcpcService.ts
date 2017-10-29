@@ -36,7 +36,6 @@ export class IcpcService {
           let codeString = code.code;
           let cn = parseInt(codeString.replace(/[\D]/gi, ''), 10);
           let fitsDiapason = cn >= 37 && cn <= 47 || cn >= 49 && cn <= 62 || cn >= 63 && cn <= 69;
-          fitsDiapason && console.log(cn);
           if (codeString.startsWith('-') && fitsDiapason) {
             this.LETTERS.forEach(l => {
               let newCode = Object.assign({}, code);
