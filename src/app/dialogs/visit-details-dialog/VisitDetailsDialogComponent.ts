@@ -4,6 +4,8 @@ import 'rxjs/add/operator/startWith';
 import 'rxjs/add/operator/mergeMap';
 import {SubVisit} from '../../model/SubVisit';
 import {Episode} from '../../model/Episode';
+import {IcpcCode} from '../../model/IcpcCode';
+import {FormControl} from '@angular/forms';
 
 @Component({
   selector: 'icpc-visit-details-dialog',
@@ -22,6 +24,10 @@ export class VisitDetailsDialogComponent {
               @Inject(MAT_DIALOG_DATA) public data: any) {
     this.visit = data.visit;
     this.episode = data.episode;
+  }
+
+  public getControl(code: IcpcCode) {
+    return new FormControl(code);
   }
 
 }
