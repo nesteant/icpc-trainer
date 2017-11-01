@@ -4,7 +4,7 @@ import {
   ControlValueAccessor,
   FormArray,
   FormBuilder,
-  FormControl,
+  FormControl, NG_VALIDATORS,
   NG_VALUE_ACCESSOR
 } from '@angular/forms';
 import {Observable} from 'rxjs/Observable';
@@ -12,6 +12,7 @@ import {IcpcCode} from '../../../model/IcpcCode';
 import {IcpcService} from '../../../services/IcpcService';
 import {MatAutocompleteSelectedEvent} from '@angular/material';
 import {noop} from 'rxjs/util/noop';
+import {CreateSubVisitService} from '../CreateSubVisitService';
 
 @Component({
   selector: 'icpc-action-subvisit-tab-action-tab',
@@ -51,8 +52,9 @@ export class ActionSubVisitTabComponent implements OnInit, ControlValueAccessor 
 
   public actionOptions: Observable<IcpcCode[]>;
 
-  constructor(fb: FormBuilder, private icpcService: IcpcService) {
-    this.actionsControl = fb.array([])
+  constructor(createSubVisitService: CreateSubVisitService, fb: FormBuilder, private icpcService: IcpcService) {
+    this.actionsControl = fb.array([]);
+    createSubVisitService.onSave.subscribe(()=>this.actionSearch.markAsTouched());
     this.actionsControl.valueChanges.subscribe(v=> {
       this.actionSearch.updateValueAndValidity({onlySelf: true, emitEvent: false});
     })

@@ -12,6 +12,7 @@ import {IcpcCode} from '../../../model/IcpcCode';
 import {IcpcService} from '../../../services/IcpcService';
 import {MatAutocompleteSelectedEvent} from '@angular/material';
 import {noop} from 'rxjs/util/noop';
+import {CreateSubVisitService} from '../CreateSubVisitService';
 
 @Component({
   selector: 'icpc-reason-subvisit-tab-action-tab',
@@ -50,9 +51,10 @@ export class ReasonSubVisitTabComponent implements OnInit, ControlValueAccessor 
     };
   }]);
 
-  constructor(fb: FormBuilder, private icpcService: IcpcService) {
-    this.reasonsControl = fb.array([])
-    this.reasonsControl.valueChanges.subscribe(v=> {
+  constructor(createSubVisitService: CreateSubVisitService, fb: FormBuilder, private icpcService: IcpcService) {
+    this.reasonsControl = fb.array([]);
+    createSubVisitService.onSave.subscribe(() => this.reasonSearch.markAsTouched());
+    this.reasonsControl.valueChanges.subscribe(v => {
       this.reasonSearch.updateValueAndValidity({onlySelf: true, emitEvent: false});
     });
   }

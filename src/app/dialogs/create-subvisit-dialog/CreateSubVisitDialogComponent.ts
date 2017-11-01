@@ -1,14 +1,16 @@
-import {ChangeDetectorRef, Component, Inject, Input, OnInit} from '@angular/core';
+import {Component, Inject, Input, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import 'rxjs/add/operator/startWith';
 import {Episode} from '../../model/Episode';
 import 'rxjs/add/operator/mergeMap';
 import {Patient} from '../../model/Patient';
+import {CreateSubVisitService} from './CreateSubVisitService';
 
 @Component({
   selector: 'icpc-create-subvisit-dialog',
   templateUrl: 'create-subvisit-dialog.html',
+  providers: [CreateSubVisitService]
 })
 export class CreateSubVisitDialogComponent implements OnInit {
 
@@ -22,7 +24,7 @@ export class CreateSubVisitDialogComponent implements OnInit {
   public dialogTitle: string;
   public formGroup: FormGroup;
 
-  constructor(cd: ChangeDetectorRef, public dialogRef: MatDialogRef<CreateSubVisitDialogComponent>,
+  constructor(private createSubVisitService: CreateSubVisitService, public dialogRef: MatDialogRef<CreateSubVisitDialogComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any,
               fb: FormBuilder) {
     this.episode = data.episode;
@@ -72,7 +74,9 @@ export class CreateSubVisitDialogComponent implements OnInit {
   }
 
   public save() {
-    this.dialogRef.close(this.formGroup.value);
+    this.createSubVisitService.onSave.next();
+    this.formGroup.get('date').markAsTouched();
+    this.canSave && this.dialogRef.close(this.formGroup.value);
   }
 
 }

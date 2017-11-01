@@ -21,7 +21,7 @@
           <input type="text" placeholder="Введіть назву епізоду" matInput
                  [matAutocomplete]="episode"
                  [disabled]="disabled"
-                 [formControl]="episodeSearch">
+                 [formControl]="episodeSearch" required>
         </mat-form-field>
 
         <mat-autocomplete #episode="matAutocomplete" [displayWith]="formatEpisode">

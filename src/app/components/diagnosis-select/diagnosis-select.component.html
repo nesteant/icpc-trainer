@@ -12,7 +12,7 @@
 </ng-template>
 <ng-template #select>
   <mat-form-field [ngClass]="clazz">
-    <mat-select placeholder="Діагноз" [formControl]="diagnosisControl">
+    <mat-select placeholder="Діагноз" [formControl]="diagnosisControl" required>
       <mat-option *ngFor="let option of diagnosisOptions | async" [value]="option.code">
         {{option | icpcCode}}
       </mat-option>

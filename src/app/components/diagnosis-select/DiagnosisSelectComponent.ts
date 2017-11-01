@@ -1,10 +1,11 @@
-import {Component, forwardRef, Input, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, forwardRef, Input, OnInit, Optional, ViewEncapsulation} from '@angular/core';
 import {ControlValueAccessor, FormControl, NG_VALUE_ACCESSOR} from '@angular/forms';
 import {IcpcCode} from '../../model/IcpcCode';
 import {Observable} from 'rxjs/Observable';
 import {IcpcService} from '../../services/IcpcService';
 import {IcpcCodePipe} from '../../pipes/IcpcCodePipe';
 import {noop} from 'rxjs/util/noop';
+import {CreateSubVisitService} from '../../dialogs/create-subvisit-dialog/CreateSubVisitService';
 
 @Component({
   selector: 'icpc-diagnosis-select',
@@ -29,7 +30,11 @@ export class DiagnosisSelectComponent implements OnInit, ControlValueAccessor {
   public diagnosisOptions: Observable<IcpcCode[]>;
   public onChange: any = noop;
 
-  constructor(private icpcCodePipe: IcpcCodePipe, private icpcService: IcpcService) {
+  constructor(@Optional() createSubVisitService: CreateSubVisitService, private icpcCodePipe: IcpcCodePipe, private icpcService: IcpcService) {
+    createSubVisitService && createSubVisitService.onSave.subscribe(() => {
+      this.diagnosisSearch.markAsTouched();
+      this.diagnosisControl.markAsTouched();
+    });
   }
 
   public ngOnInit() {

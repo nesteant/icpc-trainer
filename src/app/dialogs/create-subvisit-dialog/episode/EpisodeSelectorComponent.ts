@@ -1,4 +1,4 @@
-import {Component, forwardRef, Input, OnInit} from '@angular/core';
+import {Component, forwardRef, Input, OnInit, Optional} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/race';
 import {ControlValueAccessor, FormBuilder, FormControl, FormGroup, NG_VALUE_ACCESSOR, Validators} from '@angular/forms';
@@ -9,6 +9,7 @@ import {Patient} from '../../../model/Patient';
 import {IcpcCode} from '../../../model/IcpcCode';
 import {IcpcCodePipe} from '../../../pipes/IcpcCodePipe';
 import {IcpcService} from '../../../services/IcpcService';
+import {CreateSubVisitService} from '../CreateSubVisitService';
 
 @Component({
   selector: 'icpc-episode-selector',
@@ -50,12 +51,31 @@ export class EpisodeSelectorComponent implements OnInit, ControlValueAccessor {
   };
   public disabled = false;
 
-  constructor(fb: FormBuilder, private icpcService: IcpcService, private episodePipe: EpisodePipe) {
+  public marked = false;
+
+  constructor(fb: FormBuilder,
+              @Optional() createSubVisitService: CreateSubVisitService,
+              private icpcService: IcpcService,
+              private episodePipe: EpisodePipe) {
     this.episodeNameGroup = fb.group({
       diagnosis: new FormControl(null, Validators.required),
       episode: new FormControl(null, Validators.required)
     });
-    this.episodeCheckbox.valueChanges.subscribe(v => this.diagnosis = this._diagnosis);
+    createSubVisitService && createSubVisitService.onSave.subscribe(() => {
+      this.marked = true;
+      this.episodeNameGroup.get('diagnosis').markAsTouched();
+      this.episodeNameGroup.get('episode').markAsTouched();
+      this.episodeSearch.markAsTouched();
+    });
+    this.episodeCheckbox.valueChanges.subscribe(v => {
+      this.diagnosis = this._diagnosis;
+      if (this.marked) {
+        this.marked = false;
+        setTimeout(()=>{
+          createSubVisitService && createSubVisitService.onSave.next();
+        });
+      }
+    });
     this.episodeNameGroup.valueChanges.subscribe(v => this.onChange({
       name: v,
       history: [],
