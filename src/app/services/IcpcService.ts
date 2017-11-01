@@ -35,7 +35,7 @@ export class IcpcService {
         codes = codes.reduce((acc, code) => {
           let codeString = code.code;
           let cn = parseInt(codeString.replace(/[\D]/gi, ''), 10);
-          let fitsDiapason = cn >= 37 && cn <= 47 || cn >= 49 && cn <= 62 || cn >= 63 && cn <= 69;
+          let fitsDiapason = cn >= 31 && cn <= 47 || cn >= 49 && cn <= 62 || cn >= 64 && cn <= 69;
           if (codeString.startsWith('-') && fitsDiapason) {
             this.LETTERS.forEach(l => {
               let newCode = Object.assign({}, code);
@@ -57,6 +57,7 @@ export class IcpcService {
         });
 
         codes.forEach(code => {
+          let cn = parseInt(code.code.replace(/\D/gi, ''));
           let reasonFilter = true;
 
           let diagnosisExec = /[A-Z](\d{2})/gi.exec(code.code);
@@ -67,7 +68,8 @@ export class IcpcService {
           if (diagnosisCode <= 29 || diagnosisCode >= 70 && diagnosisCode <= 99) {
             diagnoses.push(code);
           }
-          if (code.code.startsWith('-')) {
+          let actionCode = cn >= 30 && cn <= 59 || cn === 62 || cn >= 66 && cn <= 68;
+          if (actionCode) {
             actions.push(code);
           }
         });
