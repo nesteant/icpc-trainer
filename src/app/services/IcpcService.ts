@@ -43,6 +43,7 @@ export class IcpcService {
               acc.push(newCode);
             });
           } else {
+            code.code = code.code.replace(/-/gi, '*');
             acc.push(code);
           }
           return acc;
