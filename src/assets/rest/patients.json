@@ -22,7 +22,8 @@
             "considerUa": "",
             "consider": "",
             "noteUa": "1) для дітей, звіритись з відповідними педіатричними таблицями кров’яного тиску. 2) якщо є вторинна гіпертонія, ставити також код основної причини",
-            "note": "1) For children, consult appropriate paediatric blood pressure tables. 2) If secondary hypertension, code also the underlying cause"
+            "note": "1) For children, consult appropriate paediatric blood pressure tables. 2) If secondary hypertension, code also the underlying cause",
+            "icd10": "I11.0; I11.9; I12.0; I12.9; I13.0; I13.1; I13.2; I13.9; I15.0; I15.1; I15.2; I15.8; I15.9; I67.4"
           },
           "episode": "Гіпертонія з ускладненням"
         },
@@ -49,7 +50,8 @@
             "considerUa": "",
             "consider": "",
             "noteUa": "",
-            "note": ""
+            "note": "",
+            "icd10": "E78.0; E78.1; E78.2; E78.3; E78.4; E78.5; E78.6; E78.8; E78.9"
           },
           "episode": "Розлад ліпідного обміну"
         },
@@ -129,7 +131,8 @@
           "considerUa": "",
           "consider": "",
           "noteUa": "1) для дітей, звіритись з відповідними педіатричними таблицями кров’яного тиску. 2) якщо є вторинна гіпертонія, ставити також код основної причини",
-          "note": "1) For children, consult appropriate paediatric blood pressure tables. 2) If secondary hypertension, code also the underlying cause"
+          "note": "1) For children, consult appropriate paediatric blood pressure tables. 2) If secondary hypertension, code also the underlying cause",
+          "icd10": "I11.0; I11.9; I12.0; I12.9; I13.0; I13.1; I13.2; I13.9; I15.0; I15.1; I15.2; I15.8; I15.9; I67.4"
         }
       },
       {
@@ -233,7 +236,8 @@
           "considerUa": "",
           "consider": "",
           "noteUa": "1) для дітей, звіритись з відповідними педіатричними таблицями кров’яного тиску. 2) якщо є вторинна гіпертонія, ставити також код основної причини",
-          "note": "1) For children, consult appropriate paediatric blood pressure tables. 2) If secondary hypertension, code also the underlying cause"
+          "note": "1) For children, consult appropriate paediatric blood pressure tables. 2) If secondary hypertension, code also the underlying cause",
+          "icd10": "I11.0; I11.9; I12.0; I12.9; I13.0; I13.1; I13.2; I13.9; I15.0; I15.1; I15.2; I15.8; I15.9; I67.4"
         }
       },
       {
@@ -305,7 +309,8 @@
           "considerUa": "",
           "consider": "",
           "noteUa": "1) для дітей, звіритись з відповідними педіатричними таблицями кров’яного тиску. 2) якщо є вторинна гіпертонія, ставити також код основної причини",
-          "note": "1) For children, consult appropriate paediatric blood pressure tables. 2) If secondary hypertension, code also the underlying cause"
+          "note": "1) For children, consult appropriate paediatric blood pressure tables. 2) If secondary hypertension, code also the underlying cause",
+          "icd10": "I11.0; I11.9; I12.0; I12.9; I13.0; I13.1; I13.2; I13.9; I15.0; I15.1; I15.2; I15.8; I15.9; I67.4"
         }
       },
       {
@@ -361,7 +366,8 @@
           "considerUa": "",
           "consider": "",
           "noteUa": "",
-          "note": ""
+          "note": "",
+          "icd10": "E78.0; E78.1; E78.2; E78.3; E78.4; E78.5; E78.6; E78.8; E78.9"
         }
       },
       {
@@ -433,7 +439,8 @@
           "considerUa": "задишка / утруднене дихання R02",
           "consider": "dyspnoea R02",
           "noteUa": "",
-          "note": ""
+          "note": "",
+          "icd10": "I26.0; I26.9"
         }
       }
     ]
@@ -461,7 +468,8 @@
             "considerUa": "",
             "consider": "",
             "noteUa": "Іноді у пацієнта є привід для зверненняі, який сімейний лікар не може інтерпретувати як діагноз або симптом в області сімейної практики. У цих випадках сімейний лікар / терапевт буде використовувати код A97, вказавши, що причина пацієнта для звернення стосується чогось, на що сімейний лікар / терапевт не може професійно відреагувати, за винятком того, щоб описати цей випадок.",
-            "note": "Sometimes a patient has a reason for encounter which the family doctor cannot interpret as a diagnosis or symptom within the domain of family practice. In these cases the FP/GP will use the code A97, indicating that the patient's reason for encounter refers to something the FP/GP cannot professionally respond to, except by explaining that this is the case."
+            "note": "Sometimes a patient has a reason for encounter which the family doctor cannot interpret as a diagnosis or symptom within the domain of family practice. In these cases the FP/GP will use the code A97, indicating that the patient's reason for encounter refers to something the FP/GP cannot professionally respond to, except by explaining that this is the case.",
+            "icd10": "Z00.0; Z00.1; Z00.2; Z00.3; Z00.4; Z00.5; Z00.6; Z00.8; Z02.0; Z02.1; Z02.2; Z02.3; Z02.4; Z02.5; Z02.6; Z02.7; Z02.8; Z02.9"
           },
           "episode": "Відсутність хвороби"
         },
@@ -540,7 +548,8 @@
           "considerUa": "",
           "consider": "",
           "noteUa": "Іноді у пацієнта є привід для зверненняі, який сімейний лікар не може інтерпретувати як діагноз або симптом в області сімейної практики. У цих випадках сімейний лікар / терапевт буде використовувати код A97, вказавши, що причина пацієнта для звернення стосується чогось, на що сімейний лікар / терапевт не може професійно відреагувати, за винятком того, щоб описати цей випадок.",
-          "note": "Sometimes a patient has a reason for encounter which the family doctor cannot interpret as a diagnosis or symptom within the domain of family practice. In these cases the FP/GP will use the code A97, indicating that the patient's reason for encounter refers to something the FP/GP cannot professionally respond to, except by explaining that this is the case."
+          "note": "Sometimes a patient has a reason for encounter which the family doctor cannot interpret as a diagnosis or symptom within the domain of family practice. In these cases the FP/GP will use the code A97, indicating that the patient's reason for encounter refers to something the FP/GP cannot professionally respond to, except by explaining that this is the case.",
+          "icd10": "Z00.0; Z00.1; Z00.2; Z00.3; Z00.4; Z00.5; Z00.6; Z00.8; Z02.0; Z02.1; Z02.2; Z02.3; Z02.4; Z02.5; Z02.6; Z02.7; Z02.8; Z02.9"
         }
       }
     ]
@@ -568,7 +577,8 @@
             "considerUa": "",
             "consider": "",
             "noteUa": "1) ставити подвійний код для ускладнень таких, як ретинопатія F83, нефропатія U88. 2) під час вагітності подвійний код з W84",
-            "note": "1) double code complications such as retinopathy F83, nephropathy U88. 2) In pregnancy, double code with W84"
+            "note": "1) double code complications such as retinopathy F83, nephropathy U88. 2) In pregnancy, double code with W84",
+            "icd10": "E11.0; E11.1; E11.2; E11.3; E11.4; E11.5; E11.6; E11.7; E11.8; E11.9; E12.0; E12.1; E12.2; E12.3; E12.4; E12.5; E12.6; E12.7; E12.8; E12.9; E13.0; E13.1; E13.2; E13.3; E13.4; E13.5; E13.6; E13.7; E13.8; E13.9; E14.0; E14.1; E14.2; E14.3; E14.4; E14.5; E14.6; E14.7; E14.8; E14.9"
           },
           "episode": "Інсулінонезалежний цукровий діабет"
         },
@@ -594,7 +604,8 @@
             "considerUa": "",
             "consider": "",
             "noteUa": "",
-            "note": ""
+            "note": "",
+            "icd10": "E66.0; E66.1; E66.2; E66.8; E66.9"
           },
           "episode": "Ожиріння"
         },
@@ -622,7 +633,8 @@
             "considerUa": "",
             "consider": "",
             "noteUa": "",
-            "note": ""
+            "note": "",
+            "icd10": "R63.1"
           },
           {
             "code": "D20",
@@ -638,7 +650,8 @@
             "considerUa": "",
             "consider": "",
             "noteUa": "",
-            "note": ""
+            "note": "",
+            "icd10": "K13.1; K13.7; K14.1; K14.2; K14.5; K14.6; R19.6; R68.2"
           }
         ],
         "actions": [
@@ -705,7 +718,8 @@
           "considerUa": "",
           "consider": "",
           "noteUa": "1) ставити подвійний код для ускладнень таких, як ретинопатія F83, нефропатія U88. 2) під час вагітності подвійний код з W84",
-          "note": "1) double code complications such as retinopathy F83, nephropathy U88. 2) In pregnancy, double code with W84"
+          "note": "1) double code complications such as retinopathy F83, nephropathy U88. 2) In pregnancy, double code with W84",
+          "icd10": "E11.0; E11.1; E11.2; E11.3; E11.4; E11.5; E11.6; E11.7; E11.8; E11.9; E12.0; E12.1; E12.2; E12.3; E12.4; E12.5; E12.6; E12.7; E12.8; E12.9; E13.0; E13.1; E13.2; E13.3; E13.4; E13.5; E13.6; E13.7; E13.8; E13.9; E14.0; E14.1; E14.2; E14.3; E14.4; E14.5; E14.6; E14.7; E14.8; E14.9"
         }
       },
       {
@@ -777,7 +791,8 @@
           "considerUa": "",
           "consider": "",
           "noteUa": "1) ставити подвійний код для ускладнень таких, як ретинопатія F83, нефропатія U88. 2) під час вагітності подвійний код з W84",
-          "note": "1) double code complications such as retinopathy F83, nephropathy U88. 2) In pregnancy, double code with W84"
+          "note": "1) double code complications such as retinopathy F83, nephropathy U88. 2) In pregnancy, double code with W84",
+          "icd10": "E11.0; E11.1; E11.2; E11.3; E11.4; E11.5; E11.6; E11.7; E11.8; E11.9; E12.0; E12.1; E12.2; E12.3; E12.4; E12.5; E12.6; E12.7; E12.8; E12.9; E13.0; E13.1; E13.2; E13.3; E13.4; E13.5; E13.6; E13.7; E13.8; E13.9; E14.0; E14.1; E14.2; E14.3; E14.4; E14.5; E14.6; E14.7; E14.8; E14.9"
         }
       },
       {
@@ -798,7 +813,8 @@
             "considerUa": "",
             "consider": "",
             "noteUa": "",
-            "note": ""
+            "note": "",
+            "icd10": "R63.1"
           },
           {
             "code": "D20",
@@ -814,7 +830,8 @@
             "considerUa": "",
             "consider": "",
             "noteUa": "",
-            "note": ""
+            "note": "",
+            "icd10": "K13.1; K13.7; K14.1; K14.2; K14.5; K14.6; R19.6; R68.2"
           }
         ],
         "actions": [
@@ -849,7 +866,8 @@
           "considerUa": "",
           "consider": "",
           "noteUa": "",
-          "note": ""
+          "note": "",
+          "icd10": "E66.0; E66.1; E66.2; E66.8; E66.9"
         }
       }
     ]
@@ -877,7 +895,8 @@
             "considerUa": "",
             "consider": "",
             "noteUa": "Іноді у пацієнта є привід для зверненняі, який сімейний лікар не може інтерпретувати як діагноз або симптом в області сімейної практики. У цих випадках сімейний лікар / терапевт буде використовувати код A97, вказавши, що причина пацієнта для звернення стосується чогось, на що сімейний лікар / терапевт не може професійно відреагувати, за винятком того, щоб описати цей випадок.",
-            "note": "Sometimes a patient has a reason for encounter which the family doctor cannot interpret as a diagnosis or symptom within the domain of family practice. In these cases the FP/GP will use the code A97, indicating that the patient's reason for encounter refers to something the FP/GP cannot professionally respond to, except by explaining that this is the case."
+            "note": "Sometimes a patient has a reason for encounter which the family doctor cannot interpret as a diagnosis or symptom within the domain of family practice. In these cases the FP/GP will use the code A97, indicating that the patient's reason for encounter refers to something the FP/GP cannot professionally respond to, except by explaining that this is the case.",
+            "icd10": "Z00.0; Z00.1; Z00.2; Z00.3; Z00.4; Z00.5; Z00.6; Z00.8; Z02.0; Z02.1; Z02.2; Z02.3; Z02.4; Z02.5; Z02.6; Z02.7; Z02.8; Z02.9"
           },
           "episode": "Відсутність хвороби"
         },
@@ -904,7 +923,8 @@
             "considerUa": "",
             "consider": "",
             "noteUa": "",
-            "note": ""
+            "note": "",
+            "icd10": "Z01.0; Z01.1; Z01.2; Z01.3; Z01.4; Z01.5; Z01.6; Z01.7; Z01.8; Z01.9; Z10.0; Z10.1; Z10.2; Z10.3; Z10.8; Z11.0; Z11.1; Z11.2; Z11.3; Z11.4; Z11.5; Z11.6; Z11.8; Z11.9; Z12.0; Z12.1; Z12.2; Z12.3; Z12.4; Z12.5; Z12.6; Z12.8; Z12.9; Z13.0; Z13.1; Z13.2; Z13.3; Z13.4; Z13.5; Z13.6; Z13.7; Z13.8; Z13.9; Z23.0; Z23.1; Z23.2; Z23.3; Z23.4; Z23.5; Z23.6; Z23.7; Z23.8; Z24.0; Z24.1; Z24.2; Z24.3; Z24.4; Z24.5; Z24.6; Z25.0; Z25.1; Z25.8; Z26.0; Z26.8; Z26.9; Z27.0; Z27.1; Z27.2; Z27.3; Z27.4; Z27.8; Z27.9; Z29.0; Z29.1; Z29.2; Z29.8; Z29.9; Z31.5; Z40.0; Z40.8; Z40.9; Z70.0; Z70.1; Z70.2; Z70.3; Z70.8; Z70.9"
           },
           "episode": "Підтримання здоров'я / профілактика"
         },
@@ -988,7 +1008,8 @@
           "considerUa": "",
           "consider": "",
           "noteUa": "Іноді у пацієнта є привід для зверненняі, який сімейний лікар не може інтерпретувати як діагноз або симптом в області сімейної практики. У цих випадках сімейний лікар / терапевт буде використовувати код A97, вказавши, що причина пацієнта для звернення стосується чогось, на що сімейний лікар / терапевт не може професійно відреагувати, за винятком того, щоб описати цей випадок.",
-          "note": "Sometimes a patient has a reason for encounter which the family doctor cannot interpret as a diagnosis or symptom within the domain of family practice. In these cases the FP/GP will use the code A97, indicating that the patient's reason for encounter refers to something the FP/GP cannot professionally respond to, except by explaining that this is the case."
+          "note": "Sometimes a patient has a reason for encounter which the family doctor cannot interpret as a diagnosis or symptom within the domain of family practice. In these cases the FP/GP will use the code A97, indicating that the patient's reason for encounter refers to something the FP/GP cannot professionally respond to, except by explaining that this is the case.",
+          "icd10": "Z00.0; Z00.1; Z00.2; Z00.3; Z00.4; Z00.5; Z00.6; Z00.8; Z02.0; Z02.1; Z02.2; Z02.3; Z02.4; Z02.5; Z02.6; Z02.7; Z02.8; Z02.9"
         }
       },
       {
@@ -1064,7 +1085,8 @@
           "considerUa": "",
           "consider": "",
           "noteUa": "Іноді у пацієнта є привід для зверненняі, який сімейний лікар не може інтерпретувати як діагноз або симптом в області сімейної практики. У цих випадках сімейний лікар / терапевт буде використовувати код A97, вказавши, що причина пацієнта для звернення стосується чогось, на що сімейний лікар / терапевт не може професійно відреагувати, за винятком того, щоб описати цей випадок.",
-          "note": "Sometimes a patient has a reason for encounter which the family doctor cannot interpret as a diagnosis or symptom within the domain of family practice. In these cases the FP/GP will use the code A97, indicating that the patient's reason for encounter refers to something the FP/GP cannot professionally respond to, except by explaining that this is the case."
+          "note": "Sometimes a patient has a reason for encounter which the family doctor cannot interpret as a diagnosis or symptom within the domain of family practice. In these cases the FP/GP will use the code A97, indicating that the patient's reason for encounter refers to something the FP/GP cannot professionally respond to, except by explaining that this is the case.",
+          "icd10": "Z00.0; Z00.1; Z00.2; Z00.3; Z00.4; Z00.5; Z00.6; Z00.8; Z02.0; Z02.1; Z02.2; Z02.3; Z02.4; Z02.5; Z02.6; Z02.7; Z02.8; Z02.9"
         }
       },
       {
@@ -1140,7 +1162,8 @@
           "considerUa": "",
           "consider": "",
           "noteUa": "Іноді у пацієнта є привід для зверненняі, який сімейний лікар не може інтерпретувати як діагноз або симптом в області сімейної практики. У цих випадках сімейний лікар / терапевт буде використовувати код A97, вказавши, що причина пацієнта для звернення стосується чогось, на що сімейний лікар / терапевт не може професійно відреагувати, за винятком того, щоб описати цей випадок.",
-          "note": "Sometimes a patient has a reason for encounter which the family doctor cannot interpret as a diagnosis or symptom within the domain of family practice. In these cases the FP/GP will use the code A97, indicating that the patient's reason for encounter refers to something the FP/GP cannot professionally respond to, except by explaining that this is the case."
+          "note": "Sometimes a patient has a reason for encounter which the family doctor cannot interpret as a diagnosis or symptom within the domain of family practice. In these cases the FP/GP will use the code A97, indicating that the patient's reason for encounter refers to something the FP/GP cannot professionally respond to, except by explaining that this is the case.",
+          "icd10": "Z00.0; Z00.1; Z00.2; Z00.3; Z00.4; Z00.5; Z00.6; Z00.8; Z02.0; Z02.1; Z02.2; Z02.3; Z02.4; Z02.5; Z02.6; Z02.7; Z02.8; Z02.9"
         }
       },
       {
@@ -1212,7 +1235,8 @@
           "considerUa": "",
           "consider": "",
           "noteUa": "",
-          "note": ""
+          "note": "",
+          "icd10": "Z01.0; Z01.1; Z01.2; Z01.3; Z01.4; Z01.5; Z01.6; Z01.7; Z01.8; Z01.9; Z10.0; Z10.1; Z10.2; Z10.3; Z10.8; Z11.0; Z11.1; Z11.2; Z11.3; Z11.4; Z11.5; Z11.6; Z11.8; Z11.9; Z12.0; Z12.1; Z12.2; Z12.3; Z12.4; Z12.5; Z12.6; Z12.8; Z12.9; Z13.0; Z13.1; Z13.2; Z13.3; Z13.4; Z13.5; Z13.6; Z13.7; Z13.8; Z13.9; Z23.0; Z23.1; Z23.2; Z23.3; Z23.4; Z23.5; Z23.6; Z23.7; Z23.8; Z24.0; Z24.1; Z24.2; Z24.3; Z24.4; Z24.5; Z24.6; Z25.0; Z25.1; Z25.8; Z26.0; Z26.8; Z26.9; Z27.0; Z27.1; Z27.2; Z27.3; Z27.4; Z27.8; Z27.9; Z29.0; Z29.1; Z29.2; Z29.8; Z29.9; Z31.5; Z40.0; Z40.8; Z40.9; Z70.0; Z70.1; Z70.2; Z70.3; Z70.8; Z70.9"
         }
       },
       {
@@ -1284,7 +1308,8 @@
           "considerUa": "",
           "consider": "",
           "noteUa": "",
-          "note": ""
+          "note": "",
+          "icd10": "Z01.0; Z01.1; Z01.2; Z01.3; Z01.4; Z01.5; Z01.6; Z01.7; Z01.8; Z01.9; Z10.0; Z10.1; Z10.2; Z10.3; Z10.8; Z11.0; Z11.1; Z11.2; Z11.3; Z11.4; Z11.5; Z11.6; Z11.8; Z11.9; Z12.0; Z12.1; Z12.2; Z12.3; Z12.4; Z12.5; Z12.6; Z12.8; Z12.9; Z13.0; Z13.1; Z13.2; Z13.3; Z13.4; Z13.5; Z13.6; Z13.7; Z13.8; Z13.9; Z23.0; Z23.1; Z23.2; Z23.3; Z23.4; Z23.5; Z23.6; Z23.7; Z23.8; Z24.0; Z24.1; Z24.2; Z24.3; Z24.4; Z24.5; Z24.6; Z25.0; Z25.1; Z25.8; Z26.0; Z26.8; Z26.9; Z27.0; Z27.1; Z27.2; Z27.3; Z27.4; Z27.8; Z27.9; Z29.0; Z29.1; Z29.2; Z29.8; Z29.9; Z31.5; Z40.0; Z40.8; Z40.9; Z70.0; Z70.1; Z70.2; Z70.3; Z70.8; Z70.9"
         }
       }
     ]
@@ -1298,7 +1323,23 @@
       {
         "id": "8",
         "name": {
-          "diagnosis": "K86",
+          "diagnosis": {
+            "code": "K86",
+            "shortTitleUa": "Гіпертонія неускладнена",
+            "preferred": "Hypertension uncomplicated",
+            "shortTitle": "Hypertension uncomplicated",
+            "inclusionUa": "гіпертонічна хвороба; артеріальна гіпертонія БДУ; гіпертонія невідомого походження",
+            "inclusion": "essential hypertension; hypertension NOS; idiopathic hypertension",
+            "exclusionUa": "гіпертонія з ускладненням K87; гіпертонія під час вагітності W81",
+            "exclusion": "hypertension with complications K87; hypertension in pregnancy W81",
+            "criteriaUa": "дві або більше реєстрації показів під час візиту, зроблені під час двох або більше візитів, з кров'яним тиском, що в середньому вище 95 мм рт.ст. діастолічний або більше 160 мм рт.ст. систолічний у дорослих пацієнтів;  або два або більше заміри при одноразовій зустрічіі із середнім діастолічним артеріальним тиском 120 мм рт. ст. або вище; плюс відсутність симптомів вторинного залучення серця, нирок, очей або мозку",
+            "criteria": "either two or more readings per encounter, taken at two or more encounters, with blood pressures that average over 95 mm Hg diastolic or over 160 mm Hg systolic in adult patients; or two or more readings at a single encounter with an average diastolic blood pressure of 120 mm Hg or more; plus absence of evidence of secondary involvement of heart, kidney, eye, or brain",
+            "considerUa": "підвищений кров'яний тиск K85",
+            "consider": "elevated blood pressure K85",
+            "noteUa": "1) для дітей, звіритись з відповідними педіатричними таблицями кров’яного тиску. 2) якщо є вторинна гіпертонія, ставити також код основної причини",
+            "note": "1) For children, consult appropriate paediatric blood pressure tables. 2) If secondary hypertension, code also the underlying cause",
+            "icd10": "I10"
+          },
           "episode": "Гіпертонія неускладнена"
         },
         "subVisits": [
@@ -1394,7 +1435,8 @@
           "considerUa": "підвищений кров'яний тиск K85",
           "consider": "elevated blood pressure K85",
           "noteUa": "1) для дітей, звіритись з відповідними педіатричними таблицями кров’яного тиску. 2) якщо є вторинна гіпертонія, ставити також код основної причини",
-          "note": "1) For children, consult appropriate paediatric blood pressure tables. 2) If secondary hypertension, code also the underlying cause"
+          "note": "1) For children, consult appropriate paediatric blood pressure tables. 2) If secondary hypertension, code also the underlying cause",
+          "icd10": "I10"
         }
       },
       {
@@ -1482,7 +1524,8 @@
           "considerUa": "підвищений кров'яний тиск K85",
           "consider": "elevated blood pressure K85",
           "noteUa": "1) для дітей, звіритись з відповідними педіатричними таблицями кров’яного тиску. 2) якщо є вторинна гіпертонія, ставити також код основної причини",
-          "note": "1) For children, consult appropriate paediatric blood pressure tables. 2) If secondary hypertension, code also the underlying cause"
+          "note": "1) For children, consult appropriate paediatric blood pressure tables. 2) If secondary hypertension, code also the underlying cause",
+          "icd10": "I10"
         }
       },
       {
@@ -1570,7 +1613,8 @@
           "considerUa": "підвищений кров'яний тиск K85",
           "consider": "elevated blood pressure K85",
           "noteUa": "1) для дітей, звіритись з відповідними педіатричними таблицями кров’яного тиску. 2) якщо є вторинна гіпертонія, ставити також код основної причини",
-          "note": "1) For children, consult appropriate paediatric blood pressure tables. 2) If secondary hypertension, code also the underlying cause"
+          "note": "1) For children, consult appropriate paediatric blood pressure tables. 2) If secondary hypertension, code also the underlying cause",
+          "icd10": "I10"
         }
       }
     ]

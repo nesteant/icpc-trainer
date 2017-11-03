@@ -13,4 +13,5 @@ export interface IcpcCode {
   consider: string;
   noteUa: string;
   note: string;
+  icd10?: string;
 }
