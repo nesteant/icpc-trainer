@@ -11,6 +11,9 @@
   font-size: 1em;
   font-weight: normal;
 }
+.logo {
+  height:  64px;
+}
 
 .mat-dialog-container {
   position: relative;
