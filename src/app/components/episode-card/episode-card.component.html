@@ -10,10 +10,11 @@
     <h4 class="clickable" (click)="openEpisodeDetailsModal(episode)">{{episode | episode}}</h4>
   </div>
   <div>
-    <label class="icpc-label">Діагноз</label>
+    <label class="icpc-label">Причини</label>
     <ul class="simple-list">
-      <li *ngFor="let id of episode.subVisits">
-        <icpc-subvisit-card class="clickable" (click)="openVisitDetailsModal(getVisit(id))" [subVisit]="getVisit(id)"></icpc-subvisit-card>
+      <li *ngFor="let id of episode.subVisits; let odd=odd" [ngClass]="{odd: odd}" class="list-item">
+        <icpc-subvisit-card type="reasons" class="clickable" (click)="openVisitDetailsModal(getVisit(id))"
+                            [subVisit]="getVisit(id)"></icpc-subvisit-card>
       </li>
     </ul>
   </div>

@@ -8,5 +8,7 @@ import {SubVisit} from '../../model/SubVisit';
 export class SubVisitCardComponent {
 
   @Input()
+  public type: 'reasons' | 'diagnosis' = 'diagnosis';
+  @Input()
   public subVisit: SubVisit;
 }

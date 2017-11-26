@@ -110,6 +110,9 @@ button.mat-button.circle {
   text-align: right;
 }
 
+.odd.list-item {
+  /*background: #F6F3FE;*/
+}
 .simple-list {
   list-style: none;
   margin: 0;
@@ -117,8 +120,14 @@ button.mat-button.circle {
 }
 
 .simple-list li {
-  margin-bottom: 10px;
+  padding: 5px 0;
   line-height: 40px;
+  border-bottom: #acacac 1px solid;
+}
+
+.simple-list li:hover {
+  background: #f3f0fb;
+  cursor: pointer;
 }
 
 .patient-card {
