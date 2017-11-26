@@ -32,7 +32,7 @@ export class CreateSubVisitDialogComponent implements OnInit {
     this.episodes = data.episodes;
     this.dialogTitle = data.dialogTitle;
     this.formGroup = fb.group({
-      date: new FormControl(null, [Validators.required]),
+      date: new FormControl(new Date(), [Validators.required]),
       episode: new FormControl(null, [Validators.required]),
       diagnosis: new FormControl(null, [Validators.required]),
       reasons: new FormControl(null, [Validators.required]),
