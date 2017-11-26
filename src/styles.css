@@ -125,11 +125,6 @@ button.mat-button.circle {
   border-bottom: #acacac 1px solid;
 }
 
-.simple-list li:hover {
-  background: #f3f0fb;
-  cursor: pointer;
-}
-
 .patient-card {
   border-bottom: #acacac 1px solid;
 }
