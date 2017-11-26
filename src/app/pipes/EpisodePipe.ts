@@ -17,7 +17,7 @@ export class EpisodePipe implements PipeTransform {
     }
     let diagnosis = this.icpcService.staticCodes && this.icpcService.staticCodes
       .find(code => code.code === value.name.diagnosis.code);
-    let postfix = value.name.episode ? ` - ${value.name.episode}` : '';
+    let postfix = value.name.episode && value.name.episode.trim() ? ` - ${value.name.episode}` : '';
     return value && diagnosis && `${diagnosis.code} ${diagnosis.shortTitleUa}${postfix}`;
   }
 }
