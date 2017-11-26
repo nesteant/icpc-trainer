@@ -25,6 +25,6 @@
   </mat-dialog-content>
 
   <mat-dialog-actions>
-    <button mat-button (click)="save()">Зберегти</button>
+    <button mat-button (click)="save()" *ngIf="!episode.ended">Зберегти</button>
   </mat-dialog-actions>
 </div>

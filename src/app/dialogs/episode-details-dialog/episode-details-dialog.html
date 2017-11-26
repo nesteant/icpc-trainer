@@ -30,5 +30,7 @@
     </mat-tab>
   </mat-tab-group>
   <mat-dialog-actions>
+    <button mat-button (click)="openCloseEpisodeDialog(episode)" *ngIf="!episode.ended">Закрити епізод</button>
+    <button mat-button (click)="openCreateSubvisitDialog(episode)" *ngIf="!episode.ended">Додати підвізит</button>
   </mat-dialog-actions>
 </div>
