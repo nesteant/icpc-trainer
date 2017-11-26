@@ -67,7 +67,7 @@ export class PatientDetailsComponent {
   }
 
   public get episodesLabel() {
-    return `Епізоди (${this.episodesCount})`;
+    return `Епізоди (${this.episodesCount}/${this.episodesClosedCount})`;
   }
 
   public get visitsLabel() {
@@ -76,6 +76,10 @@ export class PatientDetailsComponent {
 
   public get episodesCount() {
     return this.patient.episodes ? this.patient.episodes.filter(ep => !ep.ended).length : 0;
+  }
+
+  public get episodesClosedCount() {
+    return this.patient.episodes ? this.patient.episodes.filter(ep => ep.ended).length : 0;
   }
 
   public get visitsCount() {
