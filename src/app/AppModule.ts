@@ -20,6 +20,8 @@ import {PatientResolver} from './services/PatientResolver';
 import {IcpcDialogsModule} from './dialogs/IcpcDialogsModule';
 import {PageNotFoundComponent} from './pages/page-not-found/PageNotFoundComponent';
 import {NoContentComponent} from './pages/no-content/NoContentComponent';
+import {DateAdapter, MAT_DATE_LOCALE} from '@angular/material';
+import {AppDateAdapter} from './services/AppDateAdapter';
 
 @NgModule({
   declarations: [
@@ -70,6 +72,8 @@ import {NoContentComponent} from './pages/no-content/NoContentComponent';
     ])
   ],
   providers: [
+    {provide: MAT_DATE_LOCALE, useValue: 'en-US'},
+    {provide: DateAdapter, useClass: AppDateAdapter},
     {provide: LOCALE_ID, useValue: 'en-US'},
     PatientsService,
     IcpcService,

@@ -7,7 +7,7 @@
   <h2 mat-dialog-title>{{episode | episode}}</h2>
   <h5 mat-dialog-title>Підвізит від {{visit.date | date : 'dd/MM/yyyy'}}</h5>
 
-  <h4>Причина</h4>
+  <h4>Причина звернення</h4>
   <mat-expansion-panel [expanded]="false" *ngFor="let reason of visit?.reasons; let index = index;">
     <mat-expansion-panel-header>
       <mat-panel-title>{{reason | icpcCode}}</mat-panel-title>
