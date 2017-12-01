@@ -1,5 +1,5 @@
 <mat-card class="icpc-card" [class.ended]="episode.ended">
-  <div class="mat-error" *ngIf="episode.ended">Закритий ({{ episode.endDate | date : 'dd/MM/yyyy' }})</div>
+  <div class="mat-error" *ngIf="episode.ended">Закритий ({{ episode.endDate | date : 'dd.MM.yyyy' }})</div>
   <div class="icpc-card-header">
     <div class="icpc-button-pane">
       <button mat-icon-button *ngIf="!episode.ended" (click)="openEditEpisodeModal(episode)">

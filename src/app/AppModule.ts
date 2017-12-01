@@ -72,9 +72,9 @@ import {AppDateAdapter} from './services/AppDateAdapter';
     ])
   ],
   providers: [
-    {provide: MAT_DATE_LOCALE, useValue: 'en-US'},
+    {provide: MAT_DATE_LOCALE, useValue: 'uk-UA'},
     {provide: DateAdapter, useClass: AppDateAdapter},
-    {provide: LOCALE_ID, useValue: 'en-US'},
+    {provide: LOCALE_ID, useValue: 'uk-UA'},
     PatientsService,
     IcpcService,
     PatientResolver
