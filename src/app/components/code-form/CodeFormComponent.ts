@@ -35,7 +35,8 @@ export class CodeFormComponent implements ControlValueAccessor {
       consider: new FormControl(),
       noteUa: new FormControl(),
       note: new FormControl(),
-      icd10: new FormControl()
+      icd10: new FormControl(),
+      comment: new FormControl()
     });
     this.formGroup.valueChanges.subscribe(v => this.onChange(v));
   }
