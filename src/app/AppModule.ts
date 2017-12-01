@@ -22,7 +22,10 @@ import {PageNotFoundComponent} from './pages/page-not-found/PageNotFoundComponen
 import {NoContentComponent} from './pages/no-content/NoContentComponent';
 import {DateAdapter, MAT_DATE_LOCALE} from '@angular/material';
 import {AppDateAdapter} from './services/AppDateAdapter';
+import localeUk from '@angular/common/locales/uk';
+import {registerLocaleData} from '@angular/common';
 
+registerLocaleData(localeUk);
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +44,7 @@ import {AppDateAdapter} from './services/AppDateAdapter';
     PatientsModule,
     HttpClientModule,
     PatientDetailsModule,
-    StoreModule.provideStore({
+    StoreModule.forRoot({
       patients: patientsReducer,
       patient: patientReducer,
       icpc: icpcReducer

@@ -6,11 +6,11 @@ export const CREATE_EPISODE = 'CREATE_EPISODE';
 export function patientsReducer(state: any = [], action: Action) {
   switch (action.type) {
     case ADD_ITEMS: {
-      return action.payload;
+      return (<any>action).payload;
     }
 
     case CREATE_EPISODE:
-      return [...state, action.payload];
+      return [...state, (<any>action).payload];
 
     default:
       return state;

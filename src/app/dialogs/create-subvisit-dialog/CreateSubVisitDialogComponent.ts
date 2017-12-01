@@ -1,11 +1,12 @@
 import {Component, Inject, Input, OnInit} from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
+import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import 'rxjs/add/operator/startWith';
 import {Episode} from '../../model/Episode';
 import 'rxjs/add/operator/mergeMap';
 import {Patient} from '../../model/Patient';
 import {CreateSubVisitService} from './CreateSubVisitService';
+import {PromptDialogComponent} from '../prompt-dialog/PromptDialogComponent';
 
 @Component({
   selector: 'icpc-create-subvisit-dialog',
@@ -24,7 +25,9 @@ export class CreateSubVisitDialogComponent implements OnInit {
   public dialogTitle: string;
   public formGroup: FormGroup;
 
-  constructor(private createSubVisitService: CreateSubVisitService, public dialogRef: MatDialogRef<CreateSubVisitDialogComponent>,
+  constructor(private createSubVisitService: CreateSubVisitService,
+              public dialogRef: MatDialogRef<CreateSubVisitDialogComponent>,
+              public dialog: MatDialog,
               @Inject(MAT_DIALOG_DATA) public data: any,
               fb: FormBuilder) {
     this.episode = data.episode;
@@ -38,6 +41,27 @@ export class CreateSubVisitDialogComponent implements OnInit {
       reasons: new FormControl(null, [Validators.required]),
       actions: new FormControl(null, [Validators.required])
     });
+    let subFn = value => {
+      let diagnosisMatches = !value || (this.episode.name.diagnosis.code === value.code);
+      if (!diagnosisMatches) {
+        let dr = this.dialog.open(PromptDialogComponent, {
+          data: {
+            text: 'Увага! Ви обрали діагноз відмінний від діагнозу епізоду. При продовженні, назва епізоду буде змінена у відповідності до зазначеного діагнозу. Щоб продовжити, натисніть “Так”'
+          }
+        });
+        dr.afterClosed().subscribe(changed => {
+          if (!changed) {
+            this.formGroup.setControl('diagnosis', new FormControl());
+            this.formGroup.get('diagnosis').valueChanges.subscribe(subFn);
+          } else {
+            this.episode.name.diagnosis = value;
+            this.formGroup.setControl('diagnosis', new FormControl(value));
+            this.formGroup.patchValue({episode: this.episode});
+          }
+        });
+      }
+    };
+    this.formGroup.get('diagnosis').valueChanges.subscribe(subFn);
   }
 
 

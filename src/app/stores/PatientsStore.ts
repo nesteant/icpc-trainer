@@ -1,4 +1,8 @@
+import {IcpcCode} from '../model/IcpcCode';
+import {Patient} from '../model/Patient';
+
 export interface PatientsStore {
-  items: any[];
-  selectedItem: any;
+  icpc: IcpcCode[];
+  patients: Patient[];
+  patient: Patient;
 }

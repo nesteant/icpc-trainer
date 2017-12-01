@@ -27,12 +27,6 @@ export class IcpcService {
   }
 
   public loadItems() {
-    // return Observable.forkJoin(this.httpClient.get<IcpcCode[]>('assets/icpc.json'), this.httpClient.get<{}>('assets/icpc-icd10.json'))
-    // .map(([codes, mapping]) => {
-    //   codes.forEach(code => code.icd10 = mapping[code.code]);
-    // console.log(JSON.stringify(codes));
-    // return codes;
-    // })
     return this.httpClient.get<IcpcCode[]>('assets/icpc.json')
       .do(codes => {
         let actions: IcpcCode[] = [];
