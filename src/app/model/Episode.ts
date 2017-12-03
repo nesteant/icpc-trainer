@@ -8,4 +8,5 @@ export interface Episode {
   history: HsitoryItem[];
   ended?: boolean;
   endDate?: string;
+  comments: string;
 }

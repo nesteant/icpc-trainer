@@ -38,13 +38,15 @@ export class EpisodeDetailsDialogComponent implements OnInit {
     this.episode = data.episode;
     this.patient = data.patient;
     this.formGroup = fb.group({
-      name: new FormControl()
+      name: new FormControl(),
+      comments: new FormControl()
     });
   }
 
   public ngOnInit(): void {
     this.formGroup.patchValue({
-      name: this.episode.name
+      name: this.episode.name,
+      comments: this.episode.comments
     })
   }
 
@@ -65,6 +67,11 @@ export class EpisodeDetailsDialogComponent implements OnInit {
         visit: visit
       }
     });
+  }
+
+  public saveComment(episode: Episode) {
+    episode.comments = this.formGroup.get('comments').value;
+    this.patientsService.updateEpisode(this.patient, episode);
   }
 
   public openEditEpisodeModal(episode: Episode) {

@@ -179,3 +179,6 @@ icpc-patient.active .patient-card:before {
 .fill-space {
   flex: 1 1 auto;
 }
+.icpc-mt-10 {
+  margin-top: 10px;
+}

@@ -8,7 +8,7 @@
     </button>
   </div>
   <h4 mat-dialog-title>{{episode | episode}}</h4>
-  <mat-tab-group>
+  <mat-tab-group #tabGroup>
     <mat-tab [label]="visitsLabel">
       <table class="code-details">
         <thead>
@@ -38,12 +38,16 @@
           </tr>
         </tbody>
       </table>
+      <div class="icpc-mt-10">
+        <button mat-button (click)="openCloseEpisodeDialog(episode)" *ngIf="!episode.ended">Закрити епізод</button>
+        <button mat-button (click)="openCreateSubvisitDialog(episode)" *ngIf="!episode.ended">Додати підвізит</button>
+      </div>
     </mat-tab>
     <mat-tab label="Коментарі">
+      <mat-form-field><textarea matInput placeholder="Коментарі" formControlName="comments"></textarea></mat-form-field>
+      <div class="icpc-mt-10">
+        <button mat-button (click)="saveComment(episode)" *ngIf="!episode.ended">Зберегти коментар</button>
+      </div>
     </mat-tab>
   </mat-tab-group>
-  <mat-dialog-actions>
-    <button mat-button (click)="openCloseEpisodeDialog(episode)" *ngIf="!episode.ended">Закрити епізод</button>
-    <button mat-button (click)="openCreateSubvisitDialog(episode)" *ngIf="!episode.ended">Додати підвізит</button>
-  </mat-dialog-actions>
 </div>
