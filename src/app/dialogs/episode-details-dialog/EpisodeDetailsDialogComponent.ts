@@ -18,6 +18,7 @@ let id = 1000;
 @Component({
   selector: 'icpc-episode-details-dialog',
   templateUrl: 'episode-details-dialog.html',
+  styleUrls: ['episode-details.css']
 })
 export class EpisodeDetailsDialogComponent implements OnInit {
 

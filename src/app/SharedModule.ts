@@ -18,9 +18,9 @@ import {
   MatNativeDateModule,
   MatOptionModule,
   MatRadioModule,
-  MatSelectModule,
+  MatSelectModule, MatTableModule,
   MatTabsModule,
-  MatToolbarModule
+  MatToolbarModule, MatTooltipModule
 } from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
@@ -52,6 +52,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     MatTabsModule,
     MatListModule,
     MatRadioModule,
+    MatTableModule,
+    MatTooltipModule
   ],
   imports: [
     CommonModule,
@@ -73,7 +75,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     MatAutocompleteModule,
     MatTabsModule,
     MatListModule,
-    MatRadioModule
+    MatRadioModule,
+    MatTableModule,
+    MatTooltipModule
   ],
   providers: [
     IcpcCodePipe,

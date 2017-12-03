@@ -10,21 +10,34 @@
   <h4 mat-dialog-title>{{episode | episode}}</h4>
   <mat-tab-group>
     <mat-tab [label]="visitsLabel">
-      <ul class="simple-list">
-        <li *ngFor="let visit of episode.subVisits" class=" grid-x">
-          <div class="cell medium-11 large-11">
-            <icpc-subvisit-card class="clickable" (click)="openVisitDetailsModal(getVisit(visit))" [subVisit]="getVisit(visit)"></icpc-subvisit-card>
-          </div>
-          <div class="cell medium-1 large-1">
-            <mat-menu #appMenu="matMenu">
-              <button mat-menu-item (click)="openChangeEpisodeDialog(getVisit(visit))">Змінити епізод</button>
-            </mat-menu>
-            <button mat-icon-button [matMenuTriggerFor]="appMenu" *ngIf="!episode.ended">
-              <mat-icon>more_horiz</mat-icon>
-            </button>
-          </div>
-        </li>
-      </ul>
+      <table class="code-details">
+        <thead>
+          <tr>
+            <th>Дата</th>
+            <th>Причина захворювання</th>
+            <th>Діагноз</th>
+            <th>Дії</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let subVisit of episode.subVisits;" (click)="openVisitDetailsModal(getVisit(visit))">
+            <td>
+              <span>{{getVisit(subVisit).date | date: 'dd.MM.yyyy'}}</span></td>
+            <td><span *ngFor="let reason of getVisit(subVisit).reasons" [matTooltip]="reason | icpcCode">{{reason.code}}</span></td>
+            <td><span [matTooltip]="getVisit(subVisit).diagnosis | icpcCode">{{getVisit(subVisit).diagnosis.code}}</span></td>
+            <td><span *ngFor="let action of getVisit(subVisit).actions" [matTooltip]="action | icpcCode">{{action.code}}</span></td>
+            <td>
+              <mat-menu #appMenu="matMenu">
+                <button mat-menu-item (click)="openChangeEpisodeDialog(getVisit(subVisit))">Змінити епізод</button>
+              </mat-menu>
+              <button mat-icon-button [matMenuTriggerFor]="appMenu" *ngIf="!episode.ended">
+                <mat-icon>more_horiz</mat-icon>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </mat-tab>
     <mat-tab label="Коментарі">
     </mat-tab>
