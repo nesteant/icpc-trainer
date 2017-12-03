@@ -44,7 +44,7 @@
       </div>
     </mat-tab>
     <mat-tab label="Коментарі">
-      <mat-form-field><textarea matInput placeholder="Коментарі" formControlName="comments"></textarea></mat-form-field>
+      <mat-form-field><textarea matInput formControlName="comments"></textarea></mat-form-field>
       <div class="icpc-mt-10">
         <button mat-button (click)="saveComment(episode)" *ngIf="!episode.ended">Зберегти коментар</button>
       </div>
