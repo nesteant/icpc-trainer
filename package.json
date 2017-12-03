@@ -12,6 +12,10 @@
     "start": "node server.js",
     "heroku-postbuild": "ng build --aot -prod"
   },
+  "engines": {
+    "node": "6.11.1",
+    "npm": "5.4.1"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "5.0.4",
