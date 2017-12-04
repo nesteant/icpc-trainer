@@ -24,12 +24,15 @@ import {DateAdapter, MAT_DATE_LOCALE} from '@angular/material';
 import {AppDateAdapter} from './services/AppDateAdapter';
 import localeUk from '@angular/common/locales/uk';
 import {registerLocaleData} from '@angular/common';
+import {MainPageComponent} from './pages/main-page/MainPageComponent';
 
 registerLocaleData(localeUk);
+
 @NgModule({
   declarations: [
     AppComponent,
     PageNotFoundComponent,
+    MainPageComponent,
     NoContentComponent,
     PatientDetailsPageComponent,
   ],
@@ -66,11 +69,7 @@ registerLocaleData(localeUk);
           {path: '**', component: NoContentComponent}
         ]
       },
-      {
-        path: '',
-        redirectTo: '/patients',
-        pathMatch: 'full'
-      },
+      {path: '', component: MainPageComponent},
       {path: '**', component: PageNotFoundComponent}
     ])
   ],

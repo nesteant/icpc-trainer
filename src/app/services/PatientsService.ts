@@ -26,6 +26,7 @@ export class PatientsService {
   public preloadItems() {
     return this.httpClient.get<Patient[]>('assets/rest/patients.json').do(patients => {
       this.saved = this.getContext() || patients;
+      this.saveContext();
     });
   }
 

@@ -88,6 +88,10 @@ icpc-subvisit-card.clickable:hover > div, .clickable:hover {
 button.mat-button, button.mat-icon-button {
   color: #8969e0;
 }
+button.mat-primary:hover:not([disabled]) {
+  background: #8de678;
+  color: #222;
+}
 
 button.mat-button.circle {
   color: #8969e0;

@@ -1,0 +1,8 @@
+<div class="center-container">
+  <div class="agreement-text">
+    <mat-checkbox [formControl]="checkboxControl">Погоджуюсь з умовами використання</mat-checkbox>
+  </div>
+  <div>
+    <button mat-button [disabled]="!checkboxControl.value" color="primary" [routerLink]="['patients']">Перейти до тренажеру</button>
+  </div>
+</div>

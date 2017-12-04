@@ -19,4 +19,8 @@ export class AppComponent implements OnInit {
     this.patientService.clearContext();
     window.location.href = '/';
   }
+
+  public get loggedIn() {
+    return !!this.patientService.getContext();
+  }
 }

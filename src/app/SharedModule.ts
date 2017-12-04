@@ -10,7 +10,7 @@ import {
   MatDatepickerModule,
   MatDialogModule,
   MatExpansionModule,
-  MatFormFieldModule,
+  MatFormFieldModule, MatGridListModule,
   MatIconModule,
   MatInputModule,
   MatListModule,
@@ -53,7 +53,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     MatListModule,
     MatRadioModule,
     MatTableModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatGridListModule
   ],
   imports: [
     CommonModule,
@@ -77,7 +78,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     MatListModule,
     MatRadioModule,
     MatTableModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatGridListModule
   ],
   providers: [
     IcpcCodePipe,
