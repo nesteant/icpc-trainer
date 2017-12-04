@@ -58,7 +58,10 @@ export class EpisodeDetailsDialogComponent implements OnInit {
     return `Підвізіти (${(this.episode.subVisits || []).length})`;
   }
 
-  public openVisitDetailsModal(visit: SubVisit) {
+  public openVisitDetailsModal(event: Event, visit: SubVisit) {
+    if ((<any> event.target).innerHTML === 'more_horiz') {
+      return;
+    }
     let dialogRef = this.dialog.open(VisitDetailsDialogComponent, {
       height: '600px',
       width: '700px',
@@ -97,7 +100,9 @@ export class EpisodeDetailsDialogComponent implements OnInit {
     });
   }
 
-  public openChangeEpisodeDialog(visit: SubVisit) {
+  public openChangeEpisodeDialog(event: Event, visit: SubVisit) {
+    event.stopPropagation();
+    event.preventDefault();
     let dialogRef = this.dialog.open(ChangeEpisodeDialogComponent, {
       height: '600px',
       width: '700px',

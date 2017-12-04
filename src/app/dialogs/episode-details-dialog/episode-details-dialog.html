@@ -14,22 +14,22 @@
         <thead>
           <tr>
             <th>Дата</th>
-            <th>Причина захворювання</th>
+            <th>Причина звернення</th>
             <th>Діагноз</th>
             <th>Дії</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let subVisit of episode.subVisits;" (click)="openVisitDetailsModal(getVisit(visit))">
+          <tr *ngFor="let subVisit of episode.subVisits;" (click)="openVisitDetailsModal($event, getVisit(subVisit))">
             <td>
               <span>{{getVisit(subVisit).date | date: 'dd.MM.yyyy'}}</span></td>
             <td><span *ngFor="let reason of getVisit(subVisit).reasons" [matTooltip]="reason | icpcCode">{{reason.code}}</span></td>
             <td><span [matTooltip]="getVisit(subVisit).diagnosis | icpcCode">{{getVisit(subVisit).diagnosis.code}}</span></td>
             <td><span *ngFor="let action of getVisit(subVisit).actions" [matTooltip]="action | icpcCode">{{action.code}}</span></td>
             <td>
-              <mat-menu #appMenu="matMenu">
-                <button mat-menu-item (click)="openChangeEpisodeDialog(getVisit(subVisit))">Змінити епізод</button>
+              <mat-menu #appMenu="matMenu" (click)="openChangeEpisodeDialog($event, getVisit(subVisit))">
+                <button mat-menu-item (click)="openChangeEpisodeDialog($event, getVisit(subVisit))">Змінити епізод</button>
               </mat-menu>
               <button mat-icon-button [matMenuTriggerFor]="appMenu" *ngIf="!episode.ended">
                 <mat-icon>more_horiz</mat-icon>
