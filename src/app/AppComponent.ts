@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {PatientsService} from './services/PatientsService';
+import {IcpcService} from "./services/IcpcService";
 
 @Component({
   selector: 'icpc-root',
@@ -9,7 +10,8 @@ import {PatientsService} from './services/PatientsService';
 export class AppComponent implements OnInit {
   title = 'app';
 
-  constructor(private patientService: PatientsService) {
+  //TODO:nesteant: added to sync. Should be revised and iomplemented normally ngrx
+  constructor(private patientService: PatientsService, private icpcService: IcpcService) {
   }
 
   public ngOnInit() {
