@@ -131,6 +131,7 @@ export class EpisodeSelectorComponent implements OnInit, ControlValueAccessor {
     this.episodeOptions = this.episodeSearch.valueChanges
       .startWith(null)
       .mergeMap(val => this.filterEpisodes(val || this.formatEpisode(this.episodeSearch.value), Observable.of(this.episodes)));
+    !this.episodes.length && this.episodeCheckbox.setValue(true);
   }
 
   public filterEpisodes(val: string, values: Observable<Episode[]>): Observable<Episode[]> {

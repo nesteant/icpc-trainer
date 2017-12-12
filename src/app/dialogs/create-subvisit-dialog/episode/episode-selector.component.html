@@ -15,7 +15,7 @@
       </div>
     </div>
     <div>
-      <mat-radio-button [value]="false">Додати до існуючого епізоду</mat-radio-button>
+      <mat-radio-button [value]="false" *ngIf="episodes?.length">Додати до існуючого епізоду</mat-radio-button>
       <div *ngIf="episodeCheckbox.value === false">
         <mat-form-field class="xxl">
           <input type="text" placeholder="Введіть назву епізоду" matInput
