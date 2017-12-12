@@ -4,15 +4,16 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background: #f5f8fb;
+  /*background: #f5f8fb;*/
 }
 
 .doctor-img {
   position: relative;
-  width: 197px;
-  height: 197px;
+  width: 400px;
+  height: 400px;
   margin: 0 auto;
   top: 50%;
-  margin-top: -98px;
-  background: url('/assets/images/if_medical_icon.png');
+  margin-top: -200px;
+  background: url('/assets/images/MOZ.jpg');
+  background-size: 400px;
 }

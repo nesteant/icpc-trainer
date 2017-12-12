@@ -154,7 +154,7 @@ button.mat-button.circle {
   padding: 10px 0 10px 20px;
   width: 100%;
   background: #f5f5f5;
-  border-top: #dadada 1px solid;
+  /*border-top: #dadada 1px solid;*/
 }
 html, body, icpc-root, icpc-patients {
   height: 100%;
