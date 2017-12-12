@@ -1,8 +1,12 @@
 <div class="center-container">
   <div class="agreement-text">
-    <mat-checkbox [formControl]="checkboxControl">Погоджуюсь з умовами використання</mat-checkbox>
+    Даний тренажер використовується тільки з навчальною метою. Будь ласка, не використовуюте дані реальних пацієнтів при
+    роботі з програмою. Усі створені пацієнти будуть видалені після закінчення тестової сессії.
   </div>
+  <mat-checkbox [formControl]="checkboxControl">Погоджуюсь з умовами використання</mat-checkbox>
   <div>
-    <button mat-button [disabled]="!checkboxControl.value" color="primary" [routerLink]="['patients']">Перейти до тренажеру</button>
+    <button mat-button [disabled]="!checkboxControl.value" color="primary" [routerLink]="['patients']">Перейти до
+      тренажеру
+    </button>
   </div>
 </div>
