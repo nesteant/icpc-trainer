@@ -88,8 +88,14 @@ export class PatientDetailsComponent {
 
   public get visits() {
     let entries = this.patient && this.patient.subVisits.reduce((acc, curr) => {
-      let date = curr.date;
-      acc[date] ? acc[date].push(curr) : acc[date] = [curr];
+
+      let dateToFormat = new Date(curr.date);
+        let fullYear = dateToFormat.getFullYear();
+        let date = dateToFormat.getDate();
+        let month = dateToFormat.getMonth() + 1;
+        let monthStr = month > 9 ? '' + month : `0${month}`;
+        let formattedDate = `${fullYear}-${monthStr}-${date}`;
+      acc[formattedDate] ? acc[formattedDate].push(curr) : acc[formattedDate] = [curr];
       return acc;
     }, {});
     return Object.entries(entries).reduce((acc, [k, v]) => {

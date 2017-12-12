@@ -42,7 +42,7 @@ export class CreateSubVisitDialogComponent implements OnInit {
       actions: new FormControl(null, [Validators.required])
     });
     let subFn = value => {
-      let diagnosisMatches = !value || (this.episode.name.diagnosis.code === value.code);
+      let diagnosisMatches = !value || !this.episode || (this.episode.name.diagnosis.code === value.code);
       if (!diagnosisMatches) {
         let dr = this.dialog.open(PromptDialogComponent, {
           data: {
