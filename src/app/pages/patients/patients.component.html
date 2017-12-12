@@ -1,14 +1,19 @@
 <div class="grid-x full-height">
   <div class="cell medium-3 large-3 patient-menu-container">
-    <!--<div class="patient-card-header">-->
-      <!--<strong>Пацієнти</strong>-->
-    <!--</div>-->
     <div *ngFor="let patient of patients | async">
-      <icpc-patient [patient]="patient" [routerLink]="['/patients', patient.id]" routerLinkActive="active"></icpc-patient>
+      <icpc-patient [patient]="patient" [routerLink]="['/patients', patient.id]"
+                    routerLinkActive="active"></icpc-patient>
     </div>
 
   </div>
-  <div class="cell medium-9 large-9 position-relative">
+  <div class="page-content cell medium-9 large-9 position-relative">
     <router-outlet></router-outlet>
+  </div>
+  <div class="footer mat-body-1">
+    <span>"INTERNATIONAL CLASSIFICATION OF PRIMARY CARE (ICPC-2-E)</span>
+    <br/>
+    <span>Copyright © WONCA [2016]</span>
+    <br/>
+    <span>World Organization of National Colleges, Academies and Academic Associations of General Practitioners/Family Physicians"</span>
   </div>
 </div>
