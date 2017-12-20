@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, HostBinding, HostListener, OnInit} from '@angular/core';
 import {PatientsService} from './services/PatientsService';
 import {IcpcService} from "./services/IcpcService";
 

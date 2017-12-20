@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, HostListener} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Observable} from 'rxjs/Observable';
 import {PatientsService} from '../../services/PatientsService';
@@ -15,5 +15,10 @@ export class PatientDetailsPageComponent {
   constructor(activeRoute: ActivatedRoute, private patientsService: PatientsService) {
     this.patient = this.patientsService.selectedPatient;
     activeRoute.params.subscribe(() => this.patientsService.getPatient(activeRoute.snapshot.params.id));
+  }
+
+  @HostListener('window:resize', ['$event'])
+  public resize(event: Event) {
+    console.log(event);
   }
 }

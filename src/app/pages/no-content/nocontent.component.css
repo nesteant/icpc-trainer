@@ -2,7 +2,7 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 0;
+  left: 96px;
   right: 0;
   /*background: #f5f8fb;*/
 }
@@ -16,4 +16,10 @@
   margin-top: -200px;
   background: url('/assets/images/MOZ.jpg');
   background-size: 400px;
+}
+
+@media screen and (max-width: 639px) {
+  .doctor-container {
+    display: none;
+  }
 }

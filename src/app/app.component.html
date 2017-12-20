@@ -1,7 +1,21 @@
-<mat-toolbar *ngIf="loggedIn">
-  <img class="logo" src="/assets/images/logo-wonca.png" alt="WONCA" [routerLink]="['patients']">
-  <span class="fill-space"></span>
-  <a mat-button="" (click)="logout()"><mat-icon>power_settings_new</mat-icon> Вийти</a>
-</mat-toolbar>
-<router-outlet></router-outlet>
-
+<div id="header">
+  <mat-toolbar *ngIf="loggedIn">
+    <img class="logo" src="/assets/images/logo-wonca.png" alt="WONCA" [routerLink]="['patients']">
+    <span class="fill-space"></span>
+    <a mat-button="" (click)="logout()">
+      <mat-icon>power_settings_new</mat-icon>
+      Вийти</a>
+  </mat-toolbar>
+</div>
+<div id="content">
+  <div class="main-content">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+<div id="footer" class="mat-body-1">
+  <span>"INTERNATIONAL CLASSIFICATION OF PRIMARY CARE (ICPC-2-E)</span>
+  <br/>
+  <span>Copyright © WONCA [2016]</span>
+  <br/>
+  <span>World Organization of National Colleges, Academies and Academic Associations of General Practitioners/Family Physicians"</span>
+</div>
