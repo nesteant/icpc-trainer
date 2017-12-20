@@ -1,19 +1,13 @@
 .doctor-container {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 96px;
-  right: 0;
-  /*background: #f5f8fb;*/
+  margin-top: 50vh;
+  position: relative;
 }
 
 .doctor-img {
   position: relative;
   width: 400px;
   height: 400px;
-  margin: 0 auto;
-  top: 50%;
-  margin-top: -200px;
+  margin: -300px auto 0;
   background: url('/assets/images/MOZ.jpg');
   background-size: 400px;
 }
