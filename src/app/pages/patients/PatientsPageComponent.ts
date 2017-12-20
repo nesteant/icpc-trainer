@@ -39,6 +39,5 @@ export class PatientsPageComponent {
       this.content.style.height = `${windowHeight - this.header.scrollHeight - this.footer.scrollHeight}px`;
       this.content.style.marginTop = `${this.header.scrollHeight}px`;
       this.element.nativeElement.style.height =  this.content.style.height;
-      console.log('RESIXE', this.element.nativeElement.style.height,`${ this.content.style.height}px`)
   }
 }
