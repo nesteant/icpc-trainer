@@ -26,21 +26,21 @@ export class DiagnosisSelectComponent implements OnInit, ControlValueAccessor {
   @Input()
   public autocomplete: boolean = false;
   public diagnosisControl: FormControl = new FormControl();
-  public diagnosisSearch: FormControl = new FormControl();
   public diagnosisOptions: Observable<IcpcCode[]>;
   public onChange: any = noop;
 
   constructor(@Optional() createSubVisitService: CreateSubVisitService, private icpcCodePipe: IcpcCodePipe, private icpcService: IcpcService) {
     createSubVisitService && createSubVisitService.onSave.subscribe(() => {
-      this.diagnosisSearch.markAsTouched();
       this.diagnosisControl.markAsTouched();
     });
   }
 
   public ngOnInit() {
-    this.diagnosisOptions = this.diagnosisSearch.valueChanges
+    this.diagnosisOptions = this.diagnosisControl.valueChanges
       .startWith(null)
-      .mergeMap(val => val ? this.filter(val, this.icpcService.diagnoses) : this.icpcService.diagnoses);
+      .mergeMap(val => {
+        return val ? this.filter(val, this.icpcService.diagnoses) : this.icpcService.diagnoses
+      });
     this.diagnosisControl.valueChanges.subscribe(v => {
       this.onChange(this.icpcService.staticCodes.find(c => c.code === v));
     })
@@ -63,7 +63,7 @@ export class DiagnosisSelectComponent implements OnInit, ControlValueAccessor {
   public formatDiagnosis = (code: string) => {
     let value = this.icpcService.staticCodes.find(c => c.code === code);
     return this.icpcCodePipe.transform(value);
-  }
+  };
 
   private filter(val: string, values: Observable<IcpcCode[]>): Observable<IcpcCode[]> {
     return values.map(codes => {
