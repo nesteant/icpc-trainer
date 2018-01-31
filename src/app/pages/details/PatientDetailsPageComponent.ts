@@ -19,6 +19,5 @@ export class PatientDetailsPageComponent {
 
   @HostListener('window:resize', ['$event'])
   public resize(event: Event) {
-    console.log(event);
   }
 }

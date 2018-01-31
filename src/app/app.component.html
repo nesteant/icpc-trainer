@@ -2,9 +2,15 @@
   <mat-toolbar *ngIf="loggedIn">
     <img class="logo" src="/assets/images/logo-wonca.png" alt="WONCA" [routerLink]="['patients']">
     <span class="fill-space"></span>
-    <a mat-button="" (click)="logout()">
-      <mat-icon>power_settings_new</mat-icon>
-      Вийти</a>
+    <div class="btn-group">
+      <div class="grid-x">
+        <button mat-button class="circle" (click)="openCreatePatient()">Створити пацієнта</button>
+        <button mat-button class="circle" (click)="logout()">
+          <mat-icon>power_settings_new</mat-icon>
+          Вийти
+        </button>
+      </div>
+    </div>
   </mat-toolbar>
 </div>
 <div id="content">

@@ -1,10 +1,11 @@
 <div class="grid-x full-height">
   <div class="cell medium-3 large-3 patient-menu-container">
-    <div *ngFor="let patient of patients | async">
-      <icpc-patient [patient]="patient" [routerLink]="['/patients', patient.id]"
-                    routerLinkActive="active"></icpc-patient>
+    <div>
+      <div *ngFor="let patient of patients | async">
+        <icpc-patient [patient]="patient" [routerLink]="['/patients', patient.id]"
+                      routerLinkActive="active"></icpc-patient>
+      </div>
     </div>
-
   </div>
   <div class="page-content cell medium-9 large-9" #container>
     <router-outlet></router-outlet>

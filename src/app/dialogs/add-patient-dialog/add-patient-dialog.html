@@ -1,0 +1,30 @@
+<div [formGroup]="formGroup">
+  <div class="icpc-button-pane">
+    <button mat-icon-button [mat-dialog-close]="false">
+      <mat-icon>clear</mat-icon>
+    </button>
+  </div>
+  <h2 mat-dialog-title>Створення пацієнта</h2>
+  <div>
+    <mat-form-field class="xxl">
+      <input matInput placeholder="Ім'я" formControlName="name" required>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field class="l">
+      <mat-select placeholder="Стать" formControlName="gender" required>
+        <mat-option value="чол.">Чоловіча</mat-option>
+        <mat-option value="жін.">Жіноча</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field class="l">
+      <input matInput [matDatepicker]="picker" placeholder="Дата народження" formControlName="birthday" required>
+      <mat-error>Вкажіть дату</mat-error>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <mat-dialog-actions>
+    <button mat-button (click)="save()">Зберегти</button>
+  </mat-dialog-actions>
+</div>

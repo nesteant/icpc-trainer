@@ -49,6 +49,11 @@ export class PatientsService {
     // this.store.dispatch({type: 'CREATE_EPISODE', payload: patient});
   }
 
+  public addPatient(patient: Patient) {
+      patient && this.saved.push(patient);
+      this.saveContext();
+  }
+
   public updateVisit(patient: Patient, visit: SubVisit) {
     this.saved.filter(p => p.id === patient.id)
       .map(p => p.subVisits.find(v => v.id === visit.id))
