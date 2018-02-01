@@ -50,7 +50,7 @@ export class PatientsService {
   }
 
   public addPatient(patient: Patient) {
-      patient && this.saved.push(patient);
+      patient && this.saved.unshift(patient);
       this.saveContext();
   }
 
