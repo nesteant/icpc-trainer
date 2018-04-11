@@ -198,3 +198,7 @@ icpc-patient.active .patient-card:before {
 #content .page-content {
   overflow-x: auto;
 }
+
+mat-expansion-panel {
+  z-index: 999;
+}
