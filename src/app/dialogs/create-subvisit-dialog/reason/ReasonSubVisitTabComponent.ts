@@ -62,7 +62,10 @@ export class ReasonSubVisitTabComponent implements OnInit, ControlValueAccessor 
   public ngOnInit() {
     this.reasonOptions = this.reasonSearch.valueChanges
       .startWith(null)
-      .mergeMap(val => val ? this.filter(val, this.icpcService.reasons) : this.icpcService.reasons);
+      .filter(v => typeof v === 'string' || v == null)
+      .mergeMap(val => {
+          return val ? this.filter(val, this.icpcService.reasons) : this.icpcService.reasons;
+      });
     this.reasonsControl.valueChanges.subscribe(v => this.onChange(v));
   }
 

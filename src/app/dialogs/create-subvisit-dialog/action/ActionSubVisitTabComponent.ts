@@ -63,6 +63,7 @@ export class ActionSubVisitTabComponent implements OnInit, ControlValueAccessor 
   public ngOnInit() {
     this.actionOptions = this.actionSearch.valueChanges
       .startWith(null)
+      .filter(v => typeof v === 'string' || v == null)
       .mergeMap(val => val ? this.filter(val, this.icpcService.actions) : this.icpcService.actions);
     this.actionsControl.valueChanges.subscribe(v => this.onChange(v));
   }
