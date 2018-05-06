@@ -933,7 +933,7 @@
         "subVisits": [
           12
         ],
-        "ended": true,
+        "ended": false,
         "endDate": "2017-12-06"
       }
     ],
